@@ -1,0 +1,52 @@
+uuid: 9b8ec62c-0c91-48ad-8ad8-c3d7add42224
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_visibility_groups.block_visibility_group.about_style_3
+  content:
+    - 'block_content:basic:e54048af-b76b-4c83-97f9-216f2cf24ee0'
+  module:
+    - block_attributes
+    - block_content
+    - block_visibility_groups
+    - ntv_block_background
+  theme:
+    - probes
+third_party_settings:
+  block_attributes:
+    attr_class: ''
+    attr_id: ''
+    block_title_icon: ''
+  ntv_block_background:
+    disable: disable
+    color: '#000000'
+    bg_image: {  }
+    bg_image_type: default
+    bg_repeat: 'no'
+    bg_image_position: ''
+    bg_image_size: ''
+    background_overlay: ''
+id: probesblockhtmlknowaboutus
+theme: probes
+region: section
+weight: -11
+provider: null
+plugin: 'block_content:e54048af-b76b-4c83-97f9-216f2cf24ee0'
+settings:
+  id: 'block_content:e54048af-b76b-4c83-97f9-216f2cf24ee0'
+  label: '[Probes] Block HTML Know About Us'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+  attributes:
+    class: m-top5
+    id: ''
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: about_style_3
+    context_mapping: {  }

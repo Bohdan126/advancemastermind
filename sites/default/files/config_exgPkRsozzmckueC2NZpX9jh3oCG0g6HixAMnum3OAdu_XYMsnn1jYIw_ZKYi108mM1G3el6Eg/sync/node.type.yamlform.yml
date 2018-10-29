@@ -1,0 +1,16 @@
+uuid: abb990b6-fd43-48e8-8c65-0c549b81ef82
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - yamlform
+_core:
+  default_config_hash: ZF1H81jYaWlZ7jpqb13NniNvxLrglMeuPledkb_Tml0
+name: 'YAML form'
+type: yamlform
+description: 'A basic page with a YAML form attached.'
+help: ''
+new_revision: false
+preview_mode: 1
+display_submitted: true

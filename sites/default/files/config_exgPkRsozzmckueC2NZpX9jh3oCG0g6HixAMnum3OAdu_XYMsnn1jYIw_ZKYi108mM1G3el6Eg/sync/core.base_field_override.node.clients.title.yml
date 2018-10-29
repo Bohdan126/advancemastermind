@@ -1,0 +1,18 @@
+uuid: 2bd38b94-8b1e-4d7c-a619-400807aa5874
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.clients
+id: node.clients.title
+field_name: title
+entity_type: node
+bundle: clients
+label: Name
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

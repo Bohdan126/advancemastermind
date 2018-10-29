@@ -1,0 +1,26 @@
+uuid: 517ad5cf-a51b-4fef-aaaa-85336c54d9b6
+langcode: en
+status: false
+dependencies: {  }
+_core:
+  default_config_hash: zj6U4XYfI1C0uSup8iQzllJzFmmIHQRzIO_B4XwhqZc
+name: 'Antigua and Barbuda'
+alpha_2: AG
+alpha_3: ATG
+numeric: 28
+zones:
+  GE: 'St. George'
+  JO: 'St. John'
+  MA: 'St. Mary'
+  PA: 'St. Paul'
+  PE: 'St. Peter'
+  BB: Barbuda
+  RD: Redonda
+  PH: 'St. Philip'
+address_format:
+  - '!company'
+  - '!first_name !last_name'
+  - '!street1'
+  - '!street2'
+  - '!city, !zone_code !postal_code'
+  - '!country_name_if'

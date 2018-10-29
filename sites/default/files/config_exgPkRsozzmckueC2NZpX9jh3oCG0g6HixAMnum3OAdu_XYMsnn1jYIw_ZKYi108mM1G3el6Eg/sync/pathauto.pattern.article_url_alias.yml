@@ -1,0 +1,24 @@
+uuid: eb9e53bd-9c72-4c91-9806-a6fcc98c6b39
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: article_url_alias
+label: 'Article url alias'
+type: 'canonical_entities:node'
+pattern: '[node:content-type]/[node:title]'
+selection_criteria:
+  5f720373-ea5d-4dd9-af16-2a71dfc74e0d:
+    id: node_type
+    bundles:
+      article: article
+      features: features
+      services: services
+    negate: false
+    context_mapping:
+      node: node
+    uuid: 5f720373-ea5d-4dd9-af16-2a71dfc74e0d
+selection_logic: and
+weight: -5
+relationships: {  }

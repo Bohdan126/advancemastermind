@@ -1,0 +1,23 @@
+uuid: dc095e19-ab7a-49bc-a658-965d689b03a8
+langcode: en
+status: false
+dependencies: {  }
+_core:
+  default_config_hash: OgJhPpYYzIQrLtX47rtUCoiP07UnqAXcaKV-x1V7bqw
+name: Denmark
+alpha_2: DK
+alpha_3: DNK
+numeric: 208
+zones:
+  DK-84: Hovedstaden
+  DK-82: Midtjylland
+  DK-81: Nordjylland
+  DK-85: Sjælland
+  DK-83: Syddanmark
+address_format:
+  - '!company'
+  - '!first_name !last_name'
+  - '!street1'
+  - '!street2'
+  - '!postal_code !city'
+  - '!country_name_if'

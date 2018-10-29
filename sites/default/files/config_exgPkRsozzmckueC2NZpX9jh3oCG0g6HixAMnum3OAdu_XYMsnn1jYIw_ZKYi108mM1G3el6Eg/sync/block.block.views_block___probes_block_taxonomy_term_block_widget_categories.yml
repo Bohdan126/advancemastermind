@@ -1,0 +1,50 @@
+uuid: cf967e9e-c361-4e4d-a691-b741b27be6f2
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_visibility_groups.block_visibility_group.sidebar
+    - views.view._probes_block_taxonomy_term
+  module:
+    - block_attributes
+    - block_visibility_groups
+    - ntv_block_background
+    - views
+  theme:
+    - probes
+third_party_settings:
+  block_attributes:
+    attr_class: ''
+    attr_id: ''
+    block_title_icon: 'fa fa-align-justify'
+  ntv_block_background:
+    disable: disable
+    color: '#000000'
+    bg_image: {  }
+    bg_image_type: default
+    bg_repeat: 'no'
+    bg_image_position: ''
+    bg_image_size: ''
+    background_overlay: ''
+id: views_block___probes_block_taxonomy_term_block_widget_categories
+theme: probes
+region: sidebar
+weight: -11
+provider: null
+plugin: 'views_block:_probes_block_taxonomy_term-block_widget_categories'
+settings:
+  id: 'views_block:_probes_block_taxonomy_term-block_widget_categories'
+  label: Categories
+  provider: views
+  label_display: visible
+  views_label: Categories
+  items_per_page: none
+  attributes:
+    class: m-bottom4
+    id: ''
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: sidebar
+    context_mapping: {  }

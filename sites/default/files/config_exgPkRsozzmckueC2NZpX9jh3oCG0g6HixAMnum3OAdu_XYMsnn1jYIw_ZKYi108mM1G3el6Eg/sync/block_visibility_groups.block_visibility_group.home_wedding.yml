@@ -1,0 +1,17 @@
+uuid: 98431542-50e0-4e38-b97f-dcb7a54cf27f
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+id: home_wedding
+label: 'Home wedding'
+logic: and
+conditions:
+  ea7d50c2-7be4-42a9-b1bd-799088413877:
+    id: request_path
+    pages: /node/143
+    negate: false
+    context_mapping: {  }
+    uuid: ea7d50c2-7be4-42a9-b1bd-799088413877
+allow_other_conditions: false

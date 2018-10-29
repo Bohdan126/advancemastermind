@@ -1,0 +1,48 @@
+uuid: 95debd2e-9f7c-4394-a518-511adfd39cca
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_visibility_groups.block_visibility_group.breadcrumb
+  module:
+    - block_attributes
+    - block_visibility_groups
+    - ntv_block_background
+    - system
+  theme:
+    - probes
+third_party_settings:
+  block_attributes:
+    attr_class: ''
+    attr_id: ''
+    block_title: ''
+    block_title_icon: ''
+  ntv_block_background:
+    disable: disable
+    color: '#000000'
+    bg_image: {  }
+    bg_image_type: default
+    bg_repeat: 'no'
+    bg_image_position: ''
+    bg_image_size: ''
+    background_overlay: ''
+id: breadcrumbs
+theme: probes
+region: breadcrumb
+weight: null
+provider: null
+plugin: system_breadcrumb_block
+settings:
+  id: system_breadcrumb_block
+  label: Breadcrumbs
+  provider: system
+  label_display: '0'
+  attributes:
+    class: ''
+    id: ''
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: breadcrumb
+    context_mapping: {  }

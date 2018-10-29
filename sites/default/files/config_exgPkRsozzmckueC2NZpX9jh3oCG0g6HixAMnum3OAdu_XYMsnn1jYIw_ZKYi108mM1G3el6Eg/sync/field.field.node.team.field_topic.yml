@@ -1,0 +1,21 @@
+uuid: f0d6a84e-ad75-4a2d-8ca2-959deca5db73
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_topic
+    - node.type.team
+  module:
+    - options
+id: node.team.field_topic
+field_name: field_topic
+entity_type: node
+bundle: team
+label: Topic
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

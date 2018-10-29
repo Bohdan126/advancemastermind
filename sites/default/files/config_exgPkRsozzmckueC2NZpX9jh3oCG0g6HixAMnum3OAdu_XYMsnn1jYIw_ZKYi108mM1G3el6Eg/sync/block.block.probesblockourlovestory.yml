@@ -1,0 +1,51 @@
+uuid: 7b6f7005-826b-4320-a15b-4c6bb042f813
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_visibility_groups.block_visibility_group.home_wedding
+  content:
+    - 'block_content:basic:be5549c4-dab5-45cc-af22-07802d1408a4'
+  module:
+    - block_attributes
+    - block_content
+    - block_visibility_groups
+    - ntv_block_background
+  theme:
+    - probes
+third_party_settings:
+  block_attributes:
+    attr_class: ''
+    attr_id: ''
+  ntv_block_background:
+    disable: disable
+    color: '#000000'
+    bg_image: {  }
+    bg_image_type: default
+    bg_repeat: 'no'
+    bg_image_position: ''
+    bg_image_size: ''
+    background_overlay: ''
+id: probesblockourlovestory
+theme: probes
+region: section
+weight: -14
+provider: null
+plugin: 'block_content:be5549c4-dab5-45cc-af22-07802d1408a4'
+settings:
+  id: 'block_content:be5549c4-dab5-45cc-af22-07802d1408a4'
+  label: '[Probes] Block Our Love Story'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+  attributes:
+    class: m-top8
+    id: ''
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: home_wedding
+    context_mapping: {  }

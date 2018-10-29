@@ -1,0 +1,17 @@
+uuid: e0929a4c-6136-4746-b178-e9913d81732e
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+id: home_restaurant
+label: 'Home restaurant'
+logic: and
+conditions:
+  aa41f838-3f01-40bf-8c62-a8a07e3f46c7:
+    id: request_path
+    pages: /node/108
+    negate: false
+    context_mapping: {  }
+    uuid: aa41f838-3f01-40bf-8c62-a8a07e3f46c7
+allow_other_conditions: false

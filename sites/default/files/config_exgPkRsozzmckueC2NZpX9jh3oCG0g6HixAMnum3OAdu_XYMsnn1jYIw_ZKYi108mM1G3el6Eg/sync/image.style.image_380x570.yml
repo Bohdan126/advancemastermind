@@ -1,0 +1,14 @@
+uuid: d3c4952e-ccdf-4048-9463-4ed05dcd7869
+langcode: en
+status: true
+dependencies: {  }
+name: image_380x570
+label: 'Image 380x570'
+effects:
+  cda04a85-40cd-412b-9c79-fcca4bc4e245:
+    uuid: cda04a85-40cd-412b-9c79-fcca4bc4e245
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 380
+      height: 570

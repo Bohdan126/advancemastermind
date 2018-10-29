@@ -1,0 +1,51 @@
+uuid: 55950470-d6ad-46f1-b87c-4127d5bfe305
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_visibility_groups.block_visibility_group.home_corporate_2
+  content:
+    - 'block_content:basic:743a3a7d-79c0-48c7-8b61-262319e668ff'
+  module:
+    - block_attributes
+    - block_content
+    - block_visibility_groups
+    - ntv_block_background
+  theme:
+    - probes
+third_party_settings:
+  block_attributes:
+    attr_class: ''
+    attr_id: ''
+  ntv_block_background:
+    disable: disable
+    color: '#000000'
+    bg_image: {  }
+    bg_image_type: default
+    bg_repeat: 'no'
+    bg_image_position: ''
+    bg_image_size: ''
+    background_overlay: ''
+id: probesblocktabandskills
+theme: probes
+region: section
+weight: -12
+provider: null
+plugin: 'block_content:743a3a7d-79c0-48c7-8b61-262319e668ff'
+settings:
+  id: 'block_content:743a3a7d-79c0-48c7-8b61-262319e668ff'
+  label: '[Probes] Block tab and skills'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+  attributes:
+    class: m-top7
+    id: ''
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: home_corporate_2
+    context_mapping: {  }

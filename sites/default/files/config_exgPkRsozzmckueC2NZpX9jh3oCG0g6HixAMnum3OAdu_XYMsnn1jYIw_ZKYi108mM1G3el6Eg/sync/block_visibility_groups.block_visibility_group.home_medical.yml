@@ -1,0 +1,17 @@
+uuid: 49a045f3-0c3d-446b-9d5a-6c97f457fb4d
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+id: home_medical
+label: 'Home medical'
+logic: and
+conditions:
+  de74a77e-62a4-44fb-a12b-d910e178cd17:
+    id: request_path
+    pages: /node/75
+    negate: false
+    context_mapping: {  }
+    uuid: de74a77e-62a4-44fb-a12b-d910e178cd17
+allow_other_conditions: false

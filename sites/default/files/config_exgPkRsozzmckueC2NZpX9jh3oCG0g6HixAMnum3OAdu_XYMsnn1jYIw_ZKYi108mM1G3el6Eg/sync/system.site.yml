@@ -1,0 +1,15 @@
+uuid: c67fd9cb-9094-407f-a27a-19515143956e
+name: 'Advance Mastermind'
+mail: steve@flameconcepts.com
+slogan: ''
+page:
+  403: ''
+  404: /node/190
+  front: /node/211
+admin_compact_mode: false
+weight_select_max: 100
+langcode: en
+default_langcode: en
+_core:
+  default_config_hash: yXadRE77Va-G6dxhd2kPYapAvbnSvTF6hO4oXiOEynI
+mail_notification: ''

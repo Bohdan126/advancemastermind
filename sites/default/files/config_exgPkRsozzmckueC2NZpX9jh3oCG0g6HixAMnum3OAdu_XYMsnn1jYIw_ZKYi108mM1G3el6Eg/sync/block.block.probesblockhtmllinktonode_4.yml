@@ -1,0 +1,51 @@
+uuid: bef13739-fc7d-47fd-96ec-c7fe45909f47
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_visibility_groups.block_visibility_group.home_lawyer
+  content:
+    - 'block_content:basic:41fd0b76-4044-4445-859f-8e4dde6da5cb'
+  module:
+    - block_attributes
+    - block_content
+    - block_visibility_groups
+    - ntv_block_background
+  theme:
+    - probes
+third_party_settings:
+  block_attributes:
+    attr_class: ''
+    attr_id: ''
+  ntv_block_background:
+    disable: disable
+    color: '#000000'
+    bg_image: {  }
+    bg_image_type: default
+    bg_repeat: 'no'
+    bg_image_position: ''
+    bg_image_size: ''
+    background_overlay: ''
+id: probesblockhtmllinktonode_4
+theme: probes
+region: section
+weight: null
+provider: null
+plugin: 'block_content:41fd0b76-4044-4445-859f-8e4dde6da5cb'
+settings:
+  id: 'block_content:41fd0b76-4044-4445-859f-8e4dde6da5cb'
+  label: '[Probes] Block HTML link to node'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+  attributes:
+    class: m-top0
+    id: ''
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: home_lawyer
+    context_mapping: {  }

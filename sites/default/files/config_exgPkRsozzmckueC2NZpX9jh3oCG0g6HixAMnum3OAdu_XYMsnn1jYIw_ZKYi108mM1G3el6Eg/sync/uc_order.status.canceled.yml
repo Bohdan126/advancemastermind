@@ -1,0 +1,11 @@
+uuid: 08b3135a-492e-45b0-b5cf-6103d3217feb
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: BCIMFm69Q9S5ijt7YlmwoIOFMkbOQ2lMyjnTdKYzoBc
+id: canceled
+name: Canceled
+state: canceled
+weight: -20
+locked: true

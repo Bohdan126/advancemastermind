@@ -1,0 +1,26 @@
+uuid: 82707a3f-7bde-41d3-aa30-d0357e93c53f
+langcode: en
+status: true
+dependencies:
+  module:
+    - ctools
+    - system
+id: topbar_style_1
+label: 'Topbar style 1'
+logic: or
+conditions:
+  a9603135-aafc-4a8a-9f8d-94531a5d5ef2:
+    id: request_path
+    pages: "<front>\r\n/node/37\r\n/node/51\r\n/node/225\r\n/node/232\r\n/products-search*\r\n/cart*\r\n/search*"
+    negate: false
+    context_mapping: {  }
+    uuid: a9603135-aafc-4a8a-9f8d-94531a5d5ef2
+  c6bab50c-082b-430d-a778-2559eae74951:
+    id: 'entity_bundle:node'
+    bundles:
+      product: product
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+    uuid: c6bab50c-082b-430d-a778-2559eae74951
+allow_other_conditions: false

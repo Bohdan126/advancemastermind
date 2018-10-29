@@ -1,0 +1,32 @@
+uuid: 6cc4995e-2397-44bc-b2bb-e5b745aeedb4
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.brand_solutions.body
+    - field.field.node.brand_solutions.field_icon_class
+    - field.field.node.brand_solutions.field_image
+    - field.field.node.brand_solutions.field_subtitle
+    - node.type.brand_solutions
+  module:
+    - text
+    - user
+id: node.brand_solutions.teaser
+targetEntityType: node
+bundle: brand_solutions
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+  links:
+    weight: 100
+hidden:
+  field_icon_class: true
+  field_image: true
+  field_subtitle: true

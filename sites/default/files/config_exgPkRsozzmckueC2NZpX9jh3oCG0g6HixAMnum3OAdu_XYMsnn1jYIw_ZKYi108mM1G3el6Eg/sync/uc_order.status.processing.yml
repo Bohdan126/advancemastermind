@@ -1,0 +1,11 @@
+uuid: 7a170e79-51a1-4e2e-922d-707110f57895
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: m_zbJ39xxPq0jhcTkjW1VMNDOGVKdFBajGu8fB_Ny6o
+id: processing
+name: Processing
+state: post_checkout
+weight: 5
+locked: true

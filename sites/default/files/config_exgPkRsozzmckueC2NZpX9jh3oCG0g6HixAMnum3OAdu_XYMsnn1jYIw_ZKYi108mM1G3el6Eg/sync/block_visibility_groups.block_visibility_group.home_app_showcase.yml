@@ -1,0 +1,17 @@
+uuid: 62380a07-c4c5-4dbf-919c-bfdc12e189c8
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+id: home_app_showcase
+label: 'Home app showcase'
+logic: and
+conditions:
+  99ffe6ac-2f11-41bf-ba79-c78cb48a3faf:
+    id: request_path
+    pages: /node/73
+    negate: false
+    context_mapping: {  }
+    uuid: 99ffe6ac-2f11-41bf-ba79-c78cb48a3faf
+allow_other_conditions: false

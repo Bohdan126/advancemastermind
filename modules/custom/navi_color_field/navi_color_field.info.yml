@@ -1,0 +1,10 @@
+name: Color Field
+description: Select a color field type.
+
+type: module
+package: NaviTeam
+core: 8.x
+
+# The list of dependencies must contains the 'field' value
+dependencies:
+  - field

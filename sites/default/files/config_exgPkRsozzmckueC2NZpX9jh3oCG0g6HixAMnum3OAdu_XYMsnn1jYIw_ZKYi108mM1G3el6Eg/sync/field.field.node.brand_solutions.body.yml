@@ -1,0 +1,22 @@
+uuid: c4510071-b2f7-4e86-bec9-d408c8f9b72c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.brand_solutions
+  module:
+    - text
+id: node.brand_solutions.body
+field_name: body
+entity_type: node
+bundle: brand_solutions
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+field_type: text_with_summary

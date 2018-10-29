@@ -1,0 +1,52 @@
+uuid: 1287d84c-9f5c-46a2-b06e-c4a6282836d6
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_visibility_groups.block_visibility_group.topbar_style_3
+  content:
+    - 'block_content:basic:9f1bc9b3-7748-4ac5-84c5-691c22c8baf4'
+  module:
+    - block_attributes
+    - block_content
+    - block_visibility_groups
+    - ntv_block_background
+  theme:
+    - probes
+third_party_settings:
+  block_attributes:
+    attr_class: ''
+    attr_id: ''
+    block_title_icon: ''
+  ntv_block_background:
+    disable: disable
+    color: '#000000'
+    bg_image: {  }
+    bg_image_type: default
+    bg_repeat: 'no'
+    bg_image_position: ''
+    bg_image_size: ''
+    background_overlay: ''
+id: probesblockwelcomehtmltopbar
+theme: probes
+region: topbar
+weight: -11
+provider: null
+plugin: 'block_content:9f1bc9b3-7748-4ac5-84c5-691c22c8baf4'
+settings:
+  id: 'block_content:9f1bc9b3-7748-4ac5-84c5-691c22c8baf4'
+  label: '[Probes] Block welcome HTML topbar'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+  attributes:
+    class: 'col-md-6 nopadding'
+    id: ''
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: topbar_style_3
+    context_mapping: {  }

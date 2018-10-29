@@ -1,0 +1,52 @@
+uuid: 5d0f90ff-bbb9-4224-add5-46b2b58d5929
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_visibility_groups.block_visibility_group.animated_counters
+  content:
+    - 'block_content:basic:fc0a8603-5f63-4960-a770-c6633a1f390f'
+  module:
+    - block_attributes
+    - block_content
+    - block_visibility_groups
+    - ntv_block_background
+  theme:
+    - probes
+third_party_settings:
+  block_attributes:
+    attr_class: ''
+    attr_id: ''
+    block_title_icon: ''
+  ntv_block_background:
+    disable: disable
+    color: '#000000'
+    bg_image: {  }
+    bg_image_type: default
+    bg_repeat: 'no'
+    bg_image_position: ''
+    bg_image_size: ''
+    background_overlay: ''
+id: probesblockanimatedcounters
+theme: probes
+region: section
+weight: null
+provider: null
+plugin: 'block_content:fc0a8603-5f63-4960-a770-c6633a1f390f'
+settings:
+  id: 'block_content:fc0a8603-5f63-4960-a770-c6633a1f390f'
+  label: '[Probes] Block Animated Counters'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+  attributes:
+    class: 'bg-parallax m-top8'
+    id: ''
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: animated_counters
+    context_mapping: {  }

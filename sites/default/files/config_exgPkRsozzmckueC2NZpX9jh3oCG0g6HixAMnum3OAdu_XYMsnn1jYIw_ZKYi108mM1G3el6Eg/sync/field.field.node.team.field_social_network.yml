@@ -1,0 +1,21 @@
+uuid: 02e6ec58-63af-4d0d-8678-4dafece9506e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_social_network
+    - node.type.team
+  module:
+    - text
+id: node.team.field_social_network
+field_name: field_social_network
+entity_type: node
+bundle: team
+label: 'Social network'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

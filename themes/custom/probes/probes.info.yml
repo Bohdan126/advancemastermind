@@ -1,0 +1,36 @@
+name: Probes
+description: Probes theme for drupal 8 ready for use Industries, School, hospital, corporative, travel, fashion, jewellery and any business.
+type: theme
+package: Core
+version: VERSION
+
+#Libraries
+libraries:
+    - probes/global-styling
+    - probes/global-scripts
+
+regions:
+    topbar: 'Top Bar'
+    header_branding: 'Header branding'
+    right_header: 'Right header(layout 3, 5)'
+    shopping_cart: 'Shopping cart'
+    main_menu: 'Main menu'
+    slideshow: Slideshow
+    messages: Messages
+    breadcrumb: Breadcrumb
+    content: Content
+    sidebar: Sidebar
+    section: Section
+    section_one: 'Section one page'
+    coming_section: 'Coming soon section'
+    footer_header: Footer header(Footer layout 2, 3, 4)
+    footer: Footer
+    footer2: 'Footer layout 2'
+    footer4: 'Footer layout 4'
+    footer4_center: 'Footer 4 center'
+    footer_copyright: Footer copyright
+
+version: '8.x'
+core: '8.x'
+project: 'probes'
+datestamp: 1464825150

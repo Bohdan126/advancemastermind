@@ -1,0 +1,33 @@
+uuid: 0dfbec15-d7ba-4890-90c6-e9fe60fde31e
+langcode: en
+status: false
+dependencies:
+  config:
+    - views.view._probes_block_section
+  module:
+    - system
+    - views
+  theme:
+    - probes
+id: views_block___probes_block_section_block_best_team_style1
+theme: probes
+region: '-1'
+weight: -6
+provider: null
+plugin: 'views_block:_probes_block_section-block_best_team_style1'
+settings:
+  id: 'views_block:_probes_block_section-block_best_team_style1'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+  items_per_page: none
+  attributes:
+    class: m-top5
+    id: ''
+visibility:
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: false
+    context_mapping: {  }

@@ -1,0 +1,8 @@
+uuid: f11e905b-473a-4a31-9db2-569fdadaaf5b
+langcode: en
+status: true
+dependencies: {  }
+id: _probes_block_image
+label: '[Probes] Block image'
+revision: 0
+description: ''

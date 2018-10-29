@@ -1,0 +1,24 @@
+uuid: f858366b-a5f2-4435-b024-e76c04f1180d
+langcode: en
+status: false
+dependencies: {  }
+_core:
+  default_config_hash: oEGlTmM4LChaiov99rhRZ6H5EKyM1eMzAwEAnmhN5bY
+name: Vanuatu
+alpha_2: VU
+alpha_3: VUT
+numeric: 548
+zones:
+  VU-MAP: Malampa
+  VU-PAM: Pénama
+  VU-SAM: Sanma
+  VU-SEE: Shéfa
+  VU-TAE: Taféa
+  VU-TOB: Torba
+address_format:
+  - '!company'
+  - '!first_name !last_name'
+  - '!street1'
+  - '!street2'
+  - '!city, !zone_name  !postal_code'
+  - '!country_name_if'

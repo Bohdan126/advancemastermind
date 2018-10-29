@@ -1,0 +1,46 @@
+uuid: a108bdf1-6f52-4bb6-ab56-925c6e3d77a9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.brand_solutions.body
+    - field.field.node.brand_solutions.field_icon_class
+    - field.field.node.brand_solutions.field_image
+    - field.field.node.brand_solutions.field_subtitle
+    - node.type.brand_solutions
+  module:
+    - image
+    - text
+    - user
+id: node.brand_solutions.default
+targetEntityType: node
+bundle: brand_solutions
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 3
+    settings: {  }
+    third_party_settings: {  }
+  field_image:
+    weight: 1
+    label: hidden
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+  field_subtitle:
+    weight: 2
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+  links:
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_icon_class: true

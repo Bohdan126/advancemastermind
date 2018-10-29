@@ -1,0 +1,13 @@
+name: 'Block Settings'
+type: module
+description: 'Allows settings attributes block advanced.'
+package: NaviTeam
+# core: 8.x
+dependencies:
+  - block
+
+# Information added by Drupal.org packaging script on 2016-03-18
+version: VERSION
+core: '8.x'
+project: 'nvt_block_settings'
+datestamp: 1458306524

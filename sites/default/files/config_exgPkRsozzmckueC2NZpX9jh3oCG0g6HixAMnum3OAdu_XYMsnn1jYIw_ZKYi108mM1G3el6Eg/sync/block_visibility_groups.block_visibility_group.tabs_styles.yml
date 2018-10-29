@@ -1,0 +1,17 @@
+uuid: 15aa4bc0-17dd-4efb-a2ac-50370846d883
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+id: tabs_styles
+label: 'Tabs styles'
+logic: and
+conditions:
+  3e57c588-9e99-4597-b25a-f08f0f76edde:
+    id: request_path
+    pages: /node/201
+    negate: false
+    context_mapping: {  }
+    uuid: 3e57c588-9e99-4597-b25a-f08f0f76edde
+allow_other_conditions: false

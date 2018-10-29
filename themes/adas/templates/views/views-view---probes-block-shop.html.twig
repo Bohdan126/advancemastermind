@@ -1,0 +1,84 @@
+{% if view.current_display == 'block_featured_products' %}
+	{% if rows %}
+	<div class="container">
+	    <div class="row">
+	    {% if header %}
+			<div class="col-md-3 nophone">
+				{{ header }}
+			</div>
+		{% endif %}
+			<div class="col-md-9 pro-list">
+				{{ rows }}
+			</div>
+		</div>
+	</div>
+	{% endif %}
+{% elseif view.current_display == 'block_trending_products' %}
+	{% if rows %}
+	<div class="container">
+	    <div class="row">
+	    	<div class="text-center"> 
+		    {% if header %}
+				{{ header }}
+			{% endif %}
+				<!-- Tab panes -->
+        		<div class="tab-content tab-style4">
+        			<div id="tab1" class="tab-pane active" role="tabpanel">
+						{{ rows }}
+					</div>
+					{{ footer }}
+				</div>
+			</div>
+		</div>
+	</div>
+	{% endif %}
+{% elseif view.current_display == 'block_products_most_recent_view' %}
+	{% if rows %}
+	<div id="tab2" class="tab-pane" role="tabpanel">
+		{{ rows }}
+	</div>
+	{% endif %}
+{% elseif view.current_display == 'block_new_products' %}
+	{% if rows %}
+	<div id="tab3" class="tab-pane" role="tabpanel">
+		{{ rows }}
+	</div>
+	{% endif %}
+{% elseif view.current_display == 'block_products_top_comments' %}
+	{% if rows %}
+	<div id="tab4" class="tab-pane" role="tabpanel">
+		{{ rows }}
+	</div>
+	{% endif %}
+{% elseif view.current_display == 'block_popular_products' %}
+	{% if rows %}
+	{% if header %}
+		{{ header }}
+	{% endif %}
+	<div class="recommend-content">
+		{{ rows }}
+	</div>
+	{% endif %}
+{% elseif view.current_display == 'block_featured_products_style2' or view.current_display == 'block_related_products' %}
+	{% if rows %}
+	<div class="container">
+    	<div class="row">
+      		<div class="col-md-12">
+			{% if header %}
+				<div class="title1 text-center m-bottom5">
+					{{ header }}
+				</div>
+			{% endif %}
+				{{ rows }}
+			</div>
+		</div>
+	</div>
+	{% endif %}
+{% elseif view.current_display == 'page_products_search' %}
+	{% if rows %}
+		{{ rows }}
+	{% endif %}
+	{% if pager %}
+		{{ pager }}
+	{% endif %}
+{% endif %}

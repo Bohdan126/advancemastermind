@@ -1,0 +1,18 @@
+uuid: 35dee377-71d4-45bc-84a5-70643e1d44eb
+langcode: en
+status: false
+dependencies: {  }
+_core:
+  default_config_hash: t0nCUOL-Waljz0ChZpgPa0XGUmgrauUNmvlmco-Tix0
+name: 'Saint Helena, Ascension and Tristan da Cunha'
+alpha_2: SH
+alpha_3: SHN
+numeric: 654
+zones: {  }
+address_format:
+  - '!company'
+  - '!first_name !last_name'
+  - '!street1'
+  - '!street2'
+  - '!city  !postal_code'
+  - '!country_name_if'

@@ -1,0 +1,92 @@
+uuid: f939d916-da98-4819-97f2-cd27c0f6065f
+langcode: en
+status: true
+dependencies: {  }
+id: book_a_table
+title: 'Book a table'
+description: ''
+elements: "date:\n  '#title': Date\n  '#title_display': invisible\n  '#prefix': '<div class=\"col-sm-3\">'\n  '#suffix': '</div>'\n  '#type': date\ntime:\n  '#title': Time\n  '#title_display': invisible\n  '#prefix': '<div class=\"col-sm-3\">'\n  '#suffix': '</div>'\n  '#options':\n    '8:00am': '8:00 am'\n    '8:30am': '8:30 am'\n    '9:00am': '9:00 am'\n    '9:30am': '9:30 am'\n  '#empty_option': '8:00 am'\n  '#empty_value': '8:00am'\n  '#type': select\n  '#attributes':\n    class:\n      - selectpicker-full\npeople:\n  '#title': People\n  '#title_display': invisible\n  '#prefix': '<div class=\"col-sm-3\">'\n  '#suffix': '</div>'\n  '#options':\n    1: '1 Person'\n    2: '2 Person'\n    3: '3 Person'\n    4: '4 Person'\n  '#empty_option': '1 Person'\n  '#empty_value': '1'\n  '#type': select\n  '#attributes':\n    class:\n      - selectpicker-full\n"
+settings:
+  id: book_a_table
+  title: 'Book a table'
+  description: ''
+  page: false
+  page_submit_path: ''
+  page_confirm_path: ''
+  form_closed_message: ''
+  form_exception_message: ''
+  form_submit_label: 'BOOK A TABLE'
+  form_confidential: false
+  form_confidential_message: ''
+  form_prepopulate: false
+  wizard_progress_bar: true
+  wizard_progress_pages: false
+  wizard_progress_percentage: false
+  wizard_prev_button_label: ''
+  wizard_next_button_label: ''
+  wizard_complete: true
+  wizard_start_label: ''
+  wizard_complete_label: ''
+  preview: 0
+  preview_next_button_label: ''
+  preview_prev_button_label: ''
+  preview_message: ''
+  draft: false
+  draft_auto_save: false
+  draft_button_label: ''
+  draft_saved_message: ''
+  draft_loaded_message: ''
+  confirmation_type: url
+  confirmation_message: ''
+  confirmation_url: '<front>'
+  limit_total: null
+  limit_total_message: ''
+  limit_user: null
+  limit_user_message: ''
+  results_disabled: false
+access:
+  create:
+    roles:
+      - anonymous
+      - authenticated
+    users: {  }
+  view_any:
+    roles: {  }
+    users: {  }
+  update_any:
+    roles: {  }
+    users: {  }
+  delete_any:
+    roles: {  }
+    users: {  }
+  purge_any:
+    roles: {  }
+    users: {  }
+  view_own:
+    roles: {  }
+    users: {  }
+  update_own:
+    roles: {  }
+    users: {  }
+  delete_own:
+    roles: {  }
+    users: {  }
+handlers:
+  email:
+    id: email
+    label: Email
+    handler_id: email
+    status: true
+    weight: 1
+    settings:
+      to_mail: thanhtuanhp@gmail.com
+      cc_mail: thanhtuanhp@gmail.com
+      bcc_mail: default
+      from_mail: default
+      from_name: default
+      subject: default
+      body: default
+      excluded_elements: {  }
+      html: true
+      attachments: false
+      debug: false

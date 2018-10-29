@@ -1,0 +1,3 @@
+{% for item in items %}
+	<span class="image_bg hidden" data-img-src="{{ item.content['#item'].entity.uri.value | image_create_url }}"></span>
+{% endfor%}

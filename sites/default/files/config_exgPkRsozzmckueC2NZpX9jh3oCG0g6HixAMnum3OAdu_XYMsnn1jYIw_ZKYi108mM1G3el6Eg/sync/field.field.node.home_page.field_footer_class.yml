@@ -1,0 +1,19 @@
+uuid: a853b183-0cd2-4922-83cc-53f4e1500d3a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_footer_class
+    - node.type.home_page
+id: node.home_page.field_footer_class
+field_name: field_footer_class
+entity_type: node
+bundle: home_page
+label: 'Footer class'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

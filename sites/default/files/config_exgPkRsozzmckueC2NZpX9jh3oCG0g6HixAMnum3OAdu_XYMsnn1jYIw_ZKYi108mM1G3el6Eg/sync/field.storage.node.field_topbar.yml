@@ -1,0 +1,27 @@
+uuid: 46d1be05-f797-4d22-a5a1-3dc9a0fe006c
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.field_topbar
+field_name: field_topbar
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: 'on'
+      label: 'On'
+    -
+      value: 'off'
+      label: 'Off'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

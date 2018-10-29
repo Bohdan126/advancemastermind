@@ -1,0 +1,18 @@
+uuid: f3120787-f88f-456e-9856-04f8b4eb9e70
+langcode: en
+status: false
+dependencies: {  }
+_core:
+  default_config_hash: icloqlZbQvJvm53Q-KB2QFGTlk07bVA-hGwK80hwPKI
+name: 'Heard Island and McDonald Islands'
+alpha_2: HM
+alpha_3: HMD
+numeric: 334
+zones: {  }
+address_format:
+  - '!company'
+  - '!first_name !last_name'
+  - '!street1'
+  - '!street2'
+  - '!city  !postal_code'
+  - '!country_name_if'

@@ -1,0 +1,48 @@
+uuid: 45582be6-cb43-4a28-8ba8-6250b30b81a0
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_visibility_groups.block_visibility_group.home_wedding
+  module:
+    - block_attributes
+    - block_visibility_groups
+    - md_slider
+    - ntv_block_background
+  theme:
+    - probes
+third_party_settings:
+  block_attributes:
+    attr_class: ''
+    attr_id: ''
+    block_title: ''
+    block_title_icon: ''
+  ntv_block_background:
+    disable: disable
+    color: '#000000'
+    bg_image: {  }
+    bg_image_type: default
+    bg_repeat: 'no'
+    bg_image_position: ''
+    bg_image_size: ''
+    background_overlay: ''
+id: homesliderwedding
+theme: probes
+region: slideshow
+weight: null
+provider: null
+plugin: 'md_slider_block:home_slider_wedding'
+settings:
+  id: 'md_slider_block:home_slider_wedding'
+  label: 'Home slider wedding'
+  provider: md_slider
+  label_display: '0'
+  attributes:
+    class: ''
+    id: ''
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: home_wedding
+    context_mapping: {  }

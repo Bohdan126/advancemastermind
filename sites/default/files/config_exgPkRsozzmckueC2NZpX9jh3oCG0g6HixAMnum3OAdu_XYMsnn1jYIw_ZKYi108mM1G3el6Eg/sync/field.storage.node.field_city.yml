@@ -1,0 +1,30 @@
+uuid: 674db2c7-cc36-47df-b773-2fd6cd40df88
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.field_city
+field_name: field_city
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: Alpine
+      label: Alpine
+    -
+      value: 'Del Mar'
+      label: 'Del Mar'
+    -
+      value: 'San Diego'
+      label: 'San Diego'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

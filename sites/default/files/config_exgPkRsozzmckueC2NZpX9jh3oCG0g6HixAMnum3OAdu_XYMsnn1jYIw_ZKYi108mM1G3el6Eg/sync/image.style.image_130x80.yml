@@ -1,0 +1,14 @@
+uuid: 1a4a8c97-33ff-4929-b6a5-1677a017b80e
+langcode: en
+status: true
+dependencies: {  }
+name: image_130x80
+label: 'Image 130x80'
+effects:
+  c2822927-b957-4d12-9567-cf05233e66e5:
+    uuid: c2822927-b957-4d12-9567-cf05233e66e5
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 130
+      height: 80

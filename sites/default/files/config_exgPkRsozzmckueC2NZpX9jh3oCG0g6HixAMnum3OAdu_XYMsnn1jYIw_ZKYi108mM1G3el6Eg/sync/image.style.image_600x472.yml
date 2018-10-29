@@ -1,0 +1,14 @@
+uuid: 4d414373-6aa6-49f2-afef-7e03a121b139
+langcode: en
+status: true
+dependencies: {  }
+name: image_600x472
+label: 'Image 600x472'
+effects:
+  48980a97-738a-4ce1-8bd0-69bdecf3fdae:
+    uuid: 48980a97-738a-4ce1-8bd0-69bdecf3fdae
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 600
+      height: 472

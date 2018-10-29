@@ -1,0 +1,18 @@
+uuid: e9db9779-ee47-402a-b560-54fc718f2676
+langcode: en
+status: false
+dependencies: {  }
+_core:
+  default_config_hash: 83w1zSTr1zfhrxTujFC1RtWiVNIHTAN-ivcB6NpJfY8
+name: 'Cook Islands'
+alpha_2: CK
+alpha_3: COK
+numeric: 184
+zones: {  }
+address_format:
+  - '!company'
+  - '!first_name !last_name'
+  - '!street1'
+  - '!street2'
+  - '!city, !zone_name  !postal_code'
+  - '!country_name_if'

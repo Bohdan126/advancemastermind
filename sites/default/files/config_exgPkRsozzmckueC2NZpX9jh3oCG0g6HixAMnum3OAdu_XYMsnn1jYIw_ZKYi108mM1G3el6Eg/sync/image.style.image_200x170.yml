@@ -1,0 +1,14 @@
+uuid: 727b21fb-d90c-40c9-9f32-3cc2789f6a10
+langcode: en
+status: true
+dependencies: {  }
+name: image_200x170
+label: 'Image 200x170'
+effects:
+  cea8fad1-c8d7-4767-9f9c-47dd19efa9f2:
+    uuid: cea8fad1-c8d7-4767-9f9c-47dd19efa9f2
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 200
+      height: 170

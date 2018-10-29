@@ -1,0 +1,17 @@
+uuid: cfe5c71b-39e1-49d6-b911-f135e283fca0
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+id: topbar_style_2
+label: 'Topbar style 2'
+logic: and
+conditions:
+  ee7da626-c4df-4624-b94a-6b509711ee01:
+    id: request_path
+    pages: /node/75
+    negate: false
+    context_mapping: {  }
+    uuid: ee7da626-c4df-4624-b94a-6b509711ee01
+allow_other_conditions: false

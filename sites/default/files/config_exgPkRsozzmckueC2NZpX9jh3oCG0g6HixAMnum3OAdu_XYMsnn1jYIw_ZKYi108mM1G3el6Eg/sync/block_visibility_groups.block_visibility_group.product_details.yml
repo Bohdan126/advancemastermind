@@ -1,0 +1,19 @@
+uuid: 41d5a53f-0562-43aa-a6aa-0c3638f8c092
+langcode: en
+status: true
+dependencies:
+  module:
+    - ctools
+id: product_details
+label: 'Product details'
+logic: or
+conditions:
+  546975f6-3b14-4acb-835a-4540de16b9a2:
+    id: 'entity_bundle:node'
+    bundles:
+      product: product
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+    uuid: 546975f6-3b14-4acb-835a-4540de16b9a2
+allow_other_conditions: false

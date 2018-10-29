@@ -1,0 +1,31 @@
+uuid: a83e063d-603c-42a8-a1fc-e5d69f6fb765
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type._probes_block_image
+    - field.field.block_content._probes_block_image.body
+    - field.field.block_content._probes_block_image.field_image
+  module:
+    - image
+    - text
+id: block_content._probes_block_image.default
+targetEntityType: block_content
+bundle: _probes_block_image
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+  field_image:
+    weight: 1
+    label: hidden
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+hidden: {  }

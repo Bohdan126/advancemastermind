@@ -1,0 +1,48 @@
+uuid: 1dc14966-1921-4c58-9db6-c18518b23dfd
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_visibility_groups.block_visibility_group.home_lawyer
+  module:
+    - block_attributes
+    - block_visibility_groups
+    - md_slider
+    - ntv_block_background
+  theme:
+    - probes
+third_party_settings:
+  block_attributes:
+    attr_class: ''
+    attr_id: ''
+    block_title: ''
+    block_title_icon: ''
+  ntv_block_background:
+    disable: disable
+    color: '#000000'
+    bg_image: {  }
+    bg_image_type: default
+    bg_repeat: 'no'
+    bg_image_position: ''
+    bg_image_size: ''
+    background_overlay: ''
+id: homeslider1_11
+theme: probes
+region: slideshow
+weight: null
+provider: null
+plugin: 'md_slider_block:home_slider_1'
+settings:
+  id: 'md_slider_block:home_slider_1'
+  label: 'Home slider 1'
+  provider: md_slider
+  label_display: '0'
+  attributes:
+    class: ''
+    id: ''
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: home_lawyer
+    context_mapping: {  }

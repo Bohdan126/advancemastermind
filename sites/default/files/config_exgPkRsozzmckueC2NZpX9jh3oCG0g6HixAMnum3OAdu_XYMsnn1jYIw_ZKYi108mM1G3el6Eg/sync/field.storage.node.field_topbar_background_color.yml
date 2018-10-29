@@ -1,0 +1,19 @@
+uuid: 75661af3-804b-45a0-a90e-c3c3ed3bc5b8
+langcode: en
+status: true
+dependencies:
+  module:
+    - navi_color_field
+    - node
+id: node.field_topbar_background_color
+field_name: field_topbar_background_color
+entity_type: node
+type: Navi_Color
+settings: {  }
+module: navi_color_field
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

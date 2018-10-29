@@ -1,0 +1,36 @@
+uuid: f1784ed3-8b5d-4644-b0b0-812220db7a71
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_visibility_groups.block_visibility_group.home_corporate_1
+  content:
+    - 'block_content:_probes_block_background_image:617a15f7-547a-4b01-bdb9-3dbb0efc8902'
+  module:
+    - block_content
+    - block_visibility_groups
+  theme:
+    - probes
+id: probesblockfactsaboutus
+theme: probes
+region: section
+weight: -14
+provider: null
+plugin: 'block_content:617a15f7-547a-4b01-bdb9-3dbb0efc8902'
+settings:
+  id: 'block_content:617a15f7-547a-4b01-bdb9-3dbb0efc8902'
+  label: '[Probes] Block facts about us'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+  attributes:
+    class: 'm-top5 image-bg bg-fixed bg-no-repeat bg-vover bg-right-top'
+    id: ''
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: home_corporate_1
+    context_mapping: {  }

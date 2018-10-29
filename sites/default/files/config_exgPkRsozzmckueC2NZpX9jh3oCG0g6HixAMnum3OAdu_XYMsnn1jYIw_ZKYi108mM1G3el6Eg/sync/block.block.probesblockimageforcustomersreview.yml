@@ -1,0 +1,36 @@
+uuid: e3ea80a7-a2a6-45e1-9419-caa9d19983ca
+langcode: en
+status: false
+dependencies:
+  config:
+    - block_visibility_groups.block_visibility_group.home1
+  content:
+    - 'block_content:_probes_block_image:f7696b62-dd06-4983-872a-7b39ac88eaa2'
+  module:
+    - block_content
+    - block_visibility_groups
+  theme:
+    - probes
+id: probesblockimageforcustomersreview
+theme: probes
+region: '-1'
+weight: 4
+provider: null
+plugin: 'block_content:f7696b62-dd06-4983-872a-7b39ac88eaa2'
+settings:
+  id: 'block_content:f7696b62-dd06-4983-872a-7b39ac88eaa2'
+  label: '[Probes] Block image for customers review'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+  attributes:
+    class: m-top8
+    id: ''
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: home1
+    context_mapping: {  }

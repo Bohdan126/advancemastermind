@@ -1,0 +1,21 @@
+uuid: c9a14195-2428-49a0-a046-525bd516a900
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_page_style
+    - node.type.yamlform
+  module:
+    - options
+id: node.yamlform.field_page_style
+field_name: field_page_style
+entity_type: node
+bundle: yamlform
+label: 'Page style'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

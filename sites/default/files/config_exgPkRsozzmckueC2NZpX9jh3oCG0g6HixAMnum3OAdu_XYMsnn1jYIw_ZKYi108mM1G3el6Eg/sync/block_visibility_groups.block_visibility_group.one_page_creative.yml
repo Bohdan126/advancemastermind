@@ -1,0 +1,17 @@
+uuid: c58c2c2a-3163-4a98-9003-837fdf375300
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+id: one_page_creative
+label: 'One page creative'
+logic: and
+conditions:
+  5229cacc-0229-4ebd-bfb8-b88529790e9a:
+    id: request_path
+    pages: /node/210
+    negate: false
+    context_mapping: {  }
+    uuid: 5229cacc-0229-4ebd-bfb8-b88529790e9a
+allow_other_conditions: false

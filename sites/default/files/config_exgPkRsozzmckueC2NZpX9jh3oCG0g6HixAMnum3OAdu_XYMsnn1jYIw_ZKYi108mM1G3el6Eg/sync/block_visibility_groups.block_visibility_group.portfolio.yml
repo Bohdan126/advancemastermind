@@ -1,0 +1,26 @@
+uuid: a7fc2b1b-2f35-46ad-b80d-9eba834836f8
+langcode: en
+status: true
+dependencies:
+  module:
+    - ctools
+    - system
+id: portfolio
+label: Portfolio
+logic: or
+conditions:
+  246e9028-c84e-4377-ada3-c655c8d6c577:
+    id: request_path
+    pages: /portfolio
+    negate: false
+    context_mapping: {  }
+    uuid: 246e9028-c84e-4377-ada3-c655c8d6c577
+  5237d1df-d081-43fd-8f4a-afc8918d33e9:
+    id: 'entity_bundle:node'
+    bundles:
+      portfolio: portfolio
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+    uuid: 5237d1df-d081-43fd-8f4a-afc8918d33e9
+allow_other_conditions: false

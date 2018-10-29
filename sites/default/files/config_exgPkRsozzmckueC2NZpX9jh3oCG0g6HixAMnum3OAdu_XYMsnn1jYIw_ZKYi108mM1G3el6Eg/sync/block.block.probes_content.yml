@@ -1,0 +1,22 @@
+uuid: 6330503c-60ec-4e56-ad2d-6e39a1a33e42
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - probes
+_core:
+  default_config_hash: 9EoWV2Lot6FVSr50t4hoKgiz1LIXYWNG-IIPYsWxBqo
+id: probes_content
+theme: probes
+region: content
+weight: -9
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  provider: system
+  label_display: '0'
+visibility: {  }

@@ -1,0 +1,17 @@
+uuid: 04b5acc0-1e18-49ca-a16d-fa8d2359c0a2
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+id: home_shop_1
+label: 'Home shop 1'
+logic: and
+conditions:
+  092105cc-ec93-4f76-992c-ba206f68f876:
+    id: request_path
+    pages: /node/225
+    negate: false
+    context_mapping: {  }
+    uuid: 092105cc-ec93-4f76-992c-ba206f68f876
+allow_other_conditions: false

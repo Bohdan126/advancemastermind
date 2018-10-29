@@ -1,0 +1,33 @@
+uuid: c29bdcab-4d52-43b1-889b-ac252fe37f3f
+langcode: en
+status: false
+dependencies:
+  config:
+    - views.view._probes_block_section
+  module:
+    - system
+    - views
+  theme:
+    - probes
+id: views_block___probes_block_section_block_featured_article_style1
+theme: probes
+region: '-1'
+weight: -9
+provider: null
+plugin: 'views_block:_probes_block_section-block_featured_article_style1'
+settings:
+  id: 'views_block:_probes_block_section-block_featured_article_style1'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+  items_per_page: none
+  attributes:
+    class: m-top8
+    id: ''
+visibility:
+  request_path:
+    id: request_path
+    pages: /node/37
+    negate: false
+    context_mapping: {  }

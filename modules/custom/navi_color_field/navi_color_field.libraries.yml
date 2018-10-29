@@ -1,0 +1,11 @@
+color_picker:
+  js:
+    js/colorpicker.js: {}
+    js/layout.js: {}
+  css:
+    component:
+      css/colorpicker.css: {}
+  dependencies:
+    - core/jquery
+    - core/drupal
+    - core/drupalSettings

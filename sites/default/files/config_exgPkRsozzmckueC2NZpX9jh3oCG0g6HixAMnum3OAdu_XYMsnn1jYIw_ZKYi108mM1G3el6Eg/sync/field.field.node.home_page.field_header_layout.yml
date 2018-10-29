@@ -1,0 +1,21 @@
+uuid: ac14593f-675c-43b2-af19-04293dbb3601
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_header_layout
+    - node.type.home_page
+  module:
+    - options
+id: node.home_page.field_header_layout
+field_name: field_header_layout
+entity_type: node
+bundle: home_page
+label: 'Header layout'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

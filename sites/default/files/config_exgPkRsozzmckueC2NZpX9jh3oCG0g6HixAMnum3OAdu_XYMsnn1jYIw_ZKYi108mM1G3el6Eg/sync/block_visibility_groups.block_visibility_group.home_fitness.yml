@@ -1,0 +1,17 @@
+uuid: 0b58e503-cbc6-4930-828c-2cd8594c5463
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+id: home_fitness
+label: 'Home fitness'
+logic: and
+conditions:
+  524c1ede-4a1b-4022-b8b1-849e52f35efc:
+    id: request_path
+    pages: /node/160
+    negate: false
+    context_mapping: {  }
+    uuid: 524c1ede-4a1b-4022-b8b1-849e52f35efc
+allow_other_conditions: false

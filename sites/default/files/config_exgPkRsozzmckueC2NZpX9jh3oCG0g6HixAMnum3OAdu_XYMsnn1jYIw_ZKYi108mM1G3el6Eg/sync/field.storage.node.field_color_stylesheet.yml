@@ -1,0 +1,51 @@
+uuid: 23e1b29c-7ec9-4949-a511-57c663551e23
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.field_color_stylesheet
+field_name: field_color_stylesheet
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: blue
+      label: Blue
+    -
+      value: green
+      label: Green
+    -
+      value: lightblue
+      label: Lightblue
+    -
+      value: lightgreen
+      label: Lightgreen
+    -
+      value: lightred
+      label: Light-red
+    -
+      value: olive
+      label: Olive
+    -
+      value: orange
+      label: Orange
+    -
+      value: red
+      label: Red
+    -
+      value: sea
+      label: Sea
+    -
+      value: violet
+      label: Violet
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

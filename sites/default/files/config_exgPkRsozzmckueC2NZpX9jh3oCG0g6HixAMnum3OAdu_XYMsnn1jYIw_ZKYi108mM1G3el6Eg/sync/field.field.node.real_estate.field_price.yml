@@ -1,0 +1,23 @@
+uuid: 9b336995-eb04-4a23-aa62-3b77e0ad6cdc
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_price
+    - node.type.real_estate
+id: node.real_estate.field_price
+field_name: field_price
+entity_type: node
+bundle: real_estate
+label: Price
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: $
+  suffix: ''
+field_type: decimal

@@ -1,0 +1,30 @@
+uuid: ae8ca810-328e-48dc-bb59-a7c51ca4345a
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.features.body
+    - field.field.node.features.field_featured
+    - field.field.node.features.field_icon_class
+    - node.type.features
+  module:
+    - text
+    - user
+id: node.features.teaser
+targetEntityType: node
+bundle: features
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+  links:
+    weight: 100
+hidden:
+  field_featured: true
+  field_icon_class: true

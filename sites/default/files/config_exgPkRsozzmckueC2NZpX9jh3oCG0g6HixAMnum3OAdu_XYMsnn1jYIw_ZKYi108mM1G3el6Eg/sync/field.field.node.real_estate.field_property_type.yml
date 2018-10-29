@@ -1,0 +1,21 @@
+uuid: b784c4f2-ec3a-4fb4-8e08-67d298f5c30a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_property_type
+    - node.type.real_estate
+  module:
+    - options
+id: node.real_estate.field_property_type
+field_name: field_property_type
+entity_type: node
+bundle: real_estate
+label: 'Property type'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

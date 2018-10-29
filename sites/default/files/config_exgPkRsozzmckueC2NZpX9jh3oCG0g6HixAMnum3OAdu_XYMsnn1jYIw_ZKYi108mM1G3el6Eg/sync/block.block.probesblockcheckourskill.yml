@@ -1,0 +1,34 @@
+uuid: ce957555-04f6-4f13-9041-6156c67a5f70
+langcode: en
+status: false
+dependencies:
+  content:
+    - 'block_content:_probes_block_background_image:dc6965dd-1fba-46ef-8ea8-b4bf18c0d6ff'
+  module:
+    - block_content
+    - system
+  theme:
+    - probes
+id: probesblockcheckourskill
+theme: probes
+region: '-1'
+weight: -4
+provider: null
+plugin: 'block_content:dc6965dd-1fba-46ef-8ea8-b4bf18c0d6ff'
+settings:
+  id: 'block_content:dc6965dd-1fba-46ef-8ea8-b4bf18c0d6ff'
+  label: '[Probes] Block check our skill'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+  attributes:
+    class: ''
+    id: ''
+visibility:
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: false
+    context_mapping: {  }

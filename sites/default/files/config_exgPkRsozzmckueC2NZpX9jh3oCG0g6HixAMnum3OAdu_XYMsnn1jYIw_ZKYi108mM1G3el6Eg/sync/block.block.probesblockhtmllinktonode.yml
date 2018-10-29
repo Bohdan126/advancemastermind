@@ -1,0 +1,34 @@
+uuid: 81c0eb99-4966-4c9b-95a3-9315a867ebc0
+langcode: en
+status: false
+dependencies:
+  content:
+    - 'block_content:basic:41fd0b76-4044-4445-859f-8e4dde6da5cb'
+  module:
+    - block_content
+    - system
+  theme:
+    - probes
+id: probesblockhtmllinktonode
+theme: probes
+region: '-1'
+weight: -8
+provider: null
+plugin: 'block_content:41fd0b76-4044-4445-859f-8e4dde6da5cb'
+settings:
+  id: 'block_content:41fd0b76-4044-4445-859f-8e4dde6da5cb'
+  label: '[Probes] Block HTML link to node'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+  attributes:
+    class: m-top8
+    id: ''
+visibility:
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: false
+    context_mapping: {  }

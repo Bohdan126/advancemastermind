@@ -1,0 +1,26 @@
+uuid: 98787d87-4ea4-4f05-8538-ef2b04819a23
+langcode: en
+status: true
+dependencies:
+  module:
+    - ctools
+    - system
+id: sidebar
+label: Sidebar
+logic: or
+conditions:
+  ffc316c1-7246-4291-9b7a-d065f58afc8a:
+    id: request_path
+    pages: "/blog\r\n/portfolio\r\n/node/183\r\n/node/184\r\n/node/186\r\n/node/187"
+    negate: false
+    context_mapping: {  }
+    uuid: ffc316c1-7246-4291-9b7a-d065f58afc8a
+  5716fd4c-9dff-4dfe-9d1d-ec4505a222ed:
+    id: 'entity_bundle:node'
+    bundles:
+      blog_post: blog_post
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+    uuid: 5716fd4c-9dff-4dfe-9d1d-ec4505a222ed
+allow_other_conditions: false

@@ -1,0 +1,6 @@
+services:
+    naviteam_twig.twig_extension:
+        arguments: ['@renderer']
+        class: Drupal\naviteam_twig\TwigExtension\NaviteamTwig
+        tags:
+          - { name: twig.extension }

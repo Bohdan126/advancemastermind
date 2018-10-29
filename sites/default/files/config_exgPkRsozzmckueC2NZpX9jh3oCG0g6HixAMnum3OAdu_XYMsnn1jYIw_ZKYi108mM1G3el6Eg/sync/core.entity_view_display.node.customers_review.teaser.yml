@@ -1,0 +1,30 @@
+uuid: 1499f867-e7a4-41cf-916c-be388b5cabcc
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.customers_review.body
+    - field.field.node.customers_review.field_image
+    - field.field.node.customers_review.field_job
+    - node.type.customers_review
+  module:
+    - text
+    - user
+id: node.customers_review.teaser
+targetEntityType: node
+bundle: customers_review
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+  links:
+    weight: 100
+hidden:
+  field_image: true
+  field_job: true

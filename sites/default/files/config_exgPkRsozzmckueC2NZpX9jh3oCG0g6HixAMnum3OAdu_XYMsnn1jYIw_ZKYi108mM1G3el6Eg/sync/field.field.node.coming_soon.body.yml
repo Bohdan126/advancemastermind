@@ -1,0 +1,22 @@
+uuid: 6e8199b3-4fa6-44bc-ae1e-8979d4e41281
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.coming_soon
+  module:
+    - text
+id: node.coming_soon.body
+field_name: body
+entity_type: node
+bundle: coming_soon
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+field_type: text_with_summary

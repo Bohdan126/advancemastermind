@@ -1,0 +1,13 @@
+uuid: 00d4b677-d2f2-4e65-9a58-0fecaa88ad8d
+langcode: en
+status: true
+dependencies:
+  module:
+    - uc_cart
+_core:
+  default_config_hash: ActTVmbyxydmHJ15ExC207Gior_xFTeqM_a3dQFZhDQ
+id: uc_cart_add_product_action
+label: 'Add to cart'
+type: node
+plugin: uc_cart_add_product_action
+configuration: {  }

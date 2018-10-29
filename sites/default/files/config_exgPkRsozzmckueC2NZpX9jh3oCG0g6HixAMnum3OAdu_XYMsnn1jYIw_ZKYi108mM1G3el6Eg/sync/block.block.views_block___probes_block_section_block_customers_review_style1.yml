@@ -1,0 +1,33 @@
+uuid: b4746a7b-7a87-4b8c-84d5-316c81462c14
+langcode: en
+status: false
+dependencies:
+  config:
+    - views.view._probes_block_section
+  module:
+    - system
+    - views
+  theme:
+    - probes
+id: views_block___probes_block_section_block_customers_review_style1
+theme: probes
+region: '-1'
+weight: -2
+provider: null
+plugin: 'views_block:_probes_block_section-block_customers_review_style1'
+settings:
+  id: 'views_block:_probes_block_section-block_customers_review_style1'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+  items_per_page: none
+  attributes:
+    class: m-top8
+    id: ''
+visibility:
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: false
+    context_mapping: {  }

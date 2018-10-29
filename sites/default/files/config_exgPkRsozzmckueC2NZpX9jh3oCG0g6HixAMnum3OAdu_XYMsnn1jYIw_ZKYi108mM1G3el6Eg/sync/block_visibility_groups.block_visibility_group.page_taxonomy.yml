@@ -1,0 +1,17 @@
+uuid: aca79ec8-abf8-4ec0-8cfb-b0caa6733b67
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+id: page_taxonomy
+label: 'Page taxonomy'
+logic: and
+conditions:
+  eb3922b8-e59c-40d6-b335-5fc4727d3671:
+    id: request_path
+    pages: '/taxonomy/term/*'
+    negate: false
+    context_mapping: {  }
+    uuid: eb3922b8-e59c-40d6-b335-5fc4727d3671
+allow_other_conditions: false

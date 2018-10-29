@@ -1,0 +1,54 @@
+uuid: ce9431e0-70cf-4404-9f1d-585bd9654170
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_visibility_groups.block_visibility_group.one_page_creative
+  content:
+    - 'block_content:_probes_block_background_image:dc6965dd-1fba-46ef-8ea8-b4bf18c0d6ff'
+  module:
+    - block_attributes
+    - block_content
+    - block_visibility_groups
+    - ntv_block_background
+  theme:
+    - probes
+third_party_settings:
+  block_attributes:
+    attr_class: ''
+    attr_id: ''
+    block_title: ''
+    block_title_icon: ''
+  ntv_block_background:
+    disable: enable
+    color: '#000000'
+    bg_image:
+      - 379
+    bg_image_type: fixed
+    bg_repeat: 'no'
+    bg_image_position: 'center top'
+    bg_image_size: cover
+    background_overlay: ''
+id: probesblockcheckourskill_3
+theme: probes
+region: section_one
+weight: -12
+provider: null
+plugin: 'block_content:dc6965dd-1fba-46ef-8ea8-b4bf18c0d6ff'
+settings:
+  id: 'block_content:dc6965dd-1fba-46ef-8ea8-b4bf18c0d6ff'
+  label: '[Probes] Block check our skill'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+  attributes:
+    class: 'section-lg m-top5'
+    id: ''
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: one_page_creative
+    context_mapping: {  }

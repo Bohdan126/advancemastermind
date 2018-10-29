@@ -1,0 +1,19 @@
+uuid: c2cbfbd5-ad84-4916-b11b-e655cf0afe65
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_subtitle
+    - node.type.brand_solutions
+id: node.brand_solutions.field_subtitle
+field_name: field_subtitle
+entity_type: node
+bundle: brand_solutions
+label: Subtitle
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

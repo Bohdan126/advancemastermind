@@ -1,0 +1,27 @@
+uuid: b3486175-8754-42d0-b614-61df639488be
+langcode: en
+status: true
+dependencies:
+  module:
+    - php
+_core:
+  default_config_hash: xwUOj7cXz8VE1JG4Yn8qnm-qp4X0lOoKxfnHRS2i46E
+name: 'PHP code'
+format: php_code
+weight: 11
+filters:
+  php_code:
+    id: php_code
+    provider: php
+    status: true
+    weight: 0
+    settings: {  }
+  filter_html:
+    id: filter_html
+    provider: filter
+    status: false
+    weight: -10
+    settings:
+      allowed_html: '<a href hreflang> <em> <strong> <cite> <blockquote cite> <code> <ul type> <ol start type> <li> <dl> <dt> <dd> <h2 id> <h3 id> <h4 id> <h5 id> <h6 id>'
+      filter_html_help: true
+      filter_html_nofollow: false

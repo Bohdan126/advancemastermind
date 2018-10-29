@@ -1,0 +1,21 @@
+uuid: df981010-6f42-4bdf-a91c-97f0626aa12b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_footer_layout
+    - node.type.coming_soon
+  module:
+    - options
+id: node.coming_soon.field_footer_layout
+field_name: field_footer_layout
+entity_type: node
+bundle: coming_soon
+label: 'Footer layout'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

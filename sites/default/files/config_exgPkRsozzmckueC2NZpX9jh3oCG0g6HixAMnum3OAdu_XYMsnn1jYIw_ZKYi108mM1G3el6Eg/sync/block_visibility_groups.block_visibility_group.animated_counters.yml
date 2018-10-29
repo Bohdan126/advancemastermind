@@ -1,0 +1,17 @@
+uuid: 6f036452-55a3-469d-a7d1-5973aae79c16
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+id: animated_counters
+label: 'Animated counters'
+logic: and
+conditions:
+  6b3af57c-92d1-45ef-b212-df386f9018ad:
+    id: request_path
+    pages: /node/199
+    negate: false
+    context_mapping: {  }
+    uuid: 6b3af57c-92d1-45ef-b212-df386f9018ad
+allow_other_conditions: false

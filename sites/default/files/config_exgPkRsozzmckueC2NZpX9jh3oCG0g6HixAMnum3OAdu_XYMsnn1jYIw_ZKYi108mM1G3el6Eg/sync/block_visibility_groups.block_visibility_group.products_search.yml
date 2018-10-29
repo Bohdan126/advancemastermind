@@ -1,0 +1,17 @@
+uuid: 4163d3ce-6a43-44be-abf4-14b0075ced07
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+id: products_search
+label: 'Products search'
+logic: and
+conditions:
+  c90d7090-7bbe-44c8-bfcf-ec07ead44f85:
+    id: request_path
+    pages: '/products-search*'
+    negate: false
+    context_mapping: {  }
+    uuid: c90d7090-7bbe-44c8-bfcf-ec07ead44f85
+allow_other_conditions: false

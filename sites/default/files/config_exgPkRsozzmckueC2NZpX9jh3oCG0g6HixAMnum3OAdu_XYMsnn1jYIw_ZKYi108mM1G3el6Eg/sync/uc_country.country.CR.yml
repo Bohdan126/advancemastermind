@@ -1,0 +1,25 @@
+uuid: 5cca379b-28d9-4cca-be1b-094044f3e20d
+langcode: en
+status: false
+dependencies: {  }
+_core:
+  default_config_hash: 4r9L9HB6Gj_lZ3GNgLSCcpA3SN5gKFWLV0JSbKtKybg
+name: 'Costa Rica'
+alpha_2: CR
+alpha_3: CRI
+numeric: 188
+zones:
+  AL: Alajuela
+  CA: Cartago
+  GU: Guanacaste
+  HE: Heredia
+  LI: Limón
+  PU: Puntarenas
+  SJ: 'San José'
+address_format:
+  - '!company'
+  - '!first_name !last_name'
+  - '!street1'
+  - '!street2'
+  - '!city !zone_code !postal_code'
+  - '!country_name_if'

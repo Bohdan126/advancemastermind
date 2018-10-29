@@ -1,0 +1,17 @@
+uuid: 9f0146aa-dba5-4264-8dc1-0824c54ee831
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+id: about_style_1
+label: 'About style 1'
+logic: and
+conditions:
+  aae0b22a-1998-4f47-b7e7-b2ca9579d63d:
+    id: request_path
+    pages: /node/174
+    negate: false
+    context_mapping: {  }
+    uuid: aae0b22a-1998-4f47-b7e7-b2ca9579d63d
+allow_other_conditions: false

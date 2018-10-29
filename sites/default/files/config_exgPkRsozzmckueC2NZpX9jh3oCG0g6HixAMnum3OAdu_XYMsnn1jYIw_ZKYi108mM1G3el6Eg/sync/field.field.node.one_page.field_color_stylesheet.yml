@@ -1,0 +1,21 @@
+uuid: cf41d127-cbd8-4fae-b635-5034f5b64f95
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_color_stylesheet
+    - node.type.one_page
+  module:
+    - options
+id: node.one_page.field_color_stylesheet
+field_name: field_color_stylesheet
+entity_type: node
+bundle: one_page
+label: 'Color stylesheet'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

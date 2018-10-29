@@ -1,0 +1,18 @@
+uuid: 6866eabf-56e5-4fa5-bccc-7db5d264f97b
+langcode: en
+status: false
+dependencies: {  }
+_core:
+  default_config_hash: VOdpx9u7quYUErkb31IuTLwV3cJiNag9aVzwLDHHox0
+name: Curaçao
+alpha_2: CW
+alpha_3: CUW
+numeric: 531
+zones: {  }
+address_format:
+  - '!company'
+  - '!first_name !last_name'
+  - '!street1'
+  - '!street2'
+  - '!city  !postal_code'
+  - '!country_name_if'

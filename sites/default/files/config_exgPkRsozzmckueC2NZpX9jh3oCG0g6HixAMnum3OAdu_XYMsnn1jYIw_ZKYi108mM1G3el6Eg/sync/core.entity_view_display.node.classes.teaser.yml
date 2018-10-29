@@ -1,0 +1,32 @@
+uuid: 3095db78-eee6-4ce8-83a0-c2d8757ccc61
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.classes.body
+    - field.field.node.classes.field_hours_class
+    - field.field.node.classes.field_image
+    - field.field.node.classes.field_topic
+    - node.type.classes
+  module:
+    - text
+    - user
+id: node.classes.teaser
+targetEntityType: node
+bundle: classes
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+  links:
+    weight: 100
+hidden:
+  field_hours_class: true
+  field_image: true
+  field_topic: true

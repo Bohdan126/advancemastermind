@@ -1,0 +1,14 @@
+uuid: d435199b-8aaf-404f-a63d-ff107d347bde
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.basic_html
+  module:
+    - bueditor
+format: basic_html
+editor: bueditor
+settings:
+  default_editor: basic_html
+  roles_editors: {  }
+image_upload: {  }

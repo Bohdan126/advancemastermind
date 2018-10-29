@@ -1,0 +1,51 @@
+uuid: 7f11a707-cf4c-4b38-ab0b-05042311b480
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_visibility_groups.block_visibility_group.home_business_2
+  content:
+    - 'block_content:basic:f3d04f71-d250-49b0-a3ec-68406e0b52a7'
+  module:
+    - block_attributes
+    - block_content
+    - block_visibility_groups
+    - ntv_block_background
+  theme:
+    - probes
+third_party_settings:
+  block_attributes:
+    attr_class: ''
+    attr_id: ''
+  ntv_block_background:
+    disable: disable
+    color: '#000000'
+    bg_image: {  }
+    bg_image_type: default
+    bg_repeat: 'no'
+    bg_image_position: ''
+    bg_image_size: ''
+    background_overlay: ''
+id: probesblockimagebanner
+theme: probes
+region: section
+weight: -18
+provider: null
+plugin: 'block_content:f3d04f71-d250-49b0-a3ec-68406e0b52a7'
+settings:
+  id: 'block_content:f3d04f71-d250-49b0-a3ec-68406e0b52a7'
+  label: '[Probes] Block Image banner'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+  attributes:
+    class: three
+    id: ''
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: home_business_2
+    context_mapping: {  }

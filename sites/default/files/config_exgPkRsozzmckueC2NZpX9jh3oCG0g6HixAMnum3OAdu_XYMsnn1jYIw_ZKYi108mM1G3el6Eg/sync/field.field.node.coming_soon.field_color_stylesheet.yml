@@ -1,0 +1,21 @@
+uuid: e8346fc0-d9e6-4350-9a6b-04d5404abd7e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_color_stylesheet
+    - node.type.coming_soon
+  module:
+    - options
+id: node.coming_soon.field_color_stylesheet
+field_name: field_color_stylesheet
+entity_type: node
+bundle: coming_soon
+label: 'Color stylesheet'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

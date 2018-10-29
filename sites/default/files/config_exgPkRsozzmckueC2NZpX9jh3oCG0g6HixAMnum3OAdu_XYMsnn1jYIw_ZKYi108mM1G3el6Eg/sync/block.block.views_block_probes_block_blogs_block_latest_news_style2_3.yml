@@ -1,0 +1,51 @@
+uuid: 8e94d105-0c49-47ab-95eb-ed616746f915
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_visibility_groups.block_visibility_group.one_page_corporate
+    - views.view._probes_block_blogs
+  module:
+    - block_attributes
+    - block_visibility_groups
+    - ntv_block_background
+    - views
+  theme:
+    - probes
+third_party_settings:
+  block_attributes:
+    attr_class: ''
+    attr_id: ''
+    block_title: Blog
+    block_title_icon: ''
+  ntv_block_background:
+    disable: disable
+    color: '#000000'
+    bg_image: {  }
+    bg_image_type: default
+    bg_repeat: 'no'
+    bg_image_position: ''
+    bg_image_size: ''
+    background_overlay: ''
+id: views_block_probes_block_blogs_block_latest_news_style2_3
+theme: probes
+region: section_one
+weight: -9
+provider: null
+plugin: 'views_block:_probes_block_blogs-block_latest_news_style2'
+settings:
+  id: 'views_block:_probes_block_blogs-block_latest_news_style2'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+  items_per_page: none
+  attributes:
+    class: 'section-lg m-top7'
+    id: ''
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: one_page_corporate
+    context_mapping: {  }

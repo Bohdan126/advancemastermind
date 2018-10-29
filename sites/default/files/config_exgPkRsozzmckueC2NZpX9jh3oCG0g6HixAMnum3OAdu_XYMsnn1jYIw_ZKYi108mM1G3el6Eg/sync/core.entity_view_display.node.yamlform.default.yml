@@ -1,0 +1,42 @@
+uuid: c053aa27-71d3-4ce3-8578-e30a127b33ea
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.yamlform.body
+    - field.field.node.yamlform.field_page_slogan
+    - field.field.node.yamlform.field_page_style
+    - field.field.node.yamlform.field_page_title_background
+    - field.field.node.yamlform.yamlform
+    - node.type.yamlform
+  module:
+    - text
+    - user
+    - yamlform
+_core:
+  default_config_hash: tgdoNn9gnIznsYU0Rv6NRjvo-ae2jA-D-4YZ8IdkSrg
+id: node.yamlform.default
+targetEntityType: node
+bundle: yamlform
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 101
+    settings: {  }
+    third_party_settings: {  }
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+  yamlform:
+    weight: 102
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: yamlform_entity_reference_entity_view
+hidden:
+  field_page_slogan: true
+  field_page_style: true
+  field_page_title_background: true

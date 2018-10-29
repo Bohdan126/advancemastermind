@@ -1,0 +1,21 @@
+uuid: 051cce79-e5a4-4ece-a449-9f19fa564713
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_footer_layout
+    - node.type.home_page
+  module:
+    - options
+id: node.home_page.field_footer_layout
+field_name: field_footer_layout
+entity_type: node
+bundle: home_page
+label: 'Footer layout'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

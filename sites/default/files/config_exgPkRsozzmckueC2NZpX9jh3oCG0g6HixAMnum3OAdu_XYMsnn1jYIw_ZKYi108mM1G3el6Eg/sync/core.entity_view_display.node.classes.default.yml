@@ -1,0 +1,52 @@
+uuid: 82410196-9425-430d-b844-aa24ba6d10d1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.classes.body
+    - field.field.node.classes.field_hours_class
+    - field.field.node.classes.field_image
+    - field.field.node.classes.field_topic
+    - node.type.classes
+  module:
+    - image
+    - options
+    - text
+    - user
+id: node.classes.default
+targetEntityType: node
+bundle: classes
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+  field_hours_class:
+    weight: 3
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+  field_image:
+    weight: 2
+    label: inline
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+  field_topic:
+    weight: 4
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+  links:
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }

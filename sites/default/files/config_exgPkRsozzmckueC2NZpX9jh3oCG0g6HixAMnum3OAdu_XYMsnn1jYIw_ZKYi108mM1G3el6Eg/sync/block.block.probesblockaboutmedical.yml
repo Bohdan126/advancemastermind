@@ -1,0 +1,53 @@
+uuid: 67aa624c-4054-49a8-8f12-fde5115a59ff
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_visibility_groups.block_visibility_group.home_medical
+  content:
+    - 'block_content:basic:f4c49bab-3f08-4073-81d5-689fddabd155'
+  module:
+    - block_attributes
+    - block_content
+    - block_visibility_groups
+    - ntv_block_background
+  theme:
+    - probes
+third_party_settings:
+  block_attributes:
+    attr_class: ''
+    attr_id: ''
+    block_title: ''
+    block_title_icon: ''
+  ntv_block_background:
+    disable: disable
+    color: '#000000'
+    bg_image: {  }
+    bg_image_type: default
+    bg_repeat: 'no'
+    bg_image_position: ''
+    bg_image_size: ''
+    background_overlay: ''
+id: probesblockaboutmedical
+theme: probes
+region: section
+weight: -15
+provider: null
+plugin: 'block_content:f4c49bab-3f08-4073-81d5-689fddabd155'
+settings:
+  id: 'block_content:f4c49bab-3f08-4073-81d5-689fddabd155'
+  label: '[Probes] Block about medical'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+  attributes:
+    class: 'section-full m-top0'
+    id: ''
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: home_medical
+    context_mapping: {  }

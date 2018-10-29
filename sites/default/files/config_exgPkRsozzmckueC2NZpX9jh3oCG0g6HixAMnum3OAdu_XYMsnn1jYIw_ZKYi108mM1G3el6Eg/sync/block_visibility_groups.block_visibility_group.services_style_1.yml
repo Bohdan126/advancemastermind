@@ -1,0 +1,17 @@
+uuid: 2f2eb2d7-3a25-4501-9347-7e3f70d05e3f
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+id: services_style_1
+label: 'Services style 1'
+logic: and
+conditions:
+  34ec316c-4e2e-49cd-9fef-ebe0819e774e:
+    id: request_path
+    pages: /node/178
+    negate: false
+    context_mapping: {  }
+    uuid: 34ec316c-4e2e-49cd-9fef-ebe0819e774e
+allow_other_conditions: false

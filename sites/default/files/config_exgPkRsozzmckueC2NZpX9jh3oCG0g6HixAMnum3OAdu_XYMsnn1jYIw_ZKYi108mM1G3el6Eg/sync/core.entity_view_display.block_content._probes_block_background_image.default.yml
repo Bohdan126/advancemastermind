@@ -1,0 +1,31 @@
+uuid: 26a39f63-3123-41b0-a423-87dc4d953520
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type._probes_block_background_image
+    - field.field.block_content._probes_block_background_image.body
+    - field.field.block_content._probes_block_background_image.field_image_background
+  module:
+    - image
+    - text
+id: block_content._probes_block_background_image.default
+targetEntityType: block_content
+bundle: _probes_block_background_image
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+  field_image_background:
+    type: image
+    weight: 0
+    label: hidden
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+hidden: {  }

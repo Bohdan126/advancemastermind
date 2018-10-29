@@ -1,0 +1,14 @@
+uuid: ab6acb3b-9089-4b2b-a292-871af40a4aa6
+langcode: en
+status: true
+dependencies: {  }
+name: image_68x72
+label: 'Image 68x72'
+effects:
+  fe9ab56c-42d9-40dc-a975-ddb89d72b86b:
+    uuid: fe9ab56c-42d9-40dc-a975-ddb89d72b86b
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 68
+      height: 72

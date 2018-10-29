@@ -1,0 +1,22 @@
+uuid: aef8177b-4483-4b4a-9068-c2bf16cf296b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.customers_review
+  module:
+    - text
+id: node.customers_review.body
+field_name: body
+entity_type: node
+bundle: customers_review
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+field_type: text_with_summary

@@ -1,0 +1,14 @@
+uuid: c5e350d0-a88f-4aa9-96d8-05415d8bc7a3
+langcode: en
+status: true
+dependencies: {  }
+name: image_527x607
+label: 'Image 527x607'
+effects:
+  88eff863-8540-49d0-87bf-105c2238e099:
+    uuid: 88eff863-8540-49d0-87bf-105c2238e099
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 527
+      height: 607

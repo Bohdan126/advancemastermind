@@ -1,0 +1,48 @@
+uuid: f7dc118a-21bb-4f8b-8480-4473e023d2c3
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_visibility_groups.block_visibility_group.home_restaurant
+  module:
+    - block_attributes
+    - block_visibility_groups
+    - ntv_block_background
+    - yamlform
+  theme:
+    - probes
+third_party_settings:
+  block_attributes:
+    attr_class: ''
+    attr_id: ''
+  ntv_block_background:
+    disable: disable
+    color: '#000000'
+    bg_image: {  }
+    bg_image_type: default
+    bg_repeat: 'no'
+    bg_image_position: ''
+    bg_image_size: ''
+    background_overlay: ''
+id: yamlform_4
+theme: probes
+region: footer2
+weight: -13
+provider: null
+plugin: yamlform_block
+settings:
+  id: yamlform_block
+  label: 'YAML form'
+  provider: yamlform
+  label_display: '0'
+  yamlform_id: quick_contact
+  default_data: ''
+  attributes:
+    class: col-md-4
+    id: ''
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: home_restaurant
+    context_mapping: {  }

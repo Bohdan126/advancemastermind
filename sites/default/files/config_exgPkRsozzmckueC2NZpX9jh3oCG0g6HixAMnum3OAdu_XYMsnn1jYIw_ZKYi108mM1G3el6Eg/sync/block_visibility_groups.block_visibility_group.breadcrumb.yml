@@ -1,0 +1,40 @@
+uuid: 25f017f9-e12b-4234-87a8-a10c95df13b4
+langcode: en
+status: true
+dependencies:
+  module:
+    - ctools
+    - system
+id: breadcrumb
+label: Breadcrumb
+logic: or
+conditions:
+  bdf99f76-3f4e-48cf-bfe3-565b352a6632:
+    id: 'entity_bundle:node'
+    bundles:
+      article: article
+      blog_post: blog_post
+      brand_solutions: brand_solutions
+      classes: classes
+      clients: clients
+      courses: courses
+      customers_review: customers_review
+      features: features
+      gallery: gallery
+      page: page
+      partner: partner
+      product: product
+      real_estate: real_estate
+      services: services
+      team: team
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+    uuid: bdf99f76-3f4e-48cf-bfe3-565b352a6632
+  5112a1a0-8be5-4e9e-9406-63409b6ebbe2:
+    id: current_theme
+    theme: probes
+    negate: 0
+    context_mapping: {  }
+    uuid: 5112a1a0-8be5-4e9e-9406-63409b6ebbe2
+allow_other_conditions: false

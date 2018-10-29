@@ -1,0 +1,18 @@
+<div class="container">
+{% if rows %}
+	<div id="js-filters-masonry-projects" class="cbp-l-filters-buttonCenter uppercase">
+		<div data-filter="*" class="cbp-filter-item-active cbp-filter-item"> {{ 'All'|t }}
+			<div class="cbp-filter-counter"></div>
+		</div>
+		{{ 'Portfolio categories'|get_list_term|raw }}
+	</div>
+	<div id="js-grid-masonry-projects" class="cbp cbp-l-grid-masonry-projects">
+		{{ rows }}
+	</div>
+	{% if pager %}
+	<div class="view-pager">
+		{{ pager }}
+	</div>
+	{% endif %}
+{% endif %}
+</div>

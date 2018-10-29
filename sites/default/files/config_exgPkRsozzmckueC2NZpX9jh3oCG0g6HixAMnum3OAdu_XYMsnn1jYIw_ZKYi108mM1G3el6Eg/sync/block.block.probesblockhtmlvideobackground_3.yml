@@ -1,0 +1,52 @@
+uuid: 5dd0494c-dd9e-426d-a5cd-2cd019aae14a
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_visibility_groups.block_visibility_group.services_style_2
+  content:
+    - 'block_content:basic:cb1a0444-482a-46d1-85b0-6d02289820fe'
+  module:
+    - block_attributes
+    - block_content
+    - block_visibility_groups
+    - ntv_block_background
+  theme:
+    - probes
+third_party_settings:
+  block_attributes:
+    attr_class: ''
+    attr_id: ''
+    block_title_icon: ''
+  ntv_block_background:
+    disable: disable
+    color: '#000000'
+    bg_image: {  }
+    bg_image_type: default
+    bg_repeat: 'no'
+    bg_image_position: ''
+    bg_image_size: ''
+    background_overlay: ''
+id: probesblockhtmlvideobackground_3
+theme: probes
+region: section
+weight: -9
+provider: null
+plugin: 'block_content:cb1a0444-482a-46d1-85b0-6d02289820fe'
+settings:
+  id: 'block_content:cb1a0444-482a-46d1-85b0-6d02289820fe'
+  label: '[Probes] Block HTML video background'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+  attributes:
+    class: m-top2
+    id: ''
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: services_style_2
+    context_mapping: {  }

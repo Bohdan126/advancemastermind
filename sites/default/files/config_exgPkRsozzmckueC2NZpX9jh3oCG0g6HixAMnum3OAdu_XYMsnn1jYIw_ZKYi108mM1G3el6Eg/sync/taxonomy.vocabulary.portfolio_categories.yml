@@ -1,0 +1,9 @@
+uuid: badeb027-e0a3-4448-b225-0246a6c2a574
+langcode: en
+status: true
+dependencies: {  }
+name: 'Portfolio categories'
+vid: portfolio_categories
+description: ''
+hierarchy: 0
+weight: 0

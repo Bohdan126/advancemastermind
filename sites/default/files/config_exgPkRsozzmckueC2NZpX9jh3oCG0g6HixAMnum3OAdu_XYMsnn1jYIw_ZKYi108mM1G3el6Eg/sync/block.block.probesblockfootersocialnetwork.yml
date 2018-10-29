@@ -1,0 +1,51 @@
+uuid: 98617a98-cbb2-4215-8e83-2ead69f5ac12
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_visibility_groups.block_visibility_group.footer_layout_1
+  content:
+    - 'block_content:basic:461789f5-260f-414a-882f-b5891efdee68'
+  module:
+    - block_attributes
+    - block_content
+    - block_visibility_groups
+    - ntv_block_background
+  theme:
+    - probes
+third_party_settings:
+  block_attributes:
+    attr_class: ''
+    attr_id: ''
+  ntv_block_background:
+    disable: disable
+    color: '#000000'
+    bg_image: {  }
+    bg_image_type: default
+    bg_repeat: 'no'
+    bg_image_position: ''
+    bg_image_size: ''
+    background_overlay: ''
+id: probesblockfootersocialnetwork
+theme: probes
+region: footer_copyright
+weight: -14
+provider: null
+plugin: 'block_content:461789f5-260f-414a-882f-b5891efdee68'
+settings:
+  id: 'block_content:461789f5-260f-414a-882f-b5891efdee68'
+  label: '[Probes] Block footer social network'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+  attributes:
+    class: ''
+    id: ''
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: footer_layout_1
+    context_mapping: {  }

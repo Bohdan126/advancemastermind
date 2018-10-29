@@ -1,0 +1,24 @@
+uuid: 14ccd5dd-a4e4-4cb9-8c01-e8ba9900835c
+langcode: en
+status: false
+dependencies: {  }
+_core:
+  default_config_hash: 0-88ZcJ4OZu3o5bWXGY_Lgz9_uhsutxQt6gxEjrWYSw
+name: Cyprus
+alpha_2: CY
+alpha_3: CYP
+numeric: 196
+zones:
+  4: Famagusta
+  6: Kyrenia
+  3: Larnaca
+  2: Limassol
+  1: Nicosia
+  5: Paphos
+address_format:
+  - '!company'
+  - '!first_name !last_name'
+  - '!street1'
+  - '!street2'
+  - '!city, !zone_code !postal_code'
+  - '!country_name_if'

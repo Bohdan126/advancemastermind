@@ -1,0 +1,52 @@
+uuid: ff70a527-720c-44ba-955b-1ebb283bf2ea
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_visibility_groups.block_visibility_group.home_lawyer
+  content:
+    - 'block_content:basic:586c8e7d-23cf-4aee-a48e-101271a9ec7d'
+  module:
+    - block_attributes
+    - block_content
+    - block_visibility_groups
+    - ntv_block_background
+  theme:
+    - probes
+third_party_settings:
+  block_attributes:
+    attr_class: ''
+    attr_id: ''
+  ntv_block_background:
+    disable: enable
+    color: '#000000'
+    bg_image:
+      - 226
+    bg_image_type: default
+    bg_repeat: 'yes'
+    bg_image_position: 'center top'
+    bg_image_size: ''
+    background_overlay: ''
+id: probesblockhtmltablawyer
+theme: probes
+region: section
+weight: -11
+provider: null
+plugin: 'block_content:586c8e7d-23cf-4aee-a48e-101271a9ec7d'
+settings:
+  id: 'block_content:586c8e7d-23cf-4aee-a48e-101271a9ec7d'
+  label: '[Probes] Block HTML tab lawyer'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+  attributes:
+    class: 'bg-texture2 m-top6'
+    id: ''
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: home_lawyer
+    context_mapping: {  }

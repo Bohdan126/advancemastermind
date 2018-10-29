@@ -1,0 +1,87 @@
+<!--* Add CSS & Js product details -->
+{{ attach_library('probes/product-details') }}
+{% if node.field_sidebar is not empty %}
+    {% set product_layout = node.field_sidebar.value %}
+{% endif %}
+{% if product_layout is empty %}
+    {% set product_layout = 'nosidebar' %}
+{% endif %}
+{% if not page %}
+<div class="col-md-3 col-sm-6 m-bottom4">
+	<div class="product clearfix">
+		<div class="pro-imgage">
+			<div class="product-overlay"> <a class="add-to-cart" href="{{ url }}"><i class="fa fa-search-plus"></i><span> {{ 'Quick View'|t }}</span></a> </div>
+			{% set img = node.uc_product_image.0 %}
+			<div class="imgbox"><a href="{{ url }}"><img alt="{{ img.alt }}" src="{{ img.entity.fileuri|image_style_url('image_500x610') }}"></a></div>
+		</div>
+		<div class="product-desc text-center">
+			<div class="product-title">
+				<h3><a href="{{ url }}">{{ label }}</a></h3>
+			</div>
+			<div class="product-price blue font-bold font25 m-bottom1">{{ content.price }}</div>
+		</div>
+	</div>
+</div>
+{% else %}
+<div class="col-md-6">
+	<div id="js-grid-slider-thumbnail" class="cbp">
+	{% for img in node.uc_product_image %}
+		<div class="cbp-item">
+			<div class="cbp-caption">
+				<div class="cbp-caption-defaultWrap"> <img src="{{ img.entity.fileuri|image_style_url('image_700x600') }}" alt="{{ img.alt }}"> </div>
+			</div>
+		</div>
+	{% endfor %}
+	</div>
+	<div id="js-pagination-slider">
+	{% for img in node.uc_product_image %}
+		<div class="cbp-pagination-item {% if loop.first %}cbp-pagination-active{% elseif loop.last %}last{% endif %}"> <img src="{{ img.entity.fileuri|image_style_url('image_200x170') }}" alt="{{ img.alt }}"> </div>
+	{% endfor %}
+	</div>
+</div>
+<div class="col-md-6">
+	<h2 class="font-black font30 uppercase m-bottom1">{{ label }}</h2>
+	<div class="title-line wide50 color m-top2"></div>
+	<div class="product-rating m-bottom2"> <a href="#home">{{ 'Write a review'|t }}</a> </div>
+	<div class="product-price red font-bold font25 m-bottom1">{{ content.price }}</div>
+	<p>{{ content.body['#object'].body.summary }}</p>
+	{% if product_layout == 'nosidebar' %}
+		{{ content.add_to_cart }}
+	{% else %}
+		{{ content.add_to_cart|render|str_replace('col-sm-4 m-bottom3 add-to-cart', 'col-md-7 m-bottom3')|raw }}
+	{% endif %}
+</div>
+<div class="{% if product_layout == 'nosidebar' %}col-md-12 m-top6{% else %}col-md-12 m-top2 pull-left{% endif %}">
+	<!-- Nav tabs -->
+	<ul class="nav nav-tabs tabs-style2" role="tablist">
+		<li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab" aria-expanded="true">{{ 'Description'|t }}</a></li>
+		<li role="presentation" class=""><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab" aria-expanded="false">{{ 'Additional Information'|t }}</a></li>
+		<li role="presentation" class=""><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab" aria-expanded="false">{{ 'Reviews'|t }} ({{ node.field_product_review.comment_count }})</a></li>
+	</ul>
+	<!-- Tab panes -->
+	<div class="tab-content tab-style3">
+		<div role="tabpanel" class="tab-pane active" id="home">
+			<div {{ content_attributes }}>
+        		{{ content.body }}
+    		</div>
+		</div>
+		<div role="tabpanel" class="tab-pane" id="profile">
+			<div class="col-md-12">
+				<h4 class="m-bottom3 font-thin font20">{{ label }}</h4>
+				<div class="col-md-12"><span class="product-info">{{ 'SKU'|t }}: </span> {{ content.model  }}</div>
+				<div class="col-md-6"><span class="product-info">{{ 'Dimensions'|t }} :</span> {{ content.dimensions }}</div>
+				<div class="col-md-6"><span class="product-info">{{ 'Weight'|t }}: </span> {{ content.weight }}</div>
+				<div class="col-md-12">
+					<span>{{ 'Categories'|t }}:</span> {{ content.field_product_categories }}
+				</div>
+			</div>
+		</div>
+		<div role="tabpanel" class="tab-pane" id="messages">
+            <div class="col-md-12">
+              	<h4 class="m-bottom3 font-thin font20">{{ 'Reviews'|t }}({{ node.field_product_review.comment_count }}) {{ 'for'|t }} {{ label }}</h4>
+				{{ content.field_product_review }}
+            </div>
+        </div>
+	</div>
+</div>
+{% endif %}

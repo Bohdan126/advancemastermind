@@ -1,0 +1,51 @@
+uuid: 0c38ef9c-e84b-4900-a720-9e01ff3f6efa
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_visibility_groups.block_visibility_group.our_team_style_2
+    - views.view._probes_block_section
+  module:
+    - block_attributes
+    - block_visibility_groups
+    - ntv_block_background
+    - views
+  theme:
+    - probes
+third_party_settings:
+  block_attributes:
+    attr_class: ''
+    attr_id: ''
+    block_title_icon: ''
+  ntv_block_background:
+    disable: enable
+    color: '#000000'
+    bg_image:
+      - 333
+    bg_image_type: default
+    bg_repeat: 'yes'
+    bg_image_position: 'center top'
+    bg_image_size: ''
+    background_overlay: ''
+id: views_block___probes_block_section_block_partners_style1_12
+theme: probes
+region: section
+weight: null
+provider: null
+plugin: 'views_block:_probes_block_section-block_partners_style1'
+settings:
+  id: 'views_block:_probes_block_section-block_partners_style1'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+  items_per_page: none
+  attributes:
+    class: 'section-lg-1 bg-texture m-top3'
+    id: ''
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: our_team_style_2
+    context_mapping: {  }

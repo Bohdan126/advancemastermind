@@ -1,0 +1,167 @@
+{% if logop is defined %}
+    {%  set logo = logop %}
+{% endif %}
+{% if topbar_display is empty %}
+    {% set topbar_display = 'on' %}
+{% endif %}
+{% if header_layout is empty %}
+    {% set header_layout = 'layout1' %}
+{% endif %}
+{% if topbar_background_color is not empty %}
+    {% set topbar_class = topbar_class ~ ' background-color' %}
+{% endif %}
+{% if topbar_display == 'on' and page.topbar and (header_layout == 'layout1' or header_layout == 'layout2' or header_layout == 'layout5') %}
+<!-- topnav -->
+<div class="col-topbar {{ topbar_class }}" {% if topbar_background_color is not empty %}data-bg-color="#{{ topbar_background_color }}" {% endif %}>
+	<div class="container">
+		{{ page.topbar }}
+	</div>
+</div>
+<!-- topnav end -->
+{% endif %}
+<!-- Begin Header -->
+{% if header_layout == 'layout1' %}
+<header class="header whitebg headr-style-1 {{ header_class }}">
+    <div class="container">
+        <!-- Menu -->
+        <div class="navbar yamm navbar-default">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" data-toggle="collapse" data-target="#navbar-collapse-1" class="navbar-toggle"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+                    {% if page.header_branding %}
+                    {{ page.header_branding }}
+                    {% else %}
+                    <a href="{{ front_page }}" title="{{ 'Home'|t }}" class="navbar-brand logo" rel="home" style="background: url({{ logo }});"></a>
+                    {% endif %}
+                </div>
+            {% if page.main_menu %}
+                <div id="navbar-collapse-1" class="navbar-collapse collapse pull-right">
+                    {{ page.main_menu }}
+                </div>
+            {% endif %}
+            </div>
+        </div>
+    </div>
+</header>
+{% elseif header_layout == 'layout2' %}
+<header class="header headr-style-2 {{ header_class }}">
+        <div class="container">        
+            <!-- Menu -->
+            <div class="navbar yamm navbar-default">
+                <div class="container">
+                    <div class="navbar-header">
+                        <button type="button" data-toggle="collapse" data-target="#navbar-collapse-1" class="navbar-toggle"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+                        {% if page.header_branding %}
+                        {{ page.header_branding }}
+                        {% else %}
+                        <a href="{{ front_page }}" title="{{ 'Home'|t }}" class="navbar-brand logo" rel="home" style="background: url({{ logo }});"></a>
+                        {% endif %}
+                    </div>
+                {% if page.main_menu %}   
+                    <div id="navbar-collapse-1" class="navbar-collapse collapse pull-right">
+                        {{ page.main_menu }}
+                    </div>
+                {% endif %}
+                </div>
+            </div>
+        </div>
+    </header>
+{% elseif header_layout == 'layout3' %}
+    {% if topbar_display == 'on' and (page.topbar or logo) %}
+    <!-- topnav -->
+    <div class="col-topbar-white {{ topbar_class }}" {% if topbar_background_color is not empty %}data-bg-color="#{{ topbar_background_color }}"{% endif %}>
+        <div class="container">
+        {% if page.header_branding %}
+            {{ page.header_branding }}
+        {% else %}
+            <div class="col-md-6 nopadding m-bottom2 m-top1 mob-ove">
+                <a href="{{ front_page }}" class="navbar-brand logo bus-page" style="background: url({{ logo }});"></a>
+            </div>
+        {% endif %}
+            {{ page.topbar }}
+        </div>
+    </div>
+    <!-- topnav end -->
+    {% endif %}
+    <header class="header headr-style-3 {{ header_class }}">
+        <div class="container">
+            <!-- Menu -->
+            <div class="navbar yamm navbar-default">
+                <div class="container">
+                    <div class="navbar-header">
+                        <button type="button" data-toggle="collapse" data-target="#navbar-collapse-1" class="navbar-toggle"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+                    </div>
+                {% if page.main_menu %}
+                    <div id="navbar-collapse-1" class="navbar-collapse collapse dark-color pull-left nopadding">
+                        {{ page.main_menu }}
+                    </div>
+                {% endif %}
+                {% if page.right_header %}
+                    {{ page.right_header }}
+                {% endif %}
+                </div>
+            </div>
+        </div>
+    </header>
+{% elseif header_layout == 'layout4' %}
+    <header class="header headr-style-4 {{ header_class }}">
+        <!-- Menu -->
+        <div class="navbar yamm navbar-default">
+            <div class="navbar-header">
+                <button type="button" data-toggle="collapse" data-target="#navbar-collapse-1" class="navbar-toggle"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+            {% if page.header_branding %}
+                {{ page.header_branding }}
+            {% else %}
+                <a href="{{ front_page }}" title="{{ 'Home'|t }}" class="navbar-brand logo" rel="home" style="background: url({{ logo }});"></a>
+            {% endif %}
+            </div>
+        {% if page.main_menu %}
+            <div id="navbar-collapse-1" class="navbar-collapse collapse pull-right">
+                {{ page.main_menu }}
+            </div>
+        {% endif %}
+        </div>
+    </header>
+{% elseif header_layout == 'layout5' %}
+    {% if logo or page.right_header %}
+    <div class="col-topbar-white noborder">
+        <div class="container">
+        {% if page.header_branding or logo %}
+            <div class="col-md-6 nopadding m-bottom2 m-top5px mob-ove">
+            {% if page.header_branding %}
+                {{ page.header_branding }}
+            {% else %}
+                <a href="{{ front_page }}" title="{{ 'Home'|t }}" class="navbar-brand logo" rel="home" style="background: url({{ logo }});"></a>
+            {% endif %}
+            </div>
+        {% endif %}
+        {% if page.right_header %}
+            <div class="col-md-6 nopadding m-top2 nophone">
+                {{ page.right_header }}
+            </div>
+        {% endif %}
+        </div>
+    </div>
+    {% endif %}
+    <header class="header headr-style-3 {{ header_class }}">
+        <div class="container"> 
+            <!-- Menu -->
+            <div class="navbar yamm navbar-default">
+                <div class="container">
+                    <div class="navbar-header">
+                        <button type="button" data-toggle="collapse" data-target="#navbar-collapse-1" class="navbar-toggle"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+                    </div>
+                {% if page.main_menu %}
+                    <div id="navbar-collapse-1" class="navbar-collapse collapse dark-color pull-left fullwide nopadding">
+                        {{ page.main_menu }}
+                    {% if page.shopping_cart %}
+                        {{ page.shopping_cart }}
+                    {% endif %}
+                    </div>
+                {% endif %}
+                </div>
+            </div>
+        </div>
+    </header>
+{% endif %}
+<!-- end Header -->

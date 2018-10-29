@@ -1,0 +1,19 @@
+uuid: b350ccd2-7ac7-4b3b-9be8-c3545e5c4f5e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_topbar_class
+    - node.type.home_page
+id: node.home_page.field_topbar_class
+field_name: field_topbar_class
+entity_type: node
+bundle: home_page
+label: 'Topbar class'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

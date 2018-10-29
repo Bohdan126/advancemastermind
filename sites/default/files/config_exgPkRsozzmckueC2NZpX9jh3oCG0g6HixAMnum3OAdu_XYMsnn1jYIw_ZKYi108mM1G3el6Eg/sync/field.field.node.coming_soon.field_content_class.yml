@@ -1,0 +1,19 @@
+uuid: f717e4ba-5468-45c5-96d2-9fe4f09ae4d1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_content_class
+    - node.type.coming_soon
+id: node.coming_soon.field_content_class
+field_name: field_content_class
+entity_type: node
+bundle: coming_soon
+label: 'Content class'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

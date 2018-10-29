@@ -1,0 +1,19 @@
+uuid: 800e7acf-edd8-45d4-a648-f6f223ce3f77
+langcode: en
+status: true
+dependencies:
+  module:
+    - navi_color_field
+    - node
+id: node.field_footer_background_color
+field_name: field_footer_background_color
+entity_type: node
+type: Navi_Color
+settings: {  }
+module: navi_color_field
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,50 @@
+uuid: 97750e5f-8036-4c93-acc6-c86523c35745
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_visibility_groups.block_visibility_group.home_restaurant
+    - views.view._probes_block_section
+  module:
+    - block_attributes
+    - block_visibility_groups
+    - ntv_block_background
+    - views
+  theme:
+    - probes
+third_party_settings:
+  block_attributes:
+    attr_class: ''
+    attr_id: ''
+  ntv_block_background:
+    disable: enable
+    color: '#000000'
+    bg_image:
+      - 169
+    bg_image_type: fixed
+    bg_repeat: 'no'
+    bg_image_position: 'center top'
+    bg_image_size: cover
+    background_overlay: ''
+id: views_block___probes_block_section_block_services_style6
+theme: probes
+region: section
+weight: -15
+provider: null
+plugin: 'views_block:_probes_block_section-block_services_style6'
+settings:
+  id: 'views_block:_probes_block_section-block_services_style6'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+  items_per_page: none
+  attributes:
+    class: 'section-lg-1 bg-parallax15'
+    id: ''
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: home_restaurant
+    context_mapping: {  }

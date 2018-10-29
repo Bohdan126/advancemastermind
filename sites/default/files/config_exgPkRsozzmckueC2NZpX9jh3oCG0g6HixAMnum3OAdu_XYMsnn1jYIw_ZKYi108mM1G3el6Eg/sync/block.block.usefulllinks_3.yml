@@ -1,0 +1,51 @@
+uuid: c1be8e42-0f02-4086-ae5e-60cebeea10e7
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_visibility_groups.block_visibility_group.footer_shop
+    - system.menu.usefull-links
+  module:
+    - block_attributes
+    - block_visibility_groups
+    - ntv_block_background
+    - system
+  theme:
+    - probes
+third_party_settings:
+  block_attributes:
+    attr_class: ''
+    attr_id: ''
+    block_title: ''
+    block_title_icon: ''
+  ntv_block_background:
+    disable: disable
+    color: '#000000'
+    bg_image: {  }
+    bg_image_type: default
+    bg_repeat: 'no'
+    bg_image_position: ''
+    bg_image_size: ''
+    background_overlay: ''
+id: usefulllinks_3
+theme: probes
+region: footer
+weight: -16
+provider: null
+plugin: 'system_menu_block:usefull-links'
+settings:
+  id: 'system_menu_block:usefull-links'
+  label: 'Usefull Links'
+  provider: system
+  label_display: visible
+  level: 1
+  depth: 0
+  attributes:
+    class: 'col-md-2 col-sm-12 m-bottom3'
+    id: ''
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: footer_shop
+    context_mapping: {  }

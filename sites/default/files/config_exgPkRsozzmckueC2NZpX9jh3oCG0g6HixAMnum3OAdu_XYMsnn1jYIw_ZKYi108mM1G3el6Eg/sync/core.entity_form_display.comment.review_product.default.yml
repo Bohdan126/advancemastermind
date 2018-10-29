@@ -1,0 +1,25 @@
+uuid: 413960f6-43ed-4ee8-a0a6-c02bd5c9e506
+langcode: en
+status: true
+dependencies:
+  config:
+    - comment.type.review_product
+    - field.field.comment.review_product.field_comment_body
+id: comment.review_product.default
+targetEntityType: comment
+bundle: review_product
+mode: default
+content:
+  author:
+    weight: -2
+    settings: {  }
+    third_party_settings: {  }
+  field_comment_body:
+    weight: 3
+    settings:
+      rows: 4
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+hidden:
+  subject: true

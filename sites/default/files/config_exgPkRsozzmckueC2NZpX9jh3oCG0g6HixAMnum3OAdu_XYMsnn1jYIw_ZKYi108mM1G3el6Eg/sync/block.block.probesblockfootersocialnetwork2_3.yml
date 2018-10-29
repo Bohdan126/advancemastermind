@@ -1,0 +1,51 @@
+uuid: ea2cdaa1-897c-4d48-b8b3-391e59384698
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_visibility_groups.block_visibility_group.home_wedding
+  content:
+    - 'block_content:basic:3358eabe-9216-4f07-b4e9-ace9045c66b2'
+  module:
+    - block_attributes
+    - block_content
+    - block_visibility_groups
+    - ntv_block_background
+  theme:
+    - probes
+third_party_settings:
+  block_attributes:
+    attr_class: ''
+    attr_id: ''
+  ntv_block_background:
+    disable: disable
+    color: '#000000'
+    bg_image: {  }
+    bg_image_type: default
+    bg_repeat: 'no'
+    bg_image_position: ''
+    bg_image_size: ''
+    background_overlay: ''
+id: probesblockfootersocialnetwork2_3
+theme: probes
+region: footer_copyright
+weight: null
+provider: null
+plugin: 'block_content:3358eabe-9216-4f07-b4e9-ace9045c66b2'
+settings:
+  id: 'block_content:3358eabe-9216-4f07-b4e9-ace9045c66b2'
+  label: 'Social Media'
+  provider: block_content
+  label_display: visible
+  status: true
+  info: ''
+  view_mode: full
+  attributes:
+    class: 'm-bottom3 title-white'
+    id: ''
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: home_wedding
+    context_mapping: {  }

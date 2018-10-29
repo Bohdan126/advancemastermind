@@ -1,0 +1,52 @@
+uuid: e5b646db-791c-4098-8fa3-749ff1d3165d
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_visibility_groups.block_visibility_group.home_construction
+  content:
+    - 'block_content:basic:5ca775dc-0e3f-459e-8318-8b081ec9ff3c'
+  module:
+    - block_attributes
+    - block_content
+    - block_visibility_groups
+    - ntv_block_background
+  theme:
+    - probes
+third_party_settings:
+  block_attributes:
+    attr_class: ''
+    attr_id: ''
+  ntv_block_background:
+    disable: enable
+    color: '#000000'
+    bg_image:
+      - 205
+    bg_image_type: default
+    bg_repeat: 'yes'
+    bg_image_position: 'center top'
+    bg_image_size: ''
+    background_overlay: ''
+id: probesblockconstructionhtmltab
+theme: probes
+region: section
+weight: -12
+provider: null
+plugin: 'block_content:5ca775dc-0e3f-459e-8318-8b081ec9ff3c'
+settings:
+  id: 'block_content:5ca775dc-0e3f-459e-8318-8b081ec9ff3c'
+  label: '[Probes] Block construction HTML tab '
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+  attributes:
+    class: 'bg-texture2 m-top6'
+    id: ''
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: home_construction
+    context_mapping: {  }

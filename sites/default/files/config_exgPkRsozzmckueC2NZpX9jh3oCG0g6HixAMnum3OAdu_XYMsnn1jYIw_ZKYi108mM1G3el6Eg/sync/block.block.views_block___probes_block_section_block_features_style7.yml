@@ -1,0 +1,49 @@
+uuid: f39400fb-f2ff-4965-abd6-91c609a83e84
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_visibility_groups.block_visibility_group.home_lawyer
+    - views.view._probes_block_section
+  module:
+    - block_attributes
+    - block_visibility_groups
+    - ntv_block_background
+    - views
+  theme:
+    - probes
+third_party_settings:
+  block_attributes:
+    attr_class: ''
+    attr_id: ''
+  ntv_block_background:
+    disable: disable
+    color: '#000000'
+    bg_image: {  }
+    bg_image_type: default
+    bg_repeat: 'no'
+    bg_image_position: ''
+    bg_image_size: ''
+    background_overlay: ''
+id: views_block___probes_block_section_block_features_style7
+theme: probes
+region: section
+weight: -13
+provider: null
+plugin: 'views_block:_probes_block_section-block_features_style7'
+settings:
+  id: 'views_block:_probes_block_section-block_features_style7'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+  items_per_page: none
+  attributes:
+    class: 'grey-bg m-top-2'
+    id: ''
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: home_lawyer
+    context_mapping: {  }

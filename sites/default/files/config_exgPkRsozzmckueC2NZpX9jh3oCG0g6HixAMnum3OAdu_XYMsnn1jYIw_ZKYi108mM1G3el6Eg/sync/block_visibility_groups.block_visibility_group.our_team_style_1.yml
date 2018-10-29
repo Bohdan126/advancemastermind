@@ -1,0 +1,17 @@
+uuid: 8a904303-4a39-4736-9a2b-6f71988f75ba
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+id: our_team_style_1
+label: 'Our team style 1'
+logic: and
+conditions:
+  b996cd02-3d64-42f0-8782-6fc0fb6d3f48:
+    id: request_path
+    pages: /node/181
+    negate: false
+    context_mapping: {  }
+    uuid: b996cd02-3d64-42f0-8782-6fc0fb6d3f48
+allow_other_conditions: false

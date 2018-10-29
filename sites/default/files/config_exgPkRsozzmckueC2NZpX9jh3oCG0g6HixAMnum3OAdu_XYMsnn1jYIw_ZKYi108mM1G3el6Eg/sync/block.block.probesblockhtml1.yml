@@ -1,0 +1,36 @@
+uuid: 0815ce57-0002-4d31-a343-672d14cbca63
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_visibility_groups.block_visibility_group.home_corporate_1
+  content:
+    - 'block_content:basic:1ed1d4cd-2efc-487d-8e09-33192efa19e1'
+  module:
+    - block_content
+    - block_visibility_groups
+  theme:
+    - probes
+id: probesblockhtml1
+theme: probes
+region: section
+weight: -12
+provider: null
+plugin: 'block_content:1ed1d4cd-2efc-487d-8e09-33192efa19e1'
+settings:
+  id: 'block_content:1ed1d4cd-2efc-487d-8e09-33192efa19e1'
+  label: '[Probes] Block HTML 1'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+  attributes:
+    class: m-top4
+    id: ''
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: home_corporate_1
+    context_mapping: {  }

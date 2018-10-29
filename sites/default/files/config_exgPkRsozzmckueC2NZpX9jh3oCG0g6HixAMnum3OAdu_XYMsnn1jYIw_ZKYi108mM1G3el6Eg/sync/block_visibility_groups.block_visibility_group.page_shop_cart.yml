@@ -1,0 +1,17 @@
+uuid: f78ddaac-5657-4fe6-81d0-35b138d661c1
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+id: page_shop_cart
+label: 'Page shop cart'
+logic: or
+conditions:
+  5d1de84b-c5ab-471a-82b9-0a09b8022a68:
+    id: request_path
+    pages: '/cart*'
+    negate: false
+    context_mapping: {  }
+    uuid: 5d1de84b-c5ab-471a-82b9-0a09b8022a68
+allow_other_conditions: false

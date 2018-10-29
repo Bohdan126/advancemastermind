@@ -1,0 +1,43 @@
+uuid: 4c43dba3-610a-48e9-beb5-e9c5b269f1ad
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type._probes_block_image
+    - field.field.block_content._probes_block_image.body
+    - field.field.block_content._probes_block_image.field_image
+    - image.style.thumbnail
+  module:
+    - image
+    - imce
+    - text
+id: block_content._probes_block_image.default
+targetEntityType: block_content
+bundle: _probes_block_image
+mode: default
+content:
+  body:
+    type: text_textarea_with_summary
+    weight: 2
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+    third_party_settings: {  }
+  field_image:
+    weight: 1
+    settings:
+      preview_image_style: thumbnail
+      progress_indicator: throbber
+    third_party_settings:
+      imce:
+        enabled: true
+    type: image_image
+  info:
+    type: string_textfield
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden: {  }

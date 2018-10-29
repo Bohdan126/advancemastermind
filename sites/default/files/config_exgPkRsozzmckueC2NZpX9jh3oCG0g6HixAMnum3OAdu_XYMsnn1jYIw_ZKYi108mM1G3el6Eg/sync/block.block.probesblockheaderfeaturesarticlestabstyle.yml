@@ -1,0 +1,51 @@
+uuid: 0cbe0184-ade7-45c7-b10c-fd3db95c34be
+langcode: en
+status: false
+dependencies:
+  config:
+    - block_visibility_groups.block_visibility_group.home_business_1
+  content:
+    - 'block_content:basic:f2420c21-745d-4ebe-8c88-195cb27ffd61'
+  module:
+    - block_attributes
+    - block_content
+    - block_visibility_groups
+    - ntv_block_background
+  theme:
+    - probes
+third_party_settings:
+  block_attributes:
+    attr_class: ''
+    attr_id: ''
+  ntv_block_background:
+    disable: disable
+    color: '#000000'
+    bg_image: {  }
+    bg_image_type: default
+    bg_repeat: 'no'
+    bg_image_position: ''
+    bg_image_size: ''
+    background_overlay: ''
+id: probesblockheaderfeaturesarticlestabstyle
+theme: probes
+region: '-1'
+weight: 7
+provider: null
+plugin: 'block_content:f2420c21-745d-4ebe-8c88-195cb27ffd61'
+settings:
+  id: 'block_content:f2420c21-745d-4ebe-8c88-195cb27ffd61'
+  label: '[Probes] Block header features articles tab style'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+  attributes:
+    class: two
+    id: ''
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: home_business_1
+    context_mapping: {  }

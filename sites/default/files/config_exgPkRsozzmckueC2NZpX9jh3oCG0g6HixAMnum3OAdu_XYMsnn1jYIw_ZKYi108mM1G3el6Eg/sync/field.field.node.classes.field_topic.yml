@@ -1,0 +1,21 @@
+uuid: d1acd1a6-bc1b-4b79-93bc-70a476517775
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_topic
+    - node.type.classes
+  module:
+    - options
+id: node.classes.field_topic
+field_name: field_topic
+entity_type: node
+bundle: classes
+label: Topic
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

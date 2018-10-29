@@ -1,0 +1,17 @@
+uuid: 53ab5e35-f55e-4692-87e5-8beea762c54a
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+id: footer_layout_4
+label: 'Footer layout 4'
+logic: and
+conditions:
+  4abfe156-871f-4614-9fbd-53e7af1429a6:
+    id: request_path
+    pages: "/node/208\r\n/node/209"
+    negate: false
+    context_mapping: {  }
+    uuid: 4abfe156-871f-4614-9fbd-53e7af1429a6
+allow_other_conditions: false

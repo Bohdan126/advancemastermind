@@ -1,0 +1,17 @@
+uuid: 105d1624-281f-4b21-b6c2-21d94c074c1b
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+id: one_page_resume
+label: 'One page resume'
+logic: and
+conditions:
+  9cc62d60-bc07-4a76-8264-9bde6da0ad63:
+    id: request_path
+    pages: /node/212
+    negate: false
+    context_mapping: {  }
+    uuid: 9cc62d60-bc07-4a76-8264-9bde6da0ad63
+allow_other_conditions: false

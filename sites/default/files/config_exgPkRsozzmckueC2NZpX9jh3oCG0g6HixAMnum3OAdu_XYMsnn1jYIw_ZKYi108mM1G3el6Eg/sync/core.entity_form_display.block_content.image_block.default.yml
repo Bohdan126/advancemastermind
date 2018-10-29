@@ -1,0 +1,33 @@
+uuid: 976dd063-832f-48ad-9ff8-4c6d53dff3d7
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.image_block
+    - field.field.block_content.image_block.field_image_animate
+    - image.style.thumbnail
+  module:
+    - image
+    - imce
+id: block_content.image_block.default
+targetEntityType: block_content
+bundle: image_block
+mode: default
+content:
+  field_image_animate:
+    weight: 3
+    settings:
+      preview_image_style: thumbnail
+      progress_indicator: throbber
+    third_party_settings:
+      imce:
+        enabled: true
+    type: image_image
+  info:
+    type: string_textfield
+    weight: -5
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden: {  }

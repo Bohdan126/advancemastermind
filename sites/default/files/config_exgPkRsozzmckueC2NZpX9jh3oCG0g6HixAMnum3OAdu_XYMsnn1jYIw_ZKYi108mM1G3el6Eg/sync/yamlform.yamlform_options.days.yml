@@ -1,0 +1,9 @@
+uuid: 9d04abdd-c8b4-4433-b905-272847ffa958
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: dMkS8VI_XKn04dSgE6iGda2LDbYyin5Sr18Xd4MyN6A
+id: days
+label: Days
+options: "Sunday: Sunday\nMonday: Monday\nTuesday: Tuesday\nWednesday: Wednesday\nThursday: Thursday\nFriday: Friday\nSaturday: Saturday\n"

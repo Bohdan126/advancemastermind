@@ -1,0 +1,40 @@
+uuid: c5a748ae-3938-41fb-a2d3-d736637ba683
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.one_page.body
+    - field.field.node.one_page.field_color_stylesheet
+    - field.field.node.one_page.field_footer_background_color
+    - field.field.node.one_page.field_footer_background_image
+    - field.field.node.one_page.field_footer_class
+    - field.field.node.one_page.field_footer_layout
+    - field.field.node.one_page.field_logo
+    - field.field.node.one_page.field_menu_style
+    - node.type.one_page
+  module:
+    - text
+    - user
+id: node.one_page.teaser
+targetEntityType: node
+bundle: one_page
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+  links:
+    weight: 100
+hidden:
+  field_color_stylesheet: true
+  field_footer_background_color: true
+  field_footer_background_image: true
+  field_footer_class: true
+  field_footer_layout: true
+  field_logo: true
+  field_menu_style: true

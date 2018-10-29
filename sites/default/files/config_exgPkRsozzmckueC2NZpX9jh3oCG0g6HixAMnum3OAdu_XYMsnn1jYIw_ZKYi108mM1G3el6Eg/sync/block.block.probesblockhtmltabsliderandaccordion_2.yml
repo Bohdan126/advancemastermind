@@ -1,0 +1,52 @@
+uuid: dd3beab3-a555-4eae-bfa4-53c8b4a8df35
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_visibility_groups.block_visibility_group.about_style_1
+  content:
+    - 'block_content:basic:c407e47d-519c-4682-9163-73695719a666'
+  module:
+    - block_attributes
+    - block_content
+    - block_visibility_groups
+    - ntv_block_background
+  theme:
+    - probes
+third_party_settings:
+  block_attributes:
+    attr_class: ''
+    attr_id: ''
+    block_title_icon: ''
+  ntv_block_background:
+    disable: disable
+    color: '#000000'
+    bg_image: {  }
+    bg_image_type: default
+    bg_repeat: 'no'
+    bg_image_position: ''
+    bg_image_size: ''
+    background_overlay: ''
+id: probesblockhtmltabsliderandaccordion_2
+theme: probes
+region: section
+weight: -11
+provider: null
+plugin: 'block_content:c407e47d-519c-4682-9163-73695719a666'
+settings:
+  id: 'block_content:c407e47d-519c-4682-9163-73695719a666'
+  label: '[Probes] Block HTML tab slider and accordion'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+  attributes:
+    class: m-top7
+    id: ''
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: about_style_1
+    context_mapping: {  }

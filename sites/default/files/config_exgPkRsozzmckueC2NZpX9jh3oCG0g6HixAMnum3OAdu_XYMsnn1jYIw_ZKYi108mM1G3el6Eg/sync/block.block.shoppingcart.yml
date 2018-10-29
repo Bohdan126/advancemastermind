@@ -1,0 +1,53 @@
+uuid: 204f4e38-058b-4f10-a683-1f297a0f20c9
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_attributes
+    - block_visibility_groups
+    - ntv_block_background
+    - uc_cart
+  theme:
+    - probes
+third_party_settings:
+  block_attributes:
+    attr_class: ''
+    attr_id: ''
+    block_title: ''
+    block_title_icon: ''
+  ntv_block_background:
+    disable: disable
+    color: '#000000'
+    bg_image: {  }
+    bg_image_type: default
+    bg_repeat: 'no'
+    bg_image_position: ''
+    bg_image_size: ''
+    background_overlay: ''
+id: shoppingcart
+theme: probes
+region: shopping_cart
+weight: -15
+provider: null
+plugin: uc_cart
+settings:
+  id: uc_cart
+  label: 'Shopping cart'
+  provider: uc_cart
+  label_display: '0'
+  hide_empty: 0
+  show_image: 1
+  collapsible: 1
+  collapsed: 1
+  cache:
+    max_age:
+      '#value': 0
+  attributes:
+    class: cart
+    id: ''
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: ''
+    context_mapping: {  }

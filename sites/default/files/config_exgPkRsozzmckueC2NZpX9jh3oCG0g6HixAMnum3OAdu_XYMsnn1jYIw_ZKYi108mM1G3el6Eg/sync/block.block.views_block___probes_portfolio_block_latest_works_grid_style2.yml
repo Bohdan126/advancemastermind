@@ -1,0 +1,34 @@
+uuid: 4c412a22-fea3-40a0-8e79-0c9626320000
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_visibility_groups.block_visibility_group.home_corporate_1
+    - views.view._probes_portfolio
+  module:
+    - block_visibility_groups
+    - views
+  theme:
+    - probes
+id: views_block___probes_portfolio_block_latest_works_grid_style2
+theme: probes
+region: section
+weight: -11
+provider: null
+plugin: 'views_block:_probes_portfolio-block_latest_works_grid_style2'
+settings:
+  id: 'views_block:_probes_portfolio-block_latest_works_grid_style2'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+  items_per_page: none
+  attributes:
+    class: m-top5
+    id: ''
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: home_corporate_1
+    context_mapping: {  }

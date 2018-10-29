@@ -1,0 +1,19 @@
+uuid: d80e7cfd-406b-4d1d-9c25-57edc176f47e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_footer_class
+    - node.type.one_page
+id: node.one_page.field_footer_class
+field_name: field_footer_class
+entity_type: node
+bundle: one_page
+label: 'Footer class'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

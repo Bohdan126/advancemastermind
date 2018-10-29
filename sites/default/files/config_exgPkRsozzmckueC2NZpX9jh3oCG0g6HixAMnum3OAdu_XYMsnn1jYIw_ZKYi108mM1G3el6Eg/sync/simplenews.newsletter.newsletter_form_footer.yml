@@ -1,0 +1,17 @@
+uuid: 56c219c2-5b65-454d-b322-6fc82da05981
+langcode: en
+status: true
+dependencies: {  }
+name: 'Newsletter form footer'
+id: newsletter_form_footer
+description: ''
+format: plain
+priority: 0
+receipt: true
+from_name: 'Probes Drupal 8 Theme'
+subject: '[[simplenews-newsletter:name]] [node:title]'
+from_address: navisystemvn@gmail.com
+hyperlinks: true
+new_account: none
+opt_inout: double
+weight: 0

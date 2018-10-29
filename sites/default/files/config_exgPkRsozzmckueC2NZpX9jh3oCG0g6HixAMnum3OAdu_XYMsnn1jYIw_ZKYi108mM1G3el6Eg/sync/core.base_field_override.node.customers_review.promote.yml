@@ -1,0 +1,22 @@
+uuid: bbef9aa3-9b18-40d5-aedd-94f4011dacd7
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.customers_review
+id: node.customers_review.promote
+field_name: promote
+entity_type: node
+bundle: customers_review
+label: 'Promoted to front page'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

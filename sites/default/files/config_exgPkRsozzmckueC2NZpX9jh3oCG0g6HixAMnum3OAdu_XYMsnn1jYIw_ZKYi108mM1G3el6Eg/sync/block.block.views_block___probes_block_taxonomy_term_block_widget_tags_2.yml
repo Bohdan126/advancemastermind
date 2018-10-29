@@ -1,0 +1,50 @@
+uuid: e8500bf8-fd73-429e-a3d2-ba7bba001e46
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_visibility_groups.block_visibility_group.sidebar
+    - views.view._probes_block_taxonomy_term
+  module:
+    - block_attributes
+    - block_visibility_groups
+    - ntv_block_background
+    - views
+  theme:
+    - probes
+third_party_settings:
+  block_attributes:
+    attr_class: ''
+    attr_id: ''
+    block_title_icon: 'fa fa-tags'
+  ntv_block_background:
+    disable: disable
+    color: '#000000'
+    bg_image: {  }
+    bg_image_type: default
+    bg_repeat: 'no'
+    bg_image_position: ''
+    bg_image_size: ''
+    background_overlay: ''
+id: views_block___probes_block_taxonomy_term_block_widget_tags_2
+theme: probes
+region: sidebar
+weight: null
+provider: null
+plugin: 'views_block:_probes_block_taxonomy_term-block_widget_tags'
+settings:
+  id: 'views_block:_probes_block_taxonomy_term-block_widget_tags'
+  label: Tags
+  provider: views
+  label_display: visible
+  views_label: Tags
+  items_per_page: none
+  attributes:
+    class: title-m-bottom20
+    id: ''
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: sidebar
+    context_mapping: {  }

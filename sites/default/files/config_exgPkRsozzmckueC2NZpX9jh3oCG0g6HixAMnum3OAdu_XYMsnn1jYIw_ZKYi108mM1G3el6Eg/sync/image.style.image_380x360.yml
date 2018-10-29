@@ -1,0 +1,14 @@
+uuid: 02668438-5e6c-4b7d-96ee-4c31e5866372
+langcode: en
+status: true
+dependencies: {  }
+name: image_380x360
+label: 'Image 380x360'
+effects:
+  37f09d8c-e933-4b1c-a73e-702cb6d3b4ea:
+    uuid: 37f09d8c-e933-4b1c-a73e-702cb6d3b4ea
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 380
+      height: 360

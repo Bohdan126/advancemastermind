@@ -1,0 +1,8 @@
+uuid: ebac49bc-81f9-41a8-9772-b8c1baed057e
+langcode: en
+status: true
+dependencies: {  }
+id: _probes_block_background_image
+label: '[Probes] Block background image'
+revision: 0
+description: ''

@@ -1,0 +1,50 @@
+uuid: 1102bf3c-558f-465a-abfa-7dc417640a8f
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_visibility_groups.block_visibility_group.home_app_showcase
+  module:
+    - block_attributes
+    - block_visibility_groups
+    - ntv_block_background
+    - simplenews
+  theme:
+    - probes
+third_party_settings:
+  block_attributes:
+    attr_class: ''
+    attr_id: ''
+  ntv_block_background:
+    disable: disable
+    color: '#000000'
+    bg_image: {  }
+    bg_image_type: default
+    bg_repeat: 'no'
+    bg_image_position: ''
+    bg_image_size: ''
+    background_overlay: ''
+id: simplenewssubscription
+theme: probes
+region: section
+weight: -14
+provider: null
+plugin: simplenews_subscription_block
+settings:
+  id: simplenews_subscription_block
+  label: 'Subscribe Newsletter'
+  provider: simplenews
+  label_display: visible
+  newsletters:
+    probes_newsletter: probes_newsletter
+  message: ''
+  unique_id: 7f6a24d8-b4a1-44f8-9035-f80ab8390580
+  attributes:
+    class: m-top7
+    id: ''
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: home_app_showcase
+    context_mapping: {  }

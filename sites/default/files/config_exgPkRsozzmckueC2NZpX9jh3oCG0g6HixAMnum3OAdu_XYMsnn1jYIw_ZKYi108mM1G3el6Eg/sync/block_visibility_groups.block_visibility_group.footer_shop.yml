@@ -1,0 +1,26 @@
+uuid: 343baca3-eddd-4957-a9da-342caf66cab8
+langcode: en
+status: true
+dependencies:
+  module:
+    - ctools
+    - system
+id: footer_shop
+label: 'Footer shop'
+logic: or
+conditions:
+  bb1079fa-00fb-4bbf-a71d-9026aeca8794:
+    id: request_path
+    pages: "/node/232\r\n/node/225\r\n/products-search*\r\n/cart*"
+    negate: false
+    context_mapping: {  }
+    uuid: bb1079fa-00fb-4bbf-a71d-9026aeca8794
+  a45efe3b-d414-4fc7-ba2b-a7ac026fb2c4:
+    id: 'entity_bundle:node'
+    bundles:
+      product: product
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+    uuid: a45efe3b-d414-4fc7-ba2b-a7ac026fb2c4
+allow_other_conditions: false

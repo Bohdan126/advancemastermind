@@ -1,0 +1,52 @@
+uuid: 5b1409b0-502d-40d3-985e-e54e3d129e2e
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_visibility_groups.block_visibility_group.our_team_style_2
+  content:
+    - 'block_content:basic:9cef7004-3e41-4bc8-87ea-77681f1a2534'
+  module:
+    - block_attributes
+    - block_content
+    - block_visibility_groups
+    - ntv_block_background
+  theme:
+    - probes
+third_party_settings:
+  block_attributes:
+    attr_class: ''
+    attr_id: ''
+    block_title_icon: ''
+  ntv_block_background:
+    disable: disable
+    color: '#000000'
+    bg_image: {  }
+    bg_image_type: default
+    bg_repeat: 'no'
+    bg_image_position: ''
+    bg_image_size: ''
+    background_overlay: ''
+id: probesblockhtmlprobesisabeautiful_8
+theme: probes
+region: section
+weight: null
+provider: null
+plugin: 'block_content:9cef7004-3e41-4bc8-87ea-77681f1a2534'
+settings:
+  id: 'block_content:9cef7004-3e41-4bc8-87ea-77681f1a2534'
+  label: '[Probes] Block HTML Probes is a Beautiful'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+  attributes:
+    class: section-lg-grey3
+    id: ''
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: our_team_style_2
+    context_mapping: {  }

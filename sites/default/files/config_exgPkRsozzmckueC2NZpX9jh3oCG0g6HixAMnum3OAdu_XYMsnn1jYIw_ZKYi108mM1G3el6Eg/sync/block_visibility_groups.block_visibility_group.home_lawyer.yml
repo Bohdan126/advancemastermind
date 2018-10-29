@@ -1,0 +1,17 @@
+uuid: 511c902b-03eb-4e81-b1c4-cbc56f2ff52a
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+id: home_lawyer
+label: 'Home lawyer'
+logic: and
+conditions:
+  71f256fb-5758-4265-a8b1-76711315b8ba:
+    id: request_path
+    pages: /node/146
+    negate: false
+    context_mapping: {  }
+    uuid: 71f256fb-5758-4265-a8b1-76711315b8ba
+allow_other_conditions: false

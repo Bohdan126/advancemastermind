@@ -1,0 +1,73 @@
+uuid: bacc8cb5-2b38-4ca1-9806-749c2cd98647
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: dpKN7PgbnCcqlWK-um9qGZO0pJNjLDuEVd48l8k703w
+id: example_elements_formats
+title: 'Example: Elements with custom formats'
+description: 'Examples of elements that supports multiple formats using the #format property.'
+elements: "dates:\n  '#type': 'details'\n  '#title': 'Dates'\n  '#open': true\n  date_default:\n    '#type': datetime\n    '#title': 'datetime (default)'\n  date_html_year:\n    '#type': datetime\n    '#title': 'datetime (html_year)'\n    '#format': html_year\n  date_custom:\n    '#type': datetime\n    '#title': 'datetime (l, F j, Y - H:i)'\n    '#format': 'l, F j, Y - H:i'\noptions:\n  '#type': 'details'\n  '#title': 'Options (single and multiple)'\n  '#open': true\n  checkboxes_default:\n    '#type': checkboxes\n    '#title': 'checkboxes (default)'\n    '#options':\n      1: one\n      2: two\n      3: three\n  checkboxes_comma:\n    '#type': checkboxes\n    '#title': 'checkboxes (comma)'\n    '#format': comma\n    '#options':\n      1: one\n      2: two\n      3: three\n  checkboxes_semicolon:\n    '#type': checkboxes\n    '#title': 'checkboxes (semicolon)'\n    '#format': semicolon\n    '#options':\n      1: one\n      2: two\n      3: three\n  checkboxes_semicolon:\n    '#type': checkboxes\n    '#title': 'checkboxes (and)'\n    '#format': and\n    '#options':\n      1: one\n      2: two\n      3: three\n  checkboxes_ul:\n    '#type': checkboxes\n    '#title': 'checkboxes (ul)'\n    '#format': ul\n    '#options':\n      1: one\n      2: two\n      3: three\n  checkboxes_ol:\n    '#type': checkboxes\n    '#title': 'checkboxes (ol)'\n    '#format': ol\n    '#options':\n      1: one\n      2: two\n      3: three\ncolors:\n  '#type': 'details'\n  '#title': 'Colors'\n  '#open': true\n  color_default:\n    '#type': color\n    '#title': 'color (default)'\n  color_swatch:\n    '#type': color\n    '#title': 'color (swatch)'\n    '#format': swatch\n  color_value:\n    '#type': color\n    '#title': 'color (value)'\n    '#format': value\nlinks:\n  '#type': 'details'\n  '#title': 'Links'\n  '#open': true\n  email_default:\n    '#type': email\n    '#title': 'email (default)'\n  email_value:\n    '#type': email\n    '#title': 'email (value)'\n    '#format': value\n  tel_default:\n    '#type': tel\n    '#title': 'tel (default)'\n  tel_value:\n    '#type': tel\n    '#title': 'tel (value)'\n    '#format': value\n  url_default:\n    '#type': url\n    '#title': 'url (default)'\n  url_value:\n    '#type': url\n    '#title': 'url (value)'\n    '#format': value\nentity_autocomplete:\n  '#type': 'details'\n  '#title': 'Entity autocomplete'\n  '#open': true\n  entity_autocomplete_default:\n    '#type': 'entity_autocomplete'\n    '#title': 'entity_autocomplete (default)'\n    '#target_type': 'node'\n  entity_autocomplete_link:\n    '#type': 'entity_autocomplete'\n    '#title': 'entity_autocomplete (link)'\n    '#target_type': 'node'\n    '#format': link\n  entity_autocomplete_label:\n    '#type': 'entity_autocomplete'\n    '#title': 'entity_autocomplete (label)'\n    '#target_type': 'node'\n    '#format': label\n  entity_autocomplete_teaser:\n    '#type': 'entity_autocomplete'\n    '#title': 'entity_autocomplete (teaser)'\n    '#target_type': 'node'\n    '#format': teaser\n  entity_autocomplete_id:\n    '#type': 'entity_autocomplete'\n    '#title': 'entity_autocomplete (id)'\n    '#target_type': 'node'\n    '#format': id\nother:\n  '#type': 'details'\n  '#title': 'Other'\n  '#open': true\n  password_default:\n    '#type': password\n    '#title': 'password (default)'\n  password_value:\n    '#type': password\n    '#title': 'password (value)'\n    '#format': value\n"
+settings:
+  page: true
+  page_submit_path: ''
+  page_confirm_path: ''
+  form_closed_message: ''
+  form_exception_message: ''
+  form_submit_label: ''
+  form_prepopulate: false
+  form_confidential: false
+  form_confidential_message: ''
+  wizard_progress_bar: true
+  wizard_progress_pages: false
+  wizard_progress_percentage: false
+  wizard_next_button_label: ''
+  wizard_prev_button_label: ''
+  wizard_start_label: ''
+  wizard_complete: true
+  wizard_complete_label: ''
+  preview: 0
+  preview_next_button_label: ''
+  preview_prev_button_label: ''
+  preview_message: ''
+  draft: false
+  draft_auto_save: false
+  draft_button_label: ''
+  draft_saved_message: ''
+  draft_loaded_message: ''
+  confirmation_type: page
+  confirmation_message: ''
+  confirmation_url: ''
+  limit_total: null
+  limit_total_message: ''
+  limit_user: null
+  limit_user_message: ''
+  results_disabled: false
+access:
+  create:
+    roles:
+      - anonymous
+      - authenticated
+    users: {  }
+  view_any:
+    roles: {  }
+    users: {  }
+  update_any:
+    roles: {  }
+    users: {  }
+  delete_any:
+    roles: {  }
+    users: {  }
+  purge_any:
+    roles: {  }
+    users: {  }
+  view_own:
+    roles: {  }
+    users: {  }
+  update_own:
+    roles: {  }
+    users: {  }
+  delete_own:
+    roles: {  }
+    users: {  }
+handlers: {  }

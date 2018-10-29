@@ -1,0 +1,52 @@
+uuid: dfffafe9-f26c-4bcb-b837-8dbb7240fe51
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_visibility_groups.block_visibility_group.contact_style_1
+  content:
+    - 'block_content:basic:798de13b-f3e3-4c7c-a041-0737c669bbee'
+  module:
+    - block_attributes
+    - block_content
+    - block_visibility_groups
+    - ntv_block_background
+  theme:
+    - probes
+third_party_settings:
+  block_attributes:
+    attr_class: ''
+    attr_id: ''
+    block_title_icon: ''
+  ntv_block_background:
+    disable: disable
+    color: '#000000'
+    bg_image: {  }
+    bg_image_type: default
+    bg_repeat: 'no'
+    bg_image_position: ''
+    bg_image_size: ''
+    background_overlay: ''
+id: probesblockmapcontact1
+theme: probes
+region: section
+weight: null
+provider: null
+plugin: 'block_content:798de13b-f3e3-4c7c-a041-0737c669bbee'
+settings:
+  id: 'block_content:798de13b-f3e3-4c7c-a041-0737c669bbee'
+  label: '[Probes] Block map contact 1'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+  attributes:
+    class: m-top7
+    id: ''
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: contact_style_1
+    context_mapping: {  }

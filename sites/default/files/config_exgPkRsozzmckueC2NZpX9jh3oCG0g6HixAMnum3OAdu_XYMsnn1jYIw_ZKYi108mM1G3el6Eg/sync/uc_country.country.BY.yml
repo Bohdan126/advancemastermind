@@ -1,0 +1,25 @@
+uuid: f8d9da2d-fb68-4570-857d-74ff87ff471f
+langcode: en
+status: false
+dependencies: {  }
+_core:
+  default_config_hash: WucrjOswDe8nACNOAx-ogRGDkKO_QC7QgbImzXUlOWA
+name: Belarus
+alpha_2: BY
+alpha_3: BLR
+numeric: 112
+zones:
+  BR: Brest
+  HO: Homyel
+  HM: 'Horad Minsk'
+  HR: Hrodna
+  MA: Mahilyow
+  MI: Minsk
+  VI: Vitsyebsk
+address_format:
+  - '!company'
+  - '!first_name !last_name'
+  - '!street1'
+  - '!street2'
+  - '!city, !zone_name  !postal_code'
+  - '!country_name_if'

@@ -1,0 +1,14 @@
+uuid: d08a70d1-aadb-4662-8da8-6c90066a4321
+langcode: en
+status: true
+dependencies: {  }
+name: image_76x76
+label: 'Image 76x76'
+effects:
+  3f544044-30bb-476d-aab6-a06d8356db98:
+    uuid: 3f544044-30bb-476d-aab6-a06d8356db98
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 76
+      height: 76

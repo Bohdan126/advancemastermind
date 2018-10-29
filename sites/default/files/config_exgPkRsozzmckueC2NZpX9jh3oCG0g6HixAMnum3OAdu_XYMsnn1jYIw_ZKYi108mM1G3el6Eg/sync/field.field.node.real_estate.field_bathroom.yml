@@ -1,0 +1,21 @@
+uuid: 41f3b78b-7008-411a-888d-19ad320fe5a4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_bathroom
+    - node.type.real_estate
+  module:
+    - options
+id: node.real_estate.field_bathroom
+field_name: field_bathroom
+entity_type: node
+bundle: real_estate
+label: Bathroom
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

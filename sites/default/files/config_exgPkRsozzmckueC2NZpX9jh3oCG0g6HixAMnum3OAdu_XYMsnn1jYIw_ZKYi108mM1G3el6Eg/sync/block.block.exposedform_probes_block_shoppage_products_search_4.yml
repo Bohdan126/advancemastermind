@@ -1,0 +1,50 @@
+uuid: 12f92f69-81ae-440f-a577-767231b95003
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_visibility_groups.block_visibility_group.home_shop_1
+    - views.view._probes_block_shop
+  module:
+    - block_attributes
+    - block_visibility_groups
+    - ntv_block_background
+    - views
+  theme:
+    - probes
+third_party_settings:
+  block_attributes:
+    attr_class: ''
+    attr_id: ''
+    block_title: ''
+    block_title_icon: ''
+  ntv_block_background:
+    disable: disable
+    color: '#000000'
+    bg_image: {  }
+    bg_image_type: default
+    bg_repeat: 'no'
+    bg_image_position: ''
+    bg_image_size: ''
+    background_overlay: ''
+id: exposedform_probes_block_shoppage_products_search_4
+theme: probes
+region: right_header
+weight: null
+provider: null
+plugin: 'views_exposed_filter_block:_probes_block_shop-page_products_search'
+settings:
+  id: 'views_exposed_filter_block:_probes_block_shop-page_products_search'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+  attributes:
+    class: ''
+    id: ''
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: home_shop_1
+    context_mapping: {  }

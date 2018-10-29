@@ -1,0 +1,38 @@
+uuid: 22f7933d-b9d2-481c-bd7c-1623a97bc193
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.page.body
+    - field.field.node.page.field_carousel_slider
+    - field.field.node.page.field_color_stylesheet
+    - field.field.node.page.field_page_slogan
+    - field.field.node.page.field_page_title_background
+    - field.field.node.page.field_sidebar
+    - node.type.page
+  module:
+    - text
+    - user
+_core:
+  default_config_hash: oZ-7vpIJxjxL2up9B5KrJGD0lazQ9aN0P-fIPo6OrSU
+id: node.page.default
+targetEntityType: node
+bundle: page
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+  links:
+    weight: 101
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_carousel_slider: true
+  field_color_stylesheet: true
+  field_page_slogan: true
+  field_page_title_background: true
+  field_sidebar: true

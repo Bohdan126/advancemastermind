@@ -1,0 +1,18 @@
+uuid: 73fb6cc1-5ba9-4431-9765-5dbd9fd581ca
+langcode: en
+status: true
+dependencies:
+  module:
+    - ctools
+id: portfolio_taxonomy_term_page
+label: 'Portfolio taxonomy term page'
+logic: and
+conditions:
+  c252a7fb-abeb-4a44-b64e-20629d558ae1:
+    id: 'entity_bundle:taxonomy_term'
+    bundles:
+      portfolio_categories: portfolio_categories
+    negate: false
+    context_mapping: {  }
+    uuid: c252a7fb-abeb-4a44-b64e-20629d558ae1
+allow_other_conditions: false

@@ -1,0 +1,8 @@
+<div class="login_form">
+	<form{{ attributes.addClass('sky-form') }}>
+		<header class="font-slim">{{ header_form_password }}</header>
+		<fieldset>
+			{{ children|render|str_replace('<label for="edit-name"', '<label class="label col col-4" for="edit-name" ')|raw }}
+		</fieldset>
+	</div>
+</div>

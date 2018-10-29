@@ -1,0 +1,46 @@
+uuid: 69e48053-dae9-4ef9-845e-b347b097bb4e
+langcode: en
+status: false
+dependencies: {  }
+_core:
+  default_config_hash: c1EVS1xrMzozqzSycu2KHt1BcvtBdzVD_wYgkpJ4EGE
+name: 'Iran, Islamic Republic of'
+alpha_2: IR
+alpha_3: IRN
+numeric: 364
+zones:
+  AS: 'آذربایجان شرقی'
+  AG: 'آذربایجان غربی'
+  AR: اردبیل
+  ES: اصفهان
+  AL: البرز
+  IL: ایلام
+  BU: بوشهر
+  TH: تهران
+  CB: 'چهار محال بختیاری'
+  KH: 'خراسان جنوبی'
+  KZ: خوزستان
+  ZN: زنجان
+  SB: 'سیستان و بلوچستان'
+  SM: سمنان
+  FR: فارس
+  QZ: قزوین
+  QM: قم
+  KD: کردستان
+  KR: کرمان
+  KS: کرمانشاه
+  KB: 'کهگیلویه و بویر احمد'
+  GL: گیلان
+  GS: گلستان
+  LR: لرستان
+  MZ: مازندران
+  MR: مرکزی
+  HR: هرمزگان
+  HM: همدان
+  YZ: یزد
+address_format:
+  - '!first_name !last_name'
+  - '!country_name - !zone_name - !city,'
+  - '!street1'
+  - '!street2'
+  - '!postal_code'

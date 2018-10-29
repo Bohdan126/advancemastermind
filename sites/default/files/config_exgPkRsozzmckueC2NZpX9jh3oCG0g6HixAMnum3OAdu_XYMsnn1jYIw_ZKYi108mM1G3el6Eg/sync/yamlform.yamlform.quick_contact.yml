@@ -1,0 +1,74 @@
+uuid: 8647bf4e-417d-441f-a2b8-730a9b95ae8e
+langcode: en
+status: true
+dependencies: {  }
+id: quick_contact
+title: 'Quick contact'
+description: 'Simple Form quick contact '
+elements: "name:\n  '#title': Name\n  '#title_display': invisible\n  '#prefix': '<div class=\"col-md-6 m-bottom3\">'\n  '#suffix': '</div>'\n  '#placeholder': 'Your name'\n  '#required': true\n  '#type': textfield\n  '#attributes':\n    class:\n      - input-b-line\nemail:\n  '#title': Email\n  '#title_display': invisible\n  '#prefix': '<div class=\"col-md-6 m-bottom3\">'\n  '#suffix': '</div>'\n  '#placeholder': Email\n  '#required': true\n  '#type': email\n  '#attributes':\n    class:\n      - input-b-line\nsubject:\n  '#title': Subject\n  '#title_display': invisible\n  '#prefix': '<div class=\"col-md-12 m-bottom3\">'\n  '#suffix': '</div>'\n  '#placeholder': Subject\n  '#type': textfield\n  '#attributes':\n    class:\n      - input-b-line\nmessage:\n  '#title': Message\n  '#title_display': invisible\n  '#prefix': '<div class=\"col-md-12 m-bottom5\">'\n  '#suffix': '</div>'\n  '#rows': '3'\n  '#required': true\n  '#type': textarea\n  '#attributes':\n    placeholder:\n      - 'Your Message'\n"
+settings:
+  id: quick_contact
+  title: 'Quick contact'
+  description: 'Simple Form quick contact '
+  page: false
+  page_submit_path: ''
+  page_confirm_path: ''
+  form_closed_message: ''
+  form_exception_message: ''
+  form_submit_label: 'Send Message'
+  form_confidential: false
+  form_confidential_message: ''
+  form_prepopulate: false
+  wizard_progress_bar: true
+  wizard_progress_pages: false
+  wizard_progress_percentage: false
+  wizard_prev_button_label: ''
+  wizard_next_button_label: ''
+  wizard_complete: true
+  wizard_start_label: ''
+  wizard_complete_label: ''
+  preview: 0
+  preview_next_button_label: ''
+  preview_prev_button_label: ''
+  preview_message: ''
+  draft: false
+  draft_auto_save: false
+  draft_button_label: ''
+  draft_saved_message: ''
+  draft_loaded_message: ''
+  confirmation_type: inline
+  confirmation_message: 'Your message has been sent successfully. Thank you!'
+  confirmation_url: '#yamlform-submission-quick-contact-form'
+  limit_total: null
+  limit_total_message: ''
+  limit_user: null
+  limit_user_message: ''
+  results_disabled: false
+access:
+  create:
+    roles:
+      - anonymous
+      - authenticated
+    users: {  }
+  view_any:
+    roles: {  }
+    users: {  }
+  update_any:
+    roles: {  }
+    users: {  }
+  delete_any:
+    roles: {  }
+    users: {  }
+  purge_any:
+    roles: {  }
+    users: {  }
+  view_own:
+    roles: {  }
+    users: {  }
+  update_own:
+    roles: {  }
+    users: {  }
+  delete_own:
+    roles: {  }
+    users: {  }
+handlers: {  }

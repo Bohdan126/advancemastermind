@@ -1,0 +1,48 @@
+uuid: ddfc7859-7db0-46f3-bf2d-3f374e9ea543
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.home_page.body
+    - field.field.node.home_page.field_color_stylesheet
+    - field.field.node.home_page.field_footer_background_color
+    - field.field.node.home_page.field_footer_background_image
+    - field.field.node.home_page.field_footer_class
+    - field.field.node.home_page.field_footer_layout
+    - field.field.node.home_page.field_header_class
+    - field.field.node.home_page.field_header_layout
+    - field.field.node.home_page.field_logo
+    - field.field.node.home_page.field_topbar
+    - field.field.node.home_page.field_topbar_background_color
+    - field.field.node.home_page.field_topbar_class
+    - node.type.home_page
+  module:
+    - text
+    - user
+id: node.home_page.teaser
+targetEntityType: node
+bundle: home_page
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+  links:
+    weight: 100
+hidden:
+  field_color_stylesheet: true
+  field_footer_background_color: true
+  field_footer_background_image: true
+  field_footer_class: true
+  field_footer_layout: true
+  field_header_class: true
+  field_header_layout: true
+  field_logo: true
+  field_topbar: true
+  field_topbar_background_color: true
+  field_topbar_class: true

@@ -1,0 +1,14 @@
+uuid: 7018cd68-4130-4459-884f-a92d87606464
+langcode: en
+status: true
+dependencies: {  }
+name: image_54x54
+label: 'Image 54x54'
+effects:
+  d374a98a-d018-4c20-99ba-e8a6e0d43c86:
+    uuid: d374a98a-d018-4c20-99ba-e8a6e0d43c86
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 54
+      height: 54

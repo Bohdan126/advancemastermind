@@ -1,0 +1,17 @@
+uuid: 2ad92ff4-8dda-44a4-9e2f-3283d33aec0a
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+id: home_business_1
+label: 'Home business 1'
+logic: and
+conditions:
+  edd623a5-d39d-467c-8d24-2db7bfc420cd:
+    id: request_path
+    pages: /node/51
+    negate: false
+    context_mapping: {  }
+    uuid: edd623a5-d39d-467c-8d24-2db7bfc420cd
+allow_other_conditions: false

@@ -1,0 +1,34 @@
+uuid: 317890ef-d976-49b6-85a4-3eaa991d6f83
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_visibility_groups.block_visibility_group.home1
+    - views.view._probes_block_section
+  module:
+    - block_visibility_groups
+    - views
+  theme:
+    - probes
+id: views_block___probes_block_section_block_best_brand_solutions_2
+theme: probes
+region: section
+weight: -13
+provider: null
+plugin: 'views_block:_probes_block_section-block_best_brand_solutions'
+settings:
+  id: 'views_block:_probes_block_section-block_best_brand_solutions'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+  items_per_page: none
+  attributes:
+    class: m-top5
+    id: ''
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: home1
+    context_mapping: {  }

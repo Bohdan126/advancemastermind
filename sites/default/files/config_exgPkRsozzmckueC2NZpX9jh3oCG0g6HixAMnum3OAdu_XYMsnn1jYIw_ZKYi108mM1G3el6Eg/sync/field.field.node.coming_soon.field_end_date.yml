@@ -1,0 +1,21 @@
+uuid: 6a01d6d1-824a-468d-93e9-1f08450d995d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_end_date
+    - node.type.coming_soon
+  module:
+    - datetime
+id: node.coming_soon.field_end_date
+field_name: field_end_date
+entity_type: node
+bundle: coming_soon
+label: 'End date'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

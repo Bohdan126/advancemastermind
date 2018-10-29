@@ -1,0 +1,22 @@
+uuid: c5948a55-43c2-40c4-bfb8-6a5ce26fd6cb
+langcode: en
+status: false
+dependencies:
+  module:
+    - system
+  theme:
+    - probes
+_core:
+  default_config_hash: oXUb3JZR2WW5VOdw4HrhRicCsq51mCgLfRyvheG68ck
+id: probes_breadcrumbs
+theme: probes
+region: '-1'
+weight: -15
+provider: null
+plugin: system_breadcrumb_block
+settings:
+  id: system_breadcrumb_block
+  label: Breadcrumbs
+  provider: system
+  label_display: '0'
+visibility: {  }

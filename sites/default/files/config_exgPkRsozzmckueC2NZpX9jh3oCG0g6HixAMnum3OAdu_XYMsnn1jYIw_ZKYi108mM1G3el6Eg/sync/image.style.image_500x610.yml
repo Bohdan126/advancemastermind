@@ -1,0 +1,14 @@
+uuid: 30a8c05c-ff29-49a6-966b-a464528edc05
+langcode: en
+status: true
+dependencies: {  }
+name: image_500x610
+label: 'Image 500x610'
+effects:
+  b79455a9-ddd6-486b-b72c-b9d33eee10d2:
+    uuid: b79455a9-ddd6-486b-b72c-b9d33eee10d2
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 500
+      height: 610

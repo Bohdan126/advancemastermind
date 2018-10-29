@@ -1,0 +1,33 @@
+uuid: ceacd52a-e796-4f55-b268-4d817d58adad
+langcode: en
+status: false
+dependencies:
+  config:
+    - views.view._probes_portfolio
+  module:
+    - system
+    - views
+  theme:
+    - probes
+id: views_block___probes_portfolio_block_latest_works_grid_style1
+theme: probes
+region: '-1'
+weight: 1
+provider: null
+plugin: 'views_block:_probes_portfolio-block_latest_works_grid_style1'
+settings:
+  id: 'views_block:_probes_portfolio-block_latest_works_grid_style1'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+  items_per_page: none
+  attributes:
+    class: m-top6
+    id: ''
+visibility:
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: false
+    context_mapping: {  }

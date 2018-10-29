@@ -1,0 +1,74 @@
+uuid: aa88158c-993c-48ed-b771-7d3132713538
+langcode: en
+status: true
+dependencies: {  }
+id: contact_us
+title: 'Contact us'
+description: 'Contact Form for page contact '
+elements: "formheader:\n  '#markup': '<h2 class=\"uppercase m-bottom2\">send us a message</h2>'\n  '#type': markup\nname:\n  '#title': Name\n  '#title_display': before\n  '#prefix': '<div class=\"row\"><section class=\"col col-6\">'\n  '#suffix': '<i class=\"icon-append fa fa-user\"></i></section>'\n  '#required': true\n  '#type': textfield\nemail:\n  '#title': Email\n  '#title_display': before\n  '#prefix': '<section class=\"col col-6\">'\n  '#suffix': '<i class=\"icon-append fa fa-envelope-o\"></i></section></div>'\n  '#required': true\n  '#type': email\nsubject:\n  '#title': Subject\n  '#title_display': before\n  '#prefix': '<section>'\n  '#suffix': '<i class=\"icon-append fa fa-tags\"></i></section>'\n  '#type': textfield\nmessage:\n  '#title': Message\n  '#title_display': before\n  '#prefix': '<section>'\n  '#suffix': '<i class=\"icon-append fa fa-comment\"></i></section>'\n  '#rows': '3'\n  '#required': true\n  '#type': textarea\n"
+settings:
+  id: contact_us
+  title: 'Contact us'
+  description: 'Contact Form for page contact '
+  page: false
+  page_submit_path: ''
+  page_confirm_path: ''
+  form_closed_message: ''
+  form_exception_message: ''
+  form_submit_label: 'Send message'
+  form_confidential: false
+  form_confidential_message: ''
+  form_prepopulate: false
+  wizard_progress_bar: true
+  wizard_progress_pages: false
+  wizard_progress_percentage: false
+  wizard_prev_button_label: ''
+  wizard_next_button_label: ''
+  wizard_complete: true
+  wizard_start_label: ''
+  wizard_complete_label: ''
+  preview: 0
+  preview_next_button_label: ''
+  preview_prev_button_label: ''
+  preview_message: ''
+  draft: false
+  draft_auto_save: false
+  draft_button_label: ''
+  draft_saved_message: ''
+  draft_loaded_message: ''
+  confirmation_type: inline
+  confirmation_message: 'Your message has been sent successfully. Thank you!'
+  confirmation_url: '#yamlform-submission-quick-contact-form'
+  limit_total: null
+  limit_total_message: ''
+  limit_user: null
+  limit_user_message: ''
+  results_disabled: false
+access:
+  create:
+    roles:
+      - anonymous
+      - authenticated
+    users: {  }
+  view_any:
+    roles: {  }
+    users: {  }
+  update_any:
+    roles: {  }
+    users: {  }
+  delete_any:
+    roles: {  }
+    users: {  }
+  purge_any:
+    roles: {  }
+    users: {  }
+  view_own:
+    roles: {  }
+    users: {  }
+  update_own:
+    roles: {  }
+    users: {  }
+  delete_own:
+    roles: {  }
+    users: {  }
+handlers: {  }

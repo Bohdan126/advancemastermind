@@ -1,0 +1,17 @@
+uuid: 0ce1c3c1-423c-4c4a-baf2-94b6f539e7c1
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+id: home_education
+label: 'Home education'
+logic: and
+conditions:
+  03f98874-670b-4480-91de-6c6ee6b28634:
+    id: request_path
+    pages: /node/127
+    negate: false
+    context_mapping: {  }
+    uuid: 03f98874-670b-4480-91de-6c6ee6b28634
+allow_other_conditions: false

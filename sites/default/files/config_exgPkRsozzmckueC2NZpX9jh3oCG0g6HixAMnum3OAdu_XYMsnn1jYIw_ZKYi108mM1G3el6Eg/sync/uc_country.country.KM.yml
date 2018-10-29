@@ -1,0 +1,21 @@
+uuid: 87c1d12c-bfaf-482c-aadb-a78e144e82f7
+langcode: en
+status: false
+dependencies: {  }
+_core:
+  default_config_hash: erdZ6jijr-9DT6BsYLh4zx0_PUE-pgWakwpC3vdQcOk
+name: Comoros
+alpha_2: KM
+alpha_3: COM
+numeric: 174
+zones:
+  A: Anjouan
+  G: 'Grande Comore'
+  M: Moheli
+address_format:
+  - '!company'
+  - '!first_name !last_name'
+  - '!street1'
+  - '!street2'
+  - '!city, !zone_name  !postal_code'
+  - '!country_name_if'

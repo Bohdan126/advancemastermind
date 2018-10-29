@@ -1,0 +1,14 @@
+uuid: 3ebf4d21-c933-41ac-bc74-ccfc50abfee1
+langcode: en
+status: true
+dependencies: {  }
+name: image_100x100
+label: 'Image 100x100'
+effects:
+  71c0d826-6ecb-40ce-8654-eb972267cde5:
+    uuid: 71c0d826-6ecb-40ce-8654-eb972267cde5
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 100
+      height: 100

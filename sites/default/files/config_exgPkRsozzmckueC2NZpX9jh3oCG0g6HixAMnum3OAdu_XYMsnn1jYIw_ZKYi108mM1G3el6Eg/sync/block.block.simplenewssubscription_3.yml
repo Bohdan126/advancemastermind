@@ -1,0 +1,50 @@
+uuid: 2b3d67ea-f1c1-4ec1-a2ca-a50590c22aae
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_visibility_groups.block_visibility_group.home_real_estate
+  module:
+    - block_attributes
+    - block_visibility_groups
+    - ntv_block_background
+    - simplenews
+  theme:
+    - probes
+third_party_settings:
+  block_attributes:
+    attr_class: ''
+    attr_id: ''
+  ntv_block_background:
+    disable: disable
+    color: '#000000'
+    bg_image: {  }
+    bg_image_type: default
+    bg_repeat: 'no'
+    bg_image_position: ''
+    bg_image_size: ''
+    background_overlay: ''
+id: simplenewssubscription_3
+theme: probes
+region: footer
+weight: null
+provider: null
+plugin: simplenews_subscription_block
+settings:
+  id: simplenews_subscription_block
+  label: Newsletter
+  provider: simplenews
+  label_display: visible
+  newsletters:
+    newsletter_form_footer: newsletter_form_footer
+  message: 'Pellentesque mi purus, eleifend sedt commodo vel, sagittis elts vestib.'
+  unique_id: 1b91d009-b142-45bf-b11e-46696b845920
+  attributes:
+    class: 'col-md-3 col-sm-12 m-bottom3'
+    id: ''
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: home_real_estate
+    context_mapping: {  }

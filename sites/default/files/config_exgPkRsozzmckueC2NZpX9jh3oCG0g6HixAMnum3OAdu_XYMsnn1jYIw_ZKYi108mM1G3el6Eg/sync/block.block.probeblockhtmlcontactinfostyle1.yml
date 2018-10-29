@@ -1,0 +1,51 @@
+uuid: 3c39e79d-d92a-4403-9be6-bdd63d1dfb35
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_visibility_groups.block_visibility_group.home_real_estate
+  content:
+    - 'block_content:basic:3e9bd9e6-e8cd-4a18-b2e0-409f7ec96676'
+  module:
+    - block_attributes
+    - block_content
+    - block_visibility_groups
+    - ntv_block_background
+  theme:
+    - probes
+third_party_settings:
+  block_attributes:
+    attr_class: ''
+    attr_id: ''
+  ntv_block_background:
+    disable: disable
+    color: '#000000'
+    bg_image: {  }
+    bg_image_type: default
+    bg_repeat: 'no'
+    bg_image_position: ''
+    bg_image_size: ''
+    background_overlay: ''
+id: probeblockhtmlcontactinfostyle1
+theme: probes
+region: section
+weight: -11
+provider: null
+plugin: 'block_content:3e9bd9e6-e8cd-4a18-b2e0-409f7ec96676'
+settings:
+  id: 'block_content:3e9bd9e6-e8cd-4a18-b2e0-409f7ec96676'
+  label: '[Probe] Block HTML contact info style1'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+  attributes:
+    class: m-top0
+    id: ''
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: home_real_estate
+    context_mapping: {  }

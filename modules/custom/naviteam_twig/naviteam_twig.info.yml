@@ -1,0 +1,7 @@
+name: NaviTeam Twig Module
+description: Create the filter extension for twig
+package: NaviTeam
+
+type: module
+core: 8.x
+version: VERSION

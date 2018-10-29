@@ -1,0 +1,14 @@
+uuid: fdb08084-8d82-4bb8-a9ca-2e41b7297a34
+langcode: en
+status: true
+dependencies: {  }
+name: image_540x400
+label: 'Image 540x400'
+effects:
+  3397c329-32ed-4d21-be22-7e30c53c4e27:
+    uuid: 3397c329-32ed-4d21-be22-7e30c53c4e27
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 540
+      height: 400

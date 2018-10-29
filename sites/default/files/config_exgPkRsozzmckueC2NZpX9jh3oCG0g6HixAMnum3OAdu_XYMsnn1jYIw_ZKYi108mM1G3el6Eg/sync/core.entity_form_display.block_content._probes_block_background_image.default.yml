@@ -1,0 +1,40 @@
+uuid: 50c63608-7fc5-4231-bccd-730205e4491d
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type._probes_block_background_image
+    - field.field.block_content._probes_block_background_image.body
+    - field.field.block_content._probes_block_background_image.field_image_background
+    - image.style.thumbnail
+  module:
+    - image
+    - text
+id: block_content._probes_block_background_image.default
+targetEntityType: block_content
+bundle: _probes_block_background_image
+mode: default
+content:
+  body:
+    type: text_textarea_with_summary
+    weight: 2
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+    third_party_settings: {  }
+  field_image_background:
+    weight: 1
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+  info:
+    type: string_textfield
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden: {  }

@@ -1,0 +1,33 @@
+uuid: d4f211d0-ba94-4694-9b49-fb85f0d8d71c
+langcode: en
+status: false
+dependencies:
+  config:
+    - views.view._probes_block_section
+  module:
+    - system
+    - views
+  theme:
+    - probes
+id: views_block___probes_block_section_block_clients_style1
+theme: probes
+region: '-1'
+weight: -3
+provider: null
+plugin: 'views_block:_probes_block_section-block_clients_style1'
+settings:
+  id: 'views_block:_probes_block_section-block_clients_style1'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+  items_per_page: none
+  attributes:
+    class: m-top8
+    id: ''
+visibility:
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: false
+    context_mapping: {  }

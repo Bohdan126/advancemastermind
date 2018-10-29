@@ -1,0 +1,17 @@
+uuid: 8ddafbea-6a54-45f7-83b6-e09a9e6f449a
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+id: home_creative
+label: 'Home creative'
+logic: and
+conditions:
+  77b42af1-eada-457b-8284-7adaf44f89e3:
+    id: request_path
+    pages: /node/69
+    negate: false
+    context_mapping: {  }
+    uuid: 77b42af1-eada-457b-8284-7adaf44f89e3
+allow_other_conditions: false

@@ -1,0 +1,51 @@
+uuid: 8689a633-01be-479d-a056-7ced5ae85071
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_visibility_groups.block_visibility_group.home_restaurant
+  content:
+    - 'block_content:basic:ce190122-502e-43d0-9963-424fccc7ae03'
+  module:
+    - block_attributes
+    - block_content
+    - block_visibility_groups
+    - ntv_block_background
+  theme:
+    - probes
+third_party_settings:
+  block_attributes:
+    attr_class: ''
+    attr_id: ''
+  ntv_block_background:
+    disable: disable
+    color: '#000000'
+    bg_image: {  }
+    bg_image_type: default
+    bg_repeat: 'no'
+    bg_image_position: ''
+    bg_image_size: ''
+    background_overlay: ''
+id: probesblockwelcomerestaurant
+theme: probes
+region: section
+weight: -16
+provider: null
+plugin: 'block_content:ce190122-502e-43d0-9963-424fccc7ae03'
+settings:
+  id: 'block_content:ce190122-502e-43d0-9963-424fccc7ae03'
+  label: '[Probes] Block welcome restaurant'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+  attributes:
+    class: ''
+    id: ''
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: home_restaurant
+    context_mapping: {  }

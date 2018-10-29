@@ -1,0 +1,91 @@
+uuid: 3c8cd91d-6750-4dac-b787-3c79b38a3f7d
+langcode: en
+status: false
+dependencies: {  }
+_core:
+  default_config_hash: ag2A0sm-jbBhfXfrAETxPeSDVZ_PButUn9iBsuvtYNY
+id: template_registration
+title: 'Template: Registration'
+description: 'A registration form template.'
+elements: "personal_information:\n  '#title': 'Your Personal Information'\n  '#type': details\n  '#open': true\n  first_name:\n    '#title': 'First Name'\n    '#type': textfield\n    '#required': true\n  last_name:\n    '#title': 'Last Name'\n    '#type': textfield\n    '#required': true\n  dob:\n    '#title': 'Date of Birth'\n    '#type': 'date'\n    '#date_format': 'l, F j, Y'\n  url:\n    '#title': URL\n    '#type': url\ncontact_information:\n  '#title': 'Your Contact Information'\n  '#type': details\n  '#open': true\n  email:\n    '#title': Email\n    '#type': email\n    '#required': true\n  phone:\n    '#title': Phone\n    '#type': tel\n    '#required': true\n  address:\n    '#title': Address/Apt\n    '#type': textfield\n    '#required': true\n  city:\n    '#title': City\n    '#type': textfield\n    '#required': true\n  state_province:\n    '#title': 'State/Province'\n    '#type': select\n    '#options': state_province_names\n    '#required': true\n  zip_code:\n    '#title': 'Zip / Country Code'\n    '#type': textfield\n    '#required': true\n  country:\n    '#title': 'Country'\n    '#type': select\n    '#options': country_names\n    '#required': true\nmailinglist:\n  '#title': 'Mailing List'\n  '#type': details\n  '#open': true\n  subscribe:\n    '#title': 'Please subscribe me to your mailing list.'\n    '#type': checkbox\nadditional_information:\n  '#title': 'Additional Information'\n  '#type': details\n  '#open': true\n  notes:\n    '#title': 'Comments'\n    '#type': textarea\n"
+settings:
+  page: true
+  page_submit_path: ''
+  page_confirm_path: ''
+  form_closed_message: ''
+  form_exception_message: ''
+  form_submit_label: Register
+  form_prepopulate: false
+  form_confidential: false
+  form_confidential_message: ''
+  wizard_progress_bar: true
+  wizard_progress_pages: false
+  wizard_progress_percentage: false
+  wizard_next_button_label: ''
+  wizard_prev_button_label: ''
+  wizard_start_label: ''
+  wizard_complete: true
+  wizard_complete_label: ''
+  preview: 0
+  preview_next_button_label: ''
+  preview_prev_button_label: ''
+  preview_message: ''
+  draft: false
+  draft_auto_save: false
+  draft_button_label: ''
+  draft_saved_message: ''
+  draft_loaded_message: ''
+  confirmation_type: page
+  confirmation_message: 'Thank you for registering.'
+  confirmation_url: ''
+  limit_total: null
+  limit_total_message: ''
+  limit_user: null
+  limit_user_message: ''
+  results_disabled: false
+access:
+  create:
+    roles:
+      - anonymous
+      - authenticated
+    users: {  }
+  view_any:
+    roles: {  }
+    users: {  }
+  update_any:
+    roles: {  }
+    users: {  }
+  delete_any:
+    roles: {  }
+    users: {  }
+  purge_any:
+    roles: {  }
+    users: {  }
+  view_own:
+    roles: {  }
+    users: {  }
+  update_own:
+    roles: {  }
+    users: {  }
+  delete_own:
+    roles: {  }
+    users: {  }
+handlers:
+  email_notification:
+    id: email
+    label: 'Email Notification'
+    handler_id: email_notification
+    status: true
+    weight: 1
+    settings:
+      to_mail: default
+      cc_mail: ''
+      bcc_mail: ''
+      from_mail: '[yamlform-submission:values:email:value]'
+      from_name: '[yamlform-submission:values:first_name] [yamlform-submission:values:last_name]'
+      subject: default
+      body: default
+      excluded_elements: {  }
+      html: true
+      attachments: false
+      debug: false

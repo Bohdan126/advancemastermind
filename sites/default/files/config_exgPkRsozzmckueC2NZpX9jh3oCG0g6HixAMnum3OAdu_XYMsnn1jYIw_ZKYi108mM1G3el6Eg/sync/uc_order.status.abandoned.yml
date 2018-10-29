@@ -1,0 +1,11 @@
+uuid: 774b5949-56f7-407f-bc01-1d03f64b9a46
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: YpjVW83kbB-oqR3DcnJvZNwpLVGj8BxDZXIaB82W4YI
+id: abandoned
+name: Abandoned
+state: canceled
+weight: -30
+locked: true

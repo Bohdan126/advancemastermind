@@ -1,0 +1,81 @@
+uuid: 7ff696be-d200-4043-898b-efe2502459ad
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.real_estate.body
+    - field.field.node.real_estate.field_bathroom
+    - field.field.node.real_estate.field_bedroom
+    - field.field.node.real_estate.field_city
+    - field.field.node.real_estate.field_images
+    - field.field.node.real_estate.field_parking
+    - field.field.node.real_estate.field_price
+    - field.field.node.real_estate.field_property_type
+    - node.type.real_estate
+  module:
+    - image
+    - options
+    - text
+    - user
+id: node.real_estate.default
+targetEntityType: node
+bundle: real_estate
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 101
+    settings: {  }
+    third_party_settings: {  }
+  field_bathroom:
+    weight: 104
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+  field_bedroom:
+    weight: 103
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+  field_city:
+    weight: 106
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+  field_images:
+    weight: 107
+    label: above
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+  field_parking:
+    weight: 105
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+  field_price:
+    weight: 108
+    label: above
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_decimal
+  field_property_type:
+    weight: 102
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+  links:
+    weight: 100
+hidden: {  }

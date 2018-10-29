@@ -1,0 +1,14 @@
+uuid: 9cf69740-5980-4e94-8552-8cbca8bc0da1
+langcode: en
+status: true
+dependencies: {  }
+name: image_700x600
+label: 'Image 700x600'
+effects:
+  f757468b-a0b2-4b64-8468-acde2143e811:
+    uuid: f757468b-a0b2-4b64-8468-acde2143e811
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 700
+      height: 600

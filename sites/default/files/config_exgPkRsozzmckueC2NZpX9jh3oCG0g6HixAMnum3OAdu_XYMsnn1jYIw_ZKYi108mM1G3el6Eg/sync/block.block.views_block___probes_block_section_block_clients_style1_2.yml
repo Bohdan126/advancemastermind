@@ -1,0 +1,34 @@
+uuid: f7c197f3-d9e5-411a-ba5f-855b01dd87bf
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_visibility_groups.block_visibility_group.home1
+    - views.view._probes_block_section
+  module:
+    - block_visibility_groups
+    - views
+  theme:
+    - probes
+id: views_block___probes_block_section_block_clients_style1_2
+theme: probes
+region: section
+weight: -8
+provider: null
+plugin: 'views_block:_probes_block_section-block_clients_style1'
+settings:
+  id: 'views_block:_probes_block_section-block_clients_style1'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+  items_per_page: none
+  attributes:
+    class: m-top8
+    id: ''
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: home1
+    context_mapping: {  }

@@ -1,0 +1,51 @@
+uuid: 02de6805-c462-48a2-9d67-d6e8651825c3
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_visibility_groups.block_visibility_group.home_wedding
+  content:
+    - 'block_content:basic:782c6b42-b8fd-4369-8b93-eb573ccaef43'
+  module:
+    - block_attributes
+    - block_content
+    - block_visibility_groups
+    - ntv_block_background
+  theme:
+    - probes
+third_party_settings:
+  block_attributes:
+    attr_class: ''
+    attr_id: ''
+  ntv_block_background:
+    disable: disable
+    color: '#000000'
+    bg_image: {  }
+    bg_image_type: default
+    bg_repeat: 'no'
+    bg_image_position: ''
+    bg_image_size: ''
+    background_overlay: ''
+id: probesblockfootercontactinfostyle1_3
+theme: probes
+region: footer2
+weight: -15
+provider: null
+plugin: 'block_content:782c6b42-b8fd-4369-8b93-eb573ccaef43'
+settings:
+  id: 'block_content:782c6b42-b8fd-4369-8b93-eb573ccaef43'
+  label: '[Probes] Block footer contact info style1'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+  attributes:
+    class: 'col-md-4 col-sm-5 m-bottom4'
+    id: ''
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: home_wedding
+    context_mapping: {  }

@@ -1,0 +1,14 @@
+uuid: 44ca9044-4ed0-419d-9d00-6bb245d74d54
+langcode: en
+status: true
+dependencies: {  }
+name: image_84x84
+label: 'Image 84x84'
+effects:
+  9b9b923b-50b2-4ee4-a50c-cdba67d30995:
+    uuid: 9b9b923b-50b2-4ee4-a50c-cdba67d30995
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 84
+      height: 84

@@ -1,0 +1,51 @@
+uuid: c8b900c9-766e-4055-b3ea-295642c04ee6
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_visibility_groups.block_visibility_group.home_app_showcase
+  content:
+    - 'block_content:basic:ea5cfb6d-1f2a-4d7f-91c2-7a78964db65e'
+  module:
+    - block_attributes
+    - block_content
+    - block_visibility_groups
+    - ntv_block_background
+  theme:
+    - probes
+third_party_settings:
+  block_attributes:
+    attr_class: ''
+    attr_id: ''
+  ntv_block_background:
+    disable: disable
+    color: '#000000'
+    bg_image: {  }
+    bg_image_type: default
+    bg_repeat: 'no'
+    bg_image_position: ''
+    bg_image_size: ''
+    background_overlay: ''
+id: probesblocktableprice3_3
+theme: probes
+region: section
+weight: -10
+provider: null
+plugin: 'block_content:ea5cfb6d-1f2a-4d7f-91c2-7a78964db65e'
+settings:
+  id: 'block_content:ea5cfb6d-1f2a-4d7f-91c2-7a78964db65e'
+  label: '[Probes] Block table price 3'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+  attributes:
+    class: ''
+    id: ''
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: home_app_showcase
+    context_mapping: {  }

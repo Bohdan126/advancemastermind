@@ -1,0 +1,53 @@
+uuid: c18c0929-9166-4477-a1de-4e2e3ab52e40
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_visibility_groups.block_visibility_group.products_search
+  content:
+    - 'block_content:basic:3856dd9f-e58b-4220-a75a-a9d57932e404'
+  module:
+    - block_attributes
+    - block_content
+    - block_visibility_groups
+    - ntv_block_background
+  theme:
+    - probes
+third_party_settings:
+  block_attributes:
+    attr_class: ''
+    attr_id: ''
+    block_title: ''
+    block_title_icon: ''
+  ntv_block_background:
+    disable: disable
+    color: '#000000'
+    bg_image: {  }
+    bg_image_type: default
+    bg_repeat: 'no'
+    bg_image_position: ''
+    bg_image_size: ''
+    background_overlay: ''
+id: probesblocksectionshopcalltoaction_4
+theme: probes
+region: section
+weight: null
+provider: null
+plugin: 'block_content:3856dd9f-e58b-4220-a75a-a9d57932e404'
+settings:
+  id: 'block_content:3856dd9f-e58b-4220-a75a-a9d57932e404'
+  label: '[Probes] Block section shop call to action'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+  attributes:
+    class: four
+    id: ''
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: products_search
+    context_mapping: {  }

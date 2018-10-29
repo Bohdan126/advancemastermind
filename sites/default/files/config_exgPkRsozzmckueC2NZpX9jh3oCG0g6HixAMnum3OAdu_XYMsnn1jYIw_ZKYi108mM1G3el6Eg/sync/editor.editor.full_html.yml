@@ -1,0 +1,13 @@
+uuid: 21a550b3-d48b-49f6-96ad-35c08d6a094a
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.full_html
+  module:
+    - bueditor
+format: full_html
+editor: bueditor
+settings:
+  default_editor: basic_html
+image_upload: {  }

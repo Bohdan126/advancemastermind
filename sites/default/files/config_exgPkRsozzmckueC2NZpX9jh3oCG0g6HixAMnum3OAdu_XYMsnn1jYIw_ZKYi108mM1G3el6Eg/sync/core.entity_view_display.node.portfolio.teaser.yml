@@ -1,0 +1,32 @@
+uuid: 4e060f26-e7e9-45cd-96bc-cd4faa50c9e8
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.portfolio.body
+    - field.field.node.portfolio.field_client
+    - field.field.node.portfolio.field_images
+    - field.field.node.portfolio.field_portfolio_categories
+    - node.type.portfolio
+  module:
+    - text
+    - user
+id: node.portfolio.teaser
+targetEntityType: node
+bundle: portfolio
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+  links:
+    weight: 100
+hidden:
+  field_client: true
+  field_images: true
+  field_portfolio_categories: true

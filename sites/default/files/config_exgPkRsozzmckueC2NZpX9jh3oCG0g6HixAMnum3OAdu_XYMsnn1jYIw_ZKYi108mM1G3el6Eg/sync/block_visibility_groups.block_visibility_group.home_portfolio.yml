@@ -1,0 +1,17 @@
+uuid: 776395e4-6798-42d6-9a55-8d156fad782e
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+id: home_portfolio
+label: 'Home portfolio'
+logic: and
+conditions:
+  22bca6ef-babb-4c3f-8a73-8e5cbf90b732:
+    id: request_path
+    pages: /node/72
+    negate: false
+    context_mapping: {  }
+    uuid: 22bca6ef-babb-4c3f-8a73-8e5cbf90b732
+allow_other_conditions: false

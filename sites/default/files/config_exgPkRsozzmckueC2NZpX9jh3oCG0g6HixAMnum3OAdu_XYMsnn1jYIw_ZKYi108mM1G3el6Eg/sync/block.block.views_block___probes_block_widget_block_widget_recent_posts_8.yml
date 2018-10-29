@@ -1,0 +1,50 @@
+uuid: 7147d9cc-ac59-431c-9864-c6edf13a9341
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_visibility_groups.block_visibility_group.coming_soon_
+    - views.view._probes_block_widget
+  module:
+    - block_attributes
+    - block_visibility_groups
+    - ntv_block_background
+    - views
+  theme:
+    - probes
+third_party_settings:
+  block_attributes:
+    attr_class: ''
+    attr_id: ''
+    block_title_icon: ''
+  ntv_block_background:
+    disable: disable
+    color: '#000000'
+    bg_image: {  }
+    bg_image_type: default
+    bg_repeat: 'no'
+    bg_image_position: ''
+    bg_image_size: ''
+    background_overlay: ''
+id: views_block___probes_block_widget_block_widget_recent_posts_8
+theme: probes
+region: footer
+weight: -12
+provider: null
+plugin: 'views_block:_probes_block_widget-block_widget_recent_posts'
+settings:
+  id: 'views_block:_probes_block_widget-block_widget_recent_posts'
+  label: 'Recent Posts'
+  provider: views
+  label_display: visible
+  views_label: 'Recent Posts'
+  items_per_page: none
+  attributes:
+    class: 'col-md-3 col-sm-12 m-bottom3'
+    id: ''
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: coming_soon_
+    context_mapping: {  }

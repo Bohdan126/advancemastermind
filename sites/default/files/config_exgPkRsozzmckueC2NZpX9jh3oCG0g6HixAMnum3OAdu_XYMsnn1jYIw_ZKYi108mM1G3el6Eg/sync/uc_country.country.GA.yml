@@ -1,0 +1,27 @@
+uuid: 6e504d60-2408-4834-a570-309868e7bf8b
+langcode: en
+status: false
+dependencies: {  }
+_core:
+  default_config_hash: RUe6ET9foOq7I5Dz6zqXvKxgprUOJOHIpcS_uwqvmlI
+name: Gabon
+alpha_2: GA
+alpha_3: GAB
+numeric: 266
+zones:
+  1: Estuaire
+  2: Haut-Ogooue
+  3: Moyen-Ogooue
+  4: Ngounie
+  5: Nyanga
+  6: Ogooue-Ivindo
+  7: OgoouE-Lolo
+  8: Ogooue-Maritime
+  9: Woleu-Ntem
+address_format:
+  - '!company'
+  - '!first_name !last_name'
+  - '!street1'
+  - '!street2'
+  - '!city, !zone_name  !postal_code'
+  - '!country_name_if'

@@ -1,0 +1,17 @@
+uuid: f30c92e5-754d-4304-aad1-2dfb1226ddcc
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+id: pricing_tables
+label: 'Pricing tables'
+logic: and
+conditions:
+  6135769f-b015-4c75-8e4b-7b2f839f603b:
+    id: request_path
+    pages: /node/200
+    negate: false
+    context_mapping: {  }
+    uuid: 6135769f-b015-4c75-8e4b-7b2f839f603b
+allow_other_conditions: false

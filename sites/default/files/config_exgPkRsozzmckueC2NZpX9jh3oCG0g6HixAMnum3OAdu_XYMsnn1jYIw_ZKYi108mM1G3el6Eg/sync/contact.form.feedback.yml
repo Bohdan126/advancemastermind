@@ -1,0 +1,13 @@
+uuid: 2043d657-09f7-409e-9461-2bd6e87fd007
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: c4zaT5cyPxuTXI6JOWt3qRtMvICT9tHB6d9a5VG-CmQ
+id: feedback
+label: 'Mastermind questions'
+recipients:
+  - steph@prospectcoaching.co.uk
+  - steve@flameconcepts.com
+reply: "Thanks for contacting us, we'll be back in touch shortly.\r\nMany thanks\r\nSteve & Steph"
+weight: 0

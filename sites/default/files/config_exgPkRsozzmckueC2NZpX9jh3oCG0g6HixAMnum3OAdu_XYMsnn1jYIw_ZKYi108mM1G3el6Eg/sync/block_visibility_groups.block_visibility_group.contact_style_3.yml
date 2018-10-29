@@ -1,0 +1,17 @@
+uuid: 37cfb22a-1ddc-4ad7-8a3b-0622f54bf574
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+id: contact_style_3
+label: 'Contact style 3'
+logic: and
+conditions:
+  ef08c2f0-3b0b-4127-9f82-203eeae8abc9:
+    id: request_path
+    pages: /node/173
+    negate: false
+    context_mapping: {  }
+    uuid: ef08c2f0-3b0b-4127-9f82-203eeae8abc9
+allow_other_conditions: false

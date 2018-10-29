@@ -1,0 +1,73 @@
+uuid: 9296c3fe-e4aa-4544-b0ea-add5f06b19f0
+langcode: en
+status: false
+dependencies: {  }
+_core:
+  default_config_hash: c1KlES7yhqwxcgGOCHvSPHKkPTBIRh_lVKHgzSW-kU0
+id: example_elements
+title: 'Example: Elements'
+description: 'Examples for every supported <a href="https://api.drupal.org/api/drupal/elements">form element</a>.'
+elements: "hidden:\n  '#type': hidden\n  '#title': 'hidden'\n  '#value': '{hidden}'\nvalue:\n  '#type': value\n  '#title': 'value'\n  '#value': '{value}'\nmarkup_elements:\n  '#type': details\n  '#title': 'Markup Elements'\n  '#open': true\n  item:\n    '#type': item\n    '#title': 'item'\n    '#markup': '{markup}'\n    '#prefix': '{prefix}'\n    '#suffix': '{suffix}'\n    '#field_prefix': '{field_prefix}'\n    '#field_suffix': '{field_suffix}'\n  markup:\n    '#markup': '<p>{markup}</p>'\n  processed_text:\n    '#format': 'plain_text'\n    '#text': '<p>{processed_text}</p>'\n    '#type': processed_text\n  label:\n    '#type': label\n    '#title': 'label'\n    '#required': true\n  container:\n    '#type': container\n    content:\n      '#markup': '<p>{container}</p>'\nstandard_elements:\n  '#type': details\n  '#title': 'Standard Elements'\n  '#open': true\n  textarea:\n    '#type': textarea\n    '#title': 'textarea'\n  textfield:\n    '#type': textfield\n    '#title': 'textfield'\n  password:\n    '#type': password\n    '#title': 'password'\n  select:\n    '#type': select\n    '#title': 'select'\n    '#options':\n      1: one\n      2: two\n      3: three\n  select_multiple:\n    '#type': select\n    '#title': 'select_multiple'\n    '#multiple': true\n    '#options':\n      1: one\n      2: two\n      3: three\n  checkbox:\n    '#type': checkbox\n    '#title': 'checkbox'\n  checkboxes:\n    '#type': checkboxes\n    '#title': 'checkboxes'\n    '#options':\n      1: one\n      2: two\n      3: three\n  radios:\n    '#type': radios\n    '#title': 'radios'\n    '#options':\n      Yes: Yes\n      No: No\nhtml5_elements:\n  '#type': details\n  '#title': 'HTML5 Elements'\n  '#open': true\n  email:\n    '#type': email\n    '#title': 'email'\n  number:\n    '#type': number\n    '#title': 'number'\n    '#min': 0\n    '#max': 10\n    '#step': 1\n  range:\n    '#type': range\n    '#title': 'range'\n    '#min': 0\n    '#max': 10\n    '#step': 1\n  tel:\n    '#type': tel\n    '#title': 'tel'\n  url:\n    '#type': url\n    '#title': 'url'\n  color:\n    '#type': color\n    '#title': 'color'\n  weight:\n    '#type': weight\n    '#title': 'weight'\ndate_elements:\n  '#type': details\n  '#title': 'Date Elements'\n  '#open': true\n  date:\n    '#type': date\n    '#title': 'date'\n    '#date_format': 'l, F j, Y'\n  datetime:\n    '#type': datetime\n    '#title': 'datetime'\n    '#date_format': 'l, F j, Y - g:i A'\n  datelist:\n    '#type': datelist\n    '#title': 'datelist'\n    '#date_part_order':\n      - month\n      - day\n      - year\n      - hour\n      - minute\n      - second\n      - ampm\n    '#date_format': 'l, F j, Y - g:i A'\ncustom_elements:\n  '#type': details\n  '#title': 'Custom Elements'\n  '#open': true\n  dollars:\n    '#type': number\n    '#title': 'dollars'\n    '#min': 0\n    '#step': 1\n    '#field_prefix': '$'\n    '#field_suffix': '.00'\n  ssn:\n    '#type': textfield\n    '#title': 'ssn'\n    '#pattern': '^\\d{3}-?\\d{2}-?\\d{4}$'\n    '#test': '123-45-6789'\n  alpha_numeric:\n    '#type': textfield\n    '#title': 'alpha_numeric'\n    '#pattern': '^[a-zA-Z0-9]+$'\n    '#test': 'alphanumeric'\n  emails:\n    '#type': textfield\n    '#title': 'emails'\n    '#pattern': '^([\\w+-.%]+@[\\w-.]+\\.[A-Za-z]{2,4}(,\\s*)?)+$'\n    '#test': 'example@example.com, test@test.com'\n  three_word:\n    '#type': textfield\n    '#title': 'three_word'\n    '#pattern': '^\\s*(\\S+\\s+){0,49}\\S*$'\n    '#test': 'one two three'\ndrupal_elements:\n  '#type': details\n  '#title': 'Drupal Elements'\n  '#open': true\n  text_format:\n    '#type': text_format\n    '#title': 'text_format'\n  managed_file:\n    '#type': managed_file\n    '#title': 'managed_file'\n  machine_name_label:\n    '#type': textfield\n    '#title': 'Label with machine name'\n    '#id': 'source'\n  machine_name:\n    '#type': machine_name\n    '#title': 'Machine name'\n    '#machine_name':\n       source:\n        - drupal_elements\n        - machine_name_label\n  entity_autocomplete_user:\n    '#type': entity_autocomplete\n    '#title': 'entity_autocomplete (user)'\n    '#target_type': 'user'\n    '#selection_settings':\n      'include_anonymous': false\n  entity_autocomplete_users:\n    '#type': entity_autocomplete\n    '#title': 'entity_autocomplete (user tags)'\n    '#tags': true\n    '#target_type': 'user'\n    '#selection_settings':\n      'include_anonymous': true\n  language_select:\n    '#type': language_select\n    '#title': 'language_select'\n    '#languages': 3\n  password_confirm:\n    '#type': password_confirm\n    '#title': 'password_confirm'\n  search:\n    '#type': search\n    '#title': 'Search'\n  tableselect:\n    '#type': tableselect\n    '#title': 'tableselect'\n    '#js_select': true\n    '#options':\n      1: one\n      2: two\n      3: three\n"
+settings:
+  page: true
+  page_submit_path: ''
+  page_confirm_path: ''
+  form_closed_message: ''
+  form_exception_message: ''
+  form_submit_label: ''
+  form_prepopulate: false
+  form_confidential: false
+  form_confidential_message: ''
+  wizard_progress_bar: true
+  wizard_progress_pages: false
+  wizard_progress_percentage: false
+  wizard_next_button_label: ''
+  wizard_prev_button_label: ''
+  wizard_start_label: ''
+  wizard_complete: true
+  wizard_complete_label: ''
+  preview: 0
+  preview_next_button_label: ''
+  preview_prev_button_label: ''
+  preview_message: ''
+  draft: false
+  draft_auto_save: false
+  draft_button_label: ''
+  draft_saved_message: ''
+  draft_loaded_message: ''
+  confirmation_type: page
+  confirmation_message: ''
+  confirmation_url: ''
+  limit_total: null
+  limit_total_message: ''
+  limit_user: null
+  limit_user_message: ''
+  results_disabled: false
+access:
+  create:
+    roles:
+      - anonymous
+      - authenticated
+    users: {  }
+  view_any:
+    roles: {  }
+    users: {  }
+  update_any:
+    roles: {  }
+    users: {  }
+  delete_any:
+    roles: {  }
+    users: {  }
+  purge_any:
+    roles: {  }
+    users: {  }
+  view_own:
+    roles: {  }
+    users: {  }
+  update_own:
+    roles: {  }
+    users: {  }
+  delete_own:
+    roles: {  }
+    users: {  }
+handlers: {  }

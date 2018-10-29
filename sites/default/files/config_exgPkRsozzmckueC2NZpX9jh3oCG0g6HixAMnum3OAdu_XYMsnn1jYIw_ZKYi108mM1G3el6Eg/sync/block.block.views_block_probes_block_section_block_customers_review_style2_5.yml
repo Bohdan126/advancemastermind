@@ -1,0 +1,51 @@
+uuid: 1f4ccf66-1d72-460d-ab38-05c4c24ed06c
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_visibility_groups.block_visibility_group.services_style_1
+    - views.view._probes_block_section
+  module:
+    - block_attributes
+    - block_visibility_groups
+    - ntv_block_background
+    - views
+  theme:
+    - probes
+third_party_settings:
+  block_attributes:
+    attr_class: ''
+    attr_id: ''
+    block_title_icon: ''
+  ntv_block_background:
+    disable: enable
+    color: '#000000'
+    bg_image:
+      - 317
+    bg_image_type: fixed
+    bg_repeat: 'yes'
+    bg_image_position: 'center top'
+    bg_image_size: cover
+    background_overlay: ''
+id: views_block_probes_block_section_block_customers_review_style2_5
+theme: probes
+region: section
+weight: -9
+provider: null
+plugin: 'views_block:_probes_block_section-block_customers_review_style2'
+settings:
+  id: 'views_block:_probes_block_section-block_customers_review_style2'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+  items_per_page: none
+  attributes:
+    class: 'section-lg-1 bg-parallax8'
+    id: ''
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: services_style_1
+    context_mapping: {  }

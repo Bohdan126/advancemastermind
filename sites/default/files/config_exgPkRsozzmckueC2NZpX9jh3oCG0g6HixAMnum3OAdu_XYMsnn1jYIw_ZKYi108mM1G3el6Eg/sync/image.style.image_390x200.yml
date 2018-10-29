@@ -1,0 +1,14 @@
+uuid: 8d808bbb-8e77-411b-b431-2b6cec35e029
+langcode: en
+status: true
+dependencies: {  }
+name: image_390x200
+label: 'Image 390x200'
+effects:
+  fdb9f5df-c938-4608-b604-c19bdcb170df:
+    uuid: fdb9f5df-c938-4608-b604-c19bdcb170df
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 390
+      height: 200

@@ -1,0 +1,21 @@
+uuid: 01eeff6f-97af-4fe5-a0a3-9a3e4cae1876
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_bedroom
+    - node.type.real_estate
+  module:
+    - options
+id: node.real_estate.field_bedroom
+field_name: field_bedroom
+entity_type: node
+bundle: real_estate
+label: Bedroom
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

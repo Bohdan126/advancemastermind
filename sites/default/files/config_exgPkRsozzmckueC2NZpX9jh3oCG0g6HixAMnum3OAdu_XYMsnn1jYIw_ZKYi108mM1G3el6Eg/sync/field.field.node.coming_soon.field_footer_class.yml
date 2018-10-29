@@ -1,0 +1,19 @@
+uuid: ad0ba2b1-6735-4b6f-9db7-ff5f67dfe532
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_footer_class
+    - node.type.coming_soon
+id: node.coming_soon.field_footer_class
+field_name: field_footer_class
+entity_type: node
+bundle: coming_soon
+label: 'Footer class'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

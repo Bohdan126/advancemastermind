@@ -1,0 +1,91 @@
+uuid: b3437bbc-9499-402d-a7d6-41070eef4563
+langcode: en
+status: false
+dependencies: {  }
+_core:
+  default_config_hash: G6lCfDAVKOjYn0wnv_7NNPonvUdKiN0i_cSpcW0uMGo
+id: template_job_application
+title: 'Template: Job application'
+description: 'A job application form template.'
+elements: "information:\n  '#title': 'Your Information'\n  '#type': details\n  '#open': true\n  first_name:\n    '#title': 'First Name'\n    '#type': textfield\n    '#required': true\n  last_name:\n    '#title': 'Last Name'\n    '#type': textfield\n    '#required': true\n  gender:\n    '#type': radios\n    '#title': 'Gender'\n    '#options': gender\n    '#required': true\ncontact:\n  '#title': 'Contact Information'\n  '#type': details\n  '#open': true\n  email:\n    '#title': Email\n    '#type': email\n    '#required': true\n  phone:\n    '#title': Phone\n    '#type': tel\n    '#required': true\n  address:\n    '#title': Address/Apt\n    '#type': textfield\n    '#required': true\n  city:\n    '#title': City\n    '#type': textfield\n    '#required': true\n  state_province:\n    '#title': 'State/Province'\n    '#type': select\n    '#options': state_province_names\n    '#required': true\n  zip_code:\n    '#title': 'Zip / Country Code'\n    '#type': textfield\n    '#required': true\nresume:\n  '#title': 'Your Resume'\n  '#type': details\n  '#open': true\n  resume_method:\n    '#type': radios\n    '#options':\n      'attach': 'Attach resume file'\n      'paste': 'Paste your resume'\n    '#prefix': '<div class=\"container-inline\">'\n    '#suffix': '</div>'\n    '#default_value': attach\n  # ISSUE: #states API is not working for managed_file.\n  resume_file:\n    '#type': managed_file\n    '#states':\n      visible:\n        ':input[name=\"resume_method\"]':\n          value: attach\n      required:\n        ':input[name=\"resume_method\"]':\n          value: attach\n  resume_text:\n    '#type': textarea\n    '#states':\n      visible:\n        ':input[name=\"resume_method\"]':\n          value: paste\n      required:\n        ':input[name=\"resume_method\"]':\n          value: paste\n"
+settings:
+  page: true
+  page_submit_path: ''
+  page_confirm_path: ''
+  form_closed_message: ''
+  form_exception_message: ''
+  form_submit_label: Apply
+  form_prepopulate: false
+  form_confidential: false
+  form_confidential_message: ''
+  wizard_progress_bar: true
+  wizard_progress_pages: false
+  wizard_progress_percentage: false
+  wizard_next_button_label: ''
+  wizard_prev_button_label: ''
+  wizard_start_label: ''
+  wizard_complete: true
+  wizard_complete_label: ''
+  preview: 0
+  preview_next_button_label: ''
+  preview_prev_button_label: ''
+  preview_message: ''
+  draft: false
+  draft_auto_save: false
+  draft_button_label: ''
+  draft_saved_message: ''
+  draft_loaded_message: ''
+  confirmation_type: page
+  confirmation_message: 'Thank you for applying.'
+  confirmation_url: ''
+  limit_total: null
+  limit_total_message: ''
+  limit_user: null
+  limit_user_message: ''
+  results_disabled: false
+access:
+  create:
+    roles:
+      - anonymous
+      - authenticated
+    users: {  }
+  view_any:
+    roles: {  }
+    users: {  }
+  update_any:
+    roles: {  }
+    users: {  }
+  delete_any:
+    roles: {  }
+    users: {  }
+  purge_any:
+    roles: {  }
+    users: {  }
+  view_own:
+    roles: {  }
+    users: {  }
+  update_own:
+    roles: {  }
+    users: {  }
+  delete_own:
+    roles: {  }
+    users: {  }
+handlers:
+  email_notification:
+    id: email
+    label: 'Email Notification'
+    handler_id: email_notification
+    status: true
+    weight: 1
+    settings:
+      to_mail: default
+      cc_mail: ''
+      bcc_mail: ''
+      from_mail: '[yamlform-submission:values:email:value]'
+      from_name: '[yamlform-submission:values:first_name] [yamlform-submission:values:last_name]'
+      subject: default
+      body: default
+      excluded_elements: {  }
+      html: true
+      attachments: false
+      debug: false

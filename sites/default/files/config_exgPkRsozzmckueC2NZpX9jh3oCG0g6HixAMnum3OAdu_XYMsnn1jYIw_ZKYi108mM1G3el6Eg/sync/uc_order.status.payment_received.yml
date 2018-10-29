@@ -1,0 +1,11 @@
+uuid: 9908d76c-a04b-4ff4-b37e-9409643c6ba5
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: S6c6CtNIoqt59diEHV8d3hHswgzNW_vKb-TnA7Sj-SM
+id: payment_received
+name: 'Payment received'
+state: payment_received
+weight: 10
+locked: true

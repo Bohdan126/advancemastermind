@@ -1,0 +1,38 @@
+uuid: 74b2a0e7-0c27-4d0d-9708-121165a50c29
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_logo
+    - node.type.one_page
+  module:
+    - image
+id: node.one_page.field_logo
+field_name: field_logo
+entity_type: node
+bundle: one_page
+label: Logo
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_directory: '[date:custom:Y]-[date:custom:m]'
+  file_extensions: 'png gif jpg jpeg'
+  max_filesize: ''
+  max_resolution: ''
+  min_resolution: ''
+  alt_field: true
+  alt_field_required: false
+  title_field: false
+  title_field_required: false
+  default_image:
+    uuid: ''
+    alt: ''
+    title: ''
+    width: null
+    height: null
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: image

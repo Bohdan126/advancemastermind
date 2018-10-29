@@ -1,0 +1,51 @@
+uuid: afce06c3-a526-495d-bd75-7f453c78ed17
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_visibility_groups.block_visibility_group.home_transport
+  content:
+    - 'block_content:basic:b013b1a4-c6be-4ca9-8c24-4658d1eac2f5'
+  module:
+    - block_attributes
+    - block_content
+    - block_visibility_groups
+    - ntv_block_background
+  theme:
+    - probes
+third_party_settings:
+  block_attributes:
+    attr_class: ''
+    attr_id: ''
+  ntv_block_background:
+    disable: disable
+    color: '#000000'
+    bg_image: {  }
+    bg_image_type: default
+    bg_repeat: 'no'
+    bg_image_position: ''
+    bg_image_size: ''
+    background_overlay: ''
+id: probesblockcontactinfo2
+theme: probes
+region: section
+weight: -14
+provider: null
+plugin: 'block_content:b013b1a4-c6be-4ca9-8c24-4658d1eac2f5'
+settings:
+  id: 'block_content:b013b1a4-c6be-4ca9-8c24-4658d1eac2f5'
+  label: '[Probes] Block contact info 2'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+  attributes:
+    class: 'grey-bg m-top-2'
+    id: ''
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: home_transport
+    context_mapping: {  }

@@ -1,0 +1,38 @@
+uuid: 184d68cd-2733-417b-bf72-7956f3ced555
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.page.body
+    - field.field.node.page.field_carousel_slider
+    - field.field.node.page.field_color_stylesheet
+    - field.field.node.page.field_page_slogan
+    - field.field.node.page.field_page_title_background
+    - field.field.node.page.field_sidebar
+    - node.type.page
+  module:
+    - text
+    - user
+_core:
+  default_config_hash: rN2zrScZAJ9xB16hm_Deb9QJKy6JXnn0PdI2n5Z3KRs
+id: node.page.teaser
+targetEntityType: node
+bundle: page
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 100
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+  links:
+    weight: 101
+hidden:
+  field_carousel_slider: true
+  field_color_stylesheet: true
+  field_page_slogan: true
+  field_page_title_background: true
+  field_sidebar: true

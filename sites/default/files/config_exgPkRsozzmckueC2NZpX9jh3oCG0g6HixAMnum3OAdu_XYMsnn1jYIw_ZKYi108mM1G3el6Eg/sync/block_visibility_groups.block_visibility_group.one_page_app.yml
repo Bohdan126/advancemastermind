@@ -1,0 +1,17 @@
+uuid: 98ca1ac9-0b46-40de-9926-7eac0f17ec06
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+id: one_page_app
+label: 'One page app'
+logic: and
+conditions:
+  aab8e78f-84a2-43a4-93d5-d52d07bcc4e8:
+    id: request_path
+    pages: /node/211
+    negate: false
+    context_mapping: {  }
+    uuid: aab8e78f-84a2-43a4-93d5-d52d07bcc4e8
+allow_other_conditions: false

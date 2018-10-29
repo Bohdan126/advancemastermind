@@ -1,0 +1,31 @@
+uuid: ab4aeb80-3260-4244-aa5b-fd42e9cde0e7
+langcode: en
+status: false
+dependencies: {  }
+_core:
+  default_config_hash: ulZSVwOlrpUOkiyj-mFYi5hc2u-YmEncpccYvNnTE5w
+name: 'Saudi Arabia'
+alpha_2: SA
+alpha_3: SAU
+numeric: 682
+zones:
+  'AL BAHAH': 'Al Bahah'
+  'NORTHERN BORDER': 'Northern Border'
+  'AL JAWF': 'Al Jawf'
+  'AL MADINAH': 'Al Madinah'
+  'AL QASIM': 'Al Qasim'
+  HAIL: Hail
+  ASIR: Asir
+  'EASTERN PROVINCE': 'Eastern Province'
+  'AL RIYADH': 'Al Riyadh'
+  TABUK: Tabuk
+  NAJRAN: Najran
+  MAKKAH: Makkah
+  JIZAN: Jizan
+address_format:
+  - '!company'
+  - '!first_name !last_name'
+  - '!street1'
+  - '!street2'
+  - '!city, !postal_code'
+  - '!country_name_if'

@@ -1,0 +1,17 @@
+uuid: a394e7e4-e509-47b3-95b6-782edbb8c1aa
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+id: one_page_business
+label: 'One page business'
+logic: and
+conditions:
+  e5883780-fc15-438a-997b-b7922d768b20:
+    id: request_path
+    pages: /node/209
+    negate: false
+    context_mapping: {  }
+    uuid: e5883780-fc15-438a-997b-b7922d768b20
+allow_other_conditions: false

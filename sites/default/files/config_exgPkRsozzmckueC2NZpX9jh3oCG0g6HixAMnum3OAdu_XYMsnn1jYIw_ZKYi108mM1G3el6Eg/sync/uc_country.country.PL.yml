@@ -1,0 +1,34 @@
+uuid: 788e3942-227b-4b8a-8a9b-f6ae42081245
+langcode: en
+status: false
+dependencies: {  }
+_core:
+  default_config_hash: nFUg_BDKku0J_GOsXRqWMK7_VOF4cA7gR-z60IdsZA8
+name: Poland
+alpha_2: PL
+alpha_3: POL
+numeric: 616
+zones:
+  DO: Dolnośląskie
+  KP: Kujawsko-Pomorskie
+  LO: Łódzkie
+  LL: Lubelskie
+  LU: Lubuskie
+  ML: Małopolskie
+  MZ: Mazowieckie
+  OP: Opolskie
+  PP: Podkarpackie
+  PL: Podlaskie
+  PM: Pomorskie
+  SL: Śląskie
+  SW: Świętokrzyskie
+  WM: Warmińsko-Mazurskie
+  WP: Wielkopolskie
+  ZA: Zachodniopomorskie
+address_format:
+  - '!company'
+  - '!first_name !last_name'
+  - '!street1'
+  - '!street2'
+  - '!city, !zone_code !postal_code'
+  - '!country_name_if'

@@ -1,0 +1,21 @@
+uuid: e53e957e-7c42-43de-bdb2-a26738ecc61c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_footer_background_color
+    - node.type.coming_soon
+  module:
+    - navi_color_field
+id: node.coming_soon.field_footer_background_color
+field_name: field_footer_background_color
+entity_type: node
+bundle: coming_soon
+label: 'Footer background color'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: Navi_Color

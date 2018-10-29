@@ -1,0 +1,36 @@
+uuid: e1256618-e698-4609-9ea3-403e66640638
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_visibility_groups.block_visibility_group.home1
+  content:
+    - 'block_content:basic:41fd0b76-4044-4445-859f-8e4dde6da5cb'
+  module:
+    - block_content
+    - block_visibility_groups
+  theme:
+    - probes
+id: probesblockhtmllinktonode_2
+theme: probes
+region: section
+weight: -14
+provider: null
+plugin: 'block_content:41fd0b76-4044-4445-859f-8e4dde6da5cb'
+settings:
+  id: 'block_content:41fd0b76-4044-4445-859f-8e4dde6da5cb'
+  label: '[Probes] Block HTML link to node'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+  attributes:
+    class: m-top8
+    id: ''
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: home1
+    context_mapping: {  }

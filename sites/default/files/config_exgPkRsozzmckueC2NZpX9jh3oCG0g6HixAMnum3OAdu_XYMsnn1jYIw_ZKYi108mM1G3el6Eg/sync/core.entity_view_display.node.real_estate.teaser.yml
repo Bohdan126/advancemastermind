@@ -1,0 +1,26 @@
+uuid: 8a7fa3b0-1a99-4cb2-bb2f-411bb71f7f51
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.real_estate.body
+    - node.type.real_estate
+  module:
+    - text
+    - user
+id: node.real_estate.teaser
+targetEntityType: node
+bundle: real_estate
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+  links:
+    weight: 100
+hidden: {  }

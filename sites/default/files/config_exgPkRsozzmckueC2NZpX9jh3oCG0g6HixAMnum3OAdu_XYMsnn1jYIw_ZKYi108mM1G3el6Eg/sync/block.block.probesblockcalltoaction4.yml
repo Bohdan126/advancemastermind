@@ -1,0 +1,51 @@
+uuid: 296eb271-8078-41f5-8e9e-4785478100f4
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_visibility_groups.block_visibility_group.home_charity
+  content:
+    - 'block_content:basic:01f3f969-910d-42c3-a4b5-b641b9ac8497'
+  module:
+    - block_attributes
+    - block_content
+    - block_visibility_groups
+    - ntv_block_background
+  theme:
+    - probes
+third_party_settings:
+  block_attributes:
+    attr_class: ''
+    attr_id: ''
+  ntv_block_background:
+    disable: disable
+    color: '#000000'
+    bg_image: {  }
+    bg_image_type: default
+    bg_repeat: 'no'
+    bg_image_position: ''
+    bg_image_size: ''
+    background_overlay: ''
+id: probesblockcalltoaction4
+theme: probes
+region: section
+weight: null
+provider: null
+plugin: 'block_content:01f3f969-910d-42c3-a4b5-b641b9ac8497'
+settings:
+  id: 'block_content:01f3f969-910d-42c3-a4b5-b641b9ac8497'
+  label: '[Probes] Block call to action 4'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+  attributes:
+    class: one
+    id: ''
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: home_charity
+    context_mapping: {  }

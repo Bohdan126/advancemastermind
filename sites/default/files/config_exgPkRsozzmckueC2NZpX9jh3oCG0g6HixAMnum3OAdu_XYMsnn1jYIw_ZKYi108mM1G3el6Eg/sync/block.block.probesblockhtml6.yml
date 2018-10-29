@@ -1,0 +1,51 @@
+uuid: 08137fa8-efde-489d-bb96-aebab889f4d7
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_visibility_groups.block_visibility_group.home_creative
+  content:
+    - 'block_content:basic:9f7f954c-1a84-4162-a1af-cfbd8b0663bd'
+  module:
+    - block_attributes
+    - block_content
+    - block_visibility_groups
+    - ntv_block_background
+  theme:
+    - probes
+third_party_settings:
+  block_attributes:
+    attr_class: ''
+    attr_id: ''
+  ntv_block_background:
+    disable: disable
+    color: '#000000'
+    bg_image: {  }
+    bg_image_type: default
+    bg_repeat: 'no'
+    bg_image_position: ''
+    bg_image_size: ''
+    background_overlay: ''
+id: probesblockhtml6
+theme: probes
+region: section
+weight: -14
+provider: null
+plugin: 'block_content:9f7f954c-1a84-4162-a1af-cfbd8b0663bd'
+settings:
+  id: 'block_content:9f7f954c-1a84-4162-a1af-cfbd8b0663bd'
+  label: '[Probes] Block HTML 6'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+  attributes:
+    class: 'section-lg-1 m-top2'
+    id: ''
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: home_creative
+    context_mapping: {  }

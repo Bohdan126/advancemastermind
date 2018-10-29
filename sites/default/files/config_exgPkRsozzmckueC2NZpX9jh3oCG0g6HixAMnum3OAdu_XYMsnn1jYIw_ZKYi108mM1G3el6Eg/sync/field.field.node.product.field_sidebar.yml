@@ -1,0 +1,23 @@
+uuid: 09b274cd-3bc5-48c0-bbb2-c59feae18e11
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_sidebar
+    - node.type.product
+  module:
+    - options
+id: node.product.field_sidebar
+field_name: field_sidebar
+entity_type: node
+bundle: product
+label: Sidebar
+description: ''
+required: true
+translatable: true
+default_value:
+  -
+    value: nosidebar
+default_value_callback: ''
+settings: {  }
+field_type: list_string

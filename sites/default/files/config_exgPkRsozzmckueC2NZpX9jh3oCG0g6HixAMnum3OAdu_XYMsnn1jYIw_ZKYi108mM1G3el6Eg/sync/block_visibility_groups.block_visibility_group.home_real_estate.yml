@@ -1,0 +1,17 @@
+uuid: 95181a82-ac5b-4a99-bff9-53f0444eea58
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+id: home_real_estate
+label: 'Home real estate'
+logic: and
+conditions:
+  297619e7-e004-413e-8a3d-9f5599fa98cd:
+    id: request_path
+    pages: /node/126
+    negate: false
+    context_mapping: {  }
+    uuid: 297619e7-e004-413e-8a3d-9f5599fa98cd
+allow_other_conditions: false

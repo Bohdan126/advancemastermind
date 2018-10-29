@@ -1,0 +1,53 @@
+uuid: aad5fa88-eba9-447c-9c1d-2eb7a5a25259
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_visibility_groups.block_visibility_group.pricing_tables
+  content:
+    - 'block_content:basic:1ee2ab19-8050-4aa5-ab96-58110a842d72'
+  module:
+    - block_attributes
+    - block_content
+    - block_visibility_groups
+    - ntv_block_background
+  theme:
+    - probes
+third_party_settings:
+  block_attributes:
+    attr_class: ''
+    attr_id: ''
+    block_title_icon: ''
+  ntv_block_background:
+    disable: enable
+    color: '#000000'
+    bg_image:
+      - 356
+    bg_image_type: fixed
+    bg_repeat: 'no'
+    bg_image_position: 'center top'
+    bg_image_size: cover
+    background_overlay: ''
+id: probesblockourbestpackages
+theme: probes
+region: section
+weight: -10
+provider: null
+plugin: 'block_content:1ee2ab19-8050-4aa5-ab96-58110a842d72'
+settings:
+  id: 'block_content:1ee2ab19-8050-4aa5-ab96-58110a842d72'
+  label: '[Probes] Block Our Best Packages'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+  attributes:
+    class: 'bg-parallax10 m-top7'
+    id: ''
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: pricing_tables
+    context_mapping: {  }

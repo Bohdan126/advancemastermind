@@ -1,0 +1,50 @@
+uuid: de39d5c4-941a-4aa4-ba02-e60f9f33f1b5
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_visibility_groups.block_visibility_group.footer_layout_4
+  module:
+    - block_attributes
+    - block_visibility_groups
+    - ntv_block_background
+    - yamlform
+  theme:
+    - probes
+third_party_settings:
+  block_attributes:
+    attr_class: ''
+    attr_id: ''
+    block_title: Contact
+    block_title_icon: ''
+  ntv_block_background:
+    disable: disable
+    color: '#000000'
+    bg_image: {  }
+    bg_image_type: default
+    bg_repeat: 'no'
+    bg_image_position: ''
+    bg_image_size: ''
+    background_overlay: ''
+id: yamlform_6
+theme: probes
+region: footer4
+weight: null
+provider: null
+plugin: yamlform_block
+settings:
+  id: yamlform_block
+  label: 'YAML form'
+  provider: yamlform
+  label_display: '0'
+  yamlform_id: quick_contact
+  default_data: ''
+  attributes:
+    class: 'section-one col-md-8'
+    id: ''
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: footer_layout_4
+    context_mapping: {  }

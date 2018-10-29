@@ -1,0 +1,15 @@
+uuid: fb0a664b-dba2-444e-a7ea-80d91e8068ba
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: LRyTtRxSZ-lhRnmxOhy62ijJYYJ6aWuEPMAznVizrYA
+id: custom_headings
+label: Headings
+tooltip: null
+text: H
+cname: null
+shortcut: null
+code: "js: E.tagChooser([\n  ['h1', 'Heading1'],\n  ['h2', 'Heading2'],\n  ['h3', 'Heading3'],\n  ['h4', 'Heading4'],\n  ['h5', 'Heading5'],\n  ['h6', 'Heading6']\n], {applyTag: false});\n"
+template: null
+libraries: {  }

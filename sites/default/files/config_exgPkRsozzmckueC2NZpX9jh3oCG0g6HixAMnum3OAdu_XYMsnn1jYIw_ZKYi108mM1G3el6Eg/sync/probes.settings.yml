@@ -1,0 +1,86 @@
+features:
+  node_user_picture: 1
+  comment_user_picture: 1
+  comment_user_verification: 1
+  favicon: 1
+logo:
+  use_default: 0
+  path: 'public://stevebishop497v re2.png'
+favicon:
+  use_default: 0
+  path: 'public://stevebishop497 re1.png'
+  mimetype: image/png
+tracking_code: ''
+custom_css: ''
+menu_style: ''
+header_layout: layout1
+footer_layout: layout1
+footer_background_image:
+  - '264'
+footer_background_color: ''
+footer_class: 'm-top0 title-white'
+footer_copyright_message: ' Copyright © 2018 Advance Mastermind. All rights reserved. '
+footer_columns: '4'
+blog_layout: standard
+blog_page_title_bgimage:
+  - '271'
+blog_slogan: 'From Our Blog, News and Events'
+blog_footer_layout: layout1
+blog_footer_background_image: {  }
+blog_footer_background_color: '161616'
+blog_footer_class: 'line-color title-white'
+portfolio_style: 2cols
+portfolio_page_title_bgimage:
+  - '280'
+portfolio_slogan: ''
+portfolio_footer_layout: layout1
+portfolio_footer_background_image: {  }
+portfolio_footer_background_color: '161616'
+portfolio_footer_class: 'line-color title white'
+system_page_title_bgimage:
+  - '285'
+page_footer_layout: layout1
+page_footer_background_image: {  }
+page_footer_background_color: '161616'
+page_footer_class: 'line-color title-white'
+header_class: title-white
+topbar_display: 'on'
+topbar_background_color: '222222'
+topbar_class: ''
+portfolio_header_layout: layout1
+portfolio_header_class: title-white
+portfolio_topbar_display: 'on'
+portfolio_topbar_background_color: ''
+portfolio_topbar_class: ''
+blog_header_layout: layout1
+blog_header_class: title-white
+blog_topbar_display: 'on'
+blog_topbar_background_color: ''
+blog_topbar_class: ''
+product_layout: nosidebar
+product_header_layout: layout5
+product_header_class: shop
+product_topbar_display: 'on'
+product_topbar_background_color: f9f8f8
+product_topbar_class: ''
+product_page_title_bgimage:
+  - '418'
+product_slogan: 'Product Details'
+product_footer_layout: layout1
+product_footer_background_image: {  }
+product_footer_background_color: ''
+product_footer_class: line-color
+page_header_layout: layout1
+page_header_class: title-white
+page_topbar_display: 'on'
+page_topbar_background_color: ''
+page_topbar_class: ''
+product_breadcrumb_class_title: font-black
+portfolio_breadcrumb_class_title: ''
+blog_breadcrumb_class_title: ''
+page_breadcrumb_class_title: ''
+probes_disable_switch: 'off'
+probes_site_layout: wide
+bg_patterns_boxed:
+  - '440'
+built_in_skins: none

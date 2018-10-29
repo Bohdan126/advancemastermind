@@ -1,0 +1,14 @@
+uuid: 20977703-fbae-4fe9-a415-74e8c1685b52
+langcode: en
+status: true
+dependencies: {  }
+name: image_570x460
+label: 'Image 570x460'
+effects:
+  d638ebfb-c031-4b26-b9b7-3c60fa5f68e0:
+    uuid: d638ebfb-c031-4b26-b9b7-3c60fa5f68e0
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 570
+      height: 460

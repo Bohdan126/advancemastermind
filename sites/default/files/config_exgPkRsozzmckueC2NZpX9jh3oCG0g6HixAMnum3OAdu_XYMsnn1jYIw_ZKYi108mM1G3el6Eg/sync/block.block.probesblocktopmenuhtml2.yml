@@ -1,0 +1,52 @@
+uuid: 61e0cb66-db1a-4008-9814-3a5906646ee4
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_visibility_groups.block_visibility_group.home_business_2
+  content:
+    - 'block_content:basic:e01ee16a-7b10-4cad-9874-3d838c1cd1dc'
+  module:
+    - block_attributes
+    - block_content
+    - block_visibility_groups
+    - ntv_block_background
+  theme:
+    - probes
+third_party_settings:
+  block_attributes:
+    attr_class: ''
+    attr_id: ''
+    block_title_icon: ''
+  ntv_block_background:
+    disable: disable
+    color: '#000000'
+    bg_image: {  }
+    bg_image_type: default
+    bg_repeat: 'no'
+    bg_image_position: ''
+    bg_image_size: ''
+    background_overlay: ''
+id: probesblocktopmenuhtml2
+theme: probes
+region: topbar
+weight: -21
+provider: null
+plugin: 'block_content:e01ee16a-7b10-4cad-9874-3d838c1cd1dc'
+settings:
+  id: 'block_content:e01ee16a-7b10-4cad-9874-3d838c1cd1dc'
+  label: '[Probes] Block top menu HTML 2'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+  attributes:
+    class: 'col-md-6 nopadding m-top2'
+    id: ''
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: home_business_2
+    context_mapping: {  }

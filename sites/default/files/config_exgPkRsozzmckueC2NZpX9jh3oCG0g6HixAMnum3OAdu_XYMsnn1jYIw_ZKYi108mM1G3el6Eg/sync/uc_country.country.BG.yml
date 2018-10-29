@@ -1,0 +1,18 @@
+uuid: b7837adb-d9c3-4000-b4d4-30c6ff348801
+langcode: en
+status: false
+dependencies: {  }
+_core:
+  default_config_hash: rlzcTvKI-TQ_BdIAUKHeeXrY0DxSU00AJyrlTiML7VM
+name: Bulgaria
+alpha_2: BG
+alpha_3: BGR
+numeric: 100
+zones: {  }
+address_format:
+  - '!first_name !last_name'
+  - '!company'
+  - '!street1'
+  - '!street2'
+  - '!zone_name'
+  - '!postal_code !city !country_name_if'

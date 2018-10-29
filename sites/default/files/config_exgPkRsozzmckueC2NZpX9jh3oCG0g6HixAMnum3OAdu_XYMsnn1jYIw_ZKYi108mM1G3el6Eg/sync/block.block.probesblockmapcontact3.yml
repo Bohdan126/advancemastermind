@@ -1,0 +1,52 @@
+uuid: 07aeeb48-9afa-4adb-94bf-3ca48d86c019
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_visibility_groups.block_visibility_group.contact_style_3
+  content:
+    - 'block_content:basic:f94ced5c-d877-4d6d-a180-194e44dc69d9'
+  module:
+    - block_attributes
+    - block_content
+    - block_visibility_groups
+    - ntv_block_background
+  theme:
+    - probes
+third_party_settings:
+  block_attributes:
+    attr_class: ''
+    attr_id: ''
+    block_title_icon: ''
+  ntv_block_background:
+    disable: disable
+    color: '#000000'
+    bg_image: {  }
+    bg_image_type: default
+    bg_repeat: 'no'
+    bg_image_position: ''
+    bg_image_size: ''
+    background_overlay: ''
+id: probesblockmapcontact3
+theme: probes
+region: slideshow
+weight: null
+provider: null
+plugin: 'block_content:f94ced5c-d877-4d6d-a180-194e44dc69d9'
+settings:
+  id: 'block_content:f94ced5c-d877-4d6d-a180-194e44dc69d9'
+  label: '[Probes] Block map contact 3'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+  attributes:
+    class: m-top0
+    id: ''
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: contact_style_3
+    context_mapping: {  }

@@ -1,0 +1,53 @@
+uuid: 750cc475-7965-492e-9d4e-c515582c08af
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_visibility_groups.block_visibility_group.one_page_resume
+  content:
+    - 'block_content:basic:e6a5bf8d-8eab-4722-ab4e-b77dc8b2fe4b'
+  module:
+    - block_attributes
+    - block_content
+    - block_visibility_groups
+    - ntv_block_background
+  theme:
+    - probes
+third_party_settings:
+  block_attributes:
+    attr_class: ''
+    attr_id: ''
+    block_title: Experience
+    block_title_icon: ''
+  ntv_block_background:
+    disable: disable
+    color: '#000000'
+    bg_image: {  }
+    bg_image_type: default
+    bg_repeat: 'no'
+    bg_image_position: ''
+    bg_image_size: ''
+    background_overlay: ''
+id: probesblockmyworkexperience
+theme: probes
+region: section_one
+weight: -11
+provider: null
+plugin: 'block_content:e6a5bf8d-8eab-4722-ab4e-b77dc8b2fe4b'
+settings:
+  id: 'block_content:e6a5bf8d-8eab-4722-ab4e-b77dc8b2fe4b'
+  label: '[Probes] Block my work experience'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+  attributes:
+    class: 'section-lg m-top6'
+    id: ''
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: one_page_resume
+    context_mapping: {  }

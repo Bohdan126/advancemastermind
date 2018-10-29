@@ -1,0 +1,50 @@
+name: advancemastermind
+recipe: drupal8
+config:
+  webroot: /
+  via: nginx
+proxy:
+  mailhog:
+    # assumes site is advancemastermind.lndo.site
+    - mail.advancemastermind.lndo.site
+  pma:
+    - pma.advancemastermind.lndo.site
+
+services:
+  appserver:
+    # doesn't work on windows 10;
+    xdebug: true
+    config:
+      conf: xdebug.ini
+    overrides:
+      services:
+        environment:
+          BEHAT_PARAMS: >-
+            {"extensions" : {"Behat\\MinkExtension" : {"base_url" :
+            "http://nginx/"}, "Drupal\\DrupalExtension" : {"drush" :   {
+            "root":  "/app/web" }}}}
+  mailhog:
+    type: mailhog
+    hogfrom:
+      - appserver
+  pma:
+    type: phpmyadmin
+# Automatically run composer install on builds
+#      - cd $LANDO_MOUNT && composer install
+#      - "cd $LANDO_WEBROOT && drush si minimal -y --account-pass=password"
+#      - "cd $LANDO_MOUNT && ./scripts/advancemastermind/local_deploy.sh"
+#services:
+#  appserver:
+#    build:
+#      - "cd $LANDO_MOUNT && composer install"
+#events:
+#  post-start:
+#    - "cd $LANDO_WEBROOT && chmod 777 sites/default/settings.php"
+#    - "cd $LANDO_WEBROOT && drush si minimal -y --account-pass=password"
+#    - "cd $LANDO_MOUNT && ./scripts/advancemastermind/local_deploy.sh"
+tooling:
+  drush:
+    service: appserver
+    cmd:
+      - "drush"
+      - "--root=/app/docroot"

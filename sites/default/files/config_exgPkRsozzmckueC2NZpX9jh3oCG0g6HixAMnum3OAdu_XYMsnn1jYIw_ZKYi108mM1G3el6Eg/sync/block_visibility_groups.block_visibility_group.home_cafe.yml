@@ -1,0 +1,17 @@
+uuid: 2aba6f94-af07-43f3-8470-c3e3d4a76778
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+id: home_cafe
+label: 'Home cafe'
+logic: and
+conditions:
+  c63c9fa2-7e33-440d-9793-58b6327166fc:
+    id: request_path
+    pages: /node/154
+    negate: false
+    context_mapping: {  }
+    uuid: c63c9fa2-7e33-440d-9793-58b6327166fc
+allow_other_conditions: false

@@ -1,0 +1,21 @@
+uuid: 009266a4-2f1c-4d84-b167-223e757e7fb6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_parking
+    - node.type.real_estate
+  module:
+    - options
+id: node.real_estate.field_parking
+field_name: field_parking
+entity_type: node
+bundle: real_estate
+label: Parking
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

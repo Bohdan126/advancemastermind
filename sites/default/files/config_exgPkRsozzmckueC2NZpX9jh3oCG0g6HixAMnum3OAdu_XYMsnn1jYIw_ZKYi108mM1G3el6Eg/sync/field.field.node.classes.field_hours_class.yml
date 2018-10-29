@@ -1,0 +1,19 @@
+uuid: 301ff441-1867-4efd-b920-e5f76d898a1f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_hours_class
+    - node.type.classes
+id: node.classes.field_hours_class
+field_name: field_hours_class
+entity_type: node
+bundle: classes
+label: 'Hours in class'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,51 @@
+uuid: 2787c31b-470b-4942-8090-1f7583974347
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_visibility_groups.block_visibility_group.home_charity
+  content:
+    - 'block_content:basic:b9648582-ca70-4561-8862-b338efb8a3e9'
+  module:
+    - block_attributes
+    - block_content
+    - block_visibility_groups
+    - ntv_block_background
+  theme:
+    - probes
+third_party_settings:
+  block_attributes:
+    attr_class: ''
+    attr_id: ''
+  ntv_block_background:
+    disable: disable
+    color: '#000000'
+    bg_image: {  }
+    bg_image_type: default
+    bg_repeat: 'no'
+    bg_image_position: ''
+    bg_image_size: ''
+    background_overlay: ''
+id: probesblocksectionsocialnetwork_5
+theme: probes
+region: section
+weight: null
+provider: null
+plugin: 'block_content:b9648582-ca70-4561-8862-b338efb8a3e9'
+settings:
+  id: 'block_content:b9648582-ca70-4561-8862-b338efb8a3e9'
+  label: '[Probes] Block section social network'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+  attributes:
+    class: section-lg-1
+    id: ''
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: home_charity
+    context_mapping: {  }

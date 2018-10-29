@@ -1,0 +1,122 @@
+uuid: 1a8f4464-4621-46c5-a171-4803c2ef2200
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.product.body
+    - field.field.node.product.field_product_categories
+    - field.field.node.product.field_product_review
+    - field.field.node.product.field_sidebar
+    - field.field.node.product.uc_product_image
+    - image.style.thumbnail
+    - node.type.product
+  module:
+    - comment
+    - image
+    - imce
+    - path
+    - text
+    - uc_product
+_core:
+  default_config_hash: OBU65IeAlHpgpzOoof6WVTS4nLLW31Msq3SYnWIUXFU
+id: node.product.default
+targetEntityType: node
+bundle: product
+mode: default
+content:
+  body:
+    type: text_textarea_with_summary
+    weight: 1
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+    third_party_settings: {  }
+  created:
+    type: datetime_timestamp
+    weight: 7
+    settings: {  }
+    third_party_settings: {  }
+  dimensions:
+    type: uc_dimensions
+    weight: 5
+    settings: {  }
+    third_party_settings: {  }
+  field_product_categories:
+    weight: 12
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+  field_product_review:
+    weight: 27
+    settings: {  }
+    third_party_settings: {  }
+    type: comment_default
+  field_sidebar:
+    weight: 26
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+  model:
+    type: string_textfield
+    weight: 2
+    settings:
+      size: 32
+      placeholder: ''
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 10
+    settings: {  }
+    third_party_settings: {  }
+  price:
+    type: uc_price
+    weight: 3
+    settings: {  }
+    third_party_settings: {  }
+  promote:
+    type: boolean_checkbox
+    weight: 8
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  sticky:
+    type: boolean_checkbox
+    weight: 9
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  uc_product_image:
+    type: image_image
+    weight: 11
+    settings:
+      preview_image_style: thumbnail
+      progress_indicator: throbber
+    third_party_settings:
+      imce:
+        enabled: true
+  uid:
+    type: entity_reference_autocomplete
+    weight: 6
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  weight:
+    type: uc_weight
+    weight: 4
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  cost: true
+  default_qty: true
+  pkg_qty: true
+  shippable: true

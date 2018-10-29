@@ -1,0 +1,51 @@
+uuid: bc6e9f10-6317-4678-a6ca-9704f673b6d6
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_visibility_groups.block_visibility_group.home_creative
+  content:
+    - 'block_content:basic:c407e47d-519c-4682-9163-73695719a666'
+  module:
+    - block_attributes
+    - block_content
+    - block_visibility_groups
+    - ntv_block_background
+  theme:
+    - probes
+third_party_settings:
+  block_attributes:
+    attr_class: ''
+    attr_id: ''
+  ntv_block_background:
+    disable: disable
+    color: '#000000'
+    bg_image: {  }
+    bg_image_type: default
+    bg_repeat: 'no'
+    bg_image_position: ''
+    bg_image_size: ''
+    background_overlay: ''
+id: probesblockhtmltabsliderandaccordion
+theme: probes
+region: section
+weight: -15
+provider: null
+plugin: 'block_content:c407e47d-519c-4682-9163-73695719a666'
+settings:
+  id: 'block_content:c407e47d-519c-4682-9163-73695719a666'
+  label: '[Probes] Block HTML tab slider and accordion'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+  attributes:
+    class: ''
+    id: ''
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: home_creative
+    context_mapping: {  }

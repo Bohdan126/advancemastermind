@@ -1,0 +1,23 @@
+uuid: fdfcee92-131f-44d8-ba9b-9173af67c49e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_sidebar
+    - node.type.blog_post
+  module:
+    - options
+id: node.blog_post.field_sidebar
+field_name: field_sidebar
+entity_type: node
+bundle: blog_post
+label: Sidebar
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: right
+default_value_callback: ''
+settings: {  }
+field_type: list_string

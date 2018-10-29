@@ -1,0 +1,14 @@
+uuid: 179876e6-5c96-46ef-9351-9147703834f2
+langcode: en
+status: true
+dependencies: {  }
+name: image_176x82
+label: 'Image 176x82'
+effects:
+  243c2cb5-c33f-4be6-956a-75ecf0e944dc:
+    uuid: 243c2cb5-c33f-4be6-956a-75ecf0e944dc
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 176
+      height: 82

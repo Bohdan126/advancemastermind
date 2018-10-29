@@ -1,0 +1,100 @@
+uuid: b7a4b934-6d05-4940-8ccc-30334e78626e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.yamlform.body
+    - field.field.node.yamlform.field_page_slogan
+    - field.field.node.yamlform.field_page_style
+    - field.field.node.yamlform.field_page_title_background
+    - field.field.node.yamlform.yamlform
+    - image.style.thumbnail
+    - node.type.yamlform
+  module:
+    - image
+    - imce
+    - path
+    - text
+    - yamlform
+_core:
+  default_config_hash: G1ijbr3eRpKNU5cdbHYWD3YbhRK2n5z1J0p2YFlZsyI
+id: node.yamlform.default
+targetEntityType: node
+bundle: yamlform
+mode: default
+content:
+  body:
+    type: text_textarea_with_summary
+    weight: 0
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+    third_party_settings: {  }
+  created:
+    type: datetime_timestamp
+    weight: 10
+    settings: {  }
+    third_party_settings: {  }
+  field_page_slogan:
+    weight: 33
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+  field_page_style:
+    weight: 31
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+  field_page_title_background:
+    weight: 34
+    settings:
+      preview_image_style: thumbnail
+      progress_indicator: throbber
+    third_party_settings:
+      imce:
+        enabled: true
+    type: image_image
+  path:
+    type: path
+    weight: 30
+    settings: {  }
+    third_party_settings: {  }
+  promote:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 15
+    third_party_settings: {  }
+  sticky:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 16
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: -5
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  uid:
+    type: entity_reference_autocomplete
+    weight: 5
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  yamlform:
+    weight: 0
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: yamlform_entity_reference_autocomplete
+hidden: {  }

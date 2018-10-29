@@ -1,0 +1,22 @@
+uuid: 97a22071-a9cf-4d0b-959a-826b94a86656
+langcode: en
+status: false
+dependencies:
+  module:
+    - system
+  theme:
+    - probes
+_core:
+  default_config_hash: jQQUUWN2Uxr5qZtc9zcJKBCxpKY8orN1u2HPqYYRQDI
+id: probes_powered
+theme: probes
+region: '-1'
+weight: -13
+provider: null
+plugin: system_powered_by_block
+settings:
+  id: system_powered_by_block
+  label: 'Powered by Drupal'
+  provider: system
+  label_display: '0'
+visibility: {  }

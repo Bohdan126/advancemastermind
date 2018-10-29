@@ -1,0 +1,108 @@
+{% if footer_bg_image is not empty %}
+    {% set footer_class = 'footer-bg-image ' ~ footer_class %}
+{% elseif footer_background_color is not empty %}
+    {% set footer_class = 'footer-bg-color ' ~ footer_class %}
+{% endif %}
+{% if footer_layout == 'layout1' %}
+    {% if page.footer %}
+    <footer class="{{ footer_class }}" {% if footer_bg_image is not empty %} data-bg-image="{{ footer_bg_image }}" {% endif %} {% if footer_background_color is not empty %} data-bg-color="#{{ footer_background_color }}" {% endif %}>
+        <div class="container">
+            <div class="row">
+                {{ page.footer }}
+            </div>
+        </div>
+    </footer>
+    {% endif %}
+    {% if footer_copyright_message is not empty or page.footer_copyright %}
+    <div class="copyrights">
+        <div class="container">
+            <div class="row">
+            {% if footer_copyright_message is not empty %}
+                <div class="col-md-6 m-top1"> {{ footer_copyright_message }} </div>
+            {% endif %}
+            {% if page.footer_copyright %}
+                <div class="col-md-6">
+                    {{ page.footer_copyright }}
+                </div>
+            {% endif %}
+            </div>
+        </div>
+    </div>
+    {% endif %}
+{% elseif footer_layout == 'layout2' %}
+    {% if page.footer2 %}
+    <footer class="bg-texture2 {{ footer_class }}" {% if footer_bg_image is not empty %} data-bg-image="{{ footer_bg_image }}" {% endif %} {% if footer_background_color is not empty %} data-bg-color="#{{ footer_background_color }}" {% endif %}>
+        <div class="container">
+            <div class="row">
+            {% if page.footer_header %}
+                {{ page.footer_header }}
+            {% endif %}
+            {% if page.footer2 %}
+                {{ page.footer2 }}
+            {% endif %}
+            </div>
+        </div>
+    </footer>
+    {% endif %}
+    {% if footer_copyright_message is not empty or page.footer_copyright %}
+    <div class="copyrights">
+        <div class="container">
+            <div class="row text-center">
+                {% if page.footer_copyright %}
+                    {{ page.footer_copyright }}
+                {% endif %}
+                {% if footer_copyright_message is not empty %}
+                <p> {{ footer_copyright_message }} </p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    {% endif %}
+{% elseif footer_layout == 'layout3' %}
+    {% if page.footer2 %}
+    <footer class="bg-texture1 {{ footer_class }}" {% if footer_bg_image is not empty %} data-bg-image="{{ footer_bg_image }}" {% endif %} {% if footer_background_color is not empty %} data-bg-color="#{{ footer_background_color }}" {% endif %}>
+        <div class="container">
+            <div class="row">
+            {% if page.footer_header %}
+                {{ page.footer_header }}
+            {% endif %}
+            {% if page.footer2 %}
+                {{ page.footer2 }}
+            {% endif %}
+            </div>
+        </div>
+    </footer>
+    {% endif %}
+    {% if footer_copyright_message is not empty %}
+    <div class="copyrights one">
+        <div class="container text-center">
+            <div class="row"> {{ footer_copyright_message }} </div>
+        </div>
+    </div>
+    {% endif %}
+{% else %}
+    {% if page.footer4 or page.footer_header %}
+    <div class="bg-texture1 {{ footer_class }}" {% if footer_bg_image is not empty %} data-bg-image="{{ footer_bg_image }}" {% endif %} {% if footer_background_color is not empty %} data-bg-color="#{{ footer_background_color }}" {% endif %}>
+        <div class="container">
+            <div class="row">
+                {% if page.footer_header %}
+                    {{ page.footer_header }}
+                {% endif %}
+                {% if page.footer4 %}
+                    {{ page.footer4 }}
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    {% endif %}
+    {% if page.footer4_center %}
+    {{ page.footer4_center}}
+    {% endif %}
+    {% if footer_copyright_message is not empty %}
+    <div class="copyrights one">
+        <div class="container text-center">
+            <div class="row"> {{ footer_copyright_message }} </div>
+        </div>
+    </div>
+    {% endif %}
+{% endif %}

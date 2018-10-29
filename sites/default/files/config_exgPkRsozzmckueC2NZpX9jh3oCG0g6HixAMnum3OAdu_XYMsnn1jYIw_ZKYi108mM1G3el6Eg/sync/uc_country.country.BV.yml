@@ -1,0 +1,18 @@
+uuid: 0d2b142a-8f2d-446c-b859-00ee38ce5bf2
+langcode: en
+status: false
+dependencies: {  }
+_core:
+  default_config_hash: kzrv0fjksJiIUPz3zoztXTxPhxOS1Tir4uXIh1RqZmE
+name: 'Bouvet Island'
+alpha_2: BV
+alpha_3: BVT
+numeric: 74
+zones: {  }
+address_format:
+  - '!company'
+  - '!first_name !last_name'
+  - '!street1'
+  - '!street2'
+  - '!city !postal_code'
+  - '!country_name_if'

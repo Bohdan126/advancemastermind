@@ -1,0 +1,51 @@
+uuid: e346c425-02c0-4f1d-94e2-0d08b2747d6c
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_visibility_groups.block_visibility_group.product_details
+    - views.view._probes_block_taxonomy_term
+  module:
+    - block_attributes
+    - block_visibility_groups
+    - ntv_block_background
+    - views
+  theme:
+    - probes
+third_party_settings:
+  block_attributes:
+    attr_class: ''
+    attr_id: ''
+    block_title: ''
+    block_title_icon: ''
+  ntv_block_background:
+    disable: disable
+    color: '#000000'
+    bg_image: {  }
+    bg_image_type: default
+    bg_repeat: 'no'
+    bg_image_position: ''
+    bg_image_size: ''
+    background_overlay: ''
+id: views_block_probes_block_taxonomy_term_product_categories_widget
+theme: probes
+region: sidebar
+weight: null
+provider: null
+plugin: 'views_block:_probes_block_taxonomy_term-block_product_categories_widget'
+settings:
+  id: 'views_block:_probes_block_taxonomy_term-block_product_categories_widget'
+  label: Categories
+  provider: views
+  label_display: visible
+  views_label: Categories
+  items_per_page: none
+  attributes:
+    class: ''
+    id: ''
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: product_details
+    context_mapping: {  }

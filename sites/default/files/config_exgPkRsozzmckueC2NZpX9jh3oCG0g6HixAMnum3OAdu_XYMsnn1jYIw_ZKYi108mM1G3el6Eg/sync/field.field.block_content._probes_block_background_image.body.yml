@@ -1,0 +1,22 @@
+uuid: 0cc61aed-fc51-4c8e-aa34-56cd47581997
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type._probes_block_background_image
+    - field.storage.block_content.body
+  module:
+    - text
+id: block_content._probes_block_background_image.body
+field_name: body
+entity_type: block_content
+bundle: _probes_block_background_image
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: false
+field_type: text_with_summary

@@ -1,0 +1,52 @@
+uuid: edf73791-b089-4c1a-ac01-ef16a0f01b1a
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_visibility_groups.block_visibility_group.footer_shop
+  module:
+    - block_attributes
+    - block_visibility_groups
+    - ntv_block_background
+    - simplenews
+  theme:
+    - probes
+third_party_settings:
+  block_attributes:
+    attr_class: ''
+    attr_id: ''
+    block_title: ''
+    block_title_icon: ''
+  ntv_block_background:
+    disable: disable
+    color: '#000000'
+    bg_image: {  }
+    bg_image_type: default
+    bg_repeat: 'no'
+    bg_image_position: ''
+    bg_image_size: ''
+    background_overlay: ''
+id: simplenewssubscription_4
+theme: probes
+region: footer
+weight: -13
+provider: null
+plugin: simplenews_subscription_block
+settings:
+  id: simplenews_subscription_block
+  label: NEWSLETTER
+  provider: simplenews
+  label_display: visible
+  newsletters:
+    newsletter_form_footer: newsletter_form_footer
+  message: 'Select your newsletters, enter your email address, and click "Subscribe"'
+  unique_id: 212b122f-2fbb-4a7b-abfb-33cbf94b2d4f
+  attributes:
+    class: 'col-md-3 col-sm-12 m-bottom3'
+    id: ''
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: footer_shop
+    context_mapping: {  }

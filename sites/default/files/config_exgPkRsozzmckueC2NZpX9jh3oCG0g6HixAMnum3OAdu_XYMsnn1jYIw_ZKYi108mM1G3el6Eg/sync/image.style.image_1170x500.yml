@@ -1,0 +1,14 @@
+uuid: 614ff6a6-ae69-4ddf-b180-9d411cf15400
+langcode: en
+status: true
+dependencies: {  }
+name: image_1170x500
+label: 'Image 1170x500'
+effects:
+  1996976e-8ba8-4027-8061-cc8acfcbffca:
+    uuid: 1996976e-8ba8-4027-8061-cc8acfcbffca
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 1170
+      height: 500

@@ -1,0 +1,14 @@
+name: NaviTeam Menu Attributes
+type: module
+description: 'Allows you to add attributes to menu links.'
+package: NaviTeam
+# core: 8.x
+dependencies:
+  - menu_link_content
+configure: nvt_menu_attributes.config
+
+# Information added by Drupal.org packaging script on 2015-10-17
+version: VERSION
+core: '8.x'
+project: 'nvt_menu_attributes'
+datestamp: 1445115844

@@ -1,0 +1,619 @@
+{#
+/**
+ * @file
+ * Theme override to display a view of unformatted rows.
+ *
+ * Available variables:
+ * - title: The title of this group of rows. May be empty.
+ * - rows: A list of the view's row items.
+ *   - attributes: The row's HTML attributes.
+ *   - content: The row's content.
+ * - view: The view object.
+ * - default_row_class: A flag indicating whether default classes should be
+ *   used on rows.
+ *
+ * @see template_preprocess_views_view_unformatted()
+ */
+#}
+{% if view.current_display == 'block_features_style1' or view.current_display == 'block_featured_article_style2' or view.current_display == 'block_features_style7' %}
+	{% if rows %}
+		<div class="container">
+      		<div class="row">
+	    		{{ rows }}
+	    	</div>
+	  	</div>
+	{% endif %}
+{% elseif view.current_display == 'block_services_style1' %}
+	{% if rows %}
+		<div class="container">
+      		<div class="row">
+      			<div class="col-md-6 col-sm-6">
+      				{{ title_prefix }}
+				  	{{ title }}
+				  	{{ title_suffix }}
+				  	{% if header %}
+				    <div class="sec-titiel m-bottom5">
+				      	{{ header }}
+				    </div>
+				  	{% endif %}
+	    			{{ rows }}
+	    		</div>
+	    		{% if footer %}
+			    <div class="col-md-6 col-sm-6">
+			      	{{ footer | str_replace(' ', '_') }}
+			    </div>
+			  {% endif %}
+	    	</div>
+	  	</div>
+	{% endif %}
+{% elseif view.current_display == 'block_best_brand_solutions' %}
+	{% if rows %}
+	<div class="container">
+      	<div class="">
+      		{{ title_prefix }}
+			{{ title }}
+			{{ title_suffix }}
+			{% if header %}
+			<div class="title1 text-center">
+				{{ header }}
+			</div>
+			{% endif %}
+			<div class="tab-style1">
+				<!-- Nav tabs -->
+				{{ attachment_before|render|str_replace('class="nav nav-tabs"', 'class="nav nav-tabs" role="tablist"')|raw }}
+				<!-- Tab panes -->
+          		<div class="tab-content m-top5">
+					{{ rows|render|str_replace_first('tab-pane', 'tab-pane active')|raw }}
+          		</div>
+			</div>
+		</div>
+	</div>
+	{% endif %}
+{% elseif view.current_display == 'block_best_team_style1' %}
+	{% if rows %}
+	<div class="container">
+		<div class="row">
+			{{ title_prefix }}
+			{{ title }}
+			{{ title_suffix }}
+			{% if header %}
+			<div class="title1 text-center">
+				{{ header }}
+			</div>
+			{% endif %}
+			<div class="col-md-12">
+				{{ rows }}
+				{{ attachment_after }}
+			</div>
+		</div>
+	</div>
+	{% endif %}
+{% elseif view.current_display == 'block_customers_review_style1' %}
+	{% if rows %}
+	<div class="container">
+      	<div class="">
+      		<div class="col-md-6 nopadding">
+      		{{ title_prefix }}
+			{{ title }}
+			{{ title_suffix }}
+			{% if header %}
+				{{ header }}
+			{% endif %}
+			{% set n = rows|render|substr_count('item') %}
+				<div class="col-test-3">
+            		<div id="carousel-example-generics" class="carousel slide" data-ride="carousel">
+            			<!-- Indicators -->
+              			<ol class="carousel-indicators style">
+						{% for i in 0..n-1 %}
+							<li data-target="#carousel-example-generics" data-slide-to="{{ i }}" class="{{loop.first ? 'active' : ''}}"></li>
+						{% endfor %}
+              			</ol>
+            			<!-- Wrapper for slides -->
+              			<div class="carousel-inner" role="listbox">
+							{{ rows|render|str_replace_first('item', 'item active')|raw }}
+              			</div>
+              		</div>
+              	</div>
+			</div>
+			{% if footer %}
+			<div class="col-md-6">
+				{{ footer }}
+			</div>
+			{% endif %}
+		</div>
+	</div>
+	{% endif %}
+{% elseif view.current_display == 'block_customers_review_style2' %}
+	{% if rows %}
+	<div class="container">
+		<div class="row">
+			{{ title_prefix }}
+			{{ title }}
+			{{ title_suffix }}
+			{% set n = rows|render|substr_count('item') %}
+			<div data-ride="carousel" class="carousel slide col-test-4" id="carousel-example-generics"> 
+          		<!-- Indicators -->
+	          	<ol class="carousel-indicators">
+	          	{% for i in 0..n-1 %}
+					<li data-slide-to="{{ i }}" data-target="#carousel-example-generics" class="{{ loop.first ? 'active' : '' }}"></li>
+	          	{% endfor %}
+	          	</ol>
+	          	<!-- Wrapper for slides -->
+	          	<div role="listbox" class="carousel-inner">
+					{{ rows|render|str_replace_first('class="item', 'class="item active')|raw }}
+	          	</div>
+	        </div>
+		</div>
+	</div>
+	{% endif %}
+{% elseif view.current_display == 'block_featured_features_style1' %}
+	{% if rows %}
+	<div class="two-boxes-bgimg">
+      	<div class="container">
+      		<div class="col-md-6 left-padd0 right-padd4 m-bottom3">
+				{{ title_prefix }}
+				{{ title }}
+				{{ title_suffix }}
+				{% if header %}
+					{{ header }}
+				{% endif %}
+				{{ rows|render|str_replace_first('content-feature-col', 'content-feature-col active ')|raw }}
+			</div>
+        	<div class="col-md-6 nophone no-right-padd m-left85"></div>
+      	</div>
+    </div>
+	{% endif %}
+{% elseif view.current_display == 'block_clients_style1' or view.current_display == 'block_featured_article_style1' or view.current_display == 'block_services_style9' or view.current_display == 'block_featured_article_style1b' %}
+	{% if rows %}
+	<div class="container">
+		<div class="row">
+			{{ title_prefix }}
+			{{ title }}
+			{{ title_suffix }}
+			{% if header %}
+			<div class="title1 text-center">
+				{{ header }}
+			</div>
+			{% endif %}
+			{{ rows }}
+		</div>
+	</div>
+	{% endif %}
+{% elseif view.current_display == 'block_features_style2' %}
+	{% if rows %}
+	<div class="container">
+		{{ title_prefix }}
+		{{ title }}
+		{{ title_suffix }}
+		{% if header %}
+			{{ header }}
+		<div class="title-line wide50 color m-top2"></div>
+		{% endif %}
+		{{ rows|render|str_replace_first('content-feature-col', 'content-feature-col active ', 3)|str_replace_first('content-feature-col active', 'content-feature-col ', 2)|raw }}
+	</div>
+	{% endif %}
+{% elseif view.current_display == 'block_features_style3' %}
+	{% if rows %}
+	<div class="container">
+		<div class="row">
+		{{ title_prefix }}
+		{{ title }}
+		{{ title_suffix }}
+		{% if header %}
+			<div class="col-md-4">     
+				{{ header }}
+			</div>
+		{% endif %}
+			{{ rows|render|str_replace_first('<div class="col-lg-12 col-sm-12 left-padd0 m-bottom2 first">','<div class="col-md-4"><div class="col-lg-12 col-sm-12 left-padd0 m-bottom2">')|str_replace('<div class="col-lg-12 col-sm-12 left-padd0 m-bottom2 first">','</div><div class="col-md-4"><div class="col-lg-12 col-sm-12 left-padd0 m-bottom2">')|concatenation('</div>')|raw }}
+		</div>
+	</div>
+	{% endif %}
+{% elseif view.current_display == 'block_featured_article_style3' %}
+	{% if rows %}
+	<div class="container">
+		<div class="row">
+		{{ title_prefix }}
+		{{ title }}
+		{{ title_suffix }}
+		{% if header %}
+			<div class="col-lg-6 col-sm-6">
+				{{ header }}
+			</div>
+		{% endif %}
+			<div class="col-lg-6 col-sm-6">
+	          	<div> 
+	            	{{ attachment_before|render|str_replace('"nav nav-tabs tabs-style2"', '"nav nav-tabs tabs-style2" role="tablist"')|raw }}
+	            	<!-- Tab panes -->
+	            	<div class="tab-content tab-style3">
+						{{ rows|render|str_replace_first('class="tab-pane', 'class="tab-pane active')|raw }}
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	{% endif %}
+{% elseif view.current_display == 'block_services_style2' %}
+	{% if rows %}
+	<div class="container">
+		<div class="row">
+		{{ title_prefix }}
+		{{ title }}
+		{{ title_suffix }}
+		{% if header %}
+			{{ header }}
+		{% endif %}
+			{{ rows|render|str_replace_first('<div class="col-feature-box m-bottom6 first">','<div class="col-md-6"><div class="col-feature-box m-bottom6">')|str_replace('<div class="col-feature-box m-bottom6 first">','</div><div class="col-md-6"><div class="col-feature-box m-bottom6">')|concatenation('</div>')|raw }}
+		</div>
+	</div>
+	{% endif %}
+{% elseif view.current_display == 'block_customers_review_style3' %}
+	{% if rows %}
+	<div class="container m-bottom5">
+      	<div class="row">
+        	<div class="col-test-5 text-center">
+          		<div id="carousel-example-generics" class="carousel slide" data-ride="carousel"> 
+					{{ title_prefix }}
+					{{ title }}
+					{{ title_suffix }}
+					{% if header %}
+						{{ header }}
+					{% endif %}
+					<!-- Indicators -->
+					{% set n = rows|render|substr_count('item') %}
+            		<ol class="carousel-indicators style">
+					{% for i in 0..n-1 %}
+						<li data-target="#carousel-example-generics" data-slide-to="{{ i }}" class="{{loop.first ? 'active' : ''}}"></li>
+					{% endfor %}
+            		</ol>
+            		<!-- Wrapper for slides -->
+            		<div class="carousel-inner" role="listbox">
+						{{ rows|render|str_replace_first('<div class="col-md-6 col-sm-6 first">', '<div class="item active"><div class="col-md-6 col-sm-6">')|str_replace('<div class="col-md-6 col-sm-6 first">', '</div><div class="item"><div class="col-md-6 col-sm-6">')|concatenation('</div>')|raw }}
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	{% endif %}
+{% elseif view.current_display == 'block_customers_review_style4' %}
+	{% if rows %}
+	<div class="container m-bottom5">
+      	<div class="row">
+      		{{ title_prefix }}
+			{{ title }}
+			{{ title_suffix }}
+			{% if header %}
+			<div class="title1 text-center">
+				{{ header }}
+			</div>
+			{% endif %}
+			<div class="col-test-5 one text-center">
+          		<div id="carousel-example-generics" class="carousel slide" data-ride="carousel"> 
+            		<!-- Indicators -->
+            		{% set n = rows|render|substr_count('item') %}
+            		<ol class="carousel-indicators style">
+						{% for i in 0..n-1 %}
+						<li data-target="#carousel-example-generics" data-slide-to="{{ i }}" class="{{loop.first ? 'active' : ''}}"></li>
+						{% endfor %}
+            		</ol>
+            		<!-- Wrapper for slides -->
+            		<div class="carousel-inner" role="listbox">
+						{{ rows|render|str_replace_first('<div class="col-md-4 col-sm-4 first">', '<div class="item active"><div class="col-md-4 col-sm-4">')|str_replace('<div class="col-md-4 col-sm-4 first">', '</div><div class="item"><div class="col-md-4 col-sm-4">')|concatenation('</div>')|raw }}
+            		</div>
+            	</div>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+{% elseif view.current_display == 'block_services_style4' %}
+	{% if rows %}
+	<div class="container">
+      	<div class="row">
+			{{ title_prefix }}
+			{{ title }}
+			{{ title_suffix }}
+			{% if header %}
+			<div class="col-md-4">
+				{{ header }}
+			</div>
+			{% endif %}
+			{{ rows|render|str_replace_first('<div class="col-lg-12 col-sm-12 left-padd0 m-bottom2 first">', '<div class="col-md-4"><div class="col-lg-12 col-sm-12 left-padd0 m-bottom2">')|str_replace('<div class="col-lg-12 col-sm-12 left-padd0 m-bottom2 first">', '</div><div class="col-md-4"><div class="col-lg-12 col-sm-12 left-padd0 m-bottom2">')|concatenation('</div>')|raw }}
+      	</div>
+    </div>
+	{% endif %}
+{% elseif view.current_display == 'block_services_slider_and_accordion' %}
+	{% if rows %}
+	<div class="container">
+      	<div class="row">
+      		{{ title_prefix }}
+			{{ title }}
+			{{ title_suffix }}
+			{% if header %}
+				{{ header }}
+			{% endif %}
+        	<div class="col-md-6 m-bottom5">
+          		<div id="carousel-example-generic1" class="carousel slide" data-ride="carousel"> 
+            		<!-- Indicators -->
+            		{% set n = rows|render|substr_count('panel-default') %}
+            		<ol class="carousel-indicators">
+					{% for i in 0..n-1 %}
+						<li data-target="#carousel-example-generics" data-slide-to="{{ i }}" class="{{loop.first ? 'active' : ''}}"></li>
+					{% endfor %}
+            		</ol>
+            		{{ attachment_before }}
+            	</div>
+            </div>
+            <div class="col-md-6 m-bottom5 ser-panel">
+          		<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+          			{{ rows|render|str_replace_first('panel-collapse collapse', 'panel-collapse collapse in')|raw }}
+          		</div>
+          	</div>
+        </div>
+    </div>
+	{% endif %}
+{% elseif view.current_display == 'block_featured_features_style2' or view.current_display == 'block_featured_article_style4' or view.current_display == 'block_partners_style1' or view.current_display == 'block_features_style4' or view.current_display == 'block_featured_article_style5' or view.current_display == 'block_featured_article_style6' or view.current_display == 'block_featured_article_style12' or view.current_display == 'block_featured_article_style13' %}
+	{% if rows %}
+		{{ title_prefix }}
+		{{ title }}
+		{{ title_suffix }}
+		<div class="container">
+			<div class="row">
+				{{ header }}
+				{{ rows }}
+			</div>
+		</div>
+	{% endif %}
+{% elseif view.current_display == 'block_best_team_style2' or view.current_display == 'block_best_team_style3' or view.current_display == 'block_best_team_style2b' or view.current_display == 'block_best_team_style4' %}
+	{% if rows %}
+		{{ title_prefix }}
+		{{ title }}
+		{{ title_suffix }}
+		<div class="container">
+			<div class="row">
+			{% if header %}
+				<div class="title1 text-center">
+					{{ header }}
+				</div>
+			{% endif %}
+				{{ rows|render|str_replace_first('team-thumb clearfix', 'team-thumb active clearfix')|raw }}
+			</div>
+		</div>
+	{% endif %}
+{% elseif view.current_display == 'block_featured_features_style3' or view.current_display == 'block_featured_features_style3b' %}
+	{% if rows %}
+	<div class="container">
+      	<div class="row">
+        	<div class="col-sm-6">
+				{{ title_prefix }}
+				{{ title }}
+				{{ title_suffix }}
+				{{ header }}
+				{{ rows }}
+        	</div>
+        {% if footer %}
+			<div class="col-sm-6 text-center">
+				{{ footer }}
+			</div>
+        {% endif %}
+        </div>
+    </div>
+	{% endif %}
+{% elseif view.current_display == 'block_services_style3' %}
+	{% if rows %}
+	<div class="container">
+      	{{ title_prefix }}
+		{{ title }}
+		{{ title_suffix }}
+		{% if header %}
+		<div class="title1 text-center">
+			{{ header }}
+		</div>
+		{% endif %}
+		{% if footer %}
+		<div class="col-md-4 text-center">
+			{{ footer }}
+		</div>
+		{% endif %}
+		<div class="col-md-7 right">
+			{{ rows|render|str_replace_first('col-amg-services', 'col-amg-services active')|raw }}
+		</div>
+    </div>       
+	{% endif %}
+{% elseif view.current_display == 'block_customers_review_style5' %}
+	{% if rows %}
+	<div class="container">
+      	<div class="row">
+			{{ title_prefix }}
+			{{ title }}
+			{{ title_suffix }}
+		{% if header %}
+			<div class="title1 text-center">
+				{{ header }}
+			</div>
+		{% endif %}
+			<div id="carousel-example-generics" class="carousel slide" data-ride="carousel"> 
+          		<!-- Indicators -->
+          		{% set n = rows|render|substr_count('item') %}
+          		<ol class="carousel-indicators">
+				{% for i in 0..n-1 %}
+					<li data-target="#carousel-example-generics" data-slide-to="{{ i }}" class="{{loop.first ? 'active' : ''}}"></li>
+				{% endfor %}
+          		</ol>
+          		<!-- Wrapper for slides -->
+          		<div class="carousel-inner" role="listbox">
+					{{ rows }}
+          		</div>
+
+          	</div>
+      	</div>
+    </div>
+	{% endif %}
+{% elseif view.current_display == 'block_services_style6' %}
+	{% if rows %}
+	<div class="container text-center">
+      	<div class="row">
+			{{ title_prefix }}
+			{{ title }}
+			{{ title_suffix }}
+			{{ header }}
+			<div class="button m-top5">
+				{{ rows }}
+			</div>
+			{{ footer }}
+      	</div>
+    </div>
+	{% endif %}
+{% elseif view.current_display == 'block_featured_article_style7' or view.current_display == 'block_features_style5' or view.current_display == 'block_featured_article_style8' or view.current_display == 'block_featured_article_style9' or view.current_display == 'block_featured_article_style11' %}
+	{% if rows %}
+	<div class="container">
+      	<div class="row">
+			{{ title_prefix }}
+			{{ title }}
+			{{ title_suffix }}
+			{% if header %}
+			<div class="title1 text-center">
+				{{ header }}
+			</div>
+			{% endif %}
+			{{ rows }}
+      	</div>
+    </div>
+	{% endif %}
+{% elseif view.current_display == 'block_services_style7' %}
+	{% if rows %}
+	<div class="two-color-box-img">
+    	<div class="container">
+        	<div class="col-md-6 m-bottom3 left-padd0">
+				{{ title_prefix }}
+				{{ title }}
+				{{ title_suffix }}
+				{% if header %}
+					{{ header }}
+				{% endif %}
+				{{ rows }}
+			</div>
+			<div class="col-md-6 no-left-padd nophone right-padd4 m-bottom3">&nbsp;</div>
+      	</div>
+    </div>
+	{% endif %}
+{% elseif view.current_display == 'block_features_style6' %}
+	{% if rows %}
+	<div class="container">
+      	<div class="row">
+			{{ title_prefix }}
+			{{ title }}
+			{{ title_suffix }}
+			{% if header %}
+				{{ header }}
+			{% endif %}
+			{{ rows|render|str_replace_first('<div class="content-feature-2 font-left first">', '<div class="col-md-6"><div class="content-feature-2 font-left m-top5">')|str_replace('<div class="content-feature-2 font-left first">', '</div><div class="col-md-6"><div class="content-feature-2 font-left m-top5">')|concatenation('</div>')|raw  }}
+      	</div>
+    </div>
+	{% endif %}
+{% elseif view.current_display == 'block_recent_properties' or view.current_display == 'block_popular_courses' or view.current_display == 'block_popular_classes' %}
+	{% if rows %}
+	<div class="container">
+      	<div class="row">
+			{{ title_prefix }}
+			{{ title }}
+			{{ title_suffix }}
+			{% if header %}
+			<div class="title1 text-center m-bottom5">
+				{{ header }}
+			</div>
+			{% endif %}
+			{{ rows }}
+      	</div>
+    </div>
+	{% endif %}
+{% elseif view.current_display == 'block_featured_article_style10' %}
+	{% if rows %}
+	<div class="container">
+      	<div class="row">
+			{{ title_prefix }}
+			{{ title }}
+			{{ title_suffix }}
+			{% if header %}
+			<div class="col-sm-3 m-bottom4">
+				{{ header }}
+			</div>
+			{% endif %}
+			{{ rows }}
+      	</div>
+    </div>
+	{% endif %}
+{% elseif view.current_display == 'block_services_style8' %}
+	{% if rows %}
+	<div class="container">
+      	<div class="row">
+			{{ title_prefix }}
+			{{ title }}
+			{{ title_suffix }}
+			{% if footer %}
+			<div class="col-md-4 col-sm-4">
+				{{ footer }}
+			</div>
+			{% endif %}
+			<div class="col-md-8 col-sm-8">
+				{% if header %}
+					{{ header }}
+				{% endif %}
+				{{ rows }}
+			</div>
+      	</div>
+    </div>
+	{% endif %}
+{% elseif view.current_display == 'block_services_style10' %}
+	{% if rows %}
+	<div class="container">
+		<div class="">
+			{{ title_prefix }}
+			{{ title }}
+			{{ title_suffix }}
+			{% if header %}
+			{{ header }}
+			<div class="title-line wide50 color m-top2"></div>
+			{% endif %}
+			{{ rows }}
+		</div>
+	</div>
+	{% endif %}
+{% elseif view.current_display == 'block_services_style11' %}
+	{% if rows %}
+	<div class="container">
+      	<div class="row">
+        	<div class="col-md-6 col-sm-6">
+				{{ title_prefix }}
+				{{ title }}
+				{{ title_suffix }}
+				{% if header %}
+				<div class="sec-titiel m-bottom5">
+					{{ header }}
+				</div>
+				{% endif %}
+				{{ rows }}
+        	</div>
+        {% if footer %}
+			<div class="col-md-6 col-sm-6">
+				{{ footer }}
+			</div>
+        {% endif %}
+    	</div>
+    </div>
+	{% endif %}
+{% else %}
+	{% if rows %}
+	<div class="container">
+		<div class="">
+			{{ title_prefix }}
+			{{ title }}
+			{{ title_suffix }}
+			{% if header %}
+			<div class="title1 text-center">
+				{{ header }}
+			</div>
+			{% endif %}
+			{{ rows }}
+		</div>
+	</div>
+	{% endif %}
+{% endif %}

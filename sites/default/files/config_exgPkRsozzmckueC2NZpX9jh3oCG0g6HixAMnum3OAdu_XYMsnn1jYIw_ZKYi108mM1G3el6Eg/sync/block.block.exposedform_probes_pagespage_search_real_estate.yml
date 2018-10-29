@@ -1,0 +1,48 @@
+uuid: fb8cd4e8-b65c-497e-826e-524c8bfd91c1
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_visibility_groups.block_visibility_group.home_real_estate
+    - views.view._probes_pages
+  module:
+    - block_attributes
+    - block_visibility_groups
+    - ntv_block_background
+    - views
+  theme:
+    - probes
+third_party_settings:
+  block_attributes:
+    attr_class: ''
+    attr_id: ''
+  ntv_block_background:
+    disable: disable
+    color: '#000000'
+    bg_image: {  }
+    bg_image_type: default
+    bg_repeat: 'no'
+    bg_image_position: ''
+    bg_image_size: ''
+    background_overlay: ''
+id: exposedform_probes_pagespage_search_real_estate
+theme: probes
+region: section
+weight: -15
+provider: null
+plugin: 'views_exposed_filter_block:_probes_pages-page_search_real_estate'
+settings:
+  id: 'views_exposed_filter_block:_probes_pages-page_search_real_estate'
+  label: ''
+  provider: views
+  label_display: visible
+  views_label: '<span class="line blueline"></span><span class="uppercase font-grey font-bold font14">Property Search</span><br>Find Your Home'
+  attributes:
+    class: section-lg-grey3
+    id: ''
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: home_real_estate
+    context_mapping: {  }

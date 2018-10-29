@@ -1,0 +1,144 @@
+uuid: 2ed828c2-3ce5-4e7a-ae8c-a2112524f3f9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.coming_soon.body
+    - field.field.node.coming_soon.field_color_stylesheet
+    - field.field.node.coming_soon.field_content_class
+    - field.field.node.coming_soon.field_end_date
+    - field.field.node.coming_soon.field_footer_background_color
+    - field.field.node.coming_soon.field_footer_background_image
+    - field.field.node.coming_soon.field_footer_class
+    - field.field.node.coming_soon.field_footer_layout
+    - field.field.node.coming_soon.field_image
+    - image.style.thumbnail
+    - node.type.coming_soon
+  module:
+    - datetime
+    - field_group
+    - image
+    - imce
+    - navi_color_field
+    - path
+    - text
+third_party_settings:
+  field_group:
+    group_footer_setting:
+      children:
+        - field_footer_layout
+        - field_footer_background_image
+        - field_footer_background_color
+        - field_footer_class
+      parent_name: ''
+      weight: 108
+      label: 'Footer setting'
+      format_type: details
+      format_settings:
+        open: false
+        required_fields: true
+        classes: ''
+        id: ''
+id: node.coming_soon.default
+targetEntityType: node
+bundle: coming_soon
+mode: default
+content:
+  body:
+    type: text_textarea_with_summary
+    weight: 31
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+    third_party_settings: {  }
+  created:
+    type: datetime_timestamp
+    weight: 10
+    settings: {  }
+    third_party_settings: {  }
+  field_color_stylesheet:
+    weight: 36
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+  field_content_class:
+    weight: 35
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+  field_end_date:
+    weight: 34
+    settings: {  }
+    third_party_settings: {  }
+    type: datetime_default
+  field_footer_background_color:
+    weight: 39
+    settings: {  }
+    third_party_settings: {  }
+    type: ColorDefaultWidget
+  field_footer_background_image:
+    weight: 38
+    settings:
+      preview_image_style: thumbnail
+      progress_indicator: throbber
+    third_party_settings:
+      imce:
+        enabled: true
+    type: image_image
+  field_footer_class:
+    weight: 40
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+  field_footer_layout:
+    weight: 37
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+  field_image:
+    weight: 32
+    settings:
+      preview_image_style: thumbnail
+      progress_indicator: throbber
+    third_party_settings:
+      imce:
+        enabled: true
+    type: image_image
+  path:
+    type: path
+    weight: 30
+    settings: {  }
+    third_party_settings: {  }
+  promote:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 15
+    third_party_settings: {  }
+  sticky:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 16
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: -5
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  uid:
+    type: entity_reference_autocomplete
+    weight: 5
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden: {  }

@@ -1,0 +1,26 @@
+uuid: b83fddd1-222f-4265-b6af-7a921961763f
+langcode: en
+status: false
+dependencies: {  }
+_core:
+  default_config_hash: HyGtIjw7ZUKg2blDJwgQYbChHgB7oFywLLtYy8wl5dA
+name: Australia
+alpha_2: AU
+alpha_3: AUS
+numeric: 36
+zones:
+  NSW: 'New South Wales'
+  QLD: Queensland
+  SA: 'South Australia'
+  TAS: Tasmania
+  VIC: Victoria
+  WA: 'Western Australia'
+  NT: 'Northern Territory'
+  ACT: 'Australian Capital Territory'
+address_format:
+  - '!company'
+  - '!first_name !last_name'
+  - '!street1'
+  - '!street2'
+  - '!city !zone_code !postal_code'
+  - '!country_name_if'

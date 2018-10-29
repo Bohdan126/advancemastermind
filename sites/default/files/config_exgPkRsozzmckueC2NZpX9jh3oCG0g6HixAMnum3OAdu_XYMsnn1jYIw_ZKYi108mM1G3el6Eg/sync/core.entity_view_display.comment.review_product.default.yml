@@ -1,0 +1,23 @@
+uuid: e5ea973d-72ae-4179-8d04-0f8bd802a637
+langcode: en
+status: true
+dependencies:
+  config:
+    - comment.type.review_product
+    - field.field.comment.review_product.field_comment_body
+id: comment.review_product.default
+targetEntityType: comment
+bundle: review_product
+mode: default
+content:
+  field_comment_body:
+    weight: 0
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+  links:
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }

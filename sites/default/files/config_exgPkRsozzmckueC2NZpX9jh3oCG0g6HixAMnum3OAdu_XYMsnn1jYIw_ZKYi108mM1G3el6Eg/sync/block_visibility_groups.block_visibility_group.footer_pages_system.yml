@@ -1,0 +1,19 @@
+uuid: fdeb1b4f-ffb9-41d4-8ca0-4f4fb01ff189
+langcode: en
+status: true
+dependencies:
+  module:
+    - ctools
+id: footer_pages_system
+label: 'Footer basic page'
+logic: and
+conditions:
+  0c24584c-34c5-405c-b2b9-347aa7ff7aef:
+    id: 'entity_bundle:node'
+    bundles:
+      page: page
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+    uuid: 0c24584c-34c5-405c-b2b9-347aa7ff7aef
+allow_other_conditions: false

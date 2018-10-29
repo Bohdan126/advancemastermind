@@ -1,0 +1,36 @@
+uuid: 3ff2f82c-3c23-4b9b-a0fc-717aa08e0760
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_visibility_groups.block_visibility_group.home1
+  content:
+    - 'block_content:basic:b9648582-ca70-4561-8862-b338efb8a3e9'
+  module:
+    - block_content
+    - block_visibility_groups
+  theme:
+    - probes
+id: probesblocksectionsocialnetwork_2
+theme: probes
+region: section
+weight: -7
+provider: null
+plugin: 'block_content:b9648582-ca70-4561-8862-b338efb8a3e9'
+settings:
+  id: 'block_content:b9648582-ca70-4561-8862-b338efb8a3e9'
+  label: '[Probes] Block section social network'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+  attributes:
+    class: 'section-lg-1 m-top6'
+    id: ''
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: home1
+    context_mapping: {  }

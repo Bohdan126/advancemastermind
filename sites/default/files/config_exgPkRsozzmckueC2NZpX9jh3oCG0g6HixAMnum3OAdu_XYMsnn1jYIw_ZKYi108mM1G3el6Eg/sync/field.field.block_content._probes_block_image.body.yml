@@ -1,0 +1,22 @@
+uuid: 52c97ff3-2af3-4e9a-9fa8-bc63b1a26b32
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type._probes_block_image
+    - field.storage.block_content.body
+  module:
+    - text
+id: block_content._probes_block_image.body
+field_name: body
+entity_type: block_content
+bundle: _probes_block_image
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: false
+field_type: text_with_summary

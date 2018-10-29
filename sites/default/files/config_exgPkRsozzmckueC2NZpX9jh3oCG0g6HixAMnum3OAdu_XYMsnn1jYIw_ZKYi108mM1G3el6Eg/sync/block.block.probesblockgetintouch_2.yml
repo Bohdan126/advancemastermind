@@ -1,0 +1,53 @@
+uuid: debb469c-482b-4cf1-bee4-9772525c885f
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_visibility_groups.block_visibility_group.footer_layout_4
+  content:
+    - 'block_content:basic:1dd8bbb4-32c0-432f-b3b9-f65b3f06d2e2'
+  module:
+    - block_attributes
+    - block_content
+    - block_visibility_groups
+    - ntv_block_background
+  theme:
+    - probes
+third_party_settings:
+  block_attributes:
+    attr_class: ''
+    attr_id: ''
+    block_title: ''
+    block_title_icon: ''
+  ntv_block_background:
+    disable: disable
+    color: '#000000'
+    bg_image: {  }
+    bg_image_type: default
+    bg_repeat: 'no'
+    bg_image_position: ''
+    bg_image_size: ''
+    background_overlay: ''
+id: probesblockgetintouch_2
+theme: probes
+region: footer4
+weight: null
+provider: null
+plugin: 'block_content:1dd8bbb4-32c0-432f-b3b9-f65b3f06d2e2'
+settings:
+  id: 'block_content:1dd8bbb4-32c0-432f-b3b9-f65b3f06d2e2'
+  label: 'Get In Touch'
+  provider: block_content
+  label_display: visible
+  status: true
+  info: ''
+  view_mode: full
+  attributes:
+    class: 'col-md-4 title-white'
+    id: ''
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: footer_layout_4
+    context_mapping: {  }

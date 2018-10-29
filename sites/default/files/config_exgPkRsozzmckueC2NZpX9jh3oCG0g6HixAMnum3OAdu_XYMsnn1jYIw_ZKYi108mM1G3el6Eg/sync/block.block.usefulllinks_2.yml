@@ -1,0 +1,49 @@
+uuid: e6d3b7f9-5b80-4334-8554-5481a5a8b13c
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_visibility_groups.block_visibility_group.home_real_estate
+    - system.menu.usefull-links
+  module:
+    - block_attributes
+    - block_visibility_groups
+    - ntv_block_background
+    - system
+  theme:
+    - probes
+third_party_settings:
+  block_attributes:
+    attr_class: ''
+    attr_id: ''
+  ntv_block_background:
+    disable: disable
+    color: '#000000'
+    bg_image: {  }
+    bg_image_type: default
+    bg_repeat: 'no'
+    bg_image_position: ''
+    bg_image_size: ''
+    background_overlay: ''
+id: usefulllinks_2
+theme: probes
+region: footer
+weight: -14
+provider: null
+plugin: 'system_menu_block:usefull-links'
+settings:
+  id: 'system_menu_block:usefull-links'
+  label: 'Usefull Links'
+  provider: system
+  label_display: visible
+  level: 1
+  depth: 0
+  attributes:
+    class: 'col-md-3 col-sm-12 m-bottom3'
+    id: ''
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: home_real_estate
+    context_mapping: {  }

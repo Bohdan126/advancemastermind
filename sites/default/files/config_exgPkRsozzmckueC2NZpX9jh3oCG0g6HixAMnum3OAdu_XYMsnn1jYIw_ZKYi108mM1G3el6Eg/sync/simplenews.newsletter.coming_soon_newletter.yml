@@ -1,0 +1,17 @@
+uuid: 4fa4d271-8fe4-4667-a67e-224e44d42baf
+langcode: en
+status: true
+dependencies: {  }
+name: 'Coming soon newsletter'
+id: coming_soon_newletter
+description: ''
+format: plain
+priority: 0
+receipt: true
+from_name: 'Probes Drupal 8 Theme'
+subject: '[[simplenews-newsletter:name]] [node:title]'
+from_address: navisystemvn@gmail.com
+hyperlinks: true
+new_account: none
+opt_inout: double
+weight: 0

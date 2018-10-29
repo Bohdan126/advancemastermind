@@ -1,0 +1,17 @@
+uuid: 87f8f2a2-29b4-4643-bbf3-83d561553d94
+langcode: en
+status: true
+dependencies: {  }
+name: 'Probes newsletter'
+id: probes_newsletter
+description: ''
+format: html
+priority: 1
+receipt: true
+from_name: 'Probes Drupal 8 Theme'
+subject: '[[simplenews-newsletter:name]] [node:title]'
+from_address: navisystemvn@gmail.com
+hyperlinks: true
+new_account: 'on'
+opt_inout: double
+weight: 0

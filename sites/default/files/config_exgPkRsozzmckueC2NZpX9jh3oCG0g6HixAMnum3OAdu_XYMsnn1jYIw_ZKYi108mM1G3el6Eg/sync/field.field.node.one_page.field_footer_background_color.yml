@@ -1,0 +1,21 @@
+uuid: 3dc3a35a-3170-4d38-ac5f-68668176d26f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_footer_background_color
+    - node.type.one_page
+  module:
+    - navi_color_field
+id: node.one_page.field_footer_background_color
+field_name: field_footer_background_color
+entity_type: node
+bundle: one_page
+label: 'Footer background color'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: Navi_Color

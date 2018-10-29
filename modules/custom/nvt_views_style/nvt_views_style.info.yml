@@ -1,0 +1,7 @@
+name: NaviTeam style for views
+type: module
+description: 'Provides a custom View display style.'
+package: NaviTeam
+core: '8.x'
+dependencies:
+  - views

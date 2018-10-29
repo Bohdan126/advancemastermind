@@ -1,0 +1,8 @@
+uuid: 5f165bab-4557-4845-b438-584452567352
+langcode: en
+status: true
+dependencies: {  }
+id: review_product
+label: 'Review product'
+target_entity_type_id: node
+description: ''

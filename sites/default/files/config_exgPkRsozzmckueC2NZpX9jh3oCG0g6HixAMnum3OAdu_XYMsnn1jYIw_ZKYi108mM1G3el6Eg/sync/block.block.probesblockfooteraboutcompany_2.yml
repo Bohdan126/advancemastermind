@@ -1,0 +1,52 @@
+uuid: f8c14755-9816-4f2a-aada-e2870a0c40c9
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_visibility_groups.block_visibility_group.home_business_2
+  content:
+    - 'block_content:basic:c7607616-81c8-465c-bd30-b20663bf6307'
+  module:
+    - block_attributes
+    - block_content
+    - block_visibility_groups
+    - ntv_block_background
+  theme:
+    - probes
+third_party_settings:
+  block_attributes:
+    attr_class: ''
+    attr_id: ''
+    block_title_icon: ''
+  ntv_block_background:
+    disable: disable
+    color: '#000000'
+    bg_image: {  }
+    bg_image_type: default
+    bg_repeat: 'no'
+    bg_image_position: ''
+    bg_image_size: ''
+    background_overlay: ''
+id: probesblockfooteraboutcompany_2
+theme: probes
+region: footer
+weight: -18
+provider: null
+plugin: 'block_content:c7607616-81c8-465c-bd30-b20663bf6307'
+settings:
+  id: 'block_content:c7607616-81c8-465c-bd30-b20663bf6307'
+  label: 'About Company'
+  provider: block_content
+  label_display: visible
+  status: true
+  info: ''
+  view_mode: full
+  attributes:
+    class: 'col-md-3 col-sm-12 m-bottom3'
+    id: ''
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: home_business_2
+    context_mapping: {  }

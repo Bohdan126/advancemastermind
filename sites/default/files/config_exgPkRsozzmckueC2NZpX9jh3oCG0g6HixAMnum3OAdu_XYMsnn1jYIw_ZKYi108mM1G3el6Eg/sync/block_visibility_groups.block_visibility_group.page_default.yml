@@ -1,0 +1,37 @@
+uuid: 54ab5cf1-baa9-4dc0-9d52-82c576c9d4d5
+langcode: en
+status: true
+dependencies:
+  module:
+    - ctools
+    - system
+id: page_default
+label: 'Page default'
+logic: or
+conditions:
+  2115199f-8779-41d6-a99a-8005acca1306:
+    id: 'entity_bundle:node'
+    bundles:
+      article: article
+      brand_solutions: brand_solutions
+      classes: classes
+      clients: clients
+      courses: courses
+      customers_review: customers_review
+      features: features
+      gallery: gallery
+      partner: partner
+      real_estate: real_estate
+      services: services
+      team: team
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+    uuid: 2115199f-8779-41d6-a99a-8005acca1306
+  abbdcbbf-b3f3-47e2-99b3-10c3164b0cdf:
+    id: request_path
+    pages: "/node/172\r\n/node/173\r\n/node/186\r\n/node/187\r\n/node/191\r\n/node/192\r\n/node/193\r\n/node/194\r\n/node/195\r\n/node/196\r\n/node/197\r\n/node/198\r\n/node/202\r\n/node/203\r\n/node/204\r\n/node/205\r\n/node/206\r\n/node/207\r\n/user/*\r\n/search/*"
+    negate: false
+    context_mapping: {  }
+    uuid: abbdcbbf-b3f3-47e2-99b3-10c3164b0cdf
+allow_other_conditions: false

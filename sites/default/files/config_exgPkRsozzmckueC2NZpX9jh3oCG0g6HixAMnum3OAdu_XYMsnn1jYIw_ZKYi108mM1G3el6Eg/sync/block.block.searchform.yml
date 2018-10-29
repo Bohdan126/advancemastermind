@@ -1,0 +1,46 @@
+uuid: a7a16f85-61fd-4a35-9eb7-f600aae41061
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_visibility_groups.block_visibility_group.sidebar
+  module:
+    - block_attributes
+    - block_visibility_groups
+    - ntv_block_background
+    - search
+  theme:
+    - probes
+third_party_settings:
+  block_attributes:
+    attr_class: ''
+    attr_id: ''
+  ntv_block_background:
+    disable: disable
+    color: '#000000'
+    bg_image: {  }
+    bg_image_type: default
+    bg_repeat: 'no'
+    bg_image_position: ''
+    bg_image_size: ''
+    background_overlay: ''
+id: searchform
+theme: probes
+region: sidebar
+weight: -12
+provider: null
+plugin: search_form_block
+settings:
+  id: search_form_block
+  label: Search
+  provider: search
+  label_display: visible
+  attributes:
+    class: 'widget m-bottom4'
+    id: ''
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: sidebar
+    context_mapping: {  }

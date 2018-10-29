@@ -1,0 +1,21 @@
+uuid: d3a65c12-62a6-4445-99e3-333f8cfc5bdf
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_footer_layout
+    - node.type.one_page
+  module:
+    - options
+id: node.one_page.field_footer_layout
+field_name: field_footer_layout
+entity_type: node
+bundle: one_page
+label: 'Footer layout'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

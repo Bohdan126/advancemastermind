@@ -1,0 +1,4 @@
+nvt_menu_attributes.config:
+  route_name: nvt_menu_attributes.config
+  title: 'Available attributes'
+  base_route: entity.menu.collection

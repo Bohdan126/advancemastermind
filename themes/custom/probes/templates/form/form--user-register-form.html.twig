@@ -1,0 +1,8 @@
+<div class="reg_form">
+	<form{{ attributes.addClass('sky-form') }}>
+		<header>{{ header_form_register }}</header>
+		<fieldset>
+			{{ children|render|str_replace('<label for="edit-user-picture-0-upload"', '<label class="label" for="edit-user-picture-0-upload"')|str_replace_first('button js-form-submit','js-form-submit')|raw }}
+		</fieldset>
+	</div>
+</div>

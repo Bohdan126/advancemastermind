@@ -1,0 +1,481 @@
+<?php
+use Drupal\Views\ViewExecutable;
+use Drupal\file\Entity\File;
+use Drupal\Core\Template\Attribute;
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\node\NodeInterface;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\HeaderBag;
+global $base_url;
+
+function probes_preprocess_block(&$variables) {
+	switch ($variables['base_plugin_id']) {
+	case 'system_branding_block':
+	$variables['site_logo'] = '';
+	if ($variables['content']['site_logo']['#access'] && $variables['content']['site_logo']['#uri']) {
+		$variables['site_logo'] = str_replace('.svg', '.png', $variables['content']['site_logo']['#uri']);
+	}
+	break;
+	}
+	if (!empty($variables['elements']['#id'])) {
+    	$block = entity_load('block', $variables['elements']['#id']);
+		$region = $block->getRegion();
+        $variables['block_region'] = $region;
+		if($region == 'section') {
+			$variables['attributes']['class'][] = 'section-lg';
+		}
+  	}
+	
+}
+// Implements hook_views_pre_render().
+function probes_views_pre_render(ViewExecutable $view) {
+  if($view->id() == 'frontpage' && $view->current_display == 'page_1') {
+    // Use some or all of the following 3 lines to remove specific
+    // 'no results' behaviors
+    unset($view->empty['area_text_custom']);
+    unset($view->empty['node_listing_empty']);
+    unset($view->empty['title']);
+  }
+}
+
+
+function probes_preprocess_node(&$variables) {
+    // Getting the node creation time stamp from the node object.
+    $date = $variables['node']->getCreatedTime();
+    // Here you can use drupal's format_date() function, or some custom PHP date formatting.
+    $variables['node_date'] = \Drupal::service('date.formatter')->format($date, 'd F Y, G:i');
+}
+function probes_preprocess_page(&$variables) {
+	global $base_path;
+    $variables['logo'] = $base_path.'/'.drupal_get_path('theme','probes').'/logo.svg';
+	$variables['logo'] = str_replace('.svg', '.png', $variables['logo']);
+  	if (($node = \Drupal::routeMatch()->getParameter('node')) && $node instanceof \Drupal\node\NodeInterface) {
+        $variables['node_title'] = $node->title->value;
+  		if(isset($node->field_color_stylesheet) && !empty($node->field_color_stylesheet)) {
+  			if($node->field_color_stylesheet->value == 'blue') {
+  				$variables['#attached']['library'][] = 'probes/color-blue';
+  			} elseif ($node->field_color_stylesheet->value == 'green') {
+  				$variables['#attached']['library'][] = 'probes/color-green';
+  			} elseif ($node->field_color_stylesheet->value == 'lightblue') {
+  				$variables['#attached']['library'][] = 'probes/color-lightblue';
+  			} elseif ($node->field_color_stylesheet->value == 'lightgreen') {
+  				$variables['#attached']['library'][] = 'probes/color-lightgreen';
+  			} elseif ($node->field_color_stylesheet->value == 'lightred') {
+  				$variables['#attached']['library'][] = 'probes/color-light-red';
+  			} elseif ($node->field_color_stylesheet->value == 'olive') {
+  				$variables['#attached']['library'][] = 'probes/color-olive';
+  			} elseif ($node->field_color_stylesheet->value == 'orange') {
+  				$variables['#attached']['library'][] = 'probes/color-orange';
+  			} elseif ($node->field_color_stylesheet->value == 'red') {
+  				$variables['#attached']['library'][] = 'probes/color-red';
+  			} elseif ($node->field_color_stylesheet->value == 'sea') {
+  				$variables['#attached']['library'][] = 'probes/color-sea';
+  			} elseif ($node->field_color_stylesheet->value == 'violet') {
+  				$variables['#attached']['library'][] = 'probes/color-violet';
+  			}
+  		} else {
+            $color_stylesheet = theme_get_setting('built_in_skins', 'probes');
+            if($color_stylesheet == 'blue') {
+                $variables['#attached']['library'][] = 'probes/color-blue';
+            } elseif ($color_stylesheet == 'green') {
+                $variables['#attached']['library'][] = 'probes/color-green';
+            } elseif ($color_stylesheet == 'lightblue') {
+                $variables['#attached']['library'][] = 'probes/color-lightblue';
+            } elseif ($color_stylesheet == 'lightgreen') {
+                $variables['#attached']['library'][] = 'probes/color-lightgreen';
+            } elseif ($color_stylesheet == 'lightred') {
+                $variables['#attached']['library'][] = 'probes/color-light-red';
+            } elseif ($color_stylesheet == 'olive') {
+                $variables['#attached']['library'][] = 'probes/color-olive';
+            } elseif ($color_stylesheet == 'orange') {
+                $variables['#attached']['library'][] = 'probes/color-orange';
+            } elseif ($color_stylesheet == 'red') {
+                $variables['#attached']['library'][] = 'probes/color-red';
+            } elseif ($color_stylesheet == 'sea') {
+                $variables['#attached']['library'][] = 'probes/color-sea';
+            } elseif ($color_stylesheet == 'violet') {
+                $variables['#attached']['library'][] = 'probes/color-violet';
+            }
+        }
+        if(isset($node->field_carousel_slider) && !empty($node->field_carousel_slider)) {
+            if($node->field_carousel_slider->value ==1){
+                $variables['#attached']['library'][] = 'probes/carousel-slider';
+            }
+        }
+	} else {
+        $color_stylesheet = theme_get_setting('built_in_skins', 'probes');
+        $variables['color_stylesheet'] = $color_stylesheet;
+        if($color_stylesheet == 'blue') {
+            $variables['#attached']['library'][] = 'probes/color-blue';
+        } elseif ($color_stylesheet == 'green') {
+            $variables['#attached']['library'][] = 'probes/color-green';
+        } elseif ($color_stylesheet == 'lightblue') {
+            $variables['#attached']['library'][] = 'probes/color-lightblue';
+        } elseif ($color_stylesheet == 'lightgreen') {
+            $variables['#attached']['library'][] = 'probes/color-lightgreen';
+        } elseif ($color_stylesheet == 'lightred') {
+            $variables['#attached']['library'][] = 'probes/color-light-red';
+        } elseif ($color_stylesheet == 'olive') {
+            $variables['#attached']['library'][] = 'probes/color-olive';
+        } elseif ($color_stylesheet == 'orange') {
+            $variables['#attached']['library'][] = 'probes/color-orange';
+        } elseif ($color_stylesheet == 'red') {
+            $variables['#attached']['library'][] = 'probes/color-red';
+        } elseif ($color_stylesheet == 'sea') {
+            $variables['#attached']['library'][] = 'probes/color-sea';
+        } elseif ($color_stylesheet == 'violet') {
+            $variables['#attached']['library'][] = 'probes/color-violet';
+        }
+    }
+    
+    $request = \Drupal::request();
+    $route_match = \Drupal::routeMatch();
+    $page_title = \Drupal::service('title_resolver')->getTitle($request, $route_match->getRouteObject());
+    $variables['current_page_title'] = $page_title;
+    $current_path = \Drupal::service('path.current')->getPath();
+    $variables['current_path'] = $current_path;
+    $path_args = explode('/', $current_path);
+    if(isset($path_args[2])) {
+        if ($path_args[2] == 'login'){
+            $variables['page_sub_title'] = 'User Login Here...!';
+        } elseif ($path_args[2] == 'register') {
+            $variables['page_sub_title'] = 'User Register Here...!';
+        } elseif ($path_args[2]  == 'password') {
+            $variables['page_sub_title'] = 'Reset Password...!';
+        }
+    }
+
+    
+}
+function probes_preprocess_comment(&$variables) {
+    $comment = $variables['elements']['#comment'];
+    $variables['comment_created'] = format_date($comment->created->value, "custom", "d M Y, G:iA");
+}
+function probes_theme_suggestions_page_alter(array &$suggestions, array $variables) {
+  	// Add content type suggestions.
+  	if ($node = \Drupal::request()->attributes->get('node')) {
+    	array_splice($suggestions, 1, 0, 'page__' . $node->getType());
+  	}
+    if (\Drupal::routeMatch()->getRouteName() == 'blog') {
+        $suggestions[] = 'page__blog';
+    }
+}
+
+function probes_theme_suggestions_yamlform_alter(array &$suggestions, array $variables) {
+    if ($variables['element']['#form_id'] == 'yamlform_submission_quick_contact_form') {
+        $suggestions[] = 'yamlform__quick_contact';
+    }
+    if ($variables['element']['#form_id'] == 'yamlform_submission_contact_us_form') {
+        $suggestions[] = 'yamlform__contact_us';
+    }
+}
+function probes_form_comment_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+    $form['#theme'] = 'form__comment_form';
+    if($form['author']['name']['#access']) {
+        $form['author']['name']['#prefix'] = '<div class="row"><section class="col col-6 username">';
+        $form['subject']['#prefix'] = '<section class="col col-6">';
+    } else {
+        $form['subject']['#prefix'] = '<div class="row"><section class="col col-6">';
+    }
+    $form['subject']['#suffix'] = '</section></div>';
+    $form['author']['name']['#suffix'] = '</section>';
+    $form['author']['name']['#title'] = 'Name';
+    $form['actions']['submit']['#attributes']['value'] = t('Submit Comments');
+    $form['field_comment_body']['widget'][0]['#prefix'] = '<section>';
+    $form['field_comment_body']['widget'][0]['#suffix'] = '</section><section> </section>';
+    $form['actions']['submit']['#attributes']['class'][] = 'button seven';
+    $form['actions']['preview']['#access'] = False;
+}
+
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter() for form templates.
+ */
+function probes_theme_suggestions_form_alter(array &$suggestions, array $variables) {
+    if ($variables['element']['#form_id'] == 'search_block_form') {
+        $suggestions[] = 'form__search_block_form';
+    }
+    if ($variables['element']['#form_id'] == 'user_login_form') {
+        $suggestions[] = 'form__user_login_form';
+    }
+    if ($variables['element']['#form_id'] == 'user_register_form') {
+        $suggestions[] = 'form__user_register_form';
+    }
+    if ($variables['element']['#form_id'] == 'user_pass') {
+        $suggestions[] = 'form__user_pass_form';
+    }
+    if (strpos($variables['element']['#form_id'], 'uc_product_add_to_cart_form') !== FALSE) {
+        $suggestions[] = 'form__add_to_cart';
+    }
+}
+
+function probes_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+    if($form_id == 'simplenews_subscriptions_block_5633b2d3-c8f4-49e1-b26f-320b17004fc2') {
+        $form['actions']['subscribe']['#attributes']['class'][] = 'btn btn-default uppercase';
+        $form['actions']['subscribe']['#value'] = 'Go';
+        $form['mail']['widget'][0]['value']['#attributes']['class'][] = 'form-control email';
+        //print_r($form['mail']['widget'][0]['value']);
+    }
+    if($form_id == 'simplenews_subscriptions_block_970d7c7a-7f20-4cbc-9634-249178129dcb') {
+        $form['actions']['subscribe']['#attributes']['class'][] = 'btn btn-primary';
+        $form['actions']['subscribe']['#value'] = 'SUBSCRIBE !';
+        $form['actions']['subscribe']['#prefix'] = '<span class="input-group-btn"><i class="fa fa-cog fa-spin subscribe-icon"></i>';
+        $form['actions']['subscribe']['#suffix'] = '</span>';
+        $form['mail']['widget'][0]['value']['#title'] = FALSE;
+        $form['mail']['widget'][0]['value']['#description'] = FALSE;
+        $form['mail']['widget'][0]['value']['#attributes']['class'][] = 'form-control';
+        //print_r($form['mail']['widget'][0]['value']);
+    }
+    if ($form['#id'] == 'user-login-form') {
+        $form['name']['#prefix']  = '<section><div class="row">';
+        $form['name']['#suffix'] = '</div><i class="icon-append fa fa-user"></i></section>';
+        $form['name']['#description'] = FALSE;
+        $form['name']['#attributes']['class'][] = 'col col-8';
+        $form['pass']['#prefix']  = '<section><div class="row">';
+        $form['pass']['#suffix'] = '</div><i class="icon-append fa fa-lock"></i></section>';
+        $form['pass']['#description'] = FALSE;
+        $form['pass']['#attributes']['class'][] = 'col col-8';
+        $form['actions']['submit']['#value'] = t("Log in");
+    }
+    if ($form['#id'] =='user-register-form') {
+        //print_r($form['actions']);
+        $form['account']['mail']['#prefix']  = '<section>';
+        $form['account']['mail']['#suffix'] = '<i class="icon-append fa fa-envelope-o"></i></section>';
+        $form['account']['name']['#description'] = FALSE;
+        $form['account']['name']['#title'] = FALSE;
+        $form['account']['name']['#attributes']['placeholder'] = 'Username';
+        $form['account']['mail']['#attributes']['placeholder'] = 'Email address';
+        $form['account']['name']['#prefix']  = '<section>';
+        $form['account']['name']['#suffix'] = '<i class="icon-append fa fa-user"></i></section>';
+        $form['account']['mail']['#title'] = FALSE;
+        $form['account']['mail']['#description'] = FALSE;
+        $form['actions']['submit']['#value'] = t("Submit");
+    }
+    if ($form['#id'] == 'user-pass') {
+        $form['name']['#prefix']  = '<section><div class="row">';
+        $form['name']['#suffix'] = '</div><i class="icon-append fa fa-user"></i></section>';
+        $form['name']['#attributes']['class'][] = 'col col-8';
+        $form['actions']['submit']['#value'] = t("Submit");
+    }
+    if (strpos($form['#id'], 'uc-product-add-to-cart-form') !== FALSE) {
+        $form['attributes'][1]['#prefix']  = '<div class="col-sm-4 m-bottom3">';
+        $form['attributes'][1]['#suffix']  = '</div>';
+        $form['attributes'][1]['#attributes']['class'][] = 'selectpicker-full';
+        $form['attributes'][2]['#prefix']  = '<div class="col-sm-4 m-bottom3">';
+        $form['attributes'][2]['#suffix']  = '</div>';
+        $form['attributes'][2]['#attributes']['class'][] = 'selectpicker-full';
+        $form['qty']['#prefix']  = '<div class="col-sm-4 m-bottom3">';
+        $form['qty']['#suffix']  = '</div>';
+        $form['qty']['#attributes']['class'][] = 'selectpicker-full';
+        $form['actions']['submit']['#attributes']['class'][] = 'btn black-button fullwide font-bold font18 uppercase';
+        $form['actions']['submit']['#prefix']  = '<div class="col-sm-4 m-bottom3 add-to-cart">';
+        $form['actions']['submit']['#suffix'] = '</div>';
+    }
+}
+
+
+function probes_preprocess(&$variables) {
+    //Get Site layout
+    $disable_switch = theme_get_setting('probes_disable_switch', 'probes');
+    if(empty($disable_switch)) $disable_switch = 'off';
+    $variables['disable_switch'] = $disable_switch;
+    $variables['base_path'] = base_path();
+    $site_layout = theme_get_setting('probes_site_layout', 'probes');
+    if(empty($site_layout)) $site_layout = 'wide';
+    if($site_layout == 'boxed') {
+        $bg_pattern = theme_get_setting('bg_patterns_boxed','probes');
+        if($bg_pattern) {
+            $file = File::load($bg_pattern[0]); 
+            $path = file_create_url($file->getFileUri());
+            $variables['bg_pattern'] = $path;
+        }
+        
+    }
+    $path_css = base_path().drupal_get_path('theme', 'probes').'/css/';
+    $layout_css = '<link href="http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,500,400italic,500italic,700,900" rel="stylesheet" type="text/css">';
+    $layout_css .= '<link href="http://fonts.googleapis.com/css?family=Great+Vibes" rel="stylesheet" type="text/css">';
+    $layout_css .= '<link href="'.$path_css.'bootstrap.min.css" rel="stylesheet">';
+    if($site_layout == 'boxed') {
+        $layout_css .= '<link href="'.$path_css.'style_boxed.css" rel="stylesheet" media="screen" type="text/css" id="site_layout">';
+        $layout_css .= '<link href="'.$path_css.'reset.css" rel="stylesheet" media="screen" type="text/css" />';
+        $variables['layout_css'] = $layout_css;
+    } else {
+        $layout_css .= '<link href="'.$path_css.'style.css" rel="stylesheet" media="screen" type="text/css" id="site_layout">';
+        $layout_css .= '<link href="'.$path_css.'reset.css" rel="stylesheet" media="screen" type="text/css" />';
+        $variables['layout_css'] = $layout_css;
+    }
+    // if($site_layout == 'boxed'){
+    //     $variables['#attached']['library'][] = 'probes/boxed-css';
+    // }
+    //Theme settings get data
+    //Get trackingcode
+    $variables['tracking_code'] = theme_get_setting('tracking_code', 'probes');
+    //Get custom css
+    $variables['custom_css'] = theme_get_setting('custom_css', 'probes');
+
+    //Get header settings
+    $variables['header_layout'] = theme_get_setting('header_layout', 'probes');
+    $variables['header_class'] = theme_get_setting('header_class', 'probes');
+    $variables['topbar_display'] = theme_get_setting('topbar_display', 'probes');
+    $variables['topbar_background_color'] = theme_get_setting('topbar_background_color', 'probes');
+    $variables['topbar_class'] = theme_get_setting('topbar_class', 'probes');
+    //Get footer layout
+    $variables['footer_layout'] = theme_get_setting('footer_layout', 'probes');
+    //Get footer background image
+    $bg_footer = theme_get_setting('footer_background_image','probes');
+    if($bg_footer) {
+        $file = File::load($bg_footer[0]); 
+        $path = file_create_url($file->getFileUri());
+        $variables['footer_bg_image'] = $path;
+    } else $variables['footer_bg_image'] = '';
+    //Get footer background color
+    $variables['footer_background_color'] = theme_get_setting('footer_background_color', 'probes');
+    //Get footer class
+    $variables['footer_class'] = theme_get_setting('footer_class', 'probes');
+    // Get footer copyright
+    $variables['footer_copyright_message'] = theme_get_setting('footer_copyright_message', 'probes');
+    //Get blog layout
+    $variables['blog_layout'] = theme_get_setting('blog_layout', 'probes');
+    //Get Blog slogan
+    $variables['blog_slogan'] = theme_get_setting('blog_slogan', 'probes');
+    //Get blog page title background image
+    $bg_blog_page_title = theme_get_setting('blog_page_title_bgimage','probes');
+    if($bg_blog_page_title) {
+        $file = File::load($bg_blog_page_title[0]); 
+        $path = file_create_url($file->getFileUri());
+        $variables['bg_blog_page_title'] = $path;
+    } else $variables['bg_blog_page_title'] = '';
+    $variables['blog_breadcrumb_class_title'] = theme_get_setting('blog_breadcrumb_class_title', 'probes');
+    //Get blog header settings
+    $variables['blog_header_layout'] = theme_get_setting('blog_header_layout', 'probes');
+    $variables['blog_header_class'] = theme_get_setting('blog_header_class', 'probes');
+    $variables['blog_topbar_display'] = theme_get_setting('blog_topbar_display', 'probes');
+    $variables['blog_topbar_background_color'] = theme_get_setting('blog_topbar_background_color', 'probes');
+    $variables['blog_topbar_class'] = theme_get_setting('blog_topbar_class', 'probes');
+    //Get blog footer settings
+    $variables['blog_footer_layout'] = theme_get_setting('blog_footer_layout', 'probes');
+    $blog_footer_bg = theme_get_setting('blog_footer_background_image', 'probes');
+    if($blog_footer_bg) {
+        $file = File::load($blog_footer_bg[0]); 
+        $path = file_create_url($file->getFileUri());
+        $variables['blog_footer_bg_image'] = $path;
+    } else $variables['blog_footer_bg_image'] = '';
+
+    $variables['blog_footer_bg_color'] = theme_get_setting('blog_footer_background_color', 'probes');
+    $variables['blog_footer_class'] = theme_get_setting('blog_footer_class', 'probes');
+
+    //Get portfolio header settings
+    $variables['portfolio_header_layout'] = theme_get_setting('portfolio_header_layout', 'probes');
+    $variables['portfolio_header_class'] = theme_get_setting('portfolio_header_class', 'probes');
+    $variables['portfolio_topbar_display'] = theme_get_setting('portfolio_topbar_display', 'probes');
+    $variables['portfolio_topbar_background_color'] = theme_get_setting('portfolio_topbar_background_color', 'probes');
+    $variables['portfolio_topbar_class'] = theme_get_setting('portfolio_topbar_class', 'probes');
+    //Get Portfolio settings
+    $variables['portfolio_layout_style'] = theme_get_setting('portfolio_style', 'probes');
+    $variables['portfolio_slogan'] = theme_get_setting('portfolio_slogan', 'probes');
+    $bg_portfolio_page_title = theme_get_setting('portfolio_page_title_bgimage','probes');
+    if($bg_portfolio_page_title) {
+        $file = File::load($bg_portfolio_page_title[0]); 
+        $path = file_create_url($file->getFileUri());
+        $variables['bg_portfolio_page_title'] = $path;
+    } else $variables['bg_portfolio_page_title'] = '';
+    $variables['portfolio_breadcrumb_class_title'] = theme_get_setting('portfolio_breadcrumb_class_title', 'probes');
+    //Get portfolio footer settings
+    $variables['portfolio_footer_layout'] = theme_get_setting('portfolio_footer_layout', 'probes');
+    $portfolio_footer_bg = theme_get_setting('portfolio_footer_background_image', 'probes');
+    if($portfolio_footer_bg) {
+        $file = File::load($portfolio_footer_bg[0]); 
+        $path = file_create_url($file->getFileUri());
+        $variables['portfolio_footer_bg_image'] = $path;
+    } else $variables['blog_footer_bg_image'] = '';
+    $variables['portfolio_footer_bg_color'] = theme_get_setting('portfolio_footer_background_color', 'probes');
+    $variables['portfolio_footer_class'] = theme_get_setting('portfolio_footer_class', 'probes');
+
+    //Get page settings
+    //Get page header settings
+    $variables['page_header_layout'] = theme_get_setting('page_header_layout', 'probes');
+    $variables['page_header_class'] = theme_get_setting('page_header_class', 'probes');
+    $variables['page_topbar_display'] = theme_get_setting('page_topbar_display', 'probes');
+    $variables['page_topbar_background_color'] = theme_get_setting('page_topbar_background_color', 'probes');
+    $variables['page_topbar_class'] = theme_get_setting('page_topbar_class', 'probes');
+    //Get system page settings
+    $page_title_bgimage = theme_get_setting('system_page_title_bgimage', 'probes');
+    if($page_title_bgimage) {
+        $file = File::load($page_title_bgimage[0]); 
+        $path = file_create_url($file->getFileUri());
+        $variables['page_title_bgimage'] = $path;
+    } else $variables['page_title_bgimage'] = '';
+    $variables['page_breadcrumb_class_title'] = theme_get_setting('page_breadcrumb_class_title', 'probes');
+    $variables['page_footer_layout'] = theme_get_setting('page_footer_layout', 'probes');
+    $page_footer_bg = theme_get_setting('page_footer_background_image', 'probes');
+    if($page_footer_bg) {
+        $file = File::load($page_footer_bg[0]); 
+        $path = file_create_url($file->getFileUri());
+        $variables['page_footer_bg_image'] = $path;
+    } else $variables['page_footer_bg_image'] = '';
+    $variables['page_footer_bg_color'] = theme_get_setting('page_footer_background_color', 'probes');
+    $variables['page_footer_class'] = theme_get_setting('page_footer_class', 'probes');
+
+    //Get Product settings
+    //Get Product header settings
+    $variables['product_header_layout'] = theme_get_setting('product_header_layout', 'probes');
+    $variables['product_header_class'] = theme_get_setting('product_header_class', 'probes');
+    $variables['product_topbar_display'] = theme_get_setting('product_topbar_display', 'probes');
+    $variables['product_topbar_background_color'] = theme_get_setting('product_topbar_background_color', 'probes');
+    $variables['product_topbar_class'] = theme_get_setting('product_topbar_class', 'probes');
+    $variables['product_layout'] = theme_get_setting('product_layout', 'probes');
+    $product_page_title_bgimage = theme_get_setting('product_page_title_bgimage', 'probes');
+    if($product_page_title_bgimage) {
+        $file = File::load($product_page_title_bgimage[0]); 
+        $path = file_create_url($file->getFileUri());
+        $variables['product_page_title_bgimage'] = $path;
+    } else $variables['product_page_title_bgimage'] = '';
+    $variables['product_breadcrumb_class_title'] = theme_get_setting('product_breadcrumb_class_title', 'probes');
+    $variables['shop_slogan'] = theme_get_setting('product_slogan', 'probes');
+    $variables['product_footer_layout'] = theme_get_setting('product_footer_layout', 'probes');
+    $product_footer_bg = theme_get_setting('product_footer_background_image', 'probes');
+    if($product_footer_bg) {
+        $file = File::load($product_footer_bg[0]); 
+        $path = file_create_url($file->getFileUri());
+        $variables['product_footer_bg'] = $path;
+    } else $variables['product_footer_bg'] = '';
+    $variables['product_footer_bg_color'] = theme_get_setting('product_footer_background_color', 'probes');
+    $variables['product_footer_class'] = theme_get_setting('product_footer_class', 'probes');
+
+    //Set variable for form login, resiter
+    $variables['header_form_login'] = 'Login form';
+    $variables['header_form_register'] = "Don't have an Account? Register Now!";
+    $variables['header_form_password'] = 'Password reset';
+}
+function probes_preprocess_breadcrumb(&$variables){
+    $request = \Drupal::request();
+    if ($route = $request->attributes->get(\Symfony\Cmf\Component\Routing\RouteObjectInterface::ROUTE_OBJECT)) {
+        $current_title = \Drupal::service('title_resolver')->getTitle($request, $route);
+    } else $current_title = '';
+    if(($node = \Drupal::routeMatch()->getParameter('node')) && $variables['breadcrumb']) {
+        if($node->getTitle() == $current_title) {
+            $variables['breadcrumb'][] = array(
+                'text' => $node->getTitle(),
+                'url' => ''
+            );
+        } else {
+            $variables['breadcrumb'][] = array(
+                'text' => $node->getTitle(),
+                'url' => $node->URL()
+            );
+        }
+    } elseif ($variables['breadcrumb']) {
+        $variables['breadcrumb'][] = array(
+            'text' => $current_title,
+            'url' => ''
+        );
+    }
+}
+
+//Set path demo image
+function demo_image_path($imgFolder) {
+    global $base_url;
+    $path = $base_url.'/sites/default/files/'.$imgFolder.'/';
+    return $path;
+}
+?>

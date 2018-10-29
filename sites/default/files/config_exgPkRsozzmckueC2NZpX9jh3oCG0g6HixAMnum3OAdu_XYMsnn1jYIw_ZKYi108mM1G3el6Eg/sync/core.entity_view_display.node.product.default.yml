@@ -1,0 +1,73 @@
+uuid: c7bb00ac-9df1-45f0-898c-d51a8c076e5e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.product.body
+    - field.field.node.product.field_product_categories
+    - field.field.node.product.field_product_review
+    - field.field.node.product.field_sidebar
+    - field.field.node.product.uc_product_image
+    - node.type.product
+  module:
+    - comment
+    - text
+    - uc_product
+    - user
+_core:
+  default_config_hash: TP6Uzw7oLDiIiWQxnnPOmm7z2WPeiAD0Xfb2ktjF22E
+id: node.product.default
+targetEntityType: node
+bundle: product
+mode: default
+content:
+  add_to_cart:
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+  body:
+    type: text_default
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    label: hidden
+  dimensions:
+    type: uc_dimensions
+    weight: 0
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+  field_product_categories:
+    type: entity_reference_label
+    weight: 0
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+  field_product_review:
+    weight: 1
+    label: hidden
+    settings:
+      pager_id: 0
+    third_party_settings: {  }
+    type: comment_default
+  model:
+    type: string
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  weight:
+    type: uc_weight
+    weight: 0
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  cost: true
+  display_price: true
+  field_sidebar: true
+  links: true
+  price: true
+  uc_product_image: true

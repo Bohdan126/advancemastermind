@@ -1,0 +1,14 @@
+uuid: d46b0fb3-c864-4812-896b-c77f5a6d901a
+langcode: en
+status: true
+dependencies: {  }
+name: image_760x360
+label: 'Image 760x360'
+effects:
+  3760b65e-a98f-49bf-93d4-bed1250f3004:
+    uuid: 3760b65e-a98f-49bf-93d4-bed1250f3004
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 760
+      height: 360

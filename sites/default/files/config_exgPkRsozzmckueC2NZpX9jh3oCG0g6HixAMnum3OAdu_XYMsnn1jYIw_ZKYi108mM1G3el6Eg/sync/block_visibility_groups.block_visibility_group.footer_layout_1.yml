@@ -1,0 +1,36 @@
+uuid: 38e188fe-e40c-4cd3-a9eb-40ee8f8b0b32
+langcode: en
+status: true
+dependencies:
+  module:
+    - ctools
+    - system
+id: footer_layout_1
+label: 'Footer layout 1'
+logic: or
+conditions:
+  ebdcb51c-6e18-434f-9b1e-bc579e3571ea:
+    id: request_path
+    pages: "<front>\r\n/node/37\r\n/node/44\r\n/node/69\r\n/node/72\r\n/node/75\r\n/node/89\r\n/node/134\r\n/node/146\r\n/node/150\r\n/node/171\r\n/node/172\r\n/node/173\r\n/taxonomy/term/*\r\n/search/*"
+    negate: false
+    context_mapping: {  }
+    uuid: ebdcb51c-6e18-434f-9b1e-bc579e3571ea
+  fe0e6b35-1310-4138-ba09-c73a3476db0e:
+    id: 'entity_bundle:node'
+    bundles:
+      article: article
+      brand_solutions: brand_solutions
+      classes: classes
+      clients: clients
+      courses: courses
+      customers_review: customers_review
+      features: features
+      partner: partner
+      real_estate: real_estate
+      services: services
+      team: team
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+    uuid: fe0e6b35-1310-4138-ba09-c73a3476db0e
+allow_other_conditions: false

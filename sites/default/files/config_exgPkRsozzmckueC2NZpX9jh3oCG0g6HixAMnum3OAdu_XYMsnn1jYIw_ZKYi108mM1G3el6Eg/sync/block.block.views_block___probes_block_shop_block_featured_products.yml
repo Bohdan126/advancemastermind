@@ -1,0 +1,51 @@
+uuid: febad3aa-5af8-4e62-8a0e-30fa98a91296
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_visibility_groups.block_visibility_group.home_shop_1
+    - views.view._probes_block_shop
+  module:
+    - block_attributes
+    - block_visibility_groups
+    - ntv_block_background
+    - views
+  theme:
+    - probes
+third_party_settings:
+  block_attributes:
+    attr_class: ''
+    attr_id: ''
+    block_title: ''
+    block_title_icon: ''
+  ntv_block_background:
+    disable: disable
+    color: '#000000'
+    bg_image: {  }
+    bg_image_type: default
+    bg_repeat: 'no'
+    bg_image_position: ''
+    bg_image_size: ''
+    background_overlay: ''
+id: views_block___probes_block_shop_block_featured_products
+theme: probes
+region: section
+weight: -16
+provider: null
+plugin: 'views_block:_probes_block_shop-block_featured_products'
+settings:
+  id: 'views_block:_probes_block_shop-block_featured_products'
+  label: 'Featured Products'
+  provider: views
+  label_display: visible
+  views_label: 'Featured Products'
+  items_per_page: none
+  attributes:
+    class: one
+    id: ''
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: home_shop_1
+    context_mapping: {  }

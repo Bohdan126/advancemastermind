@@ -1,0 +1,22 @@
+uuid: 5999848d-2466-4830-a5a5-5c92a04e243a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.team
+  module:
+    - text
+id: node.team.body
+field_name: body
+entity_type: node
+bundle: team
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+field_type: text_with_summary
