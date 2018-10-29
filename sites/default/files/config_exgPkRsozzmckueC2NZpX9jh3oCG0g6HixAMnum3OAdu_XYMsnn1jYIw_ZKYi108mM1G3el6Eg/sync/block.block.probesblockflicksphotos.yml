@@ -1,6 +1,6 @@
 uuid: 6e933cb4-fbc0-4548-9202-ba2e309ca8bb
 langcode: en
-status: true
+status: false
 dependencies:
   config:
     - block_visibility_groups.block_visibility_group.footer_layout_1
@@ -17,6 +17,8 @@ third_party_settings:
   block_attributes:
     attr_class: ''
     attr_id: ''
+    block_title: ''
+    block_title_icon: ''
   ntv_block_background:
     disable: disable
     color: '#000000'
@@ -28,7 +30,7 @@ third_party_settings:
     background_overlay: ''
 id: probesblockflicksphotos
 theme: probes
-region: footer
+region: '-1'
 weight: -10
 provider: null
 plugin: 'block_content:a3d6037a-cb07-47a4-bdb3-83daea7e3321'
