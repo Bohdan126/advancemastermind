@@ -14906,7 +14906,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "<div class=\"col-md-4 col-sm-6 m-bottom4\">\n    <div class=\"content-feature-col\"> <span class=\"{{ field_icon_class }} font40 left\"></span>\n        <div class=\"feature-icon-col left-padd7\">\n            <h2 class=\"font-black font20 uppercase m-bottom1\">{{ title }}</h2>\n            <p>{{ body }}</p>\n            <div class=\"title-line wide50 color m-top2\"></div>\n        </div>\n    </div>\n</div>"
+            text: "<a class=\"anchor\" id=\"top\"></a>\n<div class=\"col-md-4 col-sm-6 m-bottom4\">\n    <div class=\"content-feature-col\"> <span class=\"{{ field_icon_class }} font40 left\"></span>\n        <div class=\"feature-icon-col left-padd7\">\n            <h2 class=\"font-black font20 uppercase m-bottom1\">{{ title }}</h2>\n            <p>{{ body }}</p>\n            <div class=\"title-line wide50 color m-top2\"></div>\n        </div>\n    </div>\n</div>"
             make_link: false
             path: ''
             absolute: false
