@@ -1,0 +1,7 @@
+uuid: 603c1f9e-dd02-4a77-a809-66dbaae88404
+langcode: en
+status: false
+dependencies: {  }
+formId: node_coming_soon_form
+captchaType: default
+label: null

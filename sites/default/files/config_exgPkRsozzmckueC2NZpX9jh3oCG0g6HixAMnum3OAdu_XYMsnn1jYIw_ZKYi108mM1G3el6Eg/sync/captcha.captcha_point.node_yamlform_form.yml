@@ -1,0 +1,7 @@
+uuid: 083d9bd8-ab63-4da5-886b-8e3e8de3db0d
+langcode: en
+status: false
+dependencies: {  }
+formId: node_yamlform_form
+captchaType: default
+label: null

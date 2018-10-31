@@ -21,3 +21,4 @@ permissions:
   9: 'subscribe to newsletters'
   10: 'restful get entity:node'
   12: 'access files overview'
+  14: 'administer yamlform submission'
