@@ -2960,7 +2960,7 @@ display:
           empty: false
           tokenize: false
           content:
-            value: "<h2 class=\"uppercase\">\n\t<span class=\"line blueline\"></span>\n\t<span class=\"uppercase font-grey font-bold font14\">best team</span><br>\n    Meet our Team\n</h2>"
+            value: "<a class=\"anchor\" id=\"our-team\"></a>\n<h2 class=\"uppercase\">\n\t<span class=\"line blueline\"></span>\n\t<span class=\"uppercase font-grey font-bold font14\">best team</span><br>\n    Meet our Team\n</h2>"
             format: full_html
           plugin_id: text
       pager:
@@ -14906,7 +14906,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "<a class=\"anchor\" id=\"top\"></a>\n<div class=\"col-md-4 col-sm-6 m-bottom4\">\n    <div class=\"content-feature-col\"> <span class=\"{{ field_icon_class }} font40 left\"></span>\n        <div class=\"feature-icon-col left-padd7\">\n            <h2 class=\"font-black font20 uppercase m-bottom1\">{{ title }}</h2>\n            <p>{{ body }}</p>\n            <div class=\"title-line wide50 color m-top2\"></div>\n        </div>\n    </div>\n</div>"
+            text: "<a class=\"anchor\" id=\"benefits\"></a>\n<div class=\"col-md-4 col-sm-6 m-bottom4\">\n    <div class=\"content-feature-col\"> <span class=\"{{ field_icon_class }} font40 left\"></span>\n        <div class=\"feature-icon-col left-padd7\">\n            <h2 class=\"font-black font20 uppercase m-bottom1\">{{ title }}</h2>\n            <p>{{ body }}</p>\n            <div class=\"title-line wide50 color m-top2\"></div>\n        </div>\n    </div>\n</div>"
             make_link: false
             path: ''
             absolute: false
@@ -19735,7 +19735,7 @@ display:
           empty: false
           tokenize: false
           content:
-            value: "<span class=\"uppercase font-grey font-bold font14\">Advance your goals </span>\n<h2 class=\"uppercase font-black font30 nomargin\">Business Solutions</h2>\n"
+            value: "<a class=\"anchor\" id=\"solutions\"></a>\n<span class=\"uppercase font-grey font-bold font14\">Advance your goals </span>\n<h2 class=\"uppercase font-black font30 nomargin\">Business Solutions</h2>\n\n"
             format: full_html
           plugin_id: text
       pager:
