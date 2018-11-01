@@ -157,7 +157,7 @@ ul.nav>li>a:hover.active {
 .navbar-nav > li.cart a {
 	color:#FFF !important;
 	padding:23px 25px 22px 25px;
-	font-size:15px 10px;
+	font-size:15px;
 }
 .cart-info-box {
 	width:400px;
@@ -173,8 +173,7 @@ ul.nav>li>a:hover.active {
 	padding-bottom:10px;
 	margin-bottom:25px;
 }
- @media (min-width:769px;
-) {
+ @media (min-width:769px) {
 .dropdown-submenu>.dropdown-menu:last-child {
  border-top: 0px solid #000;
 }
@@ -569,7 +568,7 @@ background:rgba(210,210,210,.4)
 	padding-bottom: 0px;
 	transition: all 0.3s ease-out 0s;
 }
-}
+
  @media only screen and (min-width: 1000px) and (max-width: 1169px) {
 .header {
 	height: auto;
@@ -629,7 +628,7 @@ background:rgba(210,210,210,.4)
 	padding-bottom: 9px;
 }
 .compact .header .navbar-brand {
-background-size: 75%%;
+background-size: 75%;
 	background-position: left 22px;
 }
 .header.headr-style-2 {

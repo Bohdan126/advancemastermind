@@ -319,7 +319,6 @@ ul.col-top-menu.one li.sign-in:hover a {
 ------------------------------------------------------*/
 section{
 	width:100%;
-	float:left;
 	height:auto !important
 }
 .section-lg {

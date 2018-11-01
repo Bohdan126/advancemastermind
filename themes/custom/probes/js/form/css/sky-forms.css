@@ -379,7 +379,6 @@
 /* buttons */
 /**/
 .sky-form .button {
-	float: right;
 	height: 45px;
 	overflow: hidden;
 	margin: 10px 0 0 0;
@@ -697,6 +696,7 @@ opacity: 1
 	-ms-transition: opacity 0.2s;
 	-moz-transition: opacity 0.2s;
 	-webkit-transition: opacity 0.2s;
+	margin-top: 15px;
 }
 .sky-form .button.button-secondary {
 	background-color: #5b5b5b;
