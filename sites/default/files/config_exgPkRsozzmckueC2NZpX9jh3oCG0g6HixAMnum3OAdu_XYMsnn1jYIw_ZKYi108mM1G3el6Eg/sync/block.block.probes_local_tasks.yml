@@ -2,8 +2,28 @@ uuid: 65aa3a63-c5e8-49bd-bd40-9ef90c017d9d
 langcode: en
 status: true
 dependencies:
+  module:
+    - block_attributes
+    - block_visibility_groups
+    - ntv_block_background
+    - user
   theme:
     - probes
+third_party_settings:
+  block_attributes:
+    attr_class: ''
+    attr_id: ''
+    block_title: ''
+    block_title_icon: ''
+  ntv_block_background:
+    disable: disable
+    color: '#000000'
+    bg_image: {  }
+    bg_image_type: default
+    bg_repeat: 'no'
+    bg_image_position: ''
+    bg_image_size: ''
+    background_overlay: ''
 _core:
   default_config_hash: X9I1OB0W3WlWtrK-CNcg6hNWwa8wficanpH8pYnDZDE
 id: probes_local_tasks
@@ -19,4 +39,20 @@ settings:
   label_display: '0'
   primary: true
   secondary: true
-visibility: {  }
+  attributes:
+    class: ''
+    id: ''
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: ''
+    context_mapping: {  }
+  user_role:
+    id: user_role
+    roles:
+      authenticated: authenticated
+      administrator: administrator
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'

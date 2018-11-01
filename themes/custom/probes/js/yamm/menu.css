@@ -363,7 +363,7 @@ ul.nav>li>a:hover.active {
 @media (max-width: 999px) {
 .navbar-collapse.pull-right {
 	width: 100%;
-	background: #fff;
+	overflow-y: inherit;
 }
 .navbar-collapse.pull-right.dark-color {
 	background: #2c3036;
@@ -458,7 +458,7 @@ background:rgba(210,210,210,.4)
 }
 .header.headr-style-1 {
 	display:block;
-	position:inherit;
+	position: relative;
 	z-index:9000!important;
 	top:0px;
 	left:0;
@@ -467,6 +467,7 @@ background:rgba(210,210,210,.4)
 	height:85px;
 	padding-top:6px;
 	border-bottom: 0px solid rgba(255,255,255,0.18);
+
 }
 .header.headr-style-2 {
 	padding-top:80px;

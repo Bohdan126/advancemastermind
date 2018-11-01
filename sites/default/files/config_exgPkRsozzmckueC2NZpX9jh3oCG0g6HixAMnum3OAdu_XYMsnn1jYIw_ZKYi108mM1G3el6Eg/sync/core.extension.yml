@@ -10,6 +10,7 @@ module:
   blog: 0
   breakpoint: 0
   bueditor: 0
+  captcha: 0
   ckeditor: 0
   color: 0
   comment: 0
@@ -30,6 +31,7 @@ module:
   help: 0
   history: 0
   image: 0
+  image_captcha: 0
   image_url_formatter: 0
   imce: 0
   kint: 0
@@ -48,6 +50,7 @@ module:
   php: 0
   quickedit: 0
   rdf: 0
+  recaptcha: 0
   search: 0
   shortcut: 0
   simplenews: 0
