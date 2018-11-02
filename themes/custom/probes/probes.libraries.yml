@@ -126,6 +126,7 @@ global-scripts:
         js/aninum/jquery.animateNumber.min.js: {}
         js/skroll/sKroll.min.js: {}
         js/update.js: {}
+        js/customScrollMenu.js: {}
 
     dependencies:
     - core/jquery
