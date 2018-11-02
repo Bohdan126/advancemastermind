@@ -506,7 +506,7 @@ background:rgba(210,210,210,.4)
 }
 .compact .header {
 	display:block;
-	position:fixed;
+	/*position:fixed;*/
 	z-index:9000!important;
 	top:0;
 	left:0;
@@ -516,7 +516,7 @@ background:rgba(210,210,210,.4)
 	-webkit-box-shadow:0 1px 4px rgba(0,0,0,.1);
 	box-shadow:0 1px 4px rgba(0,0,0,.1);
 	-moz-box-shadow:0 1px 4px rgba(0,0,0,.1);
-	height: auto;
+	/*height: auto;*/
 	padding-top: 0px;
 	padding-bottom: 0px;
 }
@@ -535,8 +535,8 @@ background:rgba(210,210,210,.4)
 	background-position: left 20px;
 }
 .compact .header .navbar-nav>li>a {
-	padding-top: 22px;
-	padding-bottom: 22px;
+	/*padding-top: 22px;
+	padding-bottom: 22px;*/
 	text-transform: uppercase;
 }
 .header.onpage-head {
