@@ -127,7 +127,6 @@ global-scripts:
         js/skroll/sKroll.min.js: {}
         js/update.js: {}
         js/customScrollMenu.js: {}
-
     dependencies:
     - core/jquery
     - core/drupal.ajax
