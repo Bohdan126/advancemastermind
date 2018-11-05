@@ -128,7 +128,7 @@ display:
           field_api_classes: false
       filters:
         status:
-          value: true
+          value: '1'
           table: node_field_data
           field: status
           plugin_id: boolean
@@ -199,6 +199,9 @@ display:
       display_extenders: {  }
       path: blog
       display_description: ''
+      menu:
+        enabled: true
+        expanded: false
     cache_metadata:
       max-age: -1
       contexts:
@@ -302,6 +305,9 @@ display:
           entity_field: uid
           plugin_id: standard
       enabled: true
+      menu:
+        enabled: true
+        expanded: false
     cache_metadata:
       max-age: -1
       contexts:

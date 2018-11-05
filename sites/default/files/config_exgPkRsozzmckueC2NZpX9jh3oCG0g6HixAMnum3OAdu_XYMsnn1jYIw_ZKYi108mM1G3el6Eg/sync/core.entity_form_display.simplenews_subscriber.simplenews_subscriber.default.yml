@@ -19,10 +19,12 @@ content:
     settings:
       placeholder: ''
     third_party_settings: {  }
+    region: content
   subscriptions:
     type: simplenews_subscription_select
     weight: 0
     settings: {  }
     third_party_settings: {  }
+    region: content
 hidden:
   uid: true

@@ -523,6 +523,8 @@ display:
         name: account
         weight: 0
         context: '0'
+        enabled: true
+        expanded: false
       display_extenders: {  }
     cache_metadata:
       contexts:

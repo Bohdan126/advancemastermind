@@ -1,0 +1,53 @@
+uuid: 7a907914-7a56-41d8-a9ff-61394f051542
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_visibility_groups.block_visibility_group.page_default
+  content:
+    - 'block_content:basic:334e8e8f-5e1c-4fa2-b821-7478e94c2d16'
+  module:
+    - block_attributes
+    - block_content
+    - block_visibility_groups
+    - ntv_block_background
+  theme:
+    - probes
+third_party_settings:
+  block_attributes:
+    attr_class: ''
+    attr_id: ''
+    block_title: ''
+    block_title_icon: ''
+  ntv_block_background:
+    disable: disable
+    color: '#000000'
+    bg_image: {  }
+    bg_image_type: default
+    bg_repeat: 'no'
+    bg_image_position: ''
+    bg_image_size: ''
+    background_overlay: ''
+id: googleanalytics
+theme: probes
+region: topbar
+weight: 0
+provider: null
+plugin: 'block_content:334e8e8f-5e1c-4fa2-b821-7478e94c2d16'
+settings:
+  id: 'block_content:334e8e8f-5e1c-4fa2-b821-7478e94c2d16'
+  label: 'Google Analytics'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+  attributes:
+    class: ''
+    id: ''
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: page_default
+    context_mapping: {  }

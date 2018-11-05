@@ -33,8 +33,8 @@ class UserPictureFile extends DrupalSqlBase {
    */
   public function query() {
     $query = $this->select('users', 'u')
-      ->condition('picture', '', '<>')
-      ->fields('u', array('uid', 'picture'));
+      ->condition('u.picture', '', '<>')
+      ->fields('u', ['uid', 'picture']);
     return $query;
   }
 
@@ -62,10 +62,10 @@ class UserPictureFile extends DrupalSqlBase {
    * {@inheritdoc}
    */
   public function fields() {
-    return array(
+    return [
       'picture' => "Path to the user's uploaded picture.",
       'filename' => 'The picture filename.',
-    );
+    ];
   }
   /**
    * {@inheritdoc}

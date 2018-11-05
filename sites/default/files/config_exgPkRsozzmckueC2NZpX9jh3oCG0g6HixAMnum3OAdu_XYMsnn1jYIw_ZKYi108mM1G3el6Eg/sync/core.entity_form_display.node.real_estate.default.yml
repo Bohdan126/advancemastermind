@@ -31,26 +31,31 @@ content:
       summary_rows: 3
       placeholder: ''
     third_party_settings: {  }
+    region: content
   created:
     type: datetime_timestamp
     weight: 2
     settings: {  }
     third_party_settings: {  }
+    region: content
   field_bathroom:
     weight: 8
     settings: {  }
     third_party_settings: {  }
     type: options_select
+    region: content
   field_bedroom:
     weight: 7
     settings: {  }
     third_party_settings: {  }
     type: options_select
+    region: content
   field_city:
     weight: 13
     settings: {  }
     third_party_settings: {  }
     type: options_select
+    region: content
   field_images:
     weight: 6
     settings:
@@ -60,39 +65,46 @@ content:
       imce:
         enabled: true
     type: image_image
+    region: content
   field_parking:
     weight: 9
     settings: {  }
     third_party_settings: {  }
     type: options_select
+    region: content
   field_price:
     weight: 10
     settings:
       placeholder: ''
     third_party_settings: {  }
     type: number
+    region: content
   field_property_type:
     weight: 12
     settings: {  }
     third_party_settings: {  }
     type: options_select
+    region: content
   path:
     type: path
     weight: 5
     settings: {  }
     third_party_settings: {  }
+    region: content
   promote:
     type: boolean_checkbox
     settings:
       display_label: true
     weight: 3
     third_party_settings: {  }
+    region: content
   sticky:
     type: boolean_checkbox
     settings:
       display_label: true
     weight: 4
     third_party_settings: {  }
+    region: content
   title:
     type: string_textfield
     weight: 0
@@ -100,6 +112,7 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+    region: content
   uid:
     type: entity_reference_autocomplete
     weight: 1
@@ -108,4 +121,5 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+    region: content
 hidden: {  }

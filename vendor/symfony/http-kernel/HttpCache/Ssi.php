@@ -29,9 +29,7 @@ class Ssi implements SurrogateInterface
     );
 
     /**
-     * Constructor.
-     *
-     * @param array $contentTypes An array of content-type that should be parsed for SSI information.
+     * @param array $contentTypes An array of content-type that should be parsed for SSI information
      *                            (default: text/html, text/xml, application/xhtml+xml, and application/xml)
      */
     public function __construct(array $contentTypes = array('text/html', 'text/xml', 'application/xhtml+xml', 'application/xml'))
@@ -119,7 +117,7 @@ class Ssi implements SurrogateInterface
         }
 
         $parts = explode(';', $type);
-        if (!in_array($parts[0], $this->contentTypes)) {
+        if (!\in_array($parts[0], $this->contentTypes)) {
             return $response;
         }
 

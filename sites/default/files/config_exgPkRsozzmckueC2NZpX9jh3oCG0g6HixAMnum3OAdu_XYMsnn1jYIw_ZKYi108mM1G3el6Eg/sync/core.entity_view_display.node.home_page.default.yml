@@ -30,10 +30,12 @@ content:
     weight: 1
     settings: {  }
     third_party_settings: {  }
+    region: content
   links:
     weight: 0
     settings: {  }
     third_party_settings: {  }
+    region: content
 hidden:
   field_color_stylesheet: true
   field_footer_background_color: true

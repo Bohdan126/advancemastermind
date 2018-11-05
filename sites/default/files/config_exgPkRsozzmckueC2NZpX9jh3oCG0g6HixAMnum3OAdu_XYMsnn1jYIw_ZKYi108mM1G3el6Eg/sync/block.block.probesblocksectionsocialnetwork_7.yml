@@ -1,4 +1,4 @@
-uuid: c56946fb-3e05-4af5-b469-9cb234479590
+uuid: 76afea7a-9e11-4f87-b778-11fda0456d19
 langcode: en
 status: true
 dependencies:
@@ -31,7 +31,7 @@ third_party_settings:
 id: probesblocksectionsocialnetwork_7
 theme: probes
 region: section
-weight: null
+weight: 0
 provider: null
 plugin: 'block_content:b9648582-ca70-4561-8862-b338efb8a3e9'
 settings:

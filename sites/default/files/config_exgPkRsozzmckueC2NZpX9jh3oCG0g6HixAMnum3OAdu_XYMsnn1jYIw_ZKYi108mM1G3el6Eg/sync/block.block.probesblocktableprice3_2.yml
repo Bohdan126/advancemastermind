@@ -29,7 +29,7 @@ third_party_settings:
     background_overlay: ''
 id: probesblocktableprice3_2
 theme: probes
-region: '-1'
+region: topbar
 weight: 5
 provider: null
 plugin: 'block_content:ea5cfb6d-1f2a-4d7f-91c2-7a78964db65e'

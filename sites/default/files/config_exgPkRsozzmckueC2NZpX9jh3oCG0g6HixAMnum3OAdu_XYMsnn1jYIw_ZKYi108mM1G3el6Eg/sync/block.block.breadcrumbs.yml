@@ -2,8 +2,6 @@ uuid: 95debd2e-9f7c-4394-a518-511adfd39cca
 langcode: en
 status: false
 dependencies:
-  config:
-    - block_visibility_groups.block_visibility_group.breadcrumb
   module:
     - block_attributes
     - block_visibility_groups
@@ -28,8 +26,8 @@ third_party_settings:
     background_overlay: ''
 id: breadcrumbs
 theme: probes
-region: '-1'
-weight: null
+region: breadcrumb
+weight: 0
 provider: null
 plugin: system_breadcrumb_block
 settings:
@@ -44,5 +42,5 @@ visibility:
   condition_group:
     id: condition_group
     negate: false
-    block_visibility_group: breadcrumb
+    block_visibility_group: ''
     context_mapping: {  }

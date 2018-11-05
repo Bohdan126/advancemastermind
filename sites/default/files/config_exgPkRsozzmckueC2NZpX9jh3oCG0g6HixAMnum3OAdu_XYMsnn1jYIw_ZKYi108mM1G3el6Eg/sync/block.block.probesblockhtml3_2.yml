@@ -28,7 +28,7 @@ third_party_settings:
     background_overlay: ''
 id: probesblockhtml3_2
 theme: probes
-region: '-1'
+region: topbar
 weight: -3
 provider: null
 plugin: 'block_content:b06120f9-d1b9-47bb-af47-e8ab6943c925'

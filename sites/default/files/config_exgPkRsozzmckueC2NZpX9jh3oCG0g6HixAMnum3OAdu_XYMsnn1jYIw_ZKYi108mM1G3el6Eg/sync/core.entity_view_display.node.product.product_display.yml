@@ -25,28 +25,33 @@ content:
     weight: 2
     settings: {  }
     third_party_settings: {  }
+    region: content
   body:
     type: text_default
     weight: 0
     settings: {  }
     third_party_settings: {  }
     label: hidden
+    region: content
   display_price:
     weight: 3
     settings: {  }
     third_party_settings: {  }
+    region: content
   price:
     type: uc_price
     weight: 4
     label: hidden
     settings: {  }
     third_party_settings: {  }
+    region: content
   uc_product_image:
     type: uc_product_image
     weight: 1
     label: hidden
     settings: {  }
     third_party_settings: {  }
+    region: content
 hidden:
   cost: true
   dimensions: true

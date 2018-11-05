@@ -485,7 +485,7 @@ display:
           group_type: group
           admin_label: ''
           operator: '='
-          value: true
+          value: '1'
           group: 1
           exposed: true
           expose:
@@ -605,6 +605,8 @@ display:
         weight: 11
         context: '0'
         menu_name: admin
+        enabled: true
+        expanded: false
     cache_metadata:
       contexts:
         - 'languages:language_content'

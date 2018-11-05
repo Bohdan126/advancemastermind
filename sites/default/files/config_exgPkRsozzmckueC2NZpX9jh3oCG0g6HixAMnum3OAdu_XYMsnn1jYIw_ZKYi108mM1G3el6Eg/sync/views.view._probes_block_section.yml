@@ -218,7 +218,7 @@ display:
           plugin_id: custom
       filters:
         status:
-          value: true
+          value: '1'
           table: node_field_data
           field: status
           plugin_id: boolean
@@ -526,7 +526,7 @@ display:
         row: false
       filters:
         status:
-          value: true
+          value: '1'
           table: node_field_data
           field: status
           plugin_id: boolean
@@ -622,7 +622,7 @@ display:
       display_description: ''
       filters:
         status:
-          value: true
+          value: '1'
           table: node_field_data
           field: status
           plugin_id: boolean
@@ -1129,7 +1129,7 @@ display:
       display_description: ''
       filters:
         status:
-          value: true
+          value: '1'
           table: node_field_data
           field: status
           plugin_id: boolean
@@ -1187,7 +1187,7 @@ display:
           group_type: group
           admin_label: ''
           operator: '='
-          value: true
+          value: '1'
           group: 1
           exposed: false
           expose:
@@ -1488,7 +1488,7 @@ display:
       display_description: ''
       filters:
         status:
-          value: true
+          value: '1'
           table: node_field_data
           field: status
           plugin_id: boolean
@@ -1546,7 +1546,7 @@ display:
           group_type: group
           admin_label: ''
           operator: '='
-          value: true
+          value: '1'
           group: 1
           exposed: false
           expose:
@@ -1952,7 +1952,7 @@ display:
       block_description: '[Probes] Block best brand solutions'
       filters:
         status:
-          value: true
+          value: '1'
           table: node_field_data
           field: status
           plugin_id: boolean
@@ -2486,7 +2486,7 @@ display:
       block_description: '[Probes] Block best team style 1'
       filters:
         status:
-          value: true
+          value: '1'
           table: node_field_data
           field: status
           plugin_id: boolean
@@ -2991,7 +2991,7 @@ display:
       block_description: '[Probes] Block best team style 2'
       filters:
         status:
-          value: true
+          value: '1'
           table: node_field_data
           field: status
           plugin_id: boolean
@@ -3496,7 +3496,7 @@ display:
       block_description: '[Probes] Block best team style 2b'
       filters:
         status:
-          value: true
+          value: '1'
           table: node_field_data
           field: status
           plugin_id: boolean
@@ -4003,7 +4003,7 @@ display:
       block_description: '[Probes] Block best team style 3'
       filters:
         status:
-          value: true
+          value: '1'
           table: node_field_data
           field: status
           plugin_id: boolean
@@ -4509,7 +4509,7 @@ display:
       block_description: '[Probes] Block best team style 4'
       filters:
         status:
-          value: true
+          value: '1'
           table: node_field_data
           field: status
           plugin_id: boolean
@@ -5207,7 +5207,7 @@ display:
         pager: false
       filters:
         status:
-          value: true
+          value: '1'
           table: node_field_data
           field: status
           plugin_id: boolean
@@ -5286,7 +5286,7 @@ display:
       block_description: '[Probes] Block customers review carousel style 1'
       filters:
         status:
-          value: true
+          value: '1'
           table: node_field_data
           field: status
           plugin_id: boolean
@@ -5639,7 +5639,7 @@ display:
       block_description: '[Probes] Block customers review carousel style 2'
       filters:
         status:
-          value: true
+          value: '1'
           table: node_field_data
           field: status
           plugin_id: boolean
@@ -5902,7 +5902,7 @@ display:
       block_description: '[Probes] Block customers review carousel style 3'
       filters:
         status:
-          value: true
+          value: '1'
           table: node_field_data
           field: status
           plugin_id: boolean
@@ -6252,7 +6252,7 @@ display:
       block_description: '[Probes] Block customers review carousel style 4'
       filters:
         status:
-          value: true
+          value: '1'
           table: node_field_data
           field: status
           plugin_id: boolean
@@ -6615,7 +6615,7 @@ display:
       block_description: '[Probes] Block customers review carousel style 5'
       filters:
         status:
-          value: true
+          value: '1'
           table: node_field_data
           field: status
           plugin_id: boolean
@@ -7042,7 +7042,7 @@ display:
       block_description: '[Probe] Block featured article style 1'
       filters:
         status:
-          value: true
+          value: '1'
           table: node_field_data
           field: status
           plugin_id: boolean
@@ -7100,7 +7100,7 @@ display:
           group_type: group
           admin_label: ''
           operator: '='
-          value: true
+          value: '1'
           group: 1
           exposed: false
           expose:
@@ -7403,7 +7403,7 @@ display:
       block_description: '[Probe] Block featured article cafe'
       filters:
         status:
-          value: true
+          value: '1'
           table: node_field_data
           field: status
           plugin_id: boolean
@@ -7461,7 +7461,7 @@ display:
           group_type: group
           admin_label: ''
           operator: '='
-          value: true
+          value: '1'
           group: 1
           exposed: false
           expose:
@@ -7869,7 +7869,7 @@ display:
       block_description: '[Probe] Block featured article fitness'
       filters:
         status:
-          value: true
+          value: '1'
           table: node_field_data
           field: status
           plugin_id: boolean
@@ -7927,7 +7927,7 @@ display:
           group_type: group
           admin_label: ''
           operator: '='
-          value: true
+          value: '1'
           group: 1
           exposed: false
           expose:
@@ -8259,7 +8259,7 @@ display:
       block_description: '[Probe] Block featured article style 12'
       filters:
         status:
-          value: true
+          value: '1'
           table: node_field_data
           field: status
           plugin_id: boolean
@@ -8317,7 +8317,7 @@ display:
           group_type: group
           admin_label: ''
           operator: '='
-          value: true
+          value: '1'
           group: 1
           exposed: false
           expose:
@@ -8711,7 +8711,7 @@ display:
       block_description: '[Probe] Block featured article shop'
       filters:
         status:
-          value: true
+          value: '1'
           table: node_field_data
           field: status
           plugin_id: boolean
@@ -8769,7 +8769,7 @@ display:
           group_type: group
           admin_label: ''
           operator: '='
-          value: true
+          value: '1'
           group: 1
           exposed: false
           expose:
@@ -9101,7 +9101,7 @@ display:
       block_description: '[Probe] Block featured article style 1b'
       filters:
         status:
-          value: true
+          value: '1'
           table: node_field_data
           field: status
           plugin_id: boolean
@@ -9159,7 +9159,7 @@ display:
           group_type: group
           admin_label: ''
           operator: '='
-          value: true
+          value: '1'
           group: 1
           exposed: false
           expose:
@@ -9515,7 +9515,7 @@ display:
       block_description: '[Probe] Block featured article style 2'
       filters:
         status:
-          value: true
+          value: '1'
           table: node_field_data
           field: status
           plugin_id: boolean
@@ -9573,7 +9573,7 @@ display:
           group_type: group
           admin_label: ''
           operator: '='
-          value: true
+          value: '1'
           group: 1
           exposed: false
           expose:
@@ -9915,7 +9915,7 @@ display:
       block_description: '[Probe] Block featured article tab style'
       filters:
         status:
-          value: true
+          value: '1'
           table: node_field_data
           field: status
           plugin_id: boolean
@@ -9973,7 +9973,7 @@ display:
           group_type: group
           admin_label: ''
           operator: '='
-          value: true
+          value: '1'
           group: 1
           exposed: false
           expose:
@@ -10395,7 +10395,7 @@ display:
       block_description: '[Probe] Block featured article style 4'
       filters:
         status:
-          value: true
+          value: '1'
           table: node_field_data
           field: status
           plugin_id: boolean
@@ -10453,7 +10453,7 @@ display:
           group_type: group
           admin_label: ''
           operator: '='
-          value: true
+          value: '1'
           group: 1
           exposed: false
           expose:
@@ -10847,7 +10847,7 @@ display:
       block_description: '[Probe] Block featured article medical'
       filters:
         status:
-          value: true
+          value: '1'
           table: node_field_data
           field: status
           plugin_id: boolean
@@ -10905,7 +10905,7 @@ display:
           group_type: group
           admin_label: ''
           operator: '='
-          value: true
+          value: '1'
           group: 1
           exposed: false
           expose:
@@ -11300,7 +11300,7 @@ display:
       block_description: '[Probe] Block featured article charity'
       filters:
         status:
-          value: true
+          value: '1'
           table: node_field_data
           field: status
           plugin_id: boolean
@@ -11358,7 +11358,7 @@ display:
           group_type: group
           admin_label: ''
           operator: '='
-          value: true
+          value: '1'
           group: 1
           exposed: false
           expose:
@@ -11753,7 +11753,7 @@ display:
       block_description: '[Probe] Block featured article restaurant'
       filters:
         status:
-          value: true
+          value: '1'
           table: node_field_data
           field: status
           plugin_id: boolean
@@ -11811,7 +11811,7 @@ display:
           group_type: group
           admin_label: ''
           operator: '='
-          value: true
+          value: '1'
           group: 1
           exposed: false
           expose:
@@ -12283,7 +12283,7 @@ display:
       block_description: '[Probe] Block featured article construction'
       filters:
         status:
-          value: true
+          value: '1'
           table: node_field_data
           field: status
           plugin_id: boolean
@@ -12341,7 +12341,7 @@ display:
           group_type: group
           admin_label: ''
           operator: '='
-          value: true
+          value: '1'
           group: 1
           exposed: false
           expose:
@@ -12685,7 +12685,7 @@ display:
       block_description: '[Probe] Block featured article transport'
       filters:
         status:
-          value: true
+          value: '1'
           table: node_field_data
           field: status
           plugin_id: boolean
@@ -12743,7 +12743,7 @@ display:
           group_type: group
           admin_label: ''
           operator: '='
-          value: true
+          value: '1'
           group: 1
           exposed: false
           expose:
@@ -13087,7 +13087,7 @@ display:
       block_description: '[Probes] Block featured features'
       filters:
         status:
-          value: true
+          value: '1'
           table: node_field_data
           field: status
           plugin_id: boolean
@@ -13145,7 +13145,7 @@ display:
           group_type: group
           admin_label: ''
           operator: '='
-          value: true
+          value: '1'
           group: 1
           exposed: false
           expose:
@@ -13461,7 +13461,7 @@ display:
       block_description: '[Probes] Block featured features style 2'
       filters:
         status:
-          value: true
+          value: '1'
           table: node_field_data
           field: status
           plugin_id: boolean
@@ -13519,7 +13519,7 @@ display:
           group_type: group
           admin_label: ''
           operator: '='
-          value: true
+          value: '1'
           group: 1
           exposed: false
           expose:
@@ -13822,7 +13822,7 @@ display:
       block_description: '[Probes] Block featured features style 3'
       filters:
         status:
-          value: true
+          value: '1'
           table: node_field_data
           field: status
           plugin_id: boolean
@@ -13880,7 +13880,7 @@ display:
           group_type: group
           admin_label: ''
           operator: '='
-          value: true
+          value: '1'
           group: 1
           exposed: false
           expose:
@@ -14232,7 +14232,7 @@ display:
       block_description: '[Probes] Block featured features style 3b'
       filters:
         status:
-          value: true
+          value: '1'
           table: node_field_data
           field: status
           plugin_id: boolean
@@ -14290,7 +14290,7 @@ display:
           group_type: group
           admin_label: ''
           operator: '='
-          value: true
+          value: '1'
           group: 1
           exposed: false
           expose:
@@ -14642,7 +14642,7 @@ display:
       block_description: '[Probes] Block features style 1'
       filters:
         status:
-          value: true
+          value: '1'
           table: node_field_data
           field: status
           plugin_id: boolean
@@ -14965,7 +14965,7 @@ display:
       block_description: '[Probes] Block features style 2'
       filters:
         status:
-          value: true
+          value: '1'
           table: node_field_data
           field: status
           plugin_id: boolean
@@ -15303,7 +15303,7 @@ display:
       block_description: '[Probes] Block features style 3'
       filters:
         status:
-          value: true
+          value: '1'
           table: node_field_data
           field: status
           plugin_id: boolean
@@ -15662,7 +15662,7 @@ display:
       block_description: '[Probes] Block features style 4'
       filters:
         status:
-          value: true
+          value: '1'
           table: node_field_data
           field: status
           plugin_id: boolean
@@ -16002,7 +16002,7 @@ display:
       block_description: '[Probes] Block features style 5'
       filters:
         status:
-          value: true
+          value: '1'
           table: node_field_data
           field: status
           plugin_id: boolean
@@ -16342,7 +16342,7 @@ display:
       block_description: '[Probes] Block features style 6'
       filters:
         status:
-          value: true
+          value: '1'
           table: node_field_data
           field: status
           plugin_id: boolean
@@ -16688,7 +16688,7 @@ display:
       block_description: '[Probes] Block features style 7'
       filters:
         status:
-          value: true
+          value: '1'
           table: node_field_data
           field: status
           plugin_id: boolean
@@ -17193,7 +17193,7 @@ display:
         pager: false
       filters:
         status:
-          value: true
+          value: '1'
           table: node_field_data
           field: status
           plugin_id: boolean
@@ -17272,7 +17272,7 @@ display:
       block_description: '[Probes] Block fitness classes'
       filters:
         status:
-          value: true
+          value: '1'
           table: node_field_data
           field: status
           plugin_id: boolean
@@ -17719,7 +17719,7 @@ display:
       display_description: ''
       filters:
         status:
-          value: true
+          value: '1'
           table: node_field_data
           field: status
           plugin_id: boolean
@@ -17777,7 +17777,7 @@ display:
           group_type: group
           admin_label: ''
           operator: '='
-          value: true
+          value: '1'
           group: 1
           exposed: false
           expose:
@@ -18339,7 +18339,7 @@ display:
       block_description: '[Probes] Block recent properties'
       filters:
         status:
-          value: true
+          value: '1'
           table: node_field_data
           field: status
           plugin_id: boolean
@@ -18916,7 +18916,7 @@ display:
       block_description: '[Probes] Block services slider and accordion'
       filters:
         status:
-          value: true
+          value: '1'
           table: node_field_data
           field: status
           plugin_id: boolean
@@ -18974,7 +18974,7 @@ display:
           group_type: group
           admin_label: ''
           operator: '='
-          value: true
+          value: '1'
           group: 1
           exposed: false
           expose:
@@ -19373,7 +19373,7 @@ display:
       block_description: '[Probes] Block services style 1'
       filters:
         status:
-          value: true
+          value: '1'
           table: node_field_data
           field: status
           plugin_id: boolean
@@ -19735,7 +19735,7 @@ display:
           empty: false
           tokenize: false
           content:
-            value: "<a class=\"anchor\" id=\"solutions\"></a>\n<span class=\"uppercase font-grey font-bold font14\">Advance your goals </span>\n<h2 class=\"uppercase font-black font30 nomargin\">Business Solutions</h2>\n\n"
+            value: "<a class=\"anchor\" id=\"solutions\"></a>\n<span class=\"uppercase font-grey font-bold font14\">Advance your goals </span>\n<h2 class=\"uppercase font-black font30 nomargin\">Business Solutions</h2>\n"
             format: full_html
           plugin_id: text
       pager:
@@ -19764,7 +19764,7 @@ display:
       block_description: '[Probes] Block services style 10'
       filters:
         status:
-          value: true
+          value: '1'
           table: node_field_data
           field: status
           plugin_id: boolean
@@ -20158,7 +20158,7 @@ display:
       block_description: '[Probes] Block services fitness'
       filters:
         status:
-          value: true
+          value: '1'
           table: node_field_data
           field: status
           plugin_id: boolean
@@ -20565,7 +20565,7 @@ display:
       block_description: '[Probes] Block services style 2'
       filters:
         status:
-          value: true
+          value: '1'
           table: node_field_data
           field: status
           plugin_id: boolean
@@ -20951,7 +20951,7 @@ display:
       block_description: '[Probes] Block services style 3'
       filters:
         status:
-          value: true
+          value: '1'
           table: node_field_data
           field: status
           plugin_id: boolean
@@ -21357,7 +21357,7 @@ display:
       block_description: '[Probes] Block services style 4'
       filters:
         status:
-          value: true
+          value: '1'
           table: node_field_data
           field: status
           plugin_id: boolean
@@ -21756,7 +21756,7 @@ display:
       block_description: '[Probes] Block services style 5'
       filters:
         status:
-          value: true
+          value: '1'
           table: node_field_data
           field: status
           plugin_id: boolean
@@ -22149,7 +22149,7 @@ display:
       block_description: '[Probes] Block services style 6'
       filters:
         status:
-          value: true
+          value: '1'
           table: node_field_data
           field: status
           plugin_id: boolean
@@ -22544,7 +22544,7 @@ display:
       block_description: '[Probes] Block services style 7'
       filters:
         status:
-          value: true
+          value: '1'
           table: node_field_data
           field: status
           plugin_id: boolean
@@ -22938,7 +22938,7 @@ display:
       block_description: '[Probes] Block services construction'
       filters:
         status:
-          value: true
+          value: '1'
           table: node_field_data
           field: status
           plugin_id: boolean
@@ -23345,7 +23345,7 @@ display:
       block_description: '[Probes] Block services lawyer'
       filters:
         status:
-          value: true
+          value: '1'
           table: node_field_data
           field: status
           plugin_id: boolean
@@ -23442,7 +23442,7 @@ display:
           group_type: group
           admin_label: ''
           operator: '='
-          value: true
+          value: '1'
           group: 1
           exposed: false
           expose:

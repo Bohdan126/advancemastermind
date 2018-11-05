@@ -3,7 +3,6 @@ langcode: en
 status: true
 dependencies:
   config:
-    - block_visibility_groups.block_visibility_group.contact_style_1
     - views.view._probes_block_section
   module:
     - block_attributes
@@ -16,21 +15,21 @@ third_party_settings:
   block_attributes:
     attr_class: ''
     attr_id: ''
+    block_title: ''
     block_title_icon: ''
   ntv_block_background:
     disable: enable
-    color: '#000000'
-    bg_image:
-      - 297
+    color: '#6a2e86'
+    bg_image: {  }
     bg_image_type: default
     bg_repeat: 'yes'
     bg_image_position: 'center top'
     bg_image_size: ''
-    background_overlay: ''
+    background_overlay: 'rgba(128, 39, 158, 0.97)'
 id: views_block___probes_block_section_block_partners_style1_5
 theme: probes
 region: section
-weight: null
+weight: 0
 provider: null
 plugin: 'views_block:_probes_block_section-block_partners_style1'
 settings:
@@ -47,5 +46,5 @@ visibility:
   condition_group:
     id: condition_group
     negate: false
-    block_visibility_group: contact_style_1
+    block_visibility_group: ''
     context_mapping: {  }

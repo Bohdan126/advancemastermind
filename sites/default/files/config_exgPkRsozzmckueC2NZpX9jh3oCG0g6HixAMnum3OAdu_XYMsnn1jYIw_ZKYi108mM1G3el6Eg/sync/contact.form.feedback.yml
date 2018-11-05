@@ -11,3 +11,5 @@ recipients:
   - steve@flameconcepts.com
 reply: "Thanks for contacting us, we'll be back in touch shortly.\r\nMany thanks\r\nSteve & Steph"
 weight: 0
+message: 'Your message has been sent.'
+redirect: ''

@@ -725,6 +725,7 @@ $databases['default']['default'] = array (
   'host' => 'db',
   'driver' => 'mysql',
 );
+
 $settings['install_profile'] = 'standard';
 $config_directories['sync'] = 'sites/default/files/config_exgPkRsozzmckueC2NZpX9jh3oCG0g6HixAMnum3OAdu_XYMsnn1jYIw_ZKYi108mM1G3el6Eg/sync';
 ini_set('memory_limit', '800M');

@@ -28,8 +28,10 @@ content:
     settings:
       trim_length: 600
     third_party_settings: {  }
+    region: content
   links:
     weight: 101
+    region: content
 hidden:
   field_carousel_slider: true
   field_color_stylesheet: true

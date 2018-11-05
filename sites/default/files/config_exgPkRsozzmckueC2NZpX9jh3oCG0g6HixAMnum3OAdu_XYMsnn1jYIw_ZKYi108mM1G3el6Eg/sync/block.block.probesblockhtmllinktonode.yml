@@ -11,7 +11,7 @@ dependencies:
     - probes
 id: probesblockhtmllinktonode
 theme: probes
-region: '-1'
+region: topbar
 weight: -8
 provider: null
 plugin: 'block_content:41fd0b76-4044-4445-859f-8e4dde6da5cb'

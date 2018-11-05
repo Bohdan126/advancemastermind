@@ -1,6 +1,6 @@
 uuid: b6543249-a8c5-4f90-905e-79493aaa133d
 langcode: en
-status: true
+status: false
 dependencies:
   config:
     - block_visibility_groups.block_visibility_group.home_business_2

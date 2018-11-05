@@ -16,21 +16,17 @@ namespace Symfony\Component\Validator;
  *
  * For example, let's validate the following object graph:
  *
- * <pre>
- * (Person)---($firstName: string)
- *      \
- *   ($address: Address)---($street: string)
- * </pre>
+ *     (Person)---($firstName: string)
+ *          \
+ *       ($address: Address)---($street: string)
  *
  * We validate the <tt>Person</tt> instance, which becomes the "root" of the
  * validation run (see {@link getRoot}). The state of the context after the
  * first step will be like this:
  *
- * <pre>
- * (Person)---($firstName: string)
- *    ^ \
- *   ($address: Address)---($street: string)
- * </pre>
+ *     (Person)---($firstName: string)
+ *        ^ \
+ *       ($address: Address)---($street: string)
  *
  * The validator is stopped at the <tt>Person</tt> node, both the root and the
  * value (see {@link getValue}) of the context point to the <tt>Person</tt>
@@ -41,11 +37,9 @@ namespace Symfony\Component\Validator;
  * After advancing to the property <tt>$firstName</tt> of the <tt>Person</tt>
  * instance, the state of the context looks like this:
  *
- * <pre>
- * (Person)---($firstName: string)
- *      \              ^
- *   ($address: Address)---($street: string)
- * </pre>
+ *     (Person)---($firstName: string)
+ *          \              ^
+ *       ($address: Address)---($street: string)
  *
  * The validator is stopped at the property <tt>$firstName</tt>. The root still
  * points to the <tt>Person</tt> instance, because this is where the validation
@@ -56,12 +50,10 @@ namespace Symfony\Component\Validator;
  * <tt>$street</tt> property of the <tt>Address</tt> instance, the context state
  * looks like this:
  *
- * <pre>
- * (Person)---($firstName: string)
- *      \
- *   ($address: Address)---($street: string)
- *                               ^
- * </pre>
+ *     (Person)---($firstName: string)
+ *          \
+ *       ($address: Address)---($street: string)
+ *                                   ^
  *
  * The validator is stopped at the property <tt>$street</tt>. The root still
  * points to the <tt>Person</tt> instance, but the property path is now
@@ -128,32 +120,27 @@ interface ExecutionContextInterface
      * argument which is appended to the current property path when a violation
      * is created. For example, take the following object graph:
      *
-     * <pre>
-     * (Person)---($address: Address)---($phoneNumber: PhoneNumber)
-     *                     ^
-     * </pre>
+     *     (Person)---($address: Address)---($phoneNumber: PhoneNumber)
      *
      * When the execution context stops at the <tt>Person</tt> instance, the
      * property path is "address". When you validate the <tt>PhoneNumber</tt>
      * instance now, pass "phoneNumber" as sub path to correct the property path
      * to "address.phoneNumber":
      *
-     * <pre>
-     * $context->validate($address->phoneNumber, 'phoneNumber');
-     * </pre>
+     *     $context->validate($address->phoneNumber, 'phoneNumber');
      *
      * Any violations generated during the validation will be added to the
      * violation list that you can access with {@link getViolations}.
      *
-     * @param mixed                $value    The value to validate.
-     * @param string               $subPath  The path to append to the context's property path.
+     * @param mixed                $value    The value to validate
+     * @param string               $subPath  The path to append to the context's property path
      * @param null|string|string[] $groups   The groups to validate in. If you don't pass any
      *                                       groups here, the current group of the context
      *                                       will be used.
      * @param bool                 $traverse Whether to traverse the value if it is an array
-     *                                       or an instance of <tt>\Traversable</tt>.
+     *                                       or an instance of <tt>\Traversable</tt>
      * @param bool                 $deep     Whether to traverse the value recursively if
-     *                                       it is a collection of collections.
+     *                                       it is a collection of collections
      *
      * @deprecated since version 2.5, to be removed in 3.0.
      *             Use {@link Context\ExecutionContextInterface::getValidator()}
@@ -167,23 +154,18 @@ interface ExecutionContextInterface
      * Use the parameter <tt>$subPath</tt> to adapt the property path for the
      * validated value. For example, take the following object graph:
      *
-     * <pre>
-     * (Person)---($address: Address)---($street: string)
-     *                     ^
-     * </pre>
+     *     (Person)---($address: Address)---($street: string)
      *
      * When the validator validates the <tt>Address</tt> instance, the
      * property path stored in the execution context is "address". When you
      * manually validate the property <tt>$street</tt> now, pass the sub path
      * "street" to adapt the full property path to "address.street":
      *
-     * <pre>
-     * $context->validate($address->street, new NotNull(), 'street');
-     * </pre>
+     *     $context->validate($address->street, new NotNull(), 'street');
      *
-     * @param mixed                   $value       The value to validate.
-     * @param Constraint|Constraint[] $constraints The constraint(s) to validate against.
-     * @param string                  $subPath     The path to append to the context's property path.
+     * @param mixed                   $value       The value to validate
+     * @param Constraint|Constraint[] $constraints The constraint(s) to validate against
+     * @param string                  $subPath     The path to append to the context's property path
      * @param null|string|string[]    $groups      The groups to validate in. If you don't pass any
      *                                             groups here, the current group of the context
      *                                             will be used.
@@ -197,7 +179,7 @@ interface ExecutionContextInterface
     /**
      * Returns the violations generated by the validator so far.
      *
-     * @return ConstraintViolationListInterface The constraint violation list.
+     * @return ConstraintViolationListInterface The constraint violation list
      */
     public function getViolations();
 
@@ -210,7 +192,7 @@ interface ExecutionContextInterface
      *
      * The current value is returned by {@link getValue}.
      *
-     * @return mixed The root value of the validation.
+     * @return mixed The root value of the validation
      */
     public function getRoot();
 
@@ -220,7 +202,7 @@ interface ExecutionContextInterface
      * If you want to retrieve the object that was originally passed to the
      * validator, use {@link getRoot}.
      *
-     * @return mixed The currently validated value.
+     * @return mixed The currently validated value
      */
     public function getValue();
 
@@ -237,15 +219,15 @@ interface ExecutionContextInterface
      * has been called with a plain value and constraint, this method returns
      * null.
      *
-     * @return MetadataInterface|null The metadata of the currently validated
-     *                                value.
+     * @return MetadataInterface|null the metadata of the currently validated
+     *                                value
      */
     public function getMetadata();
 
     /**
      * Returns the used metadata factory.
      *
-     * @return MetadataFactoryInterface The metadata factory.
+     * @return MetadataFactoryInterface The metadata factory
      *
      * @deprecated since version 2.5, to be removed in 3.0.
      *             Use {@link Context\ExecutionContextInterface::getValidator()}
@@ -258,7 +240,7 @@ interface ExecutionContextInterface
     /**
      * Returns the validation group that is currently being validated.
      *
-     * @return string The current validation group.
+     * @return string The current validation group
      */
     public function getGroup();
 
@@ -269,7 +251,7 @@ interface ExecutionContextInterface
      * {@link ClassBasedInterface} or if no metadata is available for the
      * current node, this method returns null.
      *
-     * @return string|null The class name or null, if no class name could be found.
+     * @return string|null The class name or null, if no class name could be found
      */
     public function getClassName();
 
@@ -280,7 +262,7 @@ interface ExecutionContextInterface
      * {@link PropertyMetadataInterface} or if no metadata is available for the
      * current node, this method returns null.
      *
-     * @return string|null The property name or null, if no property name could be found.
+     * @return string|null The property name or null, if no property name could be found
      */
     public function getPropertyName();
 
@@ -290,9 +272,7 @@ interface ExecutionContextInterface
      *
      * For example, take the following object graph:
      *
-     * <pre>
-     * (Person)---($address: Address)---($street: string)
-     * </pre>
+     *     (Person)---($address: Address)---($street: string)
      *
      * When the <tt>Person</tt> instance is passed to the validator, the
      * property path is initially empty. When the <tt>$address</tt> property

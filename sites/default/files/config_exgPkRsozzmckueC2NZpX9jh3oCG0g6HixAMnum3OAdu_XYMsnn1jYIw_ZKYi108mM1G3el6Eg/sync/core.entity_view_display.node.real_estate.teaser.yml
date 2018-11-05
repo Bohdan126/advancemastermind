@@ -5,6 +5,13 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.real_estate.body
+    - field.field.node.real_estate.field_bathroom
+    - field.field.node.real_estate.field_bedroom
+    - field.field.node.real_estate.field_city
+    - field.field.node.real_estate.field_images
+    - field.field.node.real_estate.field_parking
+    - field.field.node.real_estate.field_price
+    - field.field.node.real_estate.field_property_type
     - node.type.real_estate
   module:
     - text
@@ -21,6 +28,15 @@ content:
     settings:
       trim_length: 600
     third_party_settings: {  }
+    region: content
   links:
     weight: 100
-hidden: {  }
+    region: content
+hidden:
+  field_bathroom: true
+  field_bedroom: true
+  field_city: true
+  field_images: true
+  field_parking: true
+  field_price: true
+  field_property_type: true

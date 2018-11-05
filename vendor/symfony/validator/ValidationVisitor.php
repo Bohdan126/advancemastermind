@@ -11,7 +11,7 @@
 
 namespace Symfony\Component\Validator;
 
-@trigger_error('The '.__NAMESPACE__.'\ValidationVisitor class is deprecated since version 2.5 and will be removed in 3.0.', E_USER_DEPRECATED);
+@trigger_error('The '.__NAMESPACE__.'\ValidationVisitor class is deprecated since Symfony 2.5 and will be removed in 3.0.', E_USER_DEPRECATED);
 
 use Symfony\Component\Translation\TranslatorInterface;
 use Symfony\Component\Validator\Exception\NoSuchMetadataException;
@@ -27,55 +27,24 @@ use Symfony\Component\Validator\Exception\UnexpectedTypeException;
  */
 class ValidationVisitor implements ValidationVisitorInterface, GlobalExecutionContextInterface
 {
-    /**
-     * @var mixed
-     */
     private $root;
-
-    /**
-     * @var MetadataFactoryInterface
-     */
     private $metadataFactory;
-
-    /**
-     * @var ConstraintValidatorFactoryInterface
-     */
     private $validatorFactory;
-
-    /**
-     * @var TranslatorInterface
-     */
     private $translator;
-
-    /**
-     * @var null|string
-     */
     private $translationDomain;
-
-    /**
-     * @var array
-     */
     private $objectInitializers;
-
-    /**
-     * @var ConstraintViolationList
-     */
     private $violations;
-
-    /**
-     * @var array
-     */
     private $validatedObjects = array();
 
     /**
      * Creates a new validation visitor.
      *
-     * @param mixed                               $root               The value passed to the validator.
-     * @param MetadataFactoryInterface            $metadataFactory    The factory for obtaining metadata instances.
-     * @param ConstraintValidatorFactoryInterface $validatorFactory   The factory for creating constraint validators.
-     * @param TranslatorInterface                 $translator         The translator for translating violation messages.
-     * @param string|null                         $translationDomain  The domain of the translation messages.
-     * @param ObjectInitializerInterface[]        $objectInitializers The initializers for preparing objects before validation.
+     * @param mixed                               $root               The value passed to the validator
+     * @param MetadataFactoryInterface            $metadataFactory    The factory for obtaining metadata instances
+     * @param ConstraintValidatorFactoryInterface $validatorFactory   The factory for creating constraint validators
+     * @param TranslatorInterface                 $translator         The translator for translating violation messages
+     * @param string|null                         $translationDomain  The domain of the translation messages
+     * @param ObjectInitializerInterface[]        $objectInitializers The initializers for preparing objects before validation
      *
      * @throws UnexpectedTypeException If any of the object initializers is not an instance of ObjectInitializerInterface
      */
@@ -123,7 +92,7 @@ class ValidationVisitor implements ValidationVisitorInterface, GlobalExecutionCo
             return;
         }
 
-        if (is_object($value)) {
+        if (\is_object($value)) {
             $hash = spl_object_hash($value);
 
             // Exit, if the object is already validated for the current group
@@ -149,10 +118,10 @@ class ValidationVisitor implements ValidationVisitorInterface, GlobalExecutionCo
         // Validate arrays recursively by default, otherwise every driver needs
         // to implement special handling for arrays.
         // https://github.com/symfony/symfony/issues/6246
-        if (is_array($value) || ($traverse && $value instanceof \Traversable)) {
+        if (\is_array($value) || ($traverse && $value instanceof \Traversable)) {
             foreach ($value as $key => $element) {
                 // Ignore any scalar values in the collection
-                if (is_object($element) || is_array($element)) {
+                if (\is_object($element) || \is_array($element)) {
                     // Only repeat the traversal if $deep is set
                     $this->validate($element, $group, $propertyPath.'['.$key.']', $deep, $deep);
                 }

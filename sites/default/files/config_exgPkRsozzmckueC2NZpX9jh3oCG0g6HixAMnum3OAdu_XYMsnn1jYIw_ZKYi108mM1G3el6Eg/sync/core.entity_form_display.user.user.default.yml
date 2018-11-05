@@ -20,15 +20,18 @@ content:
     weight: -10
     settings: {  }
     third_party_settings: {  }
+    region: content
   language:
     weight: 0
     settings: {  }
     third_party_settings: {  }
+    region: content
   path:
     type: path
     weight: 30
     settings: {  }
     third_party_settings: {  }
+    region: content
   user_picture:
     type: image_image
     settings:
@@ -36,6 +39,7 @@ content:
       preview_image_style: thumbnail
     third_party_settings: {  }
     weight: -1
+    region: content
 hidden:
   contact: true
   simplenews: true

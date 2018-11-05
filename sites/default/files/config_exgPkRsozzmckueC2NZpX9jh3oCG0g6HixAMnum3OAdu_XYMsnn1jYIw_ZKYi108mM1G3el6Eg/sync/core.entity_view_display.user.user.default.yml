@@ -19,6 +19,7 @@ content:
     weight: 0
     settings: {  }
     third_party_settings: {  }
+    region: content
   user_picture:
     type: image
     weight: 0
@@ -27,5 +28,6 @@ content:
       image_link: ''
     third_party_settings: {  }
     label: hidden
+    region: content
 hidden:
   simplenews: true

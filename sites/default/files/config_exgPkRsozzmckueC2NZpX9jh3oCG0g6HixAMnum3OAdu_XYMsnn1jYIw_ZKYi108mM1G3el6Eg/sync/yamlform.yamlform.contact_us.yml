@@ -46,7 +46,9 @@ settings:
   results_disabled: false
 access:
   create:
-    roles: {  }
+    roles:
+      - anonymous
+      - authenticated
     users: {  }
   view_any:
     roles: {  }

@@ -27,10 +27,12 @@ content:
     weight: 101
     settings: {  }
     third_party_settings: {  }
+    region: content
   links:
     weight: 100
     settings: {  }
     third_party_settings: {  }
+    region: content
 hidden:
   field_color_stylesheet: true
   field_content_class: true

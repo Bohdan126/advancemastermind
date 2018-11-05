@@ -539,6 +539,8 @@ display:
         parent: uc_order.admin.store.orders
         weight: -10
         context: '0'
+        enabled: true
+        expanded: false
       display_description: ''
       display_extenders: {  }
     cache_metadata:
@@ -648,6 +650,9 @@ display:
           break_phrase: false
           not: '0'
       display_extenders: {  }
+      menu:
+        enabled: true
+        expanded: false
     cache_metadata:
       contexts:
         - 'languages:language_content'
@@ -673,6 +678,8 @@ display:
         parent: uc_order.admin.store.orders
         weight: 0
         context: '0'
+        enabled: true
+        expanded: false
       display_description: ''
       filters:
         billing_first_name:

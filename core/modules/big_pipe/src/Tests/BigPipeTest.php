@@ -158,7 +158,9 @@ class BigPipeTest extends WebTestBase {
 
     $this->drupalGet(Url::fromRoute('big_pipe_test'));
     $this->assertBigPipeResponseHeadersPresent();
+    $this->assertNoCacheTag('cache_tag_set_in_lazy_builder');
 
+    $this->setCsrfTokenSeedInTestEnvironment();
     $cases = $this->getTestCases();
     $this->assertBigPipeNoJsPlaceholders([
       $cases['edge_case__invalid_html']->bigPipeNoJsPlaceholder     => $cases['edge_case__invalid_html']->embeddedHtmlResponse,
@@ -170,6 +172,11 @@ class BigPipeTest extends WebTestBase {
       $cases['edge_case__html_non_lazy_builder']->bigPipePlaceholderId => Json::encode($cases['edge_case__html_non_lazy_builder']->embeddedAjaxResponseCommands),
       $cases['exception__lazy_builder']->bigPipePlaceholderId          => NULL,
       $cases['exception__embedded_response']->bigPipePlaceholderId     => NULL,
+    ], [
+      0 => $cases['edge_case__html_non_lazy_builder']->bigPipePlaceholderId,
+      // The 'html' case contains the 'status messages' placeholder, which is
+      // always rendered last.
+      1 => $cases['html']->bigPipePlaceholderId,
     ]);
 
     $this->assertRaw('</body>', 'Closing body tag present.');
@@ -183,7 +190,7 @@ class BigPipeTest extends WebTestBase {
     $records = db_query('SELECT * FROM {watchdog} ORDER BY wid DESC LIMIT 2')->fetchAll();
     $this->assertEqual(RfcLogLevel::ERROR, $records[0]->severity);
     $this->assertTrue(FALSE !== strpos((string) unserialize($records[0]->variables)['@message'], 'Oh noes!'));
-    $this->assertEqual(RfcLogLevel::ERROR, $records[0]->severity);
+    $this->assertEqual(RfcLogLevel::ERROR, $records[1]->severity);
     $this->assertTrue(FALSE !== strpos((string) unserialize($records[1]->variables)['@message'], 'You are not allowed to say llamas are not cool!'));
 
     // Verify that 4xx responses work fine. (4xx responses are handled by
@@ -231,7 +238,9 @@ class BigPipeTest extends WebTestBase {
 
     $this->drupalGet(Url::fromRoute('big_pipe_test'));
     $this->assertBigPipeResponseHeadersPresent();
+    $this->assertNoCacheTag('cache_tag_set_in_lazy_builder');
 
+    $this->setCsrfTokenSeedInTestEnvironment();
     $cases = $this->getTestCases();
     $this->assertBigPipeNoJsPlaceholders([
       $cases['edge_case__invalid_html']->bigPipeNoJsPlaceholder           => $cases['edge_case__invalid_html']->embeddedHtmlResponse,
@@ -250,7 +259,7 @@ class BigPipeTest extends WebTestBase {
     $this->assertNoRaw(BigPipe::STOP_SIGNAL, 'BigPipe stop signal absent.');
 
     $this->pass('Verifying BigPipe assets are absent…', 'Debug');
-    $this->assertFalse(empty($this->getDrupalSettings()), 'drupalSettings and BigPipe asset library absent.');
+    $this->assertTrue(!isset($this->getDrupalSettings()['bigPipePlaceholderIds']) && empty($this->getDrupalSettings()['ajaxPageState']), 'BigPipe drupalSettings and BigPipe asset library absent.');
     $this->assertRaw('</body>', 'Closing body tag present.');
 
     // Verify that 4xx responses work fine. (4xx responses are handled by
@@ -267,6 +276,42 @@ class BigPipeTest extends WebTestBase {
     $this->assertNoRaw('</body>', 'Closing body tag absent: error occurred before then.');
     // The exception is expected. Do not interpret it as a test failure.
     unlink(\Drupal::root() . '/' . $this->siteDirectory . '/error.log');
+  }
+
+  /**
+   * Tests BigPipe with a multi-occurrence placeholder.
+   */
+  public function testBigPipeMultiOccurrencePlaceholders() {
+    $this->drupalLogin($this->rootUser);
+    $this->assertSessionCookieExists(TRUE);
+    $this->assertBigPipeNoJsCookieExists(FALSE);
+
+    // By not calling performMetaRefresh() here, we simulate JavaScript being
+    // enabled, because as far as the BigPipe module is concerned, JavaScript is
+    // enabled in the browser as long as the BigPipe no-JS cookie is *not* set.
+    // @see setUp()
+    // @see performMetaRefresh()
+
+    $this->drupalGet(Url::fromRoute('big_pipe_test_multi_occurrence'));
+    $big_pipe_placeholder_id = 'callback=Drupal%5CCore%5CRender%5CElement%5CStatusMessages%3A%3ArenderMessages&amp;args%5B0%5D&amp;token=_HAdUpwWmet0TOTe2PSiJuMntExoshbm1kh2wQzzzAA';
+    $expected_placeholder_replacement = '<script type="application/vnd.drupal-ajax" data-big-pipe-replacement-for-placeholder-with-id="' . $big_pipe_placeholder_id . '">';
+    $this->assertRaw('The count is 1.');
+    $this->assertNoRaw('The count is 2.');
+    $this->assertNoRaw('The count is 3.');
+    $raw_content = $this->getRawContent();
+    $this->assertTrue(substr_count($raw_content, $expected_placeholder_replacement) == 1, 'Only one placeholder replacement was found for the duplicate #lazy_builder arrays.');
+
+    // By calling performMetaRefresh() here, we simulate JavaScript being
+    // disabled, because as far as the BigPipe module is concerned, it is
+    // enabled in the browser when the BigPipe no-JS cookie is set.
+    // @see setUp()
+    // @see performMetaRefresh()
+    $this->performMetaRefresh();
+    $this->assertBigPipeNoJsCookieExists(TRUE);
+    $this->drupalGet(Url::fromRoute('big_pipe_test_multi_occurrence'));
+    $this->assertRaw('The count is 1.');
+    $this->assertNoRaw('The count is 2.');
+    $this->assertNoRaw('The count is 3.');
   }
 
   protected function assertBigPipeResponseHeadersPresent() {
@@ -300,8 +345,11 @@ class BigPipeTest extends WebTestBase {
    *
    * @param array $expected_big_pipe_placeholders
    *   Keys: BigPipe placeholder IDs. Values: expected AJAX response.
+   * @param array $expected_big_pipe_placeholder_stream_order
+   *   Keys: BigPipe placeholder IDs. Values: expected AJAX response. Keys are
+   *   defined in the order that they are expected to be rendered & streamed.
    */
-  protected function assertBigPipePlaceholders(array $expected_big_pipe_placeholders) {
+  protected function assertBigPipePlaceholders(array $expected_big_pipe_placeholders, array $expected_big_pipe_placeholder_stream_order) {
     $this->pass('Verifying BigPipe placeholders & replacements…', 'Debug');
     $this->assertSetsEqual(array_keys($expected_big_pipe_placeholders), explode(' ', $this->drupalGetHeader('BigPipe-Test-Placeholders')));
     $placeholder_positions = [];
@@ -309,7 +357,7 @@ class BigPipeTest extends WebTestBase {
     foreach ($expected_big_pipe_placeholders as $big_pipe_placeholder_id => $expected_ajax_response) {
       $this->pass('BigPipe placeholder: ' . $big_pipe_placeholder_id, 'Debug');
       // Verify expected placeholder.
-      $expected_placeholder_html = '<div data-big-pipe-placeholder-id="' . $big_pipe_placeholder_id . '"></div>';
+      $expected_placeholder_html = '<span data-big-pipe-placeholder-id="' . $big_pipe_placeholder_id . '"></span>';
       $this->assertRaw($expected_placeholder_html, 'BigPipe placeholder for placeholder ID "' . $big_pipe_placeholder_id . '" found.');
       $pos = strpos($this->getRawContent(), $expected_placeholder_html);
       $placeholder_positions[$pos] = $big_pipe_placeholder_id;
@@ -328,9 +376,14 @@ class BigPipeTest extends WebTestBase {
     }
     ksort($placeholder_positions, SORT_NUMERIC);
     $this->assertEqual(array_keys($expected_big_pipe_placeholders), array_values($placeholder_positions));
-    $this->assertEqual(count($expected_big_pipe_placeholders), preg_match_all('/' . preg_quote('<div data-big-pipe-placeholder-id="', '/') . '/', $this->getRawContent()));
-    $expected_big_pipe_placeholders_with_replacements = array_filter($expected_big_pipe_placeholders);
-    $this->assertEqual(array_keys($expected_big_pipe_placeholders_with_replacements), array_values($placeholder_replacement_positions));
+    $placeholders = array_map(function(\SimpleXMLElement $element) { return (string) $element['data-big-pipe-placeholder-id']; }, $this->cssSelect('[data-big-pipe-placeholder-id]'));
+    $this->assertEqual(count($expected_big_pipe_placeholders), count(array_unique($placeholders)));
+    $expected_big_pipe_placeholders_with_replacements = [];
+    foreach ($expected_big_pipe_placeholder_stream_order as $big_pipe_placeholder_id) {
+      $expected_big_pipe_placeholders_with_replacements[$big_pipe_placeholder_id] = $expected_big_pipe_placeholders[$big_pipe_placeholder_id];
+    }
+    $this->assertEqual($expected_big_pipe_placeholders_with_replacements, array_filter($expected_big_pipe_placeholders));
+    $this->assertSetsEqual(array_keys($expected_big_pipe_placeholders_with_replacements), array_values($placeholder_replacement_positions));
     $this->assertEqual(count($expected_big_pipe_placeholders_with_replacements), preg_match_all('/' . preg_quote('<script type="application/vnd.drupal-ajax" data-big-pipe-replacement-for-placeholder-with-id="', '/') . '/', $this->getRawContent()));
 
     $this->pass('Verifying BigPipe start/stop signals…', 'Debug');
@@ -353,14 +406,18 @@ class BigPipeTest extends WebTestBase {
   }
 
   /**
-   * @return \Drupal\big_pipe\Tests\BigPipePlaceholderTestCase[]
+   * Ensures CSRF tokens can be generated for the current user's session.
    */
-  protected function getTestCases() {
-    // Ensure we can generate CSRF tokens for the current user's session.
+  protected function setCsrfTokenSeedInTestEnvironment() {
     $session_data = $this->container->get('session_handler.write_safe')->read($this->cookies[$this->getSessionName()]['value']);
     $csrf_token_seed = unserialize(explode('_sf2_meta|', $session_data)[1])['s'];
     $this->container->get('session_manager.metadata_bag')->setCsrfTokenSeed($csrf_token_seed);
+  }
 
+  /**
+   * @return \Drupal\big_pipe\Tests\BigPipePlaceholderTestCase[]
+   */
+  protected function getTestCases($has_session = TRUE) {
     return BigPipePlaceholderTestCases::cases($this->container, $this->rootUser);
   }
 

@@ -22,9 +22,11 @@ content:
     label: hidden
     settings: {  }
     third_party_settings: {  }
+    region: content
   links:
     weight: 1
     settings: {  }
     third_party_settings: {  }
+    region: content
 hidden:
   simplenews_issue: true

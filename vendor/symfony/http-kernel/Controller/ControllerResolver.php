@@ -15,8 +15,6 @@ use Psr\Log\LoggerInterface;
 use Symfony\Component\HttpFoundation\Request;
 
 /**
- * ControllerResolver.
- *
  * This implementation uses the '_controller' request attribute to determine
  * the controller to execute and uses the request attributes to determine
  * the controller method arguments.
@@ -28,13 +26,27 @@ class ControllerResolver implements ControllerResolverInterface
     private $logger;
 
     /**
-     * Constructor.
+     * If the ...$arg functionality is available.
      *
-     * @param LoggerInterface $logger A LoggerInterface instance
+     * Requires at least PHP 5.6.0 or HHVM 3.9.1
+     *
+     * @var bool
      */
+    private $supportsVariadic;
+
+    /**
+     * If scalar types exists.
+     *
+     * @var bool
+     */
+    private $supportsScalarTypes;
+
     public function __construct(LoggerInterface $logger = null)
     {
         $this->logger = $logger;
+
+        $this->supportsVariadic = method_exists('ReflectionParameter', 'isVariadic');
+        $this->supportsScalarTypes = method_exists('ReflectionParameter', 'getType');
     }
 
     /**
@@ -53,29 +65,29 @@ class ControllerResolver implements ControllerResolverInterface
             return false;
         }
 
-        if (is_array($controller)) {
+        if (\is_array($controller)) {
             return $controller;
         }
 
-        if (is_object($controller)) {
+        if (\is_object($controller)) {
             if (method_exists($controller, '__invoke')) {
                 return $controller;
             }
 
-            throw new \InvalidArgumentException(sprintf('Controller "%s" for URI "%s" is not callable.', get_class($controller), $request->getPathInfo()));
+            throw new \InvalidArgumentException(sprintf('Controller "%s" for URI "%s" is not callable.', \get_class($controller), $request->getPathInfo()));
         }
 
         if (false === strpos($controller, ':')) {
             if (method_exists($controller, '__invoke')) {
                 return $this->instantiateController($controller);
-            } elseif (function_exists($controller)) {
+            } elseif (\function_exists($controller)) {
                 return $controller;
             }
         }
 
         $callable = $this->createController($controller);
 
-        if (!is_callable($callable)) {
+        if (!\is_callable($callable)) {
             throw new \InvalidArgumentException(sprintf('Controller "%s" for URI "%s" is not callable.', $controller, $request->getPathInfo()));
         }
 
@@ -87,9 +99,9 @@ class ControllerResolver implements ControllerResolverInterface
      */
     public function getArguments(Request $request, $controller)
     {
-        if (is_array($controller)) {
+        if (\is_array($controller)) {
             $r = new \ReflectionMethod($controller[0], $controller[1]);
-        } elseif (is_object($controller) && !$controller instanceof \Closure) {
+        } elseif (\is_object($controller) && !$controller instanceof \Closure) {
             $r = new \ReflectionObject($controller);
             $r = $r->getMethod('__invoke');
         } else {
@@ -99,13 +111,20 @@ class ControllerResolver implements ControllerResolverInterface
         return $this->doGetArguments($request, $controller, $r->getParameters());
     }
 
+    /**
+     * @param Request                $request
+     * @param callable               $controller
+     * @param \ReflectionParameter[] $parameters
+     *
+     * @return array The arguments to use when calling the action
+     */
     protected function doGetArguments(Request $request, $controller, array $parameters)
     {
         $attributes = $request->attributes->all();
         $arguments = array();
         foreach ($parameters as $param) {
             if (array_key_exists($param->name, $attributes)) {
-                if (PHP_VERSION_ID >= 50600 && $param->isVariadic() && is_array($attributes[$param->name])) {
+                if ($this->supportsVariadic && $param->isVariadic() && \is_array($attributes[$param->name])) {
                     $arguments = array_merge($arguments, array_values($attributes[$param->name]));
                 } else {
                     $arguments[] = $attributes[$param->name];
@@ -114,11 +133,13 @@ class ControllerResolver implements ControllerResolverInterface
                 $arguments[] = $request;
             } elseif ($param->isDefaultValueAvailable()) {
                 $arguments[] = $param->getDefaultValue();
+            } elseif ($this->supportsScalarTypes && $param->hasType() && $param->allowsNull()) {
+                $arguments[] = null;
             } else {
-                if (is_array($controller)) {
-                    $repr = sprintf('%s::%s()', get_class($controller[0]), $controller[1]);
-                } elseif (is_object($controller)) {
-                    $repr = get_class($controller);
+                if (\is_array($controller)) {
+                    $repr = sprintf('%s::%s()', \get_class($controller[0]), $controller[1]);
+                } elseif (\is_object($controller)) {
+                    $repr = \get_class($controller);
                 } else {
                     $repr = $controller;
                 }

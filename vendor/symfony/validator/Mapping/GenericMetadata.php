@@ -23,8 +23,6 @@ use Symfony\Component\Validator\ValidationVisitorInterface;
  *
  * This class supports serialization and cloning.
  *
- * @since  2.5
- *
  * @author Bernhard Schussek <bschussek@gmail.com>
  */
 class GenericMetadata implements MetadataInterface
@@ -121,9 +119,7 @@ class GenericMetadata implements MetadataInterface
      *    if $traverse is enabled, but $deep is disabled
      *  - {@link TraversalStrategy::NONE} if $traverse is disabled
      *
-     * @param Constraint $constraint The constraint to add
-     *
-     * @return GenericMetadata This object
+     * @return $this
      *
      * @throws ConstraintDefinitionException When trying to add the
      *                                       {@link Traverse} constraint
@@ -131,11 +127,7 @@ class GenericMetadata implements MetadataInterface
     public function addConstraint(Constraint $constraint)
     {
         if ($constraint instanceof Traverse) {
-            throw new ConstraintDefinitionException(sprintf(
-                'The constraint "%s" can only be put on classes. Please use '.
-                '"Symfony\Component\Validator\Constraints\Valid" instead.',
-                get_class($constraint)
-            ));
+            throw new ConstraintDefinitionException(sprintf('The constraint "%s" can only be put on classes. Please use "Symfony\Component\Validator\Constraints\Valid" instead.', \get_class($constraint)));
         }
 
         if ($constraint instanceof Valid) {
@@ -169,7 +161,7 @@ class GenericMetadata implements MetadataInterface
      *
      * @param Constraint[] $constraints The constraints to add
      *
-     * @return GenericMetadata This object
+     * @return $this
      */
     public function addConstraints(array $constraints)
     {
@@ -195,7 +187,7 @@ class GenericMetadata implements MetadataInterface
      */
     public function hasConstraints()
     {
-        return count($this->constraints) > 0;
+        return \count($this->constraints) > 0;
     }
 
     /**

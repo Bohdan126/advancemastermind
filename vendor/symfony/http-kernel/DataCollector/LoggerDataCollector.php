@@ -69,18 +69,6 @@ class LoggerDataCollector extends DataCollector implements LateDataCollectorInte
     }
 
     /**
-     * Gets the called events.
-     *
-     * @return array An array of called events
-     *
-     * @see TraceableEventDispatcherInterface
-     */
-    public function countErrors()
-    {
-        return isset($this->data['error_count']) ? $this->data['error_count'] : 0;
-    }
-
-    /**
      * Gets the logs.
      *
      * @return array An array of logs
@@ -93,6 +81,11 @@ class LoggerDataCollector extends DataCollector implements LateDataCollectorInte
     public function getPriorities()
     {
         return isset($this->data['priorities']) ? $this->data['priorities'] : array();
+    }
+
+    public function countErrors()
+    {
+        return isset($this->data['error_count']) ? $this->data['error_count'] : 0;
     }
 
     public function countDeprecations()
@@ -162,7 +155,7 @@ class LoggerDataCollector extends DataCollector implements LateDataCollectorInte
 
     private function sanitizeContext($context)
     {
-        if (is_array($context)) {
+        if (\is_array($context)) {
             foreach ($context as $key => $value) {
                 $context[$key] = $this->sanitizeContext($value);
             }
@@ -170,12 +163,16 @@ class LoggerDataCollector extends DataCollector implements LateDataCollectorInte
             return $context;
         }
 
-        if (is_resource($context)) {
+        if (\is_resource($context)) {
             return sprintf('Resource(%s)', get_resource_type($context));
         }
 
-        if (is_object($context)) {
-            return sprintf('Object(%s)', get_class($context));
+        if (\is_object($context)) {
+            if ($context instanceof \Exception) {
+                return sprintf('Exception(%s): %s', \get_class($context), $context->getMessage());
+            }
+
+            return sprintf('Object(%s)', \get_class($context));
         }
 
         return $context;

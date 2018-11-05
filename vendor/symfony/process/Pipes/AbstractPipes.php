@@ -18,22 +18,21 @@ namespace Symfony\Component\Process\Pipes;
  */
 abstract class AbstractPipes implements PipesInterface
 {
-    /** @var array */
     public $pipes = array();
 
-    /** @var string */
-    protected $inputBuffer = '';
-    /** @var resource|null */
-    protected $input;
-
-    /** @var bool */
+    private $inputBuffer = '';
+    private $input;
     private $blocked = true;
+    private $lastError;
 
+    /**
+     * @param resource|null $input
+     */
     public function __construct($input)
     {
-        if (is_resource($input)) {
+        if (\is_resource($input)) {
             $this->input = $input;
-        } elseif (is_string($input)) {
+        } elseif (\is_string($input)) {
             $this->inputBuffer = $input;
         } else {
             $this->inputBuffer = (string) $input;
@@ -58,10 +57,11 @@ abstract class AbstractPipes implements PipesInterface
      */
     protected function hasSystemCallBeenInterrupted()
     {
-        $lastError = error_get_last();
+        $lastError = $this->lastError;
+        $this->lastError = null;
 
         // stream_select returns false when the `select` system call is interrupted by an incoming signal
-        return isset($lastError['message']) && false !== stripos($lastError['message'], 'interrupted system call');
+        return null !== $lastError && false !== stripos($lastError, 'interrupted system call');
     }
 
     /**
@@ -91,13 +91,12 @@ abstract class AbstractPipes implements PipesInterface
         if (!isset($this->pipes[0])) {
             return;
         }
-
-        $e = array();
-        $r = null !== $this->input ? array($this->input) : $e;
+        $input = $this->input;
+        $r = $e = array();
         $w = array($this->pipes[0]);
 
         // let's have a look if something changed in streams
-        if (false === $n = @stream_select($r, $w, $e, 0, 0)) {
+        if (false === @stream_select($r, $w, $e, 0, 0)) {
             return;
         }
 
@@ -110,7 +109,7 @@ abstract class AbstractPipes implements PipesInterface
                 }
             }
 
-            foreach ($r as $input) {
+            if ($input) {
                 for (;;) {
                     $data = fread($input, self::CHUNK_SIZE);
                     if (!isset($data[0])) {
@@ -124,7 +123,7 @@ abstract class AbstractPipes implements PipesInterface
                         return array($this->pipes[0]);
                     }
                 }
-                if (!isset($data[0]) && feof($input)) {
+                if (feof($input)) {
                     // no more data to read on input resource
                     // use an empty buffer in the next reads
                     $this->input = null;
@@ -136,10 +135,16 @@ abstract class AbstractPipes implements PipesInterface
         if (null === $this->input && !isset($this->inputBuffer[0])) {
             fclose($this->pipes[0]);
             unset($this->pipes[0]);
-        }
-
-        if (!$w) {
+        } elseif (!$w) {
             return array($this->pipes[0]);
         }
+    }
+
+    /**
+     * @internal
+     */
+    public function handleError($type, $msg)
+    {
+        $this->lastError = $msg;
     }
 }

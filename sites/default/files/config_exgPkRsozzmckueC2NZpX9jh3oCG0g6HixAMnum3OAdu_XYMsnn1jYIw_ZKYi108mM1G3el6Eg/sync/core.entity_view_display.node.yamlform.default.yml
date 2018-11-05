@@ -26,16 +26,19 @@ content:
     weight: 101
     settings: {  }
     third_party_settings: {  }
+    region: content
   links:
     weight: 100
     settings: {  }
     third_party_settings: {  }
+    region: content
   yamlform:
     weight: 102
     label: hidden
     settings: {  }
     third_party_settings: {  }
     type: yamlform_entity_reference_entity_view
+    region: content
 hidden:
   field_page_slogan: true
   field_page_style: true

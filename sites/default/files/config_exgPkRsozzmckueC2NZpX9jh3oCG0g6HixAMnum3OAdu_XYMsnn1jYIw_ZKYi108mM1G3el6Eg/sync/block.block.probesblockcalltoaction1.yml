@@ -11,7 +11,7 @@ dependencies:
     - probes
 id: probesblockcalltoaction1
 theme: probes
-region: '-1'
+region: topbar
 weight: -5
 provider: null
 plugin: 'block_content:c66f0c8c-562c-4abf-9363-7544cf53bcd1'

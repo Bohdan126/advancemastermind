@@ -11,9 +11,9 @@
 
 namespace Symfony\Component\Validator\Constraints;
 
-use Symfony\Component\Validator\Context\ExecutionContextInterface;
 use Symfony\Component\Validator\Constraint;
 use Symfony\Component\Validator\ConstraintValidator;
+use Symfony\Component\Validator\Context\ExecutionContextInterface;
 use Symfony\Component\Validator\Exception\UnexpectedTypeException;
 
 /**
@@ -50,7 +50,7 @@ class LuhnValidator extends ConstraintValidator
 
         // Work with strings only, because long numbers are represented as floats
         // internally and don't work with strlen()
-        if (!is_string($value) && !(is_object($value) && method_exists($value, '__toString'))) {
+        if (!\is_string($value) && !(\is_object($value) && method_exists($value, '__toString'))) {
             throw new UnexpectedTypeException($value, 'string');
         }
 
@@ -73,7 +73,7 @@ class LuhnValidator extends ConstraintValidator
         }
 
         $checkSum = 0;
-        $length = strlen($value);
+        $length = \strlen($value);
 
         // Starting with the last digit and walking left, add every second
         // digit to the check sum
@@ -81,7 +81,7 @@ class LuhnValidator extends ConstraintValidator
         //      ^     ^     ^     ^     ^     ^
         //    = 7  +  9  +  7  +  9  +  7  +  3
         for ($i = $length - 1; $i >= 0; $i -= 2) {
-            $checkSum += $value{$i};
+            $checkSum += $value[$i];
         }
 
         // Starting with the second last digit and walking left, double every
@@ -91,7 +91,7 @@ class LuhnValidator extends ConstraintValidator
         //         ^     ^     ^     ^     ^
         //    =    1+8 + 4  +  6  +  1+6 + 2
         for ($i = $length - 2; $i >= 0; $i -= 2) {
-            $checkSum += array_sum(str_split($value{$i} * 2));
+            $checkSum += array_sum(str_split($value[$i] * 2));
         }
 
         if (0 === $checkSum || 0 !== $checkSum % 10) {

@@ -13,12 +13,12 @@ namespace Symfony\Component\Serializer;
 
 use Symfony\Component\Serializer\Encoder\ChainDecoder;
 use Symfony\Component\Serializer\Encoder\ChainEncoder;
-use Symfony\Component\Serializer\Encoder\EncoderInterface;
 use Symfony\Component\Serializer\Encoder\DecoderInterface;
-use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
-use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
+use Symfony\Component\Serializer\Encoder\EncoderInterface;
 use Symfony\Component\Serializer\Exception\LogicException;
 use Symfony\Component\Serializer\Exception\UnexpectedValueException;
+use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
+use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
 
 /**
  * Serializer serializes and deserializes data.
@@ -26,9 +26,9 @@ use Symfony\Component\Serializer\Exception\UnexpectedValueException;
  * objects are turned into arrays by normalizers.
  * arrays are turned into various output formats by encoders.
  *
- * $serializer->serialize($obj, 'xml')
- * $serializer->decode($data, 'xml')
- * $serializer->denormalize($data, 'Class', 'xml')
+ *     $serializer->serialize($obj, 'xml')
+ *     $serializer->decode($data, 'xml')
+ *     $serializer->denormalize($data, 'Class', 'xml')
  *
  * @author Jordi Boggiano <j.boggiano@seld.be>
  * @author Johannes M. Schmitt <schmittjoh@gmail.com>
@@ -132,7 +132,7 @@ class Serializer implements SerializerInterface, NormalizerInterface, Denormaliz
             return $data;
         }
 
-        if (is_array($data) || $data instanceof \Traversable) {
+        if (\is_array($data) || $data instanceof \Traversable) {
             $normalized = array();
             foreach ($data as $key => $val) {
                 $normalized[$key] = $this->normalize($val, $format, $context);
@@ -141,12 +141,12 @@ class Serializer implements SerializerInterface, NormalizerInterface, Denormaliz
             return $normalized;
         }
 
-        if (is_object($data)) {
+        if (\is_object($data)) {
             if (!$this->normalizers) {
                 throw new LogicException('You must register at least one normalizer to be able to normalize objects.');
             }
 
-            throw new UnexpectedValueException(sprintf('Could not normalize object of type %s, no supporting normalizer found.', get_class($data)));
+            throw new UnexpectedValueException(sprintf('Could not normalize object of type %s, no supporting normalizer found.', \get_class($data)));
         }
 
         throw new UnexpectedValueException(sprintf('An unexpected value could not be normalized: %s', var_export($data, true)));
@@ -180,7 +180,7 @@ class Serializer implements SerializerInterface, NormalizerInterface, Denormaliz
      * Returns a matching normalizer.
      *
      * @param mixed  $data   Data to get the serializer for
-     * @param string $format format name, present to give the option to normalizers to act differently based on formats
+     * @param string $format Format name, present to give the option to normalizers to act differently based on formats
      *
      * @return NormalizerInterface|null
      */
@@ -196,9 +196,9 @@ class Serializer implements SerializerInterface, NormalizerInterface, Denormaliz
     /**
      * Returns a matching denormalizer.
      *
-     * @param mixed  $data   data to restore
-     * @param string $class  the expected class to instantiate
-     * @param string $format format name, present to give the option to normalizers to act differently based on formats
+     * @param mixed  $data   Data to restore
+     * @param string $class  The expected class to instantiate
+     * @param string $format Format name, present to give the option to normalizers to act differently based on formats
      *
      * @return DenormalizerInterface|null
      */
@@ -230,9 +230,9 @@ class Serializer implements SerializerInterface, NormalizerInterface, Denormaliz
     /**
      * Denormalizes data back into an object of the given class.
      *
-     * @param mixed  $data    data to restore
-     * @param string $class   the expected class to instantiate
-     * @param string $format  format name, present to give the option to normalizers to act differently based on formats
+     * @param mixed  $data    Data to restore
+     * @param string $class   The expected class to instantiate
+     * @param string $format  Format name, present to give the option to normalizers to act differently based on formats
      * @param array  $context The context data for this particular denormalization
      *
      * @return object
@@ -248,15 +248,6 @@ class Serializer implements SerializerInterface, NormalizerInterface, Denormaliz
 
         if ($normalizer = $this->getDenormalizer($data, $class, $format)) {
             return $normalizer->denormalize($data, $class, $format, $context);
-        }
-
-        foreach ($this->normalizers as $normalizer) {
-            if (
-                $normalizer instanceof DenormalizerInterface &&
-                $normalizer->supportsDenormalization($data, $class, $format)
-            ) {
-                return $normalizer->denormalize($data, $class, $format, $context);
-            }
         }
 
         throw new UnexpectedValueException(sprintf('Could not denormalize object of type %s, no supporting normalizer found.', $class));

@@ -11,7 +11,7 @@ dependencies:
     - probes
 id: views_block___probes_block_section_block_featured_article_style1
 theme: probes
-region: '-1'
+region: topbar
 weight: -9
 provider: null
 plugin: 'views_block:_probes_block_section-block_featured_article_style1'

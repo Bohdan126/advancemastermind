@@ -11,7 +11,7 @@ dependencies:
     - probes
 id: views_block___probes_portfolio_block_latest_works_grid_style1
 theme: probes
-region: '-1'
+region: topbar
 weight: 1
 provider: null
 plugin: 'views_block:_probes_portfolio-block_latest_works_grid_style1'

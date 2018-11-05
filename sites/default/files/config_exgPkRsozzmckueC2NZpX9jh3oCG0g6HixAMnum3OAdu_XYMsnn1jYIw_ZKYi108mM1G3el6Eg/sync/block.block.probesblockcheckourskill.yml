@@ -11,7 +11,7 @@ dependencies:
     - probes
 id: probesblockcheckourskill
 theme: probes
-region: '-1'
+region: topbar
 weight: -4
 provider: null
 plugin: 'block_content:dc6965dd-1fba-46ef-8ea8-b4bf18c0d6ff'

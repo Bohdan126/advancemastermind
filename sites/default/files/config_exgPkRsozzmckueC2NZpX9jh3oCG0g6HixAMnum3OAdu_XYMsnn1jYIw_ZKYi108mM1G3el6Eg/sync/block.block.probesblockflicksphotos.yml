@@ -2,8 +2,6 @@ uuid: 6e933cb4-fbc0-4548-9202-ba2e309ca8bb
 langcode: en
 status: false
 dependencies:
-  config:
-    - block_visibility_groups.block_visibility_group.footer_layout_1
   content:
     - 'block_content:basic:a3d6037a-cb07-47a4-bdb3-83daea7e3321'
   module:
@@ -30,7 +28,7 @@ third_party_settings:
     background_overlay: ''
 id: probesblockflicksphotos
 theme: probes
-region: '-1'
+region: footer
 weight: -10
 provider: null
 plugin: 'block_content:a3d6037a-cb07-47a4-bdb3-83daea7e3321'
@@ -49,5 +47,5 @@ visibility:
   condition_group:
     id: condition_group
     negate: false
-    block_visibility_group: footer_layout_1
+    block_visibility_group: ''
     context_mapping: {  }

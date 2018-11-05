@@ -1,4 +1,4 @@
-.navbar {
+﻿.navbar {
 	margin-bottom:0;
 	border:0;
 }
@@ -157,7 +157,7 @@ ul.nav>li>a:hover.active {
 .navbar-nav > li.cart a {
 	color:#FFF !important;
 	padding:23px 25px 22px 25px;
-	font-size:15px;
+	font-size:15px 10px;
 }
 .cart-info-box {
 	width:400px;
@@ -173,7 +173,8 @@ ul.nav>li>a:hover.active {
 	padding-bottom:10px;
 	margin-bottom:25px;
 }
- @media (min-width:769px) {
+ @media (min-width:769px;
+) {
 .dropdown-submenu>.dropdown-menu:last-child {
  border-top: 0px solid #000;
 }
@@ -457,7 +458,7 @@ background:rgba(210,210,210,.4)
 }
 .header.headr-style-1 {
 	display:block;
-	position: relative;
+	position:relative;
 	z-index:9000!important;
 	top:0px;
 	left:0;
@@ -466,7 +467,6 @@ background:rgba(210,210,210,.4)
 	height:85px;
 	padding-top:6px;
 	border-bottom: 0px solid rgba(255,255,255,0.18);
-
 }
 .header.headr-style-2 {
 	padding-top:80px;
@@ -568,7 +568,7 @@ background:rgba(210,210,210,.4)
 	padding-bottom: 0px;
 	transition: all 0.3s ease-out 0s;
 }
-
+}
  @media only screen and (min-width: 1000px) and (max-width: 1169px) {
 .header {
 	height: auto;
@@ -628,7 +628,7 @@ background:rgba(210,210,210,.4)
 	padding-bottom: 9px;
 }
 .compact .header .navbar-brand {
-background-size: 75%;
+background-size: 75%%;
 	background-position: left 22px;
 }
 .header.headr-style-2 {

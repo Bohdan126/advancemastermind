@@ -28,10 +28,9 @@ class StreamedResponse extends Response
 {
     protected $callback;
     protected $streamed;
+    private $headersSent;
 
     /**
-     * Constructor.
-     *
      * @param callable|null $callback A valid PHP callback or null to set it later
      * @param int           $status   The response status code
      * @param array         $headers  An array of response headers
@@ -44,6 +43,7 @@ class StreamedResponse extends Response
             $this->setCallback($callback);
         }
         $this->streamed = false;
+        $this->headersSent = false;
     }
 
     /**
@@ -53,7 +53,7 @@ class StreamedResponse extends Response
      * @param int           $status   The response status code
      * @param array         $headers  An array of response headers
      *
-     * @return StreamedResponse
+     * @return static
      */
     public static function create($callback = null, $status = 200, $headers = array())
     {
@@ -69,10 +69,26 @@ class StreamedResponse extends Response
      */
     public function setCallback($callback)
     {
-        if (!is_callable($callback)) {
+        if (!\is_callable($callback)) {
             throw new \LogicException('The Response callback must be a valid PHP callable.');
         }
         $this->callback = $callback;
+    }
+
+    /**
+     * {@inheritdoc}
+     *
+     * This method only sends the headers once.
+     */
+    public function sendHeaders()
+    {
+        if ($this->headersSent) {
+            return $this;
+        }
+
+        $this->headersSent = true;
+
+        return parent::sendHeaders();
     }
 
     /**
@@ -83,7 +99,7 @@ class StreamedResponse extends Response
     public function sendContent()
     {
         if ($this->streamed) {
-            return;
+            return $this;
         }
 
         $this->streamed = true;
@@ -92,7 +108,9 @@ class StreamedResponse extends Response
             throw new \LogicException('The Response callback must not be null.');
         }
 
-        call_user_func($this->callback);
+        \call_user_func($this->callback);
+
+        return $this;
     }
 
     /**
@@ -105,6 +123,8 @@ class StreamedResponse extends Response
         if (null !== $content) {
             throw new \LogicException('The content cannot be set on a StreamedResponse instance.');
         }
+
+        $this->streamed = true;
     }
 
     /**

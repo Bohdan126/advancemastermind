@@ -24,6 +24,7 @@ content:
       summary_rows: 3
       placeholder: ''
     third_party_settings: {  }
+    region: content
   field_image:
     weight: 1
     settings:
@@ -33,6 +34,7 @@ content:
       imce:
         enabled: true
     type: image_image
+    region: content
   info:
     type: string_textfield
     weight: 0
@@ -40,4 +42,5 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+    region: content
 hidden: {  }

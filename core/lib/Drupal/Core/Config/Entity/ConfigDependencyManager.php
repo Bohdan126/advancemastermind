@@ -126,7 +126,7 @@ class ConfigDependencyManager {
    *
    * @var \Drupal\Core\Config\Entity\ConfigEntityDependency[]
    */
-  protected $data = array();
+  protected $data = [];
 
   /**
    * The directed acyclic graph.
@@ -150,9 +150,9 @@ class ConfigDependencyManager {
    *   An array of config entity dependency objects that are dependent.
    */
   public function getDependentEntities($type, $name) {
-    $dependent_entities = array();
+    $dependent_entities = [];
 
-    $entities_to_check = array();
+    $entities_to_check = [];
     if ($type == 'config') {
       $entities_to_check[] = $name;
     }
@@ -173,7 +173,33 @@ class ConfigDependencyManager {
     // dependent is at the top. For example, this ensures that fields are
     // always after field storages. This is because field storages need to be
     // created before a field.
-    return array_reverse(array_intersect_key($this->graph, $dependencies));
+    $graph = $this->getGraph();
+    $sorts = $this->prepareMultisort($graph, ['weight', 'name']);
+    array_multisort($sorts['weight'], SORT_DESC, SORT_NUMERIC, $sorts['name'], SORT_ASC, SORT_NATURAL | SORT_FLAG_CASE, $graph);
+    return array_replace(array_intersect_key($graph, $dependencies), $dependencies);
+  }
+
+  /**
+   * Extracts data from the graph for use in array_multisort().
+   *
+   * @param array $graph
+   *   The graph to extract data from.
+   * @param array $keys
+   *   The keys whose values to extract.
+   *
+   * @return
+   *   An array keyed by the $keys passed in. The values are arrays keyed by the
+   *   row from the graph and the value is the corresponding value for the key
+   *   from the graph.
+   */
+  protected function prepareMultisort($graph, $keys) {
+    $return = array_fill_keys($keys, []);
+    foreach ($graph as $graph_key => $graph_row) {
+      foreach ($keys as $key) {
+        $return[$key][$graph_key] = $graph_row[$key];
+      }
+    }
+    return $return;
   }
 
   /**
@@ -185,29 +211,60 @@ class ConfigDependencyManager {
    */
   public function sortAll() {
     $graph = $this->getGraph();
-    // Sort by reverse weight and alphabetically. The most dependent entities
+    // Sort by weight and alphabetically. The most dependent entities
     // are last and entities with the same weight are alphabetically ordered.
-    uasort($graph, array($this, 'sortGraph'));
-    return array_keys($graph);
+    $sorts = $this->prepareMultisort($graph, ['weight', 'name']);
+    array_multisort($sorts['weight'], SORT_ASC, SORT_NUMERIC, $sorts['name'], SORT_ASC, SORT_NATURAL | SORT_FLAG_CASE, $graph);
+    // Use array_intersect_key() to exclude modules and themes from the list.
+    return array_keys(array_intersect_key($graph, $this->data));
   }
 
   /**
-   * Sorts the dependency graph by reverse weight and alphabetically.
+   * Sorts the dependency graph by weight and alphabetically.
+   *
+   * @deprecated in Drupal 8.2.0, will be removed before Drupal 9.0.0. Use
+   * \Drupal\Core\Config\Entity\ConfigDependencyManager::prepareMultisort() and
+   * array_multisort() instead.
    *
    * @param array $a
    *   First item for comparison. The compared items should be associative
-   *   arrays that include a 'weight' and a 'component' key.
+   *   arrays that include a 'weight' and a 'name' key.
    * @param array $b
    *   Second item for comparison.
    *
    * @return int
    *   The comparison result for uasort().
    */
-  public function sortGraph(array $a, array $b) {
+  protected static function sortGraphByWeight(array $a, array $b) {
+    $weight_cmp = SortArray::sortByKeyInt($a, $b, 'weight');
+
+    if ($weight_cmp === 0) {
+      return SortArray::sortByKeyString($a, $b, 'name');
+    }
+    return $weight_cmp;
+  }
+
+  /**
+   * Sorts the dependency graph by reverse weight and alphabetically.
+   *
+   * @deprecated in Drupal 8.2.0, will be removed before Drupal 9.0.0. Use
+   * \Drupal\Core\Config\Entity\ConfigDependencyManager::prepareMultisort() and
+   * array_multisort() instead.
+   *
+   * @param array $a
+   *   First item for comparison. The compared items should be associative
+   *   arrays that include a 'weight' and a 'name' key.
+   * @param array $b
+   *   Second item for comparison.
+   *
+   * @return int
+   *   The comparison result for uasort().
+   */
+  public static function sortGraph(array $a, array $b) {
     $weight_cmp = SortArray::sortByKeyInt($a, $b, 'weight') * -1;
 
     if ($weight_cmp === 0) {
-      return SortArray::sortByKeyString($a, $b, 'component');
+      return SortArray::sortByKeyString($a, $b, 'name');
     }
     return $weight_cmp;
   }
@@ -224,13 +281,15 @@ class ConfigDependencyManager {
    *   supplied entities to check.
    */
   protected function createGraphConfigEntityDependencies($entities_to_check) {
-    $dependent_entities = array();
+    $dependent_entities = [];
     $graph = $this->getGraph();
 
     foreach ($entities_to_check as $entity) {
-      if (isset($graph[$entity]) && !empty($graph[$entity]['reverse_paths'])) {
-        foreach ($graph[$entity]['reverse_paths'] as $dependency => $value) {
-          $dependent_entities[$dependency] = $this->data[$dependency];
+      if (isset($graph[$entity]) && !empty($graph[$entity]['paths'])) {
+        foreach ($graph[$entity]['paths'] as $dependency => $value) {
+          if (isset($this->data[$dependency])) {
+            $dependent_entities[$dependency] = $this->data[$dependency];
+          }
         }
       }
     }
@@ -245,17 +304,24 @@ class ConfigDependencyManager {
    */
   protected function getGraph() {
     if (!isset($this->graph)) {
-      $graph = array();
+      $graph = [];
       foreach ($this->data as $entity) {
         $graph_key = $entity->getConfigDependencyName();
-        $graph[$graph_key]['edges'] = array();
-        $dependencies = $entity->getDependencies('config');
-        if (!empty($dependencies)) {
-          foreach ($dependencies as $dependency) {
-            $graph[$graph_key]['edges'][$dependency] = TRUE;
-          }
+        if (!isset($graph[$graph_key])) {
+          $graph[$graph_key] = [
+            'edges' => [],
+            'name' => $graph_key,
+          ];
+        }
+        // Include all dependencies in the graph so that topographical sorting
+        // works.
+        foreach (array_merge($entity->getDependencies('config'), $entity->getDependencies('module'), $entity->getDependencies('theme')) as $dependency) {
+          $graph[$dependency]['edges'][$graph_key] = TRUE;
+          $graph[$dependency]['name'] = $dependency;
         }
       }
+      // Ensure that order of the graph is consistent.
+      krsort($graph);
       $graph_object = new Graph($graph);
       $this->graph = $graph_object->searchAndSort();
     }

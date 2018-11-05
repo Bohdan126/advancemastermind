@@ -11,9 +11,9 @@
 
 namespace Symfony\Component\DependencyInjection\Compiler;
 
+use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Definition;
 use Symfony\Component\DependencyInjection\DefinitionDecorator;
-use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Exception\RuntimeException;
 
 /**
@@ -31,8 +31,6 @@ class ResolveDefinitionTemplatesPass implements CompilerPassInterface
 
     /**
      * Process the ContainerBuilder to replace DefinitionDecorator instances with their real Definition instances.
-     *
-     * @param ContainerBuilder $container
      */
     public function process(ContainerBuilder $container)
     {
@@ -60,7 +58,7 @@ class ResolveDefinitionTemplatesPass implements CompilerPassInterface
                 $arguments[$k] = $argument = $container->getDefinition($k);
                 $this->currentId = $k;
             }
-            if (is_array($argument)) {
+            if (\is_array($argument)) {
                 $arguments[$k] = $this->resolveArguments($container, $argument);
             } elseif ($argument instanceof Definition) {
                 if ($argument instanceof DefinitionDecorator) {
@@ -136,6 +134,7 @@ class ResolveDefinitionTemplatesPass implements CompilerPassInterface
         $def->setFile($parentDef->getFile());
         $def->setPublic($parentDef->isPublic());
         $def->setLazy($parentDef->isLazy());
+        $def->setAutowired($parentDef->isAutowired());
 
         // overwrite with values specified in the decorator
         $changes = $definition->getChanges();
@@ -169,12 +168,15 @@ class ResolveDefinitionTemplatesPass implements CompilerPassInterface
         if (isset($changes['deprecated'])) {
             $def->setDeprecated($definition->isDeprecated(), $definition->getDeprecationMessage('%service_id%'));
         }
+        if (isset($changes['autowire'])) {
+            $def->setAutowired($definition->isAutowired());
+        }
         if (isset($changes['decorated_service'])) {
             $decoratedService = $definition->getDecoratedService();
             if (null === $decoratedService) {
                 $def->setDecoratedService($decoratedService);
             } else {
-                $def->setDecoratedService($decoratedService[0], $decoratedService[1]);
+                $def->setDecoratedService($decoratedService[0], $decoratedService[1], $decoratedService[2]);
             }
         }
 
@@ -189,7 +191,7 @@ class ResolveDefinitionTemplatesPass implements CompilerPassInterface
                 throw new RuntimeException(sprintf('Invalid argument key "%s" found.', $k));
             }
 
-            $index = (int) substr($k, strlen('index_'));
+            $index = (int) substr($k, \strlen('index_'));
             $def->replaceArgument($index, $v);
         }
 
@@ -199,7 +201,7 @@ class ResolveDefinitionTemplatesPass implements CompilerPassInterface
         }
 
         // append method calls
-        if (count($calls = $definition->getMethodCalls()) > 0) {
+        if (\count($calls = $definition->getMethodCalls()) > 0) {
             $def->setMethodCalls(array_merge($def->getMethodCalls(), $calls));
         }
 

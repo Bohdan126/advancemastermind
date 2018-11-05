@@ -1,7 +1,7 @@
-uuid: 8e89d635-5e8e-45f7-9b6c-f2ababbe11d4
+uuid: 215936e6-9db8-4527-9d70-9c977a70704e
 langcode: en
 status: true
 dependencies: {  }
 formId: yamlform_submission_contact_us_form
 captchaType: default
-label: yamlform-submission-contact-us-form
+label: yamlform_submission_contact_us_form

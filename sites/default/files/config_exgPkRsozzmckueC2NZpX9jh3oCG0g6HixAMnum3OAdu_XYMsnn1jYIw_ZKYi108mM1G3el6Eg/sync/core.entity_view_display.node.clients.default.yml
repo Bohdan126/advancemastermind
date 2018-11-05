@@ -21,6 +21,7 @@ content:
     weight: 101
     settings: {  }
     third_party_settings: {  }
+    region: content
   field_image:
     weight: 102
     label: hidden
@@ -29,8 +30,10 @@ content:
       image_link: ''
     third_party_settings: {  }
     type: image
+    region: content
   links:
     weight: 100
     settings: {  }
     third_party_settings: {  }
+    region: content
 hidden: {  }

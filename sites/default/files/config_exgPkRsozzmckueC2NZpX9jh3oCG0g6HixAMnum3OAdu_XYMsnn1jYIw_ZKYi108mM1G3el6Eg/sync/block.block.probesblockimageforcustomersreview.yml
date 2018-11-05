@@ -13,7 +13,7 @@ dependencies:
     - probes
 id: probesblockimageforcustomersreview
 theme: probes
-region: '-1'
+region: topbar
 weight: 4
 provider: null
 plugin: 'block_content:f7696b62-dd06-4983-872a-7b39ac88eaa2'

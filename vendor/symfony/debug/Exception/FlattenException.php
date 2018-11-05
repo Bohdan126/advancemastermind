@@ -29,10 +29,10 @@ class FlattenException
     public static function __callStatic($method, $args)
     {
         if (!method_exists('Symfony\Component\Debug\Exception\FlattenException', $method)) {
-            throw new \BadMethodCallException(sprintf('Call to undefined method %s::%s()', get_called_class(), $method));
+            throw new \BadMethodCallException(sprintf('Call to undefined method %s::%s()', \get_called_class(), $method));
         }
 
-        return call_user_func_array(array('Symfony\Component\Debug\Exception\FlattenException', $method), $args);
+        return \call_user_func_array(array('Symfony\Component\Debug\Exception\FlattenException', $method), $args);
     }
 
     public function __call($method, $args)
@@ -42,10 +42,10 @@ class FlattenException
         }
 
         if (!method_exists($this->handler, $method)) {
-            throw new \BadMethodCallException(sprintf('Call to undefined method %s::%s()', get_class($this), $method));
+            throw new \BadMethodCallException(sprintf('Call to undefined method %s::%s()', \get_class($this), $method));
         }
 
-        return call_user_func_array(array($this->handler, $method), $args);
+        return \call_user_func_array(array($this->handler, $method), $args);
     }
 }
 
@@ -91,11 +91,16 @@ class FlattenException extends LegacyFlattenException
         $e->setStatusCode($statusCode);
         $e->setHeaders($headers);
         $e->setTraceFromException($exception);
-        $e->setClass(get_class($exception));
+        $e->setClass(\get_class($exception));
         $e->setFile($exception->getFile());
         $e->setLine($exception->getLine());
-        if ($exception->getPrevious()) {
-            $e->setPrevious(static::create($exception->getPrevious()));
+
+        $previous = $exception->getPrevious();
+
+        if ($previous instanceof \Exception) {
+            $e->setPrevious(static::create($previous));
+        } elseif ($previous instanceof \Throwable) {
+            $e->setPrevious(static::create(new FatalThrowableError($previous)));
         }
 
         return $e;
@@ -258,9 +263,12 @@ class FlattenException extends LegacyFlattenException
             if (++$count > 1e4) {
                 return array('array', '*SKIPPED over 10000 entries*');
             }
-            if (is_object($value)) {
-                $result[$key] = array('object', get_class($value));
-            } elseif (is_array($value)) {
+            if ($value instanceof \__PHP_Incomplete_Class) {
+                // is_object() returns false on PHP<=7.1
+                $result[$key] = array('incomplete-object', $this->getClassNameFromIncomplete($value));
+            } elseif (\is_object($value)) {
+                $result[$key] = array('object', \get_class($value));
+            } elseif (\is_array($value)) {
                 if ($level > 10) {
                     $result[$key] = array('array', '*DEEP NESTED ARRAY*');
                 } else {
@@ -268,13 +276,10 @@ class FlattenException extends LegacyFlattenException
                 }
             } elseif (null === $value) {
                 $result[$key] = array('null', null);
-            } elseif (is_bool($value)) {
+            } elseif (\is_bool($value)) {
                 $result[$key] = array('boolean', $value);
-            } elseif (is_resource($value)) {
+            } elseif (\is_resource($value)) {
                 $result[$key] = array('resource', get_resource_type($value));
-            } elseif ($value instanceof \__PHP_Incomplete_Class) {
-                // Special case of object, is_object will return false
-                $result[$key] = array('incomplete-object', $this->getClassNameFromIncomplete($value));
             } else {
                 $result[$key] = array('string', (string) $value);
             }

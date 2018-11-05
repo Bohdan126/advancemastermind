@@ -23,6 +23,7 @@ content:
     weight: 3
     settings: {  }
     third_party_settings: {  }
+    region: content
   field_image:
     weight: 1
     label: hidden
@@ -31,6 +32,7 @@ content:
       image_link: ''
     third_party_settings: {  }
     type: image
+    region: content
   field_subtitle:
     weight: 2
     label: inline
@@ -38,9 +40,11 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     type: string
+    region: content
   links:
     weight: 0
     settings: {  }
     third_party_settings: {  }
+    region: content
 hidden:
   field_icon_class: true

@@ -22,7 +22,7 @@ third_party_settings:
     bg_image: {  }
 id: views_block___probes_block_section_block_features_style3
 theme: probes
-region: '-1'
+region: topbar
 weight: -9
 provider: null
 plugin: 'views_block:_probes_block_section-block_features_style3'

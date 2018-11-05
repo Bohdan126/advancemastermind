@@ -82,6 +82,8 @@ class UnroutedUrlTest extends UnitTestCase {
       // [$uri, $is_external]
       // An external URI.
       ['https://www.drupal.org', TRUE],
+      // A protocol-relative URL.
+      ['//www.drupal.org', TRUE],
       // An internal, unrouted, base-relative URI.
       ['base:robots.txt', FALSE],
       // Base-relative URIs with special characters.
@@ -100,9 +102,9 @@ class UnroutedUrlTest extends UnitTestCase {
    *
    * @covers ::fromUri
    * @dataProvider providerFromInvalidUri
-   * @expectedException \InvalidArgumentException
    */
   public function testFromInvalidUri($uri) {
+    $this->setExpectedException(\InvalidArgumentException::class);
     $url = Url::fromUri($uri);
   }
 
@@ -114,7 +116,6 @@ class UnroutedUrlTest extends UnitTestCase {
       // Schemeless paths.
       ['test'],
       ['/test'],
-      ['//test'],
       // Schemeless path with a query string.
       ['foo?bar'],
       // Only a query string.
@@ -132,8 +133,6 @@ class UnroutedUrlTest extends UnitTestCase {
    * Tests the createFromRequest method.
    *
    * @covers ::createFromRequest
-   *
-   * @expectedException \Symfony\Component\Routing\Exception\ResourceNotFoundException
    */
   public function testCreateFromRequest() {
     $request = Request::create('/test-path');
@@ -143,7 +142,8 @@ class UnroutedUrlTest extends UnitTestCase {
       ->with($request)
       ->will($this->throwException(new ResourceNotFoundException()));
 
-    $this->assertNull(Url::createFromRequest($request));
+    $this->setExpectedException(ResourceNotFoundException::class);
+    Url::createFromRequest($request);
   }
 
   /**
@@ -178,12 +178,11 @@ class UnroutedUrlTest extends UnitTestCase {
    * @depends testFromUri
    * @dataProvider providerFromUri
    *
-   * @expectedException \UnexpectedValueException
-   *
    * @covers ::getRouteName
    */
   public function testGetRouteName($uri) {
     $url = Url::fromUri($uri);
+    $this->setExpectedException(\UnexpectedValueException::class);
     $url->getRouteName();
   }
 
@@ -193,12 +192,11 @@ class UnroutedUrlTest extends UnitTestCase {
    * @depends testFromUri
    * @dataProvider providerFromUri
    *
-   * @expectedException \UnexpectedValueException
-   *
    * @covers ::getRouteParameters
    */
   public function testGetRouteParameters($uri) {
     $url = Url::fromUri($uri);
+    $this->setExpectedException(\UnexpectedValueException::class);
     $url->getRouteParameters();
   }
 
@@ -209,12 +207,11 @@ class UnroutedUrlTest extends UnitTestCase {
    * @dataProvider providerFromUri
    *
    * @covers ::getInternalPath
-   *
-   * @expectedException \Exception
    */
   public function testGetInternalPath($uri) {
     $url = Url::fromUri($uri);
-    $this->assertNull($url->getInternalPath());
+    $this->setExpectedException(\Exception::class);
+    $url->getInternalPath();
   }
 
   /**

@@ -24,6 +24,7 @@ content:
       trim_length: 600
     third_party_settings: {  }
     label: hidden
+    region: content
 hidden:
   links: true
   simplenews_issue: true

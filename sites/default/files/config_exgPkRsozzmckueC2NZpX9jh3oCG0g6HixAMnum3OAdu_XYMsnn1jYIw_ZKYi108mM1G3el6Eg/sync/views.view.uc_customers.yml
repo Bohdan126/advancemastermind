@@ -734,6 +734,8 @@ display:
         parent: uc_order.admin.store.customers
         weight: -10
         context: '0'
+        enabled: true
+        expanded: false
       display_extenders: {  }
     display_plugin: page
     display_title: Page
