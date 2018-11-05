@@ -1,6 +1,6 @@
 uuid: 95debd2e-9f7c-4394-a518-511adfd39cca
 langcode: en
-status: true
+status: false
 dependencies:
   config:
     - block_visibility_groups.block_visibility_group.breadcrumb
@@ -28,7 +28,7 @@ third_party_settings:
     background_overlay: ''
 id: breadcrumbs
 theme: probes
-region: breadcrumb
+region: '-1'
 weight: null
 provider: null
 plugin: system_breadcrumb_block
