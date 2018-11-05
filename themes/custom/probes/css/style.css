@@ -2598,10 +2598,10 @@ ul.pagenation-list li a:hover {
 }
 /*grey bordere*/
 .button a.grey-border {
-	border:solid 1px #8d8d8d;
+	border:solid 1px white;
 	border-radius:30px;
 	padding:10px 20px;
-	color:#8d8d8d;
+	color:white;
 }
 .button a.grey-border:hover {
 	border:solid 1px #8d8d8d;
