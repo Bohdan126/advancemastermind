@@ -2,10 +2,30 @@ uuid: c5948a55-43c2-40c4-bfb8-6a5ce26fd6cb
 langcode: en
 status: false
 dependencies:
+  config:
+    - block_visibility_groups.block_visibility_group.contact_style_1
   module:
+    - block_attributes
+    - block_visibility_groups
+    - ntv_block_background
     - system
   theme:
     - probes
+third_party_settings:
+  block_attributes:
+    attr_class: ''
+    attr_id: ''
+    block_title: ''
+    block_title_icon: ''
+  ntv_block_background:
+    disable: disable
+    color: '#000000'
+    bg_image: {  }
+    bg_image_type: default
+    bg_repeat: 'no'
+    bg_image_position: ''
+    bg_image_size: ''
+    background_overlay: ''
 _core:
   default_config_hash: oXUb3JZR2WW5VOdw4HrhRicCsq51mCgLfRyvheG68ck
 id: probes_breadcrumbs
@@ -19,4 +39,12 @@ settings:
   label: Breadcrumbs
   provider: system
   label_display: '0'
-visibility: {  }
+  attributes:
+    class: ''
+    id: ''
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: contact_style_1
+    context_mapping: {  }

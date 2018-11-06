@@ -79,9 +79,9 @@
     {% if blog_style == 'fullwidth' %}
     <div class="col-md-12">
         {% if node.field_image is  not empty %}
-        {% set node_image = node.field_image.entity.fileuri %} 
+        {% set node_image = node.field_image.entity.fileuri %}
         <img src="{{ node_image|image_style_url('image_1170x350') }}" alt="{{ label }}" class="img-responsive">
-        {% endif %}    
+        {% endif %}
         <h3 class="m-bottom2 m-top4 font-thin font30"><a href="{{ url }}">{{ label }}</a></h3>
         <div{{ content_attributes }}>
             {{ content.body['#object'].body.summary }}
@@ -98,7 +98,7 @@
     {% elseif blog_style == '3cols' %}
     <div class="col-md-4 col-sm-6">
         {% if node.field_image is  not empty %}
-        {% set node_image = node.field_image.entity.fileuri %} 
+        {% set node_image = node.field_image.entity.fileuri %}
         <img src="{{ node_image|image_style_url('image_540x400') }}" alt="{{ label }}" class="img-responsive">
         {% endif %} 
         <h3 class="m-bottom1 m-top3 font20"><a href="{{ url }}">{{ label }}</a></h3>
@@ -112,9 +112,9 @@
     {% else %}
     <div>
         {% if node.field_image is  not empty %}
-        {% set node_image = node.field_image.entity.fileuri %} 
+        {% set node_image = node.field_image.entity.fileuri %}
         <img src="{{ node_image|image_style_url('image_1170x350') }}" alt="{{ label }}" class="img-responsive">
-        {% endif %} 
+        {% endif %}
         <h3 class="m-bottom2 m-top4 font-thin font30"><a href="{{ url }}">{{ label }}</a></h3>
         <div{{ content_attributes }}>
             {{ content.body['#object'].body.summary }}
@@ -131,8 +131,8 @@
     {% endif %}
 {% else %}
     {% if node.field_image is  not empty %}
-        {% set node_image = node.field_image.entity.fileuri %} 
-        <img src="{{ node_image|image_style_url('image_1170x350') }}" alt="{{ label }}" class="img-responsive">
+        {% set node_image = node.field_image.entity.fileuri %}
+        <a href="/home#latest-news"><img src="{{ node_image|image_style_url('image_1170x350') }}" alt="{{ label }}" class="img-responsive"></a>
     {% endif %}
     <h3 class="m-bottom2 m-top4 font-thin font30">{{ label }}</h3>
     <div {{ content_attributes }}>

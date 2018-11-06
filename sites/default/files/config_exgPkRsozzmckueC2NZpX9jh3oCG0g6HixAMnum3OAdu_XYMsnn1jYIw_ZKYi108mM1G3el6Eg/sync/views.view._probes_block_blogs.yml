@@ -540,7 +540,7 @@ display:
           empty: false
           tokenize: false
           content:
-            value: "<h2 class=\"uppercase white\">\n\t<span class=\"line blueline\"></span>\n\t<span class=\"uppercase font-grey font-bold font14\">latest news</span><br>\n    from our blog\n</h2>\n"
+            value: "<a class=\"anchor\" id=\"latest-news\"></a>\n<h2 class=\"uppercase white\">\n\t<span class=\"line blueline\"></span>\n\t<span class=\"uppercase font-grey font-bold font14\">latest news</span><br>\n    from our blog\n</h2>\n"
             format: full_html
           plugin_id: text
       filters:

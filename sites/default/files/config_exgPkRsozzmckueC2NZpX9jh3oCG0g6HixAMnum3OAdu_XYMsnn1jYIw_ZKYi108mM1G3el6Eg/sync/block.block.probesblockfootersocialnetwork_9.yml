@@ -1,14 +1,16 @@
-uuid: 95debd2e-9f7c-4394-a518-511adfd39cca
+uuid: e80bacee-97dc-4776-bc1d-f926608471d5
 langcode: en
-status: false
+status: true
 dependencies:
   config:
-    - block_visibility_groups.block_visibility_group.contact_style_1
+    - block_visibility_groups.block_visibility_group.blog_post
+  content:
+    - 'block_content:basic:461789f5-260f-414a-882f-b5891efdee68'
   module:
     - block_attributes
+    - block_content
     - block_visibility_groups
     - ntv_block_background
-    - system
   theme:
     - probes
 third_party_settings:
@@ -26,17 +28,20 @@ third_party_settings:
     bg_image_position: ''
     bg_image_size: ''
     background_overlay: ''
-id: breadcrumbs
+id: probesblockfootersocialnetwork_9
 theme: probes
-region: slideshow
+region: footer
 weight: 0
 provider: null
-plugin: system_breadcrumb_block
+plugin: 'block_content:461789f5-260f-414a-882f-b5891efdee68'
 settings:
-  id: system_breadcrumb_block
-  label: Breadcrumbs
-  provider: system
+  id: 'block_content:461789f5-260f-414a-882f-b5891efdee68'
+  label: '[Probes] Block footer social network'
+  provider: block_content
   label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
   attributes:
     class: ''
     id: ''
@@ -44,5 +49,5 @@ visibility:
   condition_group:
     id: condition_group
     negate: false
-    block_visibility_group: contact_style_1
+    block_visibility_group: blog_post
     context_mapping: {  }

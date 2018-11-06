@@ -1,6 +1,6 @@
 uuid: 85eaa7ee-b60c-4637-b375-1ff8b63c7371
 langcode: en
-status: true
+status: false
 dependencies:
   config:
     - block_visibility_groups.block_visibility_group.blog_post
