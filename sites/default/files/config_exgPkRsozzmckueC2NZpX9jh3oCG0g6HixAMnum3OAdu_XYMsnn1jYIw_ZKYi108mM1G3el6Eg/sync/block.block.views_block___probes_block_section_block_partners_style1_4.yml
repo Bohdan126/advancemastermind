@@ -1,6 +1,6 @@
 uuid: e53583a4-b204-41f1-8cae-b3ae35d174ce
 langcode: en
-status: true
+status: false
 dependencies:
   config:
     - block_visibility_groups.block_visibility_group.page_taxonomy
