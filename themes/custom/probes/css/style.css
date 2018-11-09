@@ -1223,10 +1223,14 @@ select.selectpicker-full {
 .page-header.three {
 	background:url(../images/site-img-98.jpg) no-repeat scroll center top;
 	background-size:cover;
+	height: 260px;
+	background-position: center;
 }
 .page-header.four {
 	background:url(../images/site-img-99.jpg) no-repeat scroll center top;
 	background-size:cover;
+	height: 260px;
+	background-position: center;
 }
 .page-header.five {
 	background:url(../images/site-img-100.jpg) no-repeat scroll center top;
